@@ -7,58 +7,58 @@ import { FiArrowRight, FiUsers, FiTarget, FiMessageCircle, FiHeart, FiAward, FiZ
 // Team member data
 const teamMembers = [
   {
-    name: 'Abhishek Mishra',
-    role: 'Founder & CEO',
-    image: '/images/team/abhishek-mishra.png',
+    name: 'Nisha Tiwari',
+    role: 'Founder',
+    image: '/images/team/nisha-tiwari.jpg',
     description: 'Leading Team Nirosha with a vision to deliver exceptional digital solutions'
   },
   {
     name: 'Ajay Pankhaniya',
-    role: 'Co-Founder',
+    role: 'Development Lead',
     image: '/images/team/ajay-pankhaniya.jpg',
     description: 'Driving innovation and strategic growth'
   },
   {
-    name: 'Avinash Dubal',
-    role: 'Technical Lead',
-    image: '/images/team/avinash-dubal.png',
-    description: 'Expert in modern web technologies and cloud solutions'
-  },
-  {
-    name: 'Chirag Patel',
-    role: 'Senior Developer',
-    image: '/images/team/chirag-patel.png',
+    name: 'Komal Vaviya',
+    role: 'Sr. Developer',
+    image: '/images/team/komal-vaviya.jpg',
     description: 'Building scalable and secure digital solutions'
   },
   {
-    name: 'Dev Prajapati',
-    role: 'Developer',
-    image: '/images/team/dev-prajapati.png',
+    name: 'Chirag Patel',
+    role: 'Sr. Developer',
+    image: '/images/team/chirag-patel.png',
     description: 'Creating beautiful and functional web experiences'
   },
   {
-    name: 'Komal Vaviya',
-    role: 'Design Lead',
-    image: '/images/team/komal-vaviya.jpg',
-    description: 'Crafting intuitive and engaging user experiences'
-  },
-  {
-    name: 'Kunal Gaikwad',
-    role: 'Developer',
-    image: '/images/team/kunal-gaikwad.png',
-    description: 'Transforming ideas into digital reality'
-  },
-  {
-    name: 'Nisha Tiwari',
-    role: 'Marketing Specialist',
-    image: '/images/team/nisha-tiwari.jpg',
-    description: 'Driving digital marketing and brand growth'
+    name: 'Dev Prajapati',
+    role: 'Sr. Developer',
+    image: '/images/team/dev-prajapati.png',
+    description: 'Expert in modern web technologies and cloud solutions'
   },
   {
     name: 'Vilas Dhadse',
-    role: 'Senior Developer',
+    role: 'Sr. Designer - UI / UX',
     image: '/images/team/vilas-dhadse.png',
+    description: 'Crafting intuitive and engaging user experiences'
+  },
+  {
+    name: 'Avinash Dubal',
+    role: 'Sr. Designer & Developer',
+    image: '/images/team/avinash-dubal.png',
     description: 'Expert in enterprise solutions and automation'
+  },
+  {
+    name: 'Abhishek Mishra',
+    role: 'SEO Specialist',
+    image: '/images/team/abhishek-mishra.png',
+    description: 'Driving digital marketing and brand growth'
+  },
+  {
+    name: 'Kunal Gaikwad',
+    role: 'Digital Marketing Manager',
+    image: '/images/team/kunal-gaikwad.png',
+    description: 'Transforming ideas into digital reality'
   }
 ]
 
