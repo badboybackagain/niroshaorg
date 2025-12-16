@@ -8,6 +8,7 @@ import ShareButtons from '../components/ShareButtons'
 import BlogImage from '../components/BlogImage'
 import { processBlogContent } from '../utils/blogUtils'
 import ArticleSchema from '../components/ArticleSchema'
+import BreadcrumbSchema from '../components/BreadcrumbSchema'
 
 const BlogDetailPage = () => {
   const { slug } = useParams()
@@ -67,6 +68,13 @@ const BlogDetailPage = () => {
         <meta name="twitter:image" content={blog.imageSlug ? `/images/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
       </Helmet>
       <ArticleSchema blog={blog} />
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: 'https://nirosha.org' },
+          { name: 'Blog', url: 'https://nirosha.org/blog' },
+          { name: blog.title, url: currentUrl }
+        ]} 
+      />
       <section className="section blog-detail-page">
         <div className="container">
           <div className="blog-detail-header">

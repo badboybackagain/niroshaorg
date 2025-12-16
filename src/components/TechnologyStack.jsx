@@ -56,6 +56,7 @@ const TechnologyStack = () => {
                   <img
                     src={getLogoUrl(tech.slug)}
                     alt={tech.name}
+                    title={tech.name}
                     className="tech-logo"
                     loading="lazy"
                     onError={(e) => {
@@ -70,6 +71,7 @@ const TechnologyStack = () => {
                   <span className="tech-logo-fallback" style={{ display: 'none' }}>
                     {tech.name}
                   </span>
+                  <span className="tech-tooltip">{tech.name}</span>
                 </div>
               </div>
             ))}
@@ -81,3 +83,4 @@ const TechnologyStack = () => {
 }
 
 export default TechnologyStack
+

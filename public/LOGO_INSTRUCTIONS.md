@@ -48,3 +48,4 @@ To optimize for Google PageSpeed, please add the following logo files:
 3. The Logo component will automatically use the optimized versions
 
 
+

@@ -4,6 +4,9 @@ dist
 .env
 .env.local
 .env.deploy
+.env.production
+server/.env
+server/node_modules
 
 # Generated logo files (source logo in src/assets/logo-source/ should be committed)
 public/logo*.png

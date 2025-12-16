@@ -129,3 +129,4 @@ If the script doesn't work, you can manually upload:
 3. Upload all files from `dist/` folder to your server's root directory
 
 
+

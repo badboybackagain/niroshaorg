@@ -71,3 +71,4 @@ const BlogImage = ({ slug, size = 'featured', alt, className = '' }) => {
 export default BlogImage
 
 
+

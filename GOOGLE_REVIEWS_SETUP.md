@@ -174,3 +174,4 @@ For issues or questions:
 3. Try the SerpAPI method for more reliability
 4. Consider using Google My Business API for official access
 
+

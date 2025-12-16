@@ -42,3 +42,4 @@ The script automatically creates all required sizes and formats in `/public/`:
 Just replace the file in this folder and run `npm run process-logo` again!
 
 
+

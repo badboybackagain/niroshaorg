@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { FiMenu, FiX, FiSearch } from 'react-icons/fi'
+import { FiMenu, FiX, FiSearch, FiChevronDown, FiChevronRight } from 'react-icons/fi'
 import Logo from './Logo'
+import { servicesData } from '../data/servicesData.jsx'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isSearchFocused, setIsSearchFocused] = useState(false)
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 })
   const location = useLocation()
   const navigate = useNavigate()
+  const servicesDropdownRef = useRef(null)
+  const servicesLinkRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +28,57 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false)
+    setServicesDropdownOpen(false)
+    setMobileServicesOpen(false)
   }, [location])
+
+  // Calculate dropdown position when it opens or on scroll/resize
+  useEffect(() => {
+    const updatePosition = () => {
+      if (servicesDropdownOpen && servicesLinkRef.current) {
+        const rect = servicesLinkRef.current.getBoundingClientRect()
+        setDropdownPosition({
+          top: rect.bottom + 8,
+          left: rect.left
+        })
+      }
+    }
+
+    if (servicesDropdownOpen) {
+      updatePosition()
+      window.addEventListener('scroll', updatePosition, true)
+      window.addEventListener('resize', updatePosition)
+    }
+
+    return () => {
+      window.removeEventListener('scroll', updatePosition, true)
+      window.removeEventListener('resize', updatePosition)
+    }
+  }, [servicesDropdownOpen])
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target) &&
+          servicesLinkRef.current && !servicesLinkRef.current.contains(event.target)) {
+        setServicesDropdownOpen(false)
+      }
+    }
+
+    if (servicesDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [servicesDropdownOpen])
+
+  // Get all services for submenu
+  const servicesList = Object.entries(servicesData).map(([slug, data]) => ({
+    slug,
+    title: data.title
+  }))
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -37,6 +94,47 @@ const Navbar = () => {
       document.documentElement.style.overflow = ''
     }
   }, [isOpen])
+
+  // Prevent overflow when dropdown is open
+  useEffect(() => {
+    if (servicesDropdownOpen) {
+      // Ensure navbar and body don't create scrollbars
+      const navbar = document.querySelector('.navbar')
+      const navContent = document.querySelector('.nav-content')
+      const navLinks = document.querySelector('.nav-links-desktop')
+      
+      if (navbar) {
+        navbar.style.overflow = 'visible'
+        navbar.style.overflowY = 'visible'
+        navbar.style.overflowX = 'hidden'
+      }
+      if (navContent) {
+        navContent.style.overflow = 'visible'
+      }
+      if (navLinks) {
+        navLinks.style.overflow = 'visible'
+      }
+      document.body.style.overflowX = 'hidden'
+      document.documentElement.style.overflowX = 'hidden'
+    }
+    return () => {
+      const navbar = document.querySelector('.navbar')
+      const navContent = document.querySelector('.nav-content')
+      const navLinks = document.querySelector('.nav-links-desktop')
+      
+      if (navbar) {
+        navbar.style.overflow = ''
+        navbar.style.overflowY = ''
+        navbar.style.overflowX = ''
+      }
+      if (navContent) {
+        navContent.style.overflow = ''
+      }
+      if (navLinks) {
+        navLinks.style.overflow = ''
+      }
+    }
+  }, [servicesDropdownOpen])
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -69,12 +167,61 @@ const Navbar = () => {
               >
                 <span>ABOUT</span>
               </Link>
-              <Link 
-                to="/services" 
-                className={`nav-link ${location.pathname.startsWith('/services') ? 'active' : ''}`}
+              <div 
+                className={`nav-link-dropdown ${location.pathname.startsWith('/services') ? 'active' : ''}`}
+                onMouseEnter={() => {
+                  setServicesDropdownOpen(true)
+                }}
+                onMouseLeave={(e) => {
+                  // Only close if not moving to dropdown
+                  if (!servicesDropdownRef.current?.contains(e.relatedTarget)) {
+                    setServicesDropdownOpen(false)
+                  }
+                }}
               >
-                <span>SERVICES</span>
-              </Link>
+                <Link 
+                  to="/services" 
+                  className="nav-link"
+                  ref={servicesLinkRef}
+                >
+                  <span>SERVICES</span>
+                  <FiChevronDown className="dropdown-icon" />
+                </Link>
+              </div>
+              {servicesDropdownOpen && createPortal(
+                <div 
+                  className="services-dropdown"
+                  ref={servicesDropdownRef}
+                  style={{
+                    position: 'fixed',
+                    top: `${dropdownPosition.top}px`,
+                    left: `${dropdownPosition.left}px`,
+                    zIndex: 10000
+                  }}
+                  onMouseEnter={() => setServicesDropdownOpen(true)}
+                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                >
+                  <Link 
+                    to="/services" 
+                    className="services-dropdown-item services-dropdown-all"
+                    onClick={() => setServicesDropdownOpen(false)}
+                  >
+                    <span>All Services</span>
+                  </Link>
+                  <div className="services-dropdown-divider"></div>
+                  {servicesList.map((service) => (
+                    <Link
+                      key={service.slug}
+                      to={`/services/${service.slug}`}
+                      className={`services-dropdown-item ${location.pathname === `/services/${service.slug}` ? 'active' : ''}`}
+                      onClick={() => setServicesDropdownOpen(false)}
+                    >
+                      <span>{service.title}</span>
+                    </Link>
+                  ))}
+                </div>,
+                document.body
+              )}
               <Link 
                 to="/blog" 
                 className={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
@@ -134,13 +281,42 @@ const Navbar = () => {
           >
             <span>About</span>
           </Link>
-          <Link 
-            to="/services" 
-            className={`mobile-menu-link ${location.pathname.startsWith('/services') ? 'active' : ''}`} 
-            onClick={() => setIsOpen(false)}
-          >
-            <span>Services</span>
-          </Link>
+          <div className="mobile-menu-services">
+            <button
+              className={`mobile-menu-link mobile-menu-services-toggle ${location.pathname.startsWith('/services') ? 'active' : ''}`}
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            >
+              <span>Services</span>
+              <FiChevronRight className={`mobile-menu-chevron ${mobileServicesOpen ? 'open' : ''}`} />
+            </button>
+            {mobileServicesOpen && (
+              <div className="mobile-menu-services-submenu">
+                <Link
+                  to="/services"
+                  className={`mobile-menu-link mobile-menu-submenu-item ${location.pathname === '/services' ? 'active' : ''}`}
+                  onClick={() => {
+                    setIsOpen(false)
+                    setMobileServicesOpen(false)
+                  }}
+                >
+                  <span>All Services</span>
+                </Link>
+                {servicesList.map((service) => (
+                  <Link
+                    key={service.slug}
+                    to={`/services/${service.slug}`}
+                    className={`mobile-menu-link mobile-menu-submenu-item ${location.pathname === `/services/${service.slug}` ? 'active' : ''}`}
+                    onClick={() => {
+                      setIsOpen(false)
+                      setMobileServicesOpen(false)
+                    }}
+                  >
+                    <span>{service.title}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <Link 
             to="/blog" 
             className={`mobile-menu-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`} 

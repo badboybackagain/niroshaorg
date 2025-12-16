@@ -22,6 +22,7 @@ import {
   FiUsers
 } from 'react-icons/fi'
 import { servicesData } from '../data/servicesData.jsx'
+import DotGridBackground from '../components/DotGridBackground'
 
 const ServiceCard = ({ service, index, slug }) => {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
@@ -154,20 +155,27 @@ const ServicesPage = () => {
         {!searchQuery && (
           <div className="services-hero">
             <div className="services-hero-background"></div>
-            <div className="services-hero-pattern"></div>
+            <DotGridBackground 
+              dotSize={4}
+              gap={30}
+              color="rgba(255, 255, 255, 0.2)"
+              hoverColor="rgba(255, 255, 255, 0.5)"
+              hoverRadius={120}
+            />
             <div className="container">
               <div 
                 ref={heroRef}
                 className={`services-hero-content ${heroVisible ? 'animate-fadeInUp' : ''}`}
+                style={{ position: 'relative', zIndex: 2, pointerEvents: 'none' }}
               >
-                <div className="services-hero-badge">
+                <div className="services-hero-badge" style={{ pointerEvents: 'auto' }}>
                   <FiCheckCircle style={{ marginRight: '8px' }} />
                   <span>12+ Professional Services</span>
                 </div>
-                <h1 className="services-hero-title">
-                  Digital Services India - Web Development, SEO, Marketing & Cloud Solutions
+                <h1 className="services-hero-title" style={{ pointerEvents: 'auto' }}>
+                  Digital Services - Web Development, SEO, Marketing & Cloud Solutions
                 </h1>
-                <p className="services-hero-subtitle">
+                <p className="services-hero-subtitle" style={{ pointerEvents: 'auto' }}>
                   From custom web development and SEO optimization to social media marketing and cloud infrastructure, 
                   we provide end-to-end digital services that drive real results. Our expert team combines technical 
                   expertise with strategic thinking to deliver solutions that help your business scale and succeed online.
@@ -177,6 +185,7 @@ const ServicesPage = () => {
                 <div 
                   ref={benefitsRef}
                   className={`services-hero-benefits ${benefitsVisible ? 'animate-fadeInUp' : ''}`}
+                  style={{ pointerEvents: 'auto' }}
                 >
                   <div className="services-hero-benefit-item">
                     <FiTrendingUp className="benefit-icon" />

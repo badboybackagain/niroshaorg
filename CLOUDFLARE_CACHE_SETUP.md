@@ -214,3 +214,4 @@ If you're still seeing issues:
 3. Make sure Cloudflare is in "Proxied" mode (orange cloud icon)
 4. Contact your hosting provider to ensure `mod_headers` is enabled
 
+

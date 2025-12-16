@@ -24,10 +24,14 @@ const Contact = () => {
 
   const [formData, setFormData] = useState({
     fullName: '',
+    countryCode: '+91',
     whatsappNumber: '',
     email: '',
     serviceInterested: [],
-    comments: ''
+    comments: '',
+    // Honeypot fields (should remain empty)
+    website: '',
+    phone: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
@@ -64,6 +68,26 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     
+    // Honeypot check - if these fields are filled, it's likely a bot
+    if (formData.website || formData.phone) {
+      // Silently fail - don't let bots know they were caught
+      setSubmitStatus('success')
+      setTimeout(() => {
+        setSubmitStatus(null)
+        setFormData({
+          fullName: '',
+          countryCode: '+91',
+          whatsappNumber: '',
+          email: '',
+          serviceInterested: [],
+          comments: '',
+          website: '',
+          phone: ''
+        })
+      }, 2000)
+      return
+    }
+    
     // Validate that at least one service is selected
     if (formData.serviceInterested.length === 0) {
       setSubmitStatus('error')
@@ -74,21 +98,63 @@ const Contact = () => {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Get the API endpoint from environment variable or use default
+      // For local development, set VITE_CONTACT_API_URL=http://localhost:3000/api/contact in .env file
+      // For production, set it to your deployed server URL
+      const apiEndpoint = import.meta.env.VITE_CONTACT_API_URL || 
+        'http://localhost:3000/api/contact';
+      
+      console.log('Sending request to:', apiEndpoint); // Debug log
+      
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          countryCode: formData.countryCode,
+          whatsappNumber: formData.whatsappNumber,
+          email: formData.email,
+          serviceInterested: formData.serviceInterested,
+          comments: formData.comments
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        console.error('API Error:', errorData); // Debug log
+        throw new Error(errorData.message || errorData.error || 'Failed to send email')
+      }
+
       setIsSubmitting(false)
       setSubmitStatus('success')
       setFormData({
         fullName: '',
+        countryCode: '+91',
         whatsappNumber: '',
         email: '',
         serviceInterested: [],
-        comments: ''
+        comments: '',
+        website: '',
+        phone: ''
       })
       
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000)
-    }, 1500)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        apiEndpoint: import.meta.env.VITE_CONTACT_API_URL || 'http://localhost:3000/api/contact'
+      })
+      setIsSubmitting(false)
+      setSubmitStatus('error')
+      // Show error message for 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000)
+    }
   }
 
   return (
@@ -144,15 +210,77 @@ const Contact = () => {
                   <FiMessageCircle />
                   WhatsApp Number <span className="required">*</span>
                 </label>
-                <input
-                  type="tel"
-                  id="whatsappNumber"
-                  name="whatsappNumber"
-                  value={formData.whatsappNumber}
-                  onChange={handleChange}
-                  required
-                  placeholder="+91-XXXXXXXXXX"
-                />
+                <div className="phone-input-wrapper">
+                  <select
+                    id="countryCode"
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+81">🇯🇵 +81</option>
+                    <option value="+86">🇨🇳 +86</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+60">🇲🇾 +60</option>
+                    <option value="+66">🇹🇭 +66</option>
+                    <option value="+27">🇿🇦 +27</option>
+                    <option value="+55">🇧🇷 +55</option>
+                    <option value="+52">🇲🇽 +52</option>
+                    <option value="+34">🇪🇸 +34</option>
+                    <option value="+39">🇮🇹 +39</option>
+                    <option value="+31">🇳🇱 +31</option>
+                    <option value="+46">🇸🇪 +46</option>
+                    <option value="+47">🇳🇴 +47</option>
+                    <option value="+41">🇨🇭 +41</option>
+                    <option value="+32">🇧🇪 +32</option>
+                    <option value="+353">🇮🇪 +353</option>
+                    <option value="+351">🇵🇹 +351</option>
+                    <option value="+30">🇬🇷 +30</option>
+                    <option value="+48">🇵🇱 +48</option>
+                    <option value="+7">🇷🇺 +7</option>
+                    <option value="+82">🇰🇷 +82</option>
+                    <option value="+64">🇳🇿 +64</option>
+                    <option value="+62">🇮🇩 +62</option>
+                    <option value="+63">🇵🇭 +63</option>
+                    <option value="+84">🇻🇳 +84</option>
+                    <option value="+92">🇵🇰 +92</option>
+                    <option value="+880">🇧🇩 +880</option>
+                    <option value="+94">🇱🇰 +94</option>
+                    <option value="+977">🇳🇵 +977</option>
+                    <option value="+20">🇪🇬 +20</option>
+                    <option value="+234">🇳🇬 +234</option>
+                    <option value="+254">🇰🇪 +254</option>
+                    <option value="+212">🇲🇦 +212</option>
+                    <option value="+233">🇬🇭 +233</option>
+                    <option value="+852">🇭🇰 +852</option>
+                    <option value="+886">🇹🇼 +886</option>
+                    <option value="+960">🇲🇻 +960</option>
+                    <option value="+961">🇱🇧 +961</option>
+                    <option value="+962">🇯🇴 +962</option>
+                    <option value="+965">🇰🇼 +965</option>
+                    <option value="+966">🇸🇦 +966</option>
+                    <option value="+968">🇴🇲 +968</option>
+                    <option value="+972">🇮🇱 +972</option>
+                    <option value="+973">🇧🇭 +973</option>
+                    <option value="+974">🇶🇦 +974</option>
+                  </select>
+                  <input
+                    type="tel"
+                    id="whatsappNumber"
+                    name="whatsappNumber"
+                    value={formData.whatsappNumber}
+                    onChange={handleChange}
+                    required
+                    placeholder="Phone Number"
+                  />
+                </div>
               </div>
 
               <div className="form-group">
@@ -202,7 +330,7 @@ const Contact = () => {
                 {formData.serviceInterested.length === 0 && (
                   <small style={{ display: 'block', marginTop: '0.5rem', color: 'rgba(255, 0, 0, 0.7)', fontSize: '0.875rem' }}>
                     Please select at least one service
-                  </small>
+                </small>
                 )}
               </div>
 
@@ -221,6 +349,30 @@ const Contact = () => {
                 />
               </div>
 
+              {/* Honeypot fields - hidden from users but visible to bots */}
+              <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                <label htmlFor="website">Website (leave blank)</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+                <label htmlFor="phone">Phone (leave blank)</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+              </div>
+
               {submitStatus === 'success' && (
                 <div className="form-success">
                   <p>✓ Thank you! We'll get back to you soon.</p>
@@ -228,7 +380,7 @@ const Contact = () => {
               )}
               {submitStatus === 'error' && (
                 <div className="form-error">
-                  <p>⚠ Please select at least one service.</p>
+                  <p>⚠ Something went wrong. Please try again or contact us directly at info@nirosha.org</p>
                 </div>
               )}
 
@@ -257,9 +409,9 @@ const Contact = () => {
                   <FiPhone />
                 </div>
                 <div>
-                  <h3>Phone</h3>
+                <h3>Phone</h3>
                   <span>+91-9403891938</span>
-                </div>
+              </div>
               </a>
 
               <a href="https://wa.me/919403891938" target="_blank" rel="noopener noreferrer" className="contact-info-card">
@@ -267,19 +419,19 @@ const Contact = () => {
                   <FiMessageCircle />
                 </div>
                 <div>
-                  <h3>WhatsApp</h3>
+                <h3>WhatsApp</h3>
                   <span>+91-9403891938</span>
                 </div>
-              </a>
+                </a>
 
               <a href="mailto:info@nirosha.org" className="contact-info-card">
                 <div className="info-icon">
                   <FiMail />
                 </div>
                 <div>
-                  <h3>Email</h3>
+                <h3>Email</h3>
                   <span>info@nirosha.org</span>
-                </div>
+              </div>
               </a>
 
               <div className="contact-info-card">
@@ -287,8 +439,8 @@ const Contact = () => {
                   <FiMapPin />
                 </div>
                 <div>
-                  <h3>Address</h3>
-                  <p>Hadapsar, Pune, Maharashtra, India</p>
+                <h3>Address</h3>
+                <p>Hadapsar, Pune, Maharashtra, India</p>
                 </div>
               </div>
             </div>

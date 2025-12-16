@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { FiArrowRight, FiUsers, FiTarget, FiMessageCircle, FiHeart, FiAward, FiZap, FiShield, FiTrendingUp, FiCode } from 'react-icons/fi'
+import SquaresBackground from '../components/SquaresBackground'
 
 // Team member data
 const teamMembers = [
@@ -169,7 +170,7 @@ const AboutPage = () => {
               className={`about-hero-text ${heroVisible ? 'animate-fadeInUp' : ''}`}
             >
               <span className="about-hero-badge">About Team Nirosha</span>
-              <h1 className="about-hero-headline">About Team Nirosha - Digital Agency India | Web Development & SEO Experts</h1>
+              <h1 className="about-hero-headline">About Team Nirosha - Digital Agency | Web Development & SEO Experts</h1>
               <p className="about-hero-subheadline">
                 We don't just build websites - we build secure, scalable digital systems that support real business growth.
               </p>
@@ -224,19 +225,28 @@ const AboutPage = () => {
 
           {/* Team Section */}
           <div className="about-page-team animate-fadeInUp">
-            <h2 className="about-page-section-title">Meet Our Team</h2>
-            <p className="about-page-team-intro">
-              We're a team of passionate professionals dedicated to delivering exceptional digital solutions. 
-              Each member brings unique expertise and a commitment to excellence.
-            </p>
-            <div className="about-page-team-members-grid">
-              {teamMembers.map((member, index) => (
-                <TeamMemberCard key={index} member={member} index={index} />
-              ))}
+            <SquaresBackground 
+              direction="diagonal"
+              speed={0.5}
+              borderColor="rgba(150, 150, 150, 0.15)"
+              squareSize={60}
+              hoverFillColor="rgba(100, 100, 100, 0.08)"
+            />
+            <div style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}>
+              <h2 className="about-page-section-title" style={{ pointerEvents: 'auto' }}>Meet Our Team</h2>
+              <p className="about-page-team-intro" style={{ pointerEvents: 'auto' }}>
+                We're a team of passionate professionals dedicated to delivering exceptional digital solutions. 
+                Each member brings unique expertise and a commitment to excellence.
+              </p>
+              <div className="about-page-team-members-grid" style={{ pointerEvents: 'auto' }}>
+                {teamMembers.map((member, index) => (
+                  <TeamMemberCard key={index} member={member} index={index} />
+                ))}
+              </div>
+              <p className="about-page-team-closing" style={{ pointerEvents: 'auto' }}>
+                Together, we're building the future of digital solutions, one project at a time.
+              </p>
             </div>
-            <p className="about-page-team-closing">
-              Together, we're building the future of digital solutions, one project at a time.
-            </p>
           </div>
 
           {/* CTA Section */}

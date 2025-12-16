@@ -6,6 +6,8 @@ import { FiCheck, FiArrowRight, FiCalendar, FiPhone } from 'react-icons/fi'
 import { servicesData } from '../data/servicesData.jsx'
 import FAQ from '../components/FAQ'
 import FAQSchema from '../components/FAQSchema'
+import ServiceSchema from '../components/ServiceSchema'
+import BreadcrumbSchema from '../components/BreadcrumbSchema'
 
 const ServiceDetailPage = () => {
   const { slug } = useParams()
@@ -44,6 +46,14 @@ const ServiceDetailPage = () => {
         <meta property="og:type" content="website" />
         <link rel="canonical" href={`https://nirosha.org/services/${slug}`} />
       </Helmet>
+      <ServiceSchema service={serviceData} />
+      <BreadcrumbSchema 
+        items={[
+          { name: 'Home', url: 'https://nirosha.org' },
+          { name: 'Services', url: 'https://nirosha.org/services' },
+          { name: serviceData.title, url: `https://nirosha.org/services/${slug}` }
+        ]} 
+      />
       
       <section className="section service-detail-hero">
         <div className="container">
@@ -58,7 +68,7 @@ const ServiceDetailPage = () => {
               <span>/</span>
               <span>{serviceData.title}</span>
             </div>
-            <h1 className="service-hero-title">{serviceData.title} Services India | Team Nirosha</h1>
+            <h1 className="service-hero-title">{serviceData.title} Services | Team Nirosha</h1>
             <p className="service-hero-subtitle">{serviceData.heroDescription}</p>
             <div className="service-hero-cta">
               <a 
