@@ -70,7 +70,7 @@ const Hero = () => {
             ref={titleRef}
             className={`hero-title ${titleVisible ? 'animate-fadeInUp' : ''}`}
           >
-            Web Development & Digital Marketing Services India | Team Nirosha
+            Web Development & Digital Marketing Services
           </h1>
           <p className="hero-subtitle-heading">
             Web, SEO, Automation & Cloud Services Under One Roof
