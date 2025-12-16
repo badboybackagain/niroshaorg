@@ -26,7 +26,7 @@ const BlogDetailPage = () => {
       <section className="section blog-detail-page">
         <div className="container">
           <div className="blog-not-found">
-            <h1>Blog Post Not Found</h1>
+            <h2>Blog Post Not Found</h2>
             <p>The blog post you're looking for doesn't exist.</p>
             <Link to="/blog" className="btn btn-primary">
               Back to Blog
@@ -94,7 +94,7 @@ const BlogDetailPage = () => {
               </span>
             </div>
 
-            <h1 className="blog-detail-title">{blog.title}</h1>
+            <h1 className="blog-detail-title">{blog.seoTitle || blog.title} | Team Nirosha Blog</h1>
             <p className="blog-detail-excerpt">{blog.excerpt}</p>
           </div>
 

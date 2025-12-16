@@ -6,6 +6,7 @@ import Services from '../components/Services'
 import WhyChoose from '../components/WhyChoose'
 import Process from '../components/Process'
 import Industries from '../components/Industries'
+import TechnologyStack from '../components/TechnologyStack'
 import Testimonials from '../components/Testimonials'
 import CTA from '../components/CTA'
 
@@ -19,6 +20,7 @@ const HomePage = () => {
       <WhyChoose />
       <Process />
       <Industries />
+      <TechnologyStack />
       <Testimonials />
       <CTA />
     </>

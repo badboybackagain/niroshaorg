@@ -60,16 +60,17 @@ const Contact = () => {
     }))
   }
 
-  const handleServiceChange = (e) => {
-    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value)
-    setFormData(prev => ({
-      ...prev,
-      serviceInterested: selectedOptions
-    }))
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    // Validate that at least one service is selected
+    if (formData.serviceInterested.length === 0) {
+      setSubmitStatus('error')
+      setTimeout(() => setSubmitStatus(null), 3000)
+      return
+    }
+    
     setIsSubmitting(true)
     setSubmitStatus(null)
 
@@ -92,12 +93,21 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section contact-page">
+      <div className="contact-page-background-pattern"></div>
+      <div className="contact-page-particles">
+        <div className="contact-page-particle contact-page-particle-1"></div>
+        <div className="contact-page-particle contact-page-particle-2"></div>
+        <div className="contact-page-particle contact-page-particle-3"></div>
+        <div className="contact-page-particle contact-page-particle-4"></div>
+      </div>
+      <div className="contact-page-glow contact-page-glow-1"></div>
+      <div className="contact-page-glow contact-page-glow-2"></div>
       <div className="container">
         <div 
           ref={titleRef}
           className={`contact-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
         >
-          <h1 className="contact-page-title">Get In Touch</h1>
+          <h2 className="contact-page-title">Get In Touch</h2>
           <p className="contact-page-subtitle">
             Ready to transform your digital presence? Let's discuss your project and see how we can help your business grow.
           </p>
@@ -109,6 +119,8 @@ const Contact = () => {
             ref={formRef}
             className={`contact-form-wrapper ${formVisible ? 'animate-fadeInLeft' : ''}`}
           >
+            <div className="form-decoration form-decoration-1"></div>
+            <div className="form-decoration form-decoration-2"></div>
             <h2 className="form-title">Send Us a Message</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
@@ -160,34 +172,38 @@ const Contact = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="serviceInterested">
+                <label>
                   <FiSend />
                   Services Interested In <span className="required">*</span>
                 </label>
-                <select
-                  id="serviceInterested"
-                  name="serviceInterested"
-                  value={formData.serviceInterested}
-                  onChange={handleServiceChange}
-                  required
-                  multiple
-                  size="5"
-                  style={{
-                    minHeight: '120px',
-                    padding: '0.75rem',
-                    borderRadius: '8px',
-                    border: '1px solid rgba(0, 0, 0, 0.1)',
-                    fontSize: '1rem',
-                    fontFamily: 'inherit'
-                  }}
-                >
-                  {services.map((service, index) => (
-                    <option key={index} value={service}>{service}</option>
-                  ))}
-                </select>
-                <small style={{ display: 'block', marginTop: '0.5rem', color: 'rgba(0, 0, 0, 0.6)', fontSize: '0.875rem' }}>
-                  Hold Ctrl (Windows) or Cmd (Mac) to select multiple services
-                </small>
+                <div className="services-chips-group">
+                  {services.map((service, index) => {
+                    const isSelected = formData.serviceInterested.includes(service)
+                    return (
+                      <button
+                        key={index}
+                        type="button"
+                        className={`service-chip ${isSelected ? 'service-chip-selected' : ''}`}
+                        onClick={() => {
+                          const newServices = isSelected
+                            ? formData.serviceInterested.filter(s => s !== service)
+                            : [...formData.serviceInterested, service]
+                          setFormData(prev => ({
+                            ...prev,
+                            serviceInterested: newServices
+                          }))
+                        }}
+                      >
+                        {service}
+                      </button>
+                    )
+                  })}
+                </div>
+                {formData.serviceInterested.length === 0 && (
+                  <small style={{ display: 'block', marginTop: '0.5rem', color: 'rgba(255, 0, 0, 0.7)', fontSize: '0.875rem' }}>
+                    Please select at least one service
+                  </small>
+                )}
               </div>
 
               <div className="form-group">
@@ -210,6 +226,11 @@ const Contact = () => {
                   <p>✓ Thank you! We'll get back to you soon.</p>
                 </div>
               )}
+              {submitStatus === 'error' && (
+                <div className="form-error">
+                  <p>⚠ Please select at least one service.</p>
+                </div>
+              )}
 
               <button 
                 type="submit" 
@@ -227,40 +248,48 @@ const Contact = () => {
             ref={infoRef}
             className={`contact-info-wrapper ${infoVisible ? 'animate-fadeInRight' : ''}`}
           >
+            <div className="info-decoration info-decoration-1"></div>
+            <div className="info-decoration info-decoration-2"></div>
             <h2 className="info-title">Contact Information</h2>
             <div className="contact-info-cards">
-              <div className="contact-info-card">
+              <a href="tel:+919403891938" className="contact-info-card">
                 <div className="info-icon">
                   <FiPhone />
                 </div>
-                <h3>Phone</h3>
-                <a href="tel:+919403891938">+91-9403891938</a>
-              </div>
+                <div>
+                  <h3>Phone</h3>
+                  <span>+91-9403891938</span>
+                </div>
+              </a>
 
-              <div className="contact-info-card">
+              <a href="https://wa.me/919403891938" target="_blank" rel="noopener noreferrer" className="contact-info-card">
                 <div className="info-icon">
                   <FiMessageCircle />
                 </div>
-                <h3>WhatsApp</h3>
-                <a href="https://wa.me/919403891938" target="_blank" rel="noopener noreferrer">
-                  +91-9403891938
-                </a>
-              </div>
+                <div>
+                  <h3>WhatsApp</h3>
+                  <span>+91-9403891938</span>
+                </div>
+              </a>
 
-              <div className="contact-info-card">
+              <a href="mailto:info@nirosha.org" className="contact-info-card">
                 <div className="info-icon">
                   <FiMail />
                 </div>
-                <h3>Email</h3>
-                <a href="mailto:info@nirosha.org">info@nirosha.org</a>
-              </div>
+                <div>
+                  <h3>Email</h3>
+                  <span>info@nirosha.org</span>
+                </div>
+              </a>
 
               <div className="contact-info-card">
                 <div className="info-icon">
                   <FiMapPin />
                 </div>
-                <h3>Address</h3>
-                <p>Hadapsar, Pune, Maharashtra, India</p>
+                <div>
+                  <h3>Address</h3>
+                  <p>Hadapsar, Pune, Maharashtra, India</p>
+                </div>
               </div>
             </div>
 
@@ -283,6 +312,8 @@ const Contact = () => {
           ref={mapRef}
           className={`map-wrapper ${mapVisible ? 'animate-fadeInUp' : ''}`}
         >
+          <div className="map-decoration map-decoration-1"></div>
+          <div className="map-decoration map-decoration-2"></div>
           <h2 className="map-title">Find Us</h2>
           <div className="map-container">
             <iframe

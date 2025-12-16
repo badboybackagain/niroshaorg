@@ -160,15 +160,8 @@ const AboutPage = () => {
 
       {/* Hero Section */}
       <section className="about-page-hero-section">
-        <div className="about-hero-background-pattern"></div>
-        <div className="about-hero-particles">
-          <div className="about-particle about-particle-1"></div>
-          <div className="about-particle about-particle-2"></div>
-          <div className="about-particle about-particle-3"></div>
-          <div className="about-particle about-particle-4"></div>
-        </div>
-        <div className="about-hero-glow about-hero-glow-1"></div>
-        <div className="about-hero-glow about-hero-glow-2"></div>
+        <div className="iridescence-background"></div>
+        <div className="iridescence-overlay"></div>
         <div className="container">
           <div className="about-hero-content">
             <div 
@@ -176,7 +169,7 @@ const AboutPage = () => {
               className={`about-hero-text ${heroVisible ? 'animate-fadeInUp' : ''}`}
             >
               <span className="about-hero-badge">About Team Nirosha</span>
-              <h1 className="about-hero-headline">Your Trusted Digital Growth Partner</h1>
+              <h1 className="about-hero-headline">About Team Nirosha - Digital Agency India | Web Development & SEO Experts</h1>
               <p className="about-hero-subheadline">
                 We don't just build websites - we build secure, scalable digital systems that support real business growth.
               </p>

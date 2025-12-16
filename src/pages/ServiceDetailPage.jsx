@@ -24,7 +24,7 @@ const ServiceDetailPage = () => {
     return (
       <section className="section service-detail">
         <div className="container">
-          <h1>Service Not Found</h1>
+          <h2>Service Not Found</h2>
           <p>Slug: {slug}</p>
           <p>Available services: {Object.keys(servicesData || {}).join(', ')}</p>
           <Link to="/services">Back to Services</Link>
@@ -58,7 +58,7 @@ const ServiceDetailPage = () => {
               <span>/</span>
               <span>{serviceData.title}</span>
             </div>
-            <h1 className="service-hero-title">{serviceData.title}</h1>
+            <h1 className="service-hero-title">{serviceData.title} Services India | Team Nirosha</h1>
             <p className="service-hero-subtitle">{serviceData.heroDescription}</p>
             <div className="service-hero-cta">
               <a 

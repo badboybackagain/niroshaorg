@@ -165,7 +165,7 @@ const ServicesPage = () => {
                   <span>12+ Professional Services</span>
                 </div>
                 <h1 className="services-hero-title">
-                  Complete Digital Solutions for Your Business Growth
+                  Digital Services India - Web Development, SEO, Marketing & Cloud Solutions
                 </h1>
                 <p className="services-hero-subtitle">
                   From custom web development and SEO optimization to social media marketing and cloud infrastructure, 
@@ -204,9 +204,9 @@ const ServicesPage = () => {
                 ref={titleRef}
                 className={`services-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
               >
-                <h1 className="page-title">
+                <h2 className="page-title">
                   Search Results for "{searchQuery}"
-                </h1>
+                </h2>
                 <p className="page-subtitle">
                   Found {filteredServices.length} service{filteredServices.length !== 1 ? 's' : ''} matching your search
                 </p>

@@ -115,7 +115,7 @@ const HeroFeaturedCard = ({ blog }) => {
           <span>{blog.category}</span>
         </div>
         <div className="hero-featured-content">
-          <h1 className="hero-featured-title">{blog.title}</h1>
+          <h2 className="hero-featured-title">{blog.title}</h2>
         </div>
       </div>
     </Link>
@@ -221,6 +221,12 @@ const BlogListingPage = () => {
 
       <section className="section blog-listing-page">
         <div className="container">
+          {selectedCategory === 'All' && (
+            <div className="blog-page-header">
+              <h1 className="blog-page-main-title">Digital Marketing & Web Development Blog | Team Nirosha</h1>
+              <p className="blog-page-subtitle">Expert insights, tips, and strategies for growing your digital presence</p>
+            </div>
+          )}
           <div className="blog-layout">
             {/* Main Content */}
             <div className="blog-main-content">
@@ -279,7 +285,7 @@ const BlogListingPage = () => {
                     ref={titleRef}
                     className={`blog-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
                   >
-                    <h1 className="page-title">{selectedCategory}</h1>
+                    <h1 className="page-title">{selectedCategory} Blog Posts | Team Nirosha</h1>
                     <p className="page-subtitle">
                       {filteredBlogs.length} {filteredBlogs.length === 1 ? 'post' : 'posts'} in this category
                     </p>
