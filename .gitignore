@@ -1,0 +1,28 @@
+node_modules
+dist
+.DS_Store
+.env
+.env.local
+.env.deploy
+
+# Generated logo files (source logo in src/assets/logo-source/ should be committed)
+public/logo*.png
+public/logo*.webp
+public/logo*.jpg
+public/logo*.jpeg
+public/logo-small*
+public/logo-large*
+public/logo-xlarge*
+
+# Backup files
+*.backup
+*.bak
+*.zip
+
+# Temporary restore folders
+temp_restore/
+assets_2025-12-16_04_40_18/
+
+# Build artifacts
+*.timestamp-*
+vite.config.js.timestamp-*

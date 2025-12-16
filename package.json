@@ -1,0 +1,30 @@
+{
+  "name": "nirosha-enterprises",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "process-logo": "node scripts/process-logo.js",
+    "process-blog-images": "node scripts/process-blog-images.js",
+    "process-team-images": "node scripts/process-team-images.js",
+    "fetch-reviews": "node scripts/fetch-google-reviews-puppeteer.js",
+    "fetch-reviews-basic": "node scripts/fetch-google-reviews.js",
+    "prebuild": "npm run process-logo",
+    "dev": "npm run process-logo && vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "puppeteer": "^24.33.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^7.10.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "sharp": "^0.34.5",
+    "vite": "^5.0.8"
+  }
+}

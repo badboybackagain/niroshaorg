@@ -1,0 +1,186 @@
+import React from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+import { FiCalendar, FiClock, FiTag, FiArrowLeft, FiUser } from 'react-icons/fi'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { getBlogBySlug, getBlogsByCategory } from '../data/blogData'
+import ShareButtons from '../components/ShareButtons'
+import BlogImage from '../components/BlogImage'
+import { processBlogContent } from '../utils/blogUtils'
+import ArticleSchema from '../components/ArticleSchema'
+
+const BlogDetailPage = () => {
+  const { slug } = useParams()
+  const navigate = useNavigate()
+  const blog = getBlogBySlug(slug)
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.1 })
+  
+  // Get latest 5 blogs from the same category, excluding current blog
+  const categoryBlogs = getBlogsByCategory(blog?.category || '')
+    .filter(b => b.slug !== slug)
+    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+    .slice(0, 5)
+
+  if (!blog) {
+    return (
+      <section className="section blog-detail-page">
+        <div className="container">
+          <div className="blog-not-found">
+            <h1>Blog Post Not Found</h1>
+            <p>The blog post you're looking for doesn't exist.</p>
+            <Link to="/blog" className="btn btn-primary">
+              Back to Blog
+            </Link>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    })
+  }
+
+  const currentUrl = typeof window !== 'undefined' 
+    ? window.location.href 
+    : `https://nirosha.org/blog/${slug}`
+
+  return (
+    <>
+      <Helmet>
+        <title>{blog.seoTitle || blog.title} | Team Nirosha</title>
+        <meta name="description" content={blog.seoDescription || blog.excerpt} />
+        <meta name="keywords" content={blog.seoKeywords} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.excerpt} />
+        <meta property="og:image" content={blog.imageSlug ? `/images/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.excerpt} />
+        <meta name="twitter:image" content={blog.imageSlug ? `/images/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
+      </Helmet>
+      <ArticleSchema blog={blog} />
+      <section className="section blog-detail-page">
+        <div className="container">
+          <div className="blog-detail-header">
+            <button onClick={() => navigate('/blog')} className="blog-back-button">
+              <FiArrowLeft />
+              Back to Blog
+            </button>
+            
+            <div className="blog-detail-meta">
+              <span className="blog-meta-item">
+                <FiTag />
+                {blog.category}
+              </span>
+              <span className="blog-meta-item">
+                <FiCalendar />
+                {formatDate(blog.publishDate)}
+              </span>
+              <span className="blog-meta-item">
+                <FiClock />
+                {blog.readTime}
+              </span>
+              <span className="blog-meta-item">
+                <FiUser />
+                {blog.author}
+              </span>
+            </div>
+
+            <h1 className="blog-detail-title">{blog.title}</h1>
+            <p className="blog-detail-excerpt">{blog.excerpt}</p>
+          </div>
+
+          <div className="blog-detail-image">
+            {blog.imageSlug ? (
+              <BlogImage 
+                slug={blog.imageSlug} 
+                size="featured" 
+                alt={blog.imageAlt || blog.title}
+                className="blog-detail-img"
+              />
+            ) : (
+              <img 
+                src={blog.featuredImage || '/images/blog/placeholder.jpg'} 
+                alt={blog.imageAlt || blog.title}
+              />
+            )}
+          </div>
+
+          <div className="blog-detail-layout">
+            <div className="blog-detail-main">
+              <div 
+                ref={contentRef}
+                className={`blog-detail-content ${contentVisible ? 'animate-fadeInUp' : ''}`}
+                dangerouslySetInnerHTML={{ __html: processBlogContent(blog.content, blog.category) }}
+              />
+
+              <ShareButtons 
+                url={currentUrl}
+                title={blog.title}
+                description={blog.excerpt}
+              />
+            </div>
+
+            <aside className="blog-sidebar">
+              <div className="blog-sidebar-section">
+                <h3 className="blog-sidebar-title">
+                  {categoryBlogs.length > 0 ? `Latest in ${blog.category}` : `More from ${blog.category}`}
+                </h3>
+                {categoryBlogs.length > 0 ? (
+                  <div className="blog-sidebar-list">
+                    {categoryBlogs.map((relatedBlog) => (
+                      <Link
+                        key={relatedBlog.id}
+                        to={`/blog/${relatedBlog.slug}`}
+                        className="blog-sidebar-item"
+                      >
+                        <div className="blog-sidebar-image">
+                          {relatedBlog.imageSlug ? (
+                            <BlogImage 
+                              slug={relatedBlog.imageSlug} 
+                              size="thumbnail" 
+                              alt={relatedBlog.imageAlt || relatedBlog.title}
+                              className="blog-sidebar-img"
+                            />
+                          ) : (
+                            <img 
+                              src={relatedBlog.featuredImage || '/images/blog/placeholder.jpg'} 
+                              alt={relatedBlog.imageAlt || relatedBlog.title}
+                              loading="lazy"
+                            />
+                          )}
+                        </div>
+                        <div className="blog-sidebar-content">
+                          <h4 className="blog-sidebar-item-title">{relatedBlog.title}</h4>
+                          <div className="blog-sidebar-meta">
+                            <span className="blog-meta-item">
+                              <FiCalendar />
+                              {formatDate(relatedBlog.publishDate)}
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="blog-sidebar-empty">No other articles in this category yet.</p>
+                )}
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default BlogDetailPage
+
