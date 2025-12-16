@@ -9,22 +9,28 @@
     "process-team-images": "node scripts/process-team-images.js",
     "fetch-reviews": "node scripts/fetch-google-reviews-puppeteer.js",
     "fetch-reviews-basic": "node scripts/fetch-google-reviews.js",
-    "prebuild": "npm run process-logo",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "npm run process-logo && npm run generate-sitemap",
     "dev": "npm run process-logo && vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "motion": "^12.23.26",
     "puppeteer": "^24.33.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
     "react-icons": "^4.11.0",
-    "react-router-dom": "^7.10.1"
+    "react-router-dom": "^7.10.1",
+    "tailwindcss": "^4.1.18",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
+    "shadcn": "^3.6.1",
     "sharp": "^0.34.5",
-    "vite": "^5.0.8"
+    "vite": "^7.3.0"
   }
 }
