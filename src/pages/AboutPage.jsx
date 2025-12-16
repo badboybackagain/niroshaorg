@@ -4,101 +4,67 @@ import { Link } from 'react-router-dom'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { FiArrowRight, FiUsers, FiTarget, FiMessageCircle, FiHeart, FiAward, FiZap, FiShield, FiTrendingUp, FiCode } from 'react-icons/fi'
 
-// Team member data - using cache folder paths for optimized images
+// Team member data
 const teamMembers = [
   {
     name: 'Nisha Tiwari',
     role: 'Founder',
-    image: '/images/team/cache/nisha-tiwari.jpg',
+    image: '/images/team/nisha-tiwari.jpg',
     description: 'Leading Team Nirosha with a vision to deliver exceptional digital solutions'
   },
   {
     name: 'Ajay Pankhaniya',
     role: 'Development Lead',
-    image: '/images/team/cache/ajay-pankhaniya.jpg',
+    image: '/images/team/ajay-pankhaniya.jpg',
     description: 'Driving innovation and strategic growth'
   },
   {
     name: 'Komal Vaviya',
     role: 'Sr. Developer',
-    image: '/images/team/cache/komal-vaviya.jpg',
-    description: 'Building scalable and secure digital solutions'
+    image: '/images/team/komal-vaviya.jpg',
+    description: 'Expert in modern web technologies and cloud solutions'
   },
   {
     name: 'Chirag Patel',
     role: 'Sr. Developer',
-    image: '/images/team/cache/chirag-patel.jpg',
-    description: 'Creating beautiful and functional web experiences'
+    image: '/images/team/chirag-patel.png',
+    description: 'Building scalable and secure digital solutions'
   },
   {
     name: 'Dev Prajapati',
     role: 'Sr. Developer',
-    image: '/images/team/cache/dev-prajapati.jpg',
-    description: 'Expert in modern web technologies and cloud solutions'
+    image: '/images/team/dev-prajapati.png',
+    description: 'Creating beautiful and functional web experiences'
   },
   {
     name: 'Vilas Dhadse',
     role: 'Sr. Designer - UI / UX',
-    image: '/images/team/cache/vilas-dhadse.jpg',
+    image: '/images/team/vilas-dhadse.png',
     description: 'Crafting intuitive and engaging user experiences'
   },
   {
     name: 'Avinash Dubal',
     role: 'Sr. Designer & Developer',
-    image: '/images/team/cache/avinash-dubal.jpg',
-    description: 'Expert in enterprise solutions and automation'
+    image: '/images/team/avinash-dubal.png',
+    description: 'Transforming ideas into digital reality'
   },
   {
     name: 'Abhishek Mishra',
     role: 'SEO Specialist',
-    image: '/images/team/cache/abhishek-mishra.jpg',
+    image: '/images/team/abhishek-mishra.png',
     description: 'Driving digital marketing and brand growth'
   },
   {
     name: 'Kunal Gaikwad',
     role: 'Digital Marketing Manager',
-    image: '/images/team/cache/kunal-gaikwad.jpg',
-    description: 'Transforming ideas into digital reality'
+    image: '/images/team/kunal-gaikwad.png',
+    description: 'Expert in enterprise solutions and automation'
   }
 ]
 
 const TeamMemberCard = ({ member, index }) => {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
   const [imageError, setImageError] = React.useState(false)
-  const [imageLoaded, setImageLoaded] = React.useState(false)
-
-  // Generate image paths - use cache folder with WebP support
-  const getImagePaths = (baseName) => {
-    return {
-      webp: `/images/team/cache/${baseName}.webp`,
-      webp2x: `/images/team/cache/${baseName}@2x.webp`,
-      jpg: `/images/team/cache/${baseName}.jpg`,
-      jpg2x: `/images/team/cache/${baseName}@2x.jpg`
-    }
-  }
-
-  // Extract base name from image path
-  const getBaseName = (imagePath) => {
-    const filename = imagePath.split('/').pop()
-    return filename.replace(/\.(png|jpg|jpeg|webp)$/i, '')
-  }
-
-  const baseName = getBaseName(member.image)
-  const imagePaths = getImagePaths(baseName)
-  const fallbackInitials = member.name.split(' ').map(n => n.charAt(0)).join('')
-
-  // Debug: Log image paths
-  React.useEffect(() => {
-    console.log(`[TeamMemberCard] ${member.name}:`, {
-      baseName,
-      imagePaths,
-      originalPath: member.image
-    })
-  }, [member.name, baseName, member.image])
-
-  // Test with a dummy image URL for debugging
-  const useDummyImage = false // Set to true to test with a placeholder image
-  const dummyImage = 'https://via.placeholder.com/400x400/2563eb/ffffff?text=' + encodeURIComponent(member.name)
 
   return (
     <div 
@@ -107,57 +73,21 @@ const TeamMemberCard = ({ member, index }) => {
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="about-page-team-member-image-wrapper">
-        {imageError ? (
-          <div className="about-page-team-member-placeholder">
-            <span className="about-page-team-member-initials">
-              {fallbackInitials}
-            </span>
-            {/* Debug info */}
-            <div style={{ 
-              position: 'absolute', 
-              bottom: '10px', 
-              left: '10px', 
-              right: '10px',
-              fontSize: '10px',
-              color: '#fff',
-              background: 'rgba(0,0,0,0.5)',
-              padding: '4px',
-              borderRadius: '4px',
-              textAlign: 'center'
-            }}>
-              Error loading image
-            </div>
-          </div>
-        ) : (
+        {!imageError ? (
           <picture className="about-page-team-member-picture">
-            {!useDummyImage && (
-              <source
-                srcSet={`${imagePaths.webp} 1x, ${imagePaths.webp2x} 2x`}
-                type="image/webp"
-              />
-            )}
             <img 
-              src={useDummyImage ? dummyImage : imagePaths.jpg}
-              srcSet={useDummyImage ? undefined : `${imagePaths.jpg} 1x, ${imagePaths.jpg2x} 2x`}
+              src={member.image} 
               alt={member.name}
               className="about-page-team-member-image"
-              loading="eager"
-              decoding="async"
-              onLoad={() => {
-                console.log(`[TeamMemberCard] Image loaded successfully for ${member.name}`)
-                setImageLoaded(true)
-              }}
-              onError={(e) => {
-                console.error(`[TeamMemberCard] Image failed to load for ${member.name}:`, {
-                  error: e,
-                  attemptedPaths: imagePaths,
-                  currentSrc: e.target?.currentSrc || e.target?.src,
-                  member: member.name
-                })
-                setImageError(true)
-              }}
+              onError={() => setImageError(true)}
             />
           </picture>
+        ) : (
+          <div className="about-page-team-member-placeholder">
+            <span className="about-page-team-member-initials">
+              {member.name.split(' ').map(n => n.charAt(0)).join('')}
+            </span>
+          </div>
         )}
       </div>
       <h3 className="about-page-team-member-name">{member.name}</h3>
@@ -186,7 +116,6 @@ const AboutPage = () => {
   const [heroRef, heroVisible] = useScrollAnimation({ threshold: 0.2 })
   const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.2 })
   const [valuesRef, valuesVisible] = useScrollAnimation({ threshold: 0.2 })
-  const [teamRef, teamVisible] = useScrollAnimation({ threshold: 0.2 })
 
   const values = [
     {
@@ -301,10 +230,7 @@ const AboutPage = () => {
           </div>
 
           {/* Team Section */}
-          <div 
-            ref={teamRef}
-            className={`about-page-team ${teamVisible ? 'animate-fadeInUp' : ''}`}
-          >
+          <div className="about-page-team animate-fadeInUp">
             <h2 className="about-page-section-title">Meet Our Team</h2>
             <p className="about-page-team-intro">
               We're a team of passionate professionals dedicated to delivering exceptional digital solutions. 

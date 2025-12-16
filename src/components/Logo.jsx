@@ -60,13 +60,11 @@ const Logo = ({ size = 'default', className = '' }) => {
         <source
           srcSet={`/${logoName}.webp 1x, /${logoName}@2x.webp 2x`}
           type="image/webp"
-          onError={() => setImageError(true)}
         />
         {/* PNG fallback with srcset */}
         <source
           srcSet={`/${logoName}.png 1x, /${logoName}@2x.png 2x`}
           type="image/png"
-          onError={() => setImageError(true)}
         />
         {/* Fallback img */}
         <img
