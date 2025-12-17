@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { FiCalendar, FiClock, FiTag, FiArrowLeft, FiUser } from 'react-icons/fi'
@@ -6,6 +6,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { getBlogBySlug, getBlogsByCategory } from '../data/blogData'
 import ShareButtons from '../components/ShareButtons'
 import BlogImage from '../components/BlogImage'
+import TableOfContents from '../components/TableOfContents'
 import { processBlogContent } from '../utils/blogUtils'
 import ArticleSchema from '../components/ArticleSchema'
 import BreadcrumbSchema from '../components/BreadcrumbSchema'
@@ -14,7 +15,11 @@ const BlogDetailPage = () => {
   const { slug } = useParams()
   const navigate = useNavigate()
   const blog = getBlogBySlug(slug)
-  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.1 })
+  // Use lower threshold and rootMargin for better mobile detection
+  const [contentRef, contentVisible] = useScrollAnimation({ 
+    threshold: 0.05,
+    rootMargin: '50px 0px'
+  })
   
   // Get latest 5 blogs from the same category, excluding current blog
   const categoryBlogs = getBlogsByCategory(blog?.category || '')
@@ -59,13 +64,13 @@ const BlogDetailPage = () => {
         <meta name="keywords" content={blog.seoKeywords} />
         <meta property="og:title" content={blog.title} />
         <meta property="og:description" content={blog.excerpt} />
-        <meta property="og:image" content={blog.imageSlug ? `/images/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
+        <meta property="og:image" content={blog.imageSlug ? `/cache/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blog.title} />
         <meta name="twitter:description" content={blog.excerpt} />
-        <meta name="twitter:image" content={blog.imageSlug ? `/images/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
+        <meta name="twitter:image" content={blog.imageSlug ? `/cache/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
       </Helmet>
       <ArticleSchema blog={blog} />
       <BreadcrumbSchema 
@@ -75,14 +80,41 @@ const BlogDetailPage = () => {
           { name: blog.title, url: currentUrl }
         ]} 
       />
-      <section className="section blog-detail-page">
+      <div className="blog-detail-page">
+        {/* Hero Section with Image Background */}
+        <div className="blog-detail-hero">
+          <div className="blog-hero-background">
+            {blog.imageSlug ? (
+              <BlogImage 
+                slug={blog.imageSlug} 
+                size="featured" 
+                alt={blog.imageAlt || blog.title}
+                className="blog-hero-bg-image"
+              />
+            ) : (
+              <img 
+                src={blog.featuredImage || '/cache/blog/placeholder.jpg'} 
+                alt={blog.imageAlt || blog.title}
+                className="blog-hero-bg-image"
+              />
+            )}
+            <div className="blog-hero-overlay"></div>
+          </div>
+          <div className="blog-hero-content">
+            <div className="container">
+              <button onClick={() => navigate('/blog')} className="blog-back-button">
+                <FiArrowLeft />
+                Back to Blog
+              </button>
+              <h1 className="blog-detail-title">{blog.seoTitle || blog.title}</h1>
+              <p className="blog-detail-excerpt">{blog.excerpt}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Metadata Section Below Hero */}
         <div className="container">
-          <div className="blog-detail-header">
-            <button onClick={() => navigate('/blog')} className="blog-back-button">
-              <FiArrowLeft />
-              Back to Blog
-            </button>
-            
+          <div className="blog-detail-meta-section">
             <div className="blog-detail-meta">
               <span className="blog-meta-item">
                 <FiTag />
@@ -101,25 +133,6 @@ const BlogDetailPage = () => {
                 {blog.author}
               </span>
             </div>
-
-            <h1 className="blog-detail-title">{blog.seoTitle || blog.title} | Team Nirosha Blog</h1>
-            <p className="blog-detail-excerpt">{blog.excerpt}</p>
-          </div>
-
-          <div className="blog-detail-image">
-            {blog.imageSlug ? (
-              <BlogImage 
-                slug={blog.imageSlug} 
-                size="featured" 
-                alt={blog.imageAlt || blog.title}
-                className="blog-detail-img"
-              />
-            ) : (
-              <img 
-                src={blog.featuredImage || '/images/blog/placeholder.jpg'} 
-                alt={blog.imageAlt || blog.title}
-              />
-            )}
           </div>
 
           <div className="blog-detail-layout">
@@ -138,6 +151,8 @@ const BlogDetailPage = () => {
             </div>
 
             <aside className="blog-sidebar">
+              <TableOfContents content={blog.content} />
+              
               <div className="blog-sidebar-section">
                 <h3 className="blog-sidebar-title">
                   {categoryBlogs.length > 0 ? `Latest in ${blog.category}` : `More from ${blog.category}`}
@@ -160,7 +175,7 @@ const BlogDetailPage = () => {
                             />
                           ) : (
                             <img 
-                              src={relatedBlog.featuredImage || '/images/blog/placeholder.jpg'} 
+                              src={relatedBlog.featuredImage || '/cache/blog/placeholder.jpg'} 
                               alt={relatedBlog.imageAlt || relatedBlog.title}
                               loading="lazy"
                             />
@@ -185,7 +200,7 @@ const BlogDetailPage = () => {
             </aside>
           </div>
         </div>
-      </section>
+      </div>
     </>
   )
 }
