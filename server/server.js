@@ -2,26 +2,50 @@ import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { existsSync } from 'fs';
 
-// Load environment variables
+// Get current directory for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Load environment variables (if .env file exists)
 dotenv.config();
 
-// Debug: Check if environment variables are loaded (remove in production)
+// Try to load config from config.js file (for hosting without env var support)
+let config = null;
+const configPath = join(__dirname, 'config.js');
+if (existsSync(configPath)) {
+  try {
+    const configModule = await import('./config.js');
+    config = configModule.config || configModule.default;
+  } catch (error) {
+    console.warn('Could not load config.js:', error.message);
+  }
+}
+
+// Debug: Check if credentials are loaded
 if (process.env.NODE_ENV !== 'production') {
-  console.log('\n=== Environment Check ===');
-  console.log('GMAIL_USER:', process.env.GMAIL_USER ? `Set (${process.env.GMAIL_USER})` : '❌ NOT SET');
-  console.log('GMAIL_PASSWORD:', process.env.GMAIL_PASSWORD ? `Set (${process.env.GMAIL_PASSWORD.length} characters)` : '❌ NOT SET');
-  console.log('PORT:', process.env.PORT || '3000 (default)');
+  console.log('\n=== Configuration Check ===');
+  const gmailUser = config?.gmail?.user || process.env.GMAIL_USER;
+  const gmailPassword = config?.gmail?.password || process.env.GMAIL_PASSWORD;
+  console.log('Config source:', config ? 'config.js file' : 'environment variables');
+  console.log('GMAIL_USER:', gmailUser ? `Set (${gmailUser})` : '❌ NOT SET');
+  console.log('GMAIL_PASSWORD:', gmailPassword ? `Set (${gmailPassword.length} characters)` : '❌ NOT SET');
+  console.log('PORT:', config?.port || process.env.PORT || '3000 (default)');
   console.log('========================\n');
 }
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = config?.port || process.env.PORT || 3000;
 
 // Middleware
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim())
-  : ['http://localhost:5173', 'http://localhost:4173', 'http://localhost:3000', '*'];
+// Get allowed origins from config file or environment variables
+const allowedOrigins = config?.allowedOrigins || 
+  (process.env.ALLOWED_ORIGINS 
+    ? process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim())
+    : ['http://localhost:5173', 'http://localhost:4173', 'http://localhost:3000', '*']);
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -56,11 +80,12 @@ function getTransporter() {
     return transporter;
   }
 
-  const gmailUser = process.env.GMAIL_USER?.trim();
-  const gmailPassword = process.env.GMAIL_PASSWORD?.trim();
+  // Try to get credentials from config file first, then environment variables
+  const gmailUser = (config?.gmail?.user || process.env.GMAIL_USER || '').trim();
+  const gmailPassword = (config?.gmail?.password || process.env.GMAIL_PASSWORD || '').trim();
 
   if (!gmailUser || !gmailPassword) {
-    throw new Error('Gmail credentials not configured. Please set GMAIL_USER and GMAIL_PASSWORD environment variables.');
+    throw new Error('Gmail credentials not configured. Please set GMAIL_USER and GMAIL_PASSWORD in config.js or environment variables.');
   }
 
   // Log configuration (without password) for debugging
@@ -135,9 +160,12 @@ app.post('/api/contact', async (req, res) => {
       ? serviceInterested.join(', ') 
       : serviceInterested;
 
-    // Email to info@nirosha.org (form submission)
-    const adminEmailContent = {
-      from: `"Nirosha Contact Form" <${process.env.GMAIL_USER}>`,
+      // Get Gmail user from config or environment
+      const gmailUser = config?.gmail?.user || process.env.GMAIL_USER;
+      
+      // Email to info@nirosha.org (form submission)
+      const adminEmailContent = {
+        from: `"Nirosha Contact Form" <${gmailUser}>`,
       to: 'info@nirosha.org',
       subject: `New Contact Form Submission from ${fullName}`,
       html: `
@@ -173,9 +201,9 @@ Submitted at: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })
       `
     };
 
-    // Thank you email to the user
-    const userEmailContent = {
-      from: `"Nirosha Enterprises" <${process.env.GMAIL_USER}>`,
+      // Thank you email to the user
+      const userEmailContent = {
+        from: `"Nirosha Enterprises" <${gmailUser}>`,
       to: email,
       subject: 'Thank you for contacting Nirosha Enterprises',
       html: `
