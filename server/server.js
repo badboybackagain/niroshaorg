@@ -131,8 +131,21 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Email server is running' });
 });
 
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', message: 'Email server is running' });
+});
+
 // Contact form email endpoint
+// Support both /api/contact and /contact (in case proxy strips /api)
 app.post('/api/contact', async (req, res) => {
+  handleContactForm(req, res);
+});
+
+app.post('/contact', async (req, res) => {
+  handleContactForm(req, res);
+});
+
+async function handleContactForm(req, res) {
   try {
     const { fullName, countryCode, whatsappNumber, email, serviceInterested, comments } = req.body;
 
@@ -293,7 +306,7 @@ www.nirosha.org
       message: error.message || 'An error occurred while sending the email. Please try again later.'
     });
   }
-});
+}
 
 // Start server
 app.listen(PORT, () => {
