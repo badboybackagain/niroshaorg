@@ -5,6 +5,7 @@ import { FiCalendar, FiClock, FiTag, FiArrowRight, FiUser } from 'react-icons/fi
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { blogPosts, blogCategories, getFeaturedBlogs, getRecentBlogs } from '../data/blogData'
 import BlogImage from '../components/BlogImage'
+import BlogSchema from '../components/BlogSchema'
 
 // Category color mapping
 const getCategoryColor = (category) => {
@@ -56,7 +57,7 @@ const BlogCard = ({ blog, index, layout = 'vertical' }) => {
           />
         ) : (
           <img 
-            src={blog.featuredImage || '/images/blog/placeholder.jpg'} 
+            src={blog.featuredImage || '/cache/blog/placeholder.jpg'} 
             alt={blog.imageAlt || blog.title}
             loading="lazy"
           />
@@ -106,7 +107,7 @@ const HeroFeaturedCard = ({ blog }) => {
           />
         ) : (
           <img 
-            src={blog.featuredImage || '/images/blog/placeholder.jpg'} 
+            src={blog.featuredImage || '/cache/blog/placeholder.jpg'} 
             alt={blog.imageAlt || blog.title}
             loading="lazy"
           />
@@ -144,7 +145,7 @@ const HeroSideCard = ({ blog }) => {
           />
         ) : (
           <img 
-            src={blog.featuredImage || '/images/blog/placeholder.jpg'} 
+            src={blog.featuredImage || '/cache/blog/placeholder.jpg'} 
             alt={blog.imageAlt || blog.title}
             loading="lazy"
           />
@@ -200,6 +201,7 @@ const BlogListingPage = () => {
         <meta name="description" content="Read our latest blog posts on web development, SEO, digital marketing, branding, and more. Expert insights from Team Nirosha digital agency." />
         <meta name="keywords" content="digital marketing blog, web development blog, SEO tips, branding blog, digital agency blog" />
       </Helmet>
+      <BlogSchema />
       
       {/* Hero Section with Featured Blogs */}
       {mainFeatured && (

@@ -1,0 +1,48 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set host "37.27.54.247"
+set user "nirosha_1"
+set password "Celorita13jan!!"
+set port "22"
+set script_path "/tmp/server-diagnose.sh"
+
+# First, copy the script using scp
+spawn scp -P $port server-diagnose.sh $user@$host:$script_path
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    eof
+}
+
+# Now SSH and run it
+spawn ssh -p $port $user@$host "chmod +x $script_path && $script_path"
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "$ " {
+        # Wait for output
+        exp_continue
+    }
+    "# " {
+        # Wait for output
+        exp_continue
+    }
+    eof
+}
+
+expect eof

@@ -1,0 +1,56 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set host "37.27.54.247"
+set user "nirosha_1"
+set password "Celorita13jan!!"
+set port "22"
+
+spawn ssh -p $port $user@$host
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd /var/www/5fcedb5f-4188-4356-a8e9-4f09d37e27af/public_html\r"
+        expect "$ "
+        send "echo '=== Checking ContactPage files ==='\r"
+        expect "$ "
+        send "ls -lah assets/js/ContactPage*.js 2>/dev/null | tail -3\r"
+        expect "$ "
+        send "echo '=== Searching for mount message in latest ContactPage file ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1) && echo \"Latest file: \$LATEST\" && grep -o 'Contact component mounted' \"\$LATEST\" 2>/dev/null && echo 'FOUND' || echo 'NOT FOUND'\r"
+        expect "$ "
+        send "echo '=== Searching for handleSubmit in latest ContactPage file ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1) && grep -o 'handleSubmit' \"\$LATEST\" 2>/dev/null | head -1 && echo 'FOUND' || echo 'NOT FOUND'\r"
+        expect "$ "
+        send "echo '=== Checking file modification times ==='\r"
+        expect "$ "
+        send "ls -lah assets/js/ContactPage*.js 2>/dev/null | tail -3\r"
+        expect "$ "
+        send "echo '=== Checking index.html for script references ==='\r"
+        expect "$ "
+        send "grep -i 'contactpage' index.html 2>/dev/null | head -3\r"
+        expect "$ "
+        send "echo '=== Checking for JavaScript errors - file sizes ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1) && wc -c \"\$LATEST\" 2>/dev/null\r"
+        expect "$ "
+        send "exit\r"
+    }
+    "# " {
+        send "cd /var/www/5fcedb5f-4188-4356-a8e9-4f09d37e27af/public_html\r"
+        expect "# "
+        send "exit\r"
+    }
+}
+
+expect eof

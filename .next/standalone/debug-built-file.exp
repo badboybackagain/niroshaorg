@@ -1,0 +1,56 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set host "37.27.54.247"
+set user "nirosha_1"
+set password "Celorita13jan!!"
+set port "22"
+
+spawn ssh -p $port $user@$host
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd /var/www/5fcedb5f-4188-4356-a8e9-4f09d37e27af/public_html\r"
+        expect "$ "
+        send "echo '=== Latest ContactPage file ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1); echo \"File: \$LATEST\"\r"
+        expect "$ "
+        send "echo ''\r"
+        expect "$ "
+        send "echo '=== Searching for localhost:3000 in built file ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1); grep -o 'localhost:3000[^\"'']*' \"\$LATEST\" 2>/dev/null | head -5\r"
+        expect "$ "
+        send "echo ''\r"
+        expect "$ "
+        send "echo '=== Searching for VITE_CONTACT_API_URL ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1); grep -o 'VITE_CONTACT_API_URL[^,}]*' \"\$LATEST\" 2>/dev/null | head -3\r"
+        expect "$ "
+        send "echo ''\r"
+        expect "$ "
+        send "echo '=== Checking for hardcoded localhost URL ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1); strings \"\$LATEST\" | grep -i 'localhost:3000/api/contact' | head -3\r"
+        expect "$ "
+        send "echo ''\r"
+        expect "$ "
+        send "echo '=== Checking file modification time ==='\r"
+        expect "$ "
+        send "LATEST=\$(ls -t assets/js/ContactPage*.js 2>/dev/null | head -1); ls -lah \"\$LATEST\"\r"
+        expect "$ "
+        send "exit\r"
+    }
+}
+
+expect eof
+

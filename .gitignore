@@ -8,6 +8,9 @@ dist
 server/.env
 server/node_modules
 
+# Configuration file (contains sensitive credentials)
+config.js
+
 # Generated logo files (source logo in src/assets/logo-source/ should be committed)
 public/logo*.png
 public/logo*.webp

@@ -1,0 +1,39 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set host "37.27.54.247"
+set user "nirosha_1"
+set password "Celorita13jan!!"
+set port "22"
+
+spawn ssh -p $port $user@$host
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd /var/www/5fcedb5f-4188-4356-a8e9-4f09d37e27af/public_html\r"
+        expect "$ "
+        send "echo Checking index.html\r"
+        expect "$ "
+        send "grep script index.html | head -3\r"
+        expect "$ "
+        send "echo Checking ContactPage files\r"
+        expect "$ "
+        send "ls -lah assets/js/ContactPage*.js\r"
+        expect "$ "
+        send "echo Extracting console.log from latest file\r"
+        expect "$ "
+        send "LATEST_FILE=$(ls -t assets/js/ContactPage*.js | head -1); grep -o 'console.log([^)]*)' $LATEST_FILE | head -3\r"
+        expect "$ "
+        send "exit\r"
+    }
+}
+
+expect eof

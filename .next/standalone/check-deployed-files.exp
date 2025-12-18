@@ -1,0 +1,52 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set host "37.27.54.247"
+set user "nirosha_1"
+set password "Celorita13jan!!"
+set port "22"
+
+spawn ssh -p $port $user@$host
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "$ " {
+        send "echo '=== Checking deployed files ==='\r"
+        expect "$ "
+        send "find /var/www -name '*.js' -path '*/assets/*' -type f -mtime -1 2>/dev/null | head -5\r"
+        expect "$ "
+        send "ls -lah /var/www/*/dist/assets/*.js 2>/dev/null | head -5\r"
+        expect "$ "
+        send "grep -l 'Contact component mounted' /var/www/*/dist/assets/*.js 2>/dev/null | head -3\r"
+        expect "$ "
+        send "grep -l 'handleSubmit' /var/www/*/dist/assets/*.js 2>/dev/null | head -3\r"
+        expect "$ "
+        send "echo '=== Checking website root ==='\r"
+        expect "$ "
+        send "find ~/public_html ~/www ~/html -name 'index.html' -type f 2>/dev/null | head -3\r"
+        expect "$ "
+        send "find ~ -name 'assets' -type d -path '*/dist/*' 2>/dev/null | head -3\r"
+        expect "$ "
+        send "echo '=== Checking for JavaScript errors in HTML ==='\r"
+        expect "$ "
+        send "grep -r 'assets.*js' ~/public_html/index.html ~/www/index.html ~/html/index.html 2>/dev/null | head -3\r"
+        expect "$ "
+        send "exit\r"
+    }
+    "# " {
+        send "echo '=== Checking deployed files ==='\r"
+        expect "# "
+        send "find /var/www -name '*.js' -path '*/assets/*' -type f -mtime -1 2>/dev/null | head -5\r"
+        expect "# "
+        send "exit\r"
+    }
+}
+
+expect eof

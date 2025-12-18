@@ -10,55 +10,55 @@ const teamMembers = [
   {
     name: 'Nisha Tiwari',
     role: 'Founder',
-    image: '/images/team/nisha-tiwari.jpg',
+    imageSlug: 'nisha-tiwari',
     description: 'Leading Team Nirosha with a vision to deliver exceptional digital solutions'
   },
   {
     name: 'Ajay Pankhaniya',
     role: 'Development Lead',
-    image: '/images/team/ajay-pankhaniya.jpg',
+    imageSlug: 'ajay-pankhaniya',
     description: 'Driving innovation and strategic growth'
   },
   {
     name: 'Komal Vaviya',
     role: 'Sr. Developer',
-    image: '/images/team/komal-vaviya.jpg',
+    imageSlug: 'komal-vaviya',
     description: 'Expert in modern web technologies and cloud solutions'
   },
   {
     name: 'Chirag Patel',
     role: 'Sr. Developer',
-    image: '/images/team/chirag-patel.png',
+    imageSlug: 'chirag-patel',
     description: 'Building scalable and secure digital solutions'
   },
   {
     name: 'Dev Prajapati',
     role: 'Sr. Developer',
-    image: '/images/team/dev-prajapati.png',
+    imageSlug: 'dev-prajapati',
     description: 'Creating beautiful and functional web experiences'
   },
   {
     name: 'Vilas Dhadse',
     role: 'Sr. Designer - UI / UX',
-    image: '/images/team/vilas-dhadse.png',
+    imageSlug: 'vilas-dhadse',
     description: 'Crafting intuitive and engaging user experiences'
   },
   {
     name: 'Avinash Dubal',
     role: 'Sr. Designer & Developer',
-    image: '/images/team/avinash-dubal.png',
+    imageSlug: 'avinash-dubal',
     description: 'Transforming ideas into digital reality'
   },
   {
     name: 'Abhishek Mishra',
     role: 'SEO Specialist',
-    image: '/images/team/abhishek-mishra.png',
+    imageSlug: 'abhishek-mishra',
     description: 'Driving digital marketing and brand growth'
   },
   {
     name: 'Kunal Gaikwad',
     role: 'Digital Marketing Manager',
-    image: '/images/team/kunal-gaikwad.png',
+    imageSlug: 'kunal-gaikwad',
     description: 'Expert in enterprise solutions and automation'
   }
 ]
@@ -76,8 +76,13 @@ const TeamMemberCard = ({ member, index }) => {
       <div className="about-page-team-member-image-wrapper">
         {!imageError ? (
           <picture className="about-page-team-member-picture">
+            <source
+              srcSet={`/cache/team/${member.imageSlug}.webp 1x, /cache/team/${member.imageSlug}@2x.webp 2x`}
+              type="image/webp"
+            />
             <img 
-              src={member.image} 
+              src={`/cache/team/${member.imageSlug}.png`}
+              srcSet={`/cache/team/${member.imageSlug}.png 1x, /cache/team/${member.imageSlug}@2x.png 2x`}
               alt={member.name}
               className="about-page-team-member-image"
               onError={() => setImageError(true)}

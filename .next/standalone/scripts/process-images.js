@@ -1,0 +1,364 @@
+import sharp from 'sharp'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const publicDir = path.join(__dirname, '../public')
+const imagesDir = path.join(publicDir, 'images')
+const cacheDir = path.join(publicDir, 'cache')
+
+// Image processing configurations
+const imageConfigs = {
+  blog: {
+    sourceDir: path.join(imagesDir, 'blog'),
+    cacheDir: path.join(cacheDir, 'blog'),
+    sizes: {
+      thumbnail: { width: 400, height: 300 },
+      featured: { width: 1200, height: 630 },
+      large: { width: 1600, height: 900 }
+    },
+    fit: 'cover',
+    processAll: false // Blog images are processed individually
+  },
+  team: {
+    sourceDir: path.join(imagesDir, 'team'),
+    cacheDir: path.join(cacheDir, 'team'),
+    sizes: {
+      default: { width: 300, height: 300 } // Square profile images
+    },
+    fit: 'cover',
+    processAll: true
+  },
+  'client-logos': {
+    sourceDir: path.join(imagesDir, 'client-logos'),
+    cacheDir: path.join(cacheDir, 'client-logos'),
+    sizes: {
+      default: { width: 200, height: null } // Maintain aspect ratio
+    },
+    fit: 'contain',
+    processAll: true
+  }
+}
+
+/**
+ * Get all image files from source directory
+ */
+function getSourceImages(sourceDir, excludeDirs = ['cache']) {
+  if (!fs.existsSync(sourceDir)) {
+    return []
+  }
+
+  const files = fs.readdirSync(sourceDir)
+  const imageExtensions = ['.png', '.jpg', '.jpeg', '.webp']
+  
+  return files.filter(file => {
+    const filePath = path.join(sourceDir, file)
+    // Skip directories (especially cache)
+    if (fs.statSync(filePath).isDirectory()) {
+      return false
+    }
+    // Skip README files
+    if (file.toLowerCase() === 'readme.md') {
+      return false
+    }
+    const ext = path.extname(file).toLowerCase()
+    return imageExtensions.includes(ext)
+  })
+}
+
+/**
+ * Process a single image for blog
+ */
+async function processBlogImage(inputFile, outputBaseName, config) {
+  const inputPath = path.join(config.sourceDir, inputFile)
+  
+  if (!fs.existsSync(inputPath)) {
+    console.error(`❌ Error: Source file ${inputFile} not found`)
+    return false
+  }
+
+  try {
+    console.log(`\n📸 Processing blog image: ${inputFile}`)
+
+    for (const [sizeName, dimensions] of Object.entries(config.sizes)) {
+      const { width, height } = dimensions
+      
+      // Generate PNG versions (1x and 2x)
+      for (const scale of [1, 2]) {
+        const outputWidth = width * scale
+        const outputHeight = height * scale
+        const outputName = `${outputBaseName}-${sizeName}${scale === 2 ? '@2x' : ''}.png`
+        const outputPath = path.join(config.cacheDir, outputName)
+
+        await sharp(inputPath)
+          .resize(outputWidth, outputHeight, {
+            fit: config.fit,
+            position: 'center'
+          })
+          .png({ quality: 90, compressionLevel: 9 })
+          .toFile(outputPath)
+
+        const stats = fs.statSync(outputPath)
+        const fileSizeKB = (stats.size / 1024).toFixed(2)
+        console.log(`   ✓ Created ${outputName} (${outputWidth}x${outputHeight}) - ${fileSizeKB} KB`)
+      }
+
+      // Generate WebP versions (1x and 2x)
+      for (const scale of [1, 2]) {
+        const outputWidth = width * scale
+        const outputHeight = height * scale
+        const outputName = `${outputBaseName}-${sizeName}${scale === 2 ? '@2x' : ''}.webp`
+        const outputPath = path.join(config.cacheDir, outputName)
+
+        await sharp(inputPath)
+          .resize(outputWidth, outputHeight, {
+            fit: config.fit,
+            position: 'center'
+          })
+          .webp({ quality: 85 })
+          .toFile(outputPath)
+
+        const stats = fs.statSync(outputPath)
+        const fileSizeKB = (stats.size / 1024).toFixed(2)
+        console.log(`   ✓ Created ${outputName} (${outputWidth}x${outputHeight}) - ${fileSizeKB} KB`)
+      }
+    }
+
+    console.log(`✅ Successfully processed ${inputFile}`)
+    return true
+  } catch (error) {
+    console.error(`❌ Error processing ${inputFile}:`, error.message)
+    return false
+  }
+}
+
+/**
+ * Process images for team or client-logos
+ */
+async function processImage(inputFile, config) {
+  const inputPath = path.join(config.sourceDir, inputFile)
+  const baseName = path.parse(inputFile).name
+  
+  if (!fs.existsSync(inputPath)) {
+    console.error(`❌ Error: Source file ${inputFile} not found`)
+    return false
+  }
+
+  try {
+    const metadata = await sharp(inputPath).metadata()
+    const sizeConfig = config.sizes.default
+    const { width: targetWidth, height: targetHeight } = sizeConfig
+
+    // Calculate output dimensions
+    let outputWidth, outputHeight
+    if (targetHeight === null) {
+      // Maintain aspect ratio (for client-logos)
+      const aspectRatio = metadata.width / metadata.height
+      outputHeight = Math.round(targetWidth / aspectRatio)
+      outputWidth = targetWidth
+    } else {
+      // Fixed dimensions (for team)
+      outputWidth = targetWidth
+      outputHeight = targetHeight
+    }
+
+    console.log(`\n📸 Processing: ${inputFile}`)
+    console.log(`   Original: ${metadata.width}x${metadata.height}px (${(metadata.size / 1024).toFixed(2)} KB)`)
+
+    // Generate PNG versions (1x and 2x)
+    for (const scale of [1, 2]) {
+      const scaledWidth = outputWidth * scale
+      const scaledHeight = outputHeight * scale
+      
+      const outputName = `${baseName}${scale === 2 ? '@2x' : ''}.png`
+      const outputPath = path.join(config.cacheDir, outputName)
+
+      await sharp(inputPath)
+        .resize(scaledWidth, scaledHeight, {
+          fit: config.fit,
+          background: { r: 255, g: 255, b: 255, alpha: 0 } // Transparent background
+        })
+        .png({ 
+          quality: 90, 
+          compressionLevel: 9,
+          adaptiveFiltering: true
+        })
+        .toFile(outputPath)
+
+      const stats = fs.statSync(outputPath)
+      const fileSizeKB = (stats.size / 1024).toFixed(2)
+      console.log(`   ✓ Created ${outputName} (${scaledWidth}x${scaledHeight}) - ${fileSizeKB} KB`)
+    }
+
+    // Generate WebP versions (1x and 2x)
+    for (const scale of [1, 2]) {
+      const scaledWidth = outputWidth * scale
+      const scaledHeight = outputHeight * scale
+      
+      const outputName = `${baseName}${scale === 2 ? '@2x' : ''}.webp`
+      const outputPath = path.join(config.cacheDir, outputName)
+
+      await sharp(inputPath)
+        .resize(scaledWidth, scaledHeight, {
+          fit: config.fit,
+          background: { r: 255, g: 255, b: 255, alpha: 0 } // Transparent background
+        })
+        .webp({ 
+          quality: 85,
+          effort: 6
+        })
+        .toFile(outputPath)
+
+      const stats = fs.statSync(outputPath)
+      const fileSizeKB = (stats.size / 1024).toFixed(2)
+      console.log(`   ✓ Created ${outputName} (${scaledWidth}x${scaledHeight}) - ${fileSizeKB} KB`)
+    }
+
+    console.log(`✅ Successfully processed ${inputFile}`)
+    return baseName
+  } catch (error) {
+    console.error(`❌ Error processing ${inputFile}:`, error.message)
+    return null
+  }
+}
+
+/**
+ * Process all images for a category
+ */
+async function processCategory(categoryName, config) {
+  console.log(`\n${'='.repeat(60)}`)
+  console.log(`🚀 Processing ${categoryName} images...`)
+  console.log(`${'='.repeat(60)}`)
+  console.log(`📁 Source: ${config.sourceDir}`)
+  console.log(`💾 Cache: ${config.cacheDir}\n`)
+
+  // Ensure cache directory exists
+  if (!fs.existsSync(config.cacheDir)) {
+    fs.mkdirSync(config.cacheDir, { recursive: true })
+  }
+
+  if (!fs.existsSync(config.sourceDir)) {
+    console.log(`⚠️  Source directory not found: ${config.sourceDir}`)
+    return { success: 0, failed: 0, items: [] }
+  }
+
+  const sourceImages = getSourceImages(config.sourceDir)
+  
+  if (sourceImages.length === 0) {
+    console.log(`⚠️  No source images found in ${categoryName} directory`)
+    return { success: 0, failed: 0, items: [] }
+  }
+
+  console.log(`📋 Found ${sourceImages.length} image(s) to process:\n`)
+  sourceImages.forEach((file, index) => {
+    console.log(`   ${index + 1}. ${file}`)
+  })
+
+  let successCount = 0
+  let failCount = 0
+  const processedItems = []
+
+  for (const imageFile of sourceImages) {
+    const result = await processImage(imageFile, config)
+    if (result) {
+      successCount++
+      processedItems.push(result)
+    } else {
+      failCount++
+    }
+  }
+
+  // Generate manifest for client-logos
+  if (categoryName === 'client-logos' && processedItems.length > 0) {
+    const manifestPath = path.join(config.cacheDir, 'manifest.json')
+    const manifest = {
+      generated: new Date().toISOString(),
+      count: processedItems.length,
+      logos: processedItems.sort()
+    }
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
+    console.log(`\n📄 Generated manifest: ${manifestPath}`)
+  }
+
+  return { success: successCount, failed: failCount, items: processedItems }
+}
+
+/**
+ * Main execution
+ */
+async function main() {
+  const args = process.argv.slice(2)
+  const category = args[0] // 'blog', 'team', 'client-logos', or 'all'
+
+  console.log('🖼️  Image Processing Script')
+  console.log('='.repeat(60))
+
+  if (!category || category === 'all') {
+    // Process all categories
+    const results = {}
+    
+    for (const [categoryName, config] of Object.entries(imageConfigs)) {
+      if (categoryName === 'blog') {
+        console.log('\n⚠️  Blog images are processed individually. Use: npm run process-images blog <filename>')
+        continue
+      }
+      results[categoryName] = await processCategory(categoryName, config)
+    }
+
+    // Summary
+    console.log('\n' + '='.repeat(60))
+    console.log('📊 Processing Summary')
+    console.log('='.repeat(60))
+    for (const [categoryName, result] of Object.entries(results)) {
+      console.log(`\n${categoryName}:`)
+      console.log(`   ✅ Success: ${result.success}`)
+      if (result.failed > 0) {
+        console.log(`   ❌ Failed: ${result.failed}`)
+      }
+    }
+  } else if (category === 'blog') {
+    // Blog images need filename and base name
+    const inputFile = args[1]
+    const outputBaseName = args[2]
+    
+    if (!inputFile || !outputBaseName) {
+      console.error('❌ Blog images require filename and output base name')
+      console.log('Usage: npm run process-images blog <inputFile> <outputBaseName>')
+      console.log('Example: npm run process-images blog logonumerology.png logo-numerology-astrology')
+      process.exit(1)
+    }
+
+    const config = imageConfigs.blog
+    if (!fs.existsSync(config.cacheDir)) {
+      fs.mkdirSync(config.cacheDir, { recursive: true })
+    }
+    await processBlogImage(inputFile, outputBaseName, config)
+  } else if (imageConfigs[category]) {
+    // Process specific category
+    const config = imageConfigs[category]
+    const result = await processCategory(category, config)
+    
+    console.log('\n' + '='.repeat(60))
+    console.log('📊 Processing Summary:')
+    console.log(`   ✅ Success: ${result.success}`)
+    if (result.failed > 0) {
+      console.log(`   ❌ Failed: ${result.failed}`)
+    }
+    console.log('='.repeat(60))
+  } else {
+    console.error(`❌ Unknown category: ${category}`)
+    console.log('Available categories: blog, team, client-logos, all')
+    process.exit(1)
+  }
+
+  console.log('\n✨ Image processing complete!\n')
+}
+
+main().catch(error => {
+  console.error('❌ Fatal error:', error)
+  process.exit(1)
+})
+

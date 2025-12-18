@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/abhishek/niroshaorg/src/components/DotGridBackground.css"],"sourcesContent":[".dot-grid-background {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  pointer-events: auto;\n  z-index: 0;\n  overflow: visible;\n  min-height: 100%;\n}\n"],"names":[],"mappings":"AAAA"}}]
+}

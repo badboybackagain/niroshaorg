@@ -1,0 +1,49 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set host "37.27.54.247"
+set user "nirosha_1"
+set password "Celorita13jan!!"
+set port "22"
+
+spawn ssh -p $port $user@$host
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd /var/www/5fcedb5f-4188-4356-a8e9-4f09d37e27af/server\r"
+        expect "$ "
+        send "echo '=== Checking server process ==='\r"
+        expect "$ "
+        send "ps aux | grep 'node.*server' | grep -v grep\r"
+        expect "$ "
+        send "echo '=== Checking for log files ==='\r"
+        expect "$ "
+        send "ls -lah *.log *.out 2>/dev/null | head -5\r"
+        expect "$ "
+        send "echo '=== Checking nohup.out (last 50 lines) ==='\r"
+        expect "$ "
+        send "tail -50 nohup.out 2>/dev/null | tail -20\r"
+        expect "$ "
+        send "echo '=== Testing endpoint from server ==='\r"
+        expect "$ "
+        send "curl -s -X POST http://localhost:3000/api/contact -H 'Content-Type: application/json' -d '{\"fullName\":\"Server Test\",\"countryCode\":\"+91\",\"whatsappNumber\":\"123\",\"email\":\"test@test.com\",\"serviceInterested\":[\"Web Development\"]}' | head -c 200\r"
+        expect "$ "
+        send "echo ''\r"
+        expect "$ "
+        send "echo '=== Checking server.js for logging ==='\r"
+        expect "$ "
+        send "grep -n 'console.log\\|console.error' server.js | head -10\r"
+        expect "$ "
+        send "exit\r"
+    }
+}
+
+expect eof
