@@ -21,8 +21,7 @@ const OrganizationSchema = () => {
         streetAddress: 'Hadapsar',
         addressLocality: 'Pune',
         addressRegion: 'Maharashtra',
-        addressCountry: 'IN',
-        addressCountryName: 'India'
+        addressCountry: 'IN'
       },
       geo: {
         '@type': 'GeoCoordinates',
@@ -177,8 +176,8 @@ const OrganizationSchema = () => {
       },
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '4.8',
-        reviewCount: '50',
+        ratingValue: '5',
+        reviewCount: '145',
         bestRating: '5',
         worstRating: '1'
       }

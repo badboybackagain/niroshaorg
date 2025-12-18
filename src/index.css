@@ -16,6 +16,18 @@ body {
   overflow-x: hidden;
   max-width: 100vw;
 }
+
+/* GSAP ScrollSmoother styles */
+#smooth-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  will-change: transform;
+}
 :root {
   --primary-color: #000000;
   --primary-dark: #1a1a1a;

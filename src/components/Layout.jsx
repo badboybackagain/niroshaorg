@@ -4,8 +4,10 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
 import ScrollToTopButton from './ScrollToTopButton'
+import ContactBubbles from './ContactBubbles'
 import OrganizationSchema from './OrganizationSchema'
 import WebsiteSchema from './WebsiteSchema'
+import ScrollSmootherWrapper from './ScrollSmootherWrapper'
 
 const Layout = () => {
   return (
@@ -13,12 +15,22 @@ const Layout = () => {
       <OrganizationSchema />
       <WebsiteSchema />
       <ScrollToTop />
+      {/* Fixed elements should be outside the smooth-wrapper */}
       <Navbar />
-      <main id="main-content">
-        <Outlet />
-      </main>
-      <Footer />
+      
+      {/* ScrollSmoother enabled on all pages */}
+      <ScrollSmootherWrapper />
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <main id="main-content">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+      </div>
+      
       <ScrollToTopButton />
+      <ContactBubbles />
     </div>
   )
 }

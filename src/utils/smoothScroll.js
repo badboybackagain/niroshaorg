@@ -1,7 +1,18 @@
 /**
  * Smooth scroll utility functions
  * Provides smooth scrolling functionality for anchor links and programmatic scrolling
+ * Works with GSAP ScrollSmoother when available
  */
+
+/**
+ * Get ScrollSmoother instance if available
+ */
+const getScrollSmoother = () => {
+  if (typeof window !== 'undefined' && window.__scrollSmoother) {
+    return window.__scrollSmoother
+  }
+  return null
+}
 
 /**
  * Smoothly scroll to a target element or selector
@@ -19,6 +30,15 @@ export const smoothScrollTo = (target, offset = 80, duration = 500) => {
     return
   }
 
+  // Check if ScrollSmoother is active
+  const smoother = getScrollSmoother()
+  if (smoother) {
+    // Use ScrollSmoother's scrollTo method
+    smoother.scrollTo(element, true, `top top-=${offset}`)
+    return
+  }
+
+  // Fallback to native smooth scroll
   const startPosition = window.pageYOffset
   const elementPosition = element.getBoundingClientRect().top
   const targetPosition = elementPosition + startPosition - offset
@@ -62,6 +82,15 @@ export const smoothScrollTo = (target, offset = 80, duration = 500) => {
  * @param {number} duration - Animation duration in ms (default: 500)
  */
 export const scrollToTop = (duration = 500) => {
+  // Check if ScrollSmoother is active
+  const smoother = getScrollSmoother()
+  if (smoother) {
+    // Use ScrollSmoother's scrollTo method
+    smoother.scrollTo(0, true)
+    return
+  }
+  
+  // Fallback to native scroll
   smoothScrollTo(document.body, 0, duration)
 }
 
