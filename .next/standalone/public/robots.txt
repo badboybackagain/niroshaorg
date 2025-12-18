@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap location (update with your actual sitemap URL)
-Sitemap: https://nirosha.org/sitemap.xml
-
-

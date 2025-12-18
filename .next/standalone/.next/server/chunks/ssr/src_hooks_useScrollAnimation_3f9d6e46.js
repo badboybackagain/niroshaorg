@@ -1,3 +1,0 @@
-module.exports=[39402,a=>{"use strict";var b=a.i(72131);a.s(["useScrollAnimation",0,(a={})=>{let[c,d]=(0,b.useState)(!1),e=(0,b.useRef)(null);return(0,b.useEffect)(()=>{if("undefined"==typeof IntersectionObserver)return void d(!0);let b=new IntersectionObserver(([c])=>{c.isIntersecting?(d(!0),!1!==a.once&&b.unobserve(c.target)):a.once||d(!1)},{threshold:a.threshold||.1,rootMargin:a.rootMargin||"0px"}),c=e.current;return c&&b.observe(c),()=>{c&&b.unobserve(c)}},[a.threshold,a.rootMargin,a.once]),[e,c]}])}];
-
-//# sourceMappingURL=src_hooks_useScrollAnimation_3f9d6e46.js.map
