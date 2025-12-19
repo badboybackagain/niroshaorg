@@ -179,7 +179,13 @@ const Navbar = () => {
                 }}
                 onMouseLeave={(e) => {
                   // Only close if not moving to dropdown
-                  if (!servicesDropdownRef.current?.contains(e.relatedTarget)) {
+                  // Check if relatedTarget is a valid Node before using contains
+                  if (e.relatedTarget && e.relatedTarget instanceof Node) {
+                    if (!servicesDropdownRef.current?.contains(e.relatedTarget)) {
+                      setServicesDropdownOpen(false)
+                    }
+                  } else {
+                    // If relatedTarget is null or not a Node, close the dropdown
                     setServicesDropdownOpen(false)
                   }
                 }}
@@ -238,6 +244,13 @@ const Navbar = () => {
                 <span>BLOG</span>
               </Link>
               <Link 
+                href="/portfolio" 
+                className={`nav-link ${pathname?.startsWith('/portfolio') ? 'active' : ''}`}
+                suppressHydrationWarning
+              >
+                <span>OUR WORK</span>
+              </Link>
+              <Link 
                 href="/contact" 
                 className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}
                 suppressHydrationWarning
@@ -278,100 +291,115 @@ const Navbar = () => {
           onClick={(e) => e.stopPropagation()}
           suppressHydrationWarning
         >
-          <Link 
-            href="/" 
-            className={`mobile-menu-link ${pathname === '/' ? 'active' : ''}`} 
+          <button 
+            className="mobile-menu-close"
             onClick={() => setIsOpen(false)}
-            suppressHydrationWarning
+            aria-label="Close menu"
           >
-            <span>Home</span>
-          </Link>
-          <Link 
-            href="/about" 
-            className={`mobile-menu-link ${pathname === '/about' ? 'active' : ''}`} 
-            onClick={() => setIsOpen(false)}
-            suppressHydrationWarning
-          >
-            <span>About</span>
-          </Link>
-          <div className="mobile-menu-services">
-            <button
-              className={`mobile-menu-link mobile-menu-services-toggle ${pathname?.startsWith('/services') ? 'active' : ''}`}
-              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            <FiX />
+          </button>
+          <div className="mobile-menu-inner">
+            <Link 
+              href="/" 
+              className={`mobile-menu-link ${pathname === '/' ? 'active' : ''}`} 
+              onClick={() => setIsOpen(false)}
+              suppressHydrationWarning
             >
-              <span>Services</span>
-              <FiChevronRight className={`mobile-menu-chevron ${mobileServicesOpen ? 'open' : ''}`} />
-            </button>
-            {mobileServicesOpen && (
-              <div className="mobile-menu-services-submenu">
+              <span>Home</span>
+            </Link>
+            <Link 
+              href="/about" 
+              className={`mobile-menu-link ${pathname === '/about' ? 'active' : ''}`} 
+              onClick={() => setIsOpen(false)}
+              suppressHydrationWarning
+            >
+              <span>About</span>
+            </Link>
+            <div className="mobile-menu-services">
+              <button
+                className={`mobile-menu-link mobile-menu-services-toggle ${pathname?.startsWith('/services') ? 'active' : ''}`}
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              >
+                <span>Services</span>
+                <FiChevronRight className={`mobile-menu-chevron ${mobileServicesOpen ? 'open' : ''}`} />
+              </button>
+            <div className={`mobile-menu-services-submenu ${mobileServicesOpen ? 'open' : ''}`}>
+              <Link
+                href="/services"
+                className={`mobile-menu-link mobile-menu-submenu-item ${pathname === '/services' ? 'active' : ''}`}
+                onClick={() => {
+                  setIsOpen(false)
+                  setMobileServicesOpen(false)
+                }}
+                suppressHydrationWarning
+              >
+                <span>All Services</span>
+              </Link>
+              {servicesList.map((service) => (
                 <Link
-                  href="/services"
-                  className={`mobile-menu-link mobile-menu-submenu-item ${pathname === '/services' ? 'active' : ''}`}
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className={`mobile-menu-link mobile-menu-submenu-item ${pathname === `/services/${service.slug}` ? 'active' : ''}`}
                   onClick={() => {
                     setIsOpen(false)
                     setMobileServicesOpen(false)
                   }}
                   suppressHydrationWarning
                 >
-                  <span>All Services</span>
+                  <span>{service.title}</span>
                 </Link>
-                {servicesList.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    className={`mobile-menu-link mobile-menu-submenu-item ${pathname === `/services/${service.slug}` ? 'active' : ''}`}
-                    onClick={() => {
-                      setIsOpen(false)
-                      setMobileServicesOpen(false)
-                    }}
-                    suppressHydrationWarning
-                  >
-                    <span>{service.title}</span>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-          <Link 
-            href="/blog" 
-            className={`mobile-menu-link ${pathname?.startsWith('/blog') ? 'active' : ''}`} 
-            onClick={() => setIsOpen(false)}
-            suppressHydrationWarning
-          >
-            <span>BLOG</span>
-          </Link>
-          <Link 
-            href="/contact" 
-            className={`mobile-menu-link ${pathname === '/contact' ? 'active' : ''}`} 
-            onClick={() => setIsOpen(false)}
-            suppressHydrationWarning
-          >
-            <span>CONTACT</span>
-          </Link>
-          <form className="mobile-search" onSubmit={handleSearch}>
-            <input
-              type="text"
-              placeholder="Search...."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="mobile-search-input"
-            />
-            <button type="submit" className="mobile-search-button" aria-label="Search">
-              <FiSearch />
-            </button>
-          </form>
-          <span suppressHydrationWarning style={{ display: 'inline-block' }}>
-            <a 
-              href="https://calendly.com/nirosha-info/30min" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-primary mobile-menu-cta" 
+              ))}
+            </div>
+            </div>
+            <Link
+              href="/blog"
+              className={`mobile-menu-link ${pathname?.startsWith('/blog') ? 'active' : ''}`}
               onClick={() => setIsOpen(false)}
               suppressHydrationWarning
             >
-              <span>Free Consultation</span>
-            </a>
-          </span>
+              <span>Blog</span>
+            </Link>
+            <Link
+              href="/portfolio"
+              className={`mobile-menu-link ${pathname?.startsWith('/portfolio') ? 'active' : ''}`}
+              onClick={() => setIsOpen(false)}
+              suppressHydrationWarning
+            >
+              <span>Our Work</span>
+            </Link>
+            <Link
+              href="/contact"
+              className={`mobile-menu-link ${pathname === '/contact' ? 'active' : ''}`}
+              onClick={() => setIsOpen(false)}
+              suppressHydrationWarning
+            >
+              <span>Contact</span>
+            </Link>
+            <form className="mobile-search" onSubmit={handleSearch}>
+              <input
+                type="text"
+                placeholder="Search...."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="mobile-search-input"
+              />
+              <button type="submit" className="mobile-search-button" aria-label="Search">
+                <FiSearch />
+              </button>
+            </form>
+            <span suppressHydrationWarning style={{ display: 'inline-block' }}>
+              <a 
+                href="https://calendly.com/nirosha-info/30min" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary mobile-menu-cta" 
+                onClick={() => setIsOpen(false)}
+                suppressHydrationWarning
+              >
+                <span>Free Consultation</span>
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </>
