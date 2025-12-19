@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { blogPosts, blogCategories } from '@/data/blogData'
+import { portfolioCategories } from '@/data/portfolioData'
 import { extractServiceSlugs } from '@/lib/sitemapUtils'
 import { categoryToSlug } from '@/utils/categorySlug'
 
@@ -35,9 +36,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/terms`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${SITE_URL}/blog`,
       lastModified: currentDate,
       changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/portfolio`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
   ]
@@ -75,5 +94,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...categoryRoutes]
+  // Portfolio category routes
+  const portfolioCategoryRoutes: MetadataRoute.Sitemap = portfolioCategories.map(category => ({
+    url: `${SITE_URL}/portfolio/${category.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...categoryRoutes, ...portfolioCategoryRoutes]
 }
+

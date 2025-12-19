@@ -181,8 +181,7 @@ const ConsentBanner = ({ onConsentChange }) => {
           href="#"
           onClick={(e) => {
             e.preventDefault()
-            // You can add a link to your privacy policy or cookie policy here
-            window.open('/privacy', '_blank')
+            window.location.href = '/privacy'
           }}
           style={{
             fontSize: '15px',
