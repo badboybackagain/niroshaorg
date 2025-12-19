@@ -53,16 +53,6 @@ const ServiceDetailPage = ({ params }) => {
 
   return (
     <>
-      {/* Metadata is now handled in app/services/[slug]/page.jsx */}
-      {/* <Helmet>
-        <title>{serviceData.title} Services | Team Nirosha - Professional {serviceData.title}</title>
-        <meta name="description" content={serviceData.heroDescription} />
-        <meta name="keywords" content={serviceData.seoKeywords} />
-        <meta property="og:title" content={`${serviceData.title} Services | Team Nirosha`} />
-        <meta property="og:description" content={serviceData.heroDescription} />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={`https://nirosha.org/services/${slug}`} />
-      </Helmet> */}
       <ServiceSchema service={serviceData} />
       <BreadcrumbSchema 
         items={[

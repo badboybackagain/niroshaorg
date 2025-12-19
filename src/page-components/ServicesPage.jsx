@@ -138,22 +138,6 @@ const ServicesPage = () => {
 
   return (
     <>
-      {/* Metadata is handled in app/services/page.jsx */}
-      {/* <Helmet>
-        <title>Professional Web Development & Digital Marketing Services | Team Nirosha</title>
-        <meta 
-          name="description" 
-          content="Comprehensive digital services including web development, SEO, social media marketing, branding, e-commerce solutions, automation, and cloud infrastructure. Expert team delivering results-driven solutions for businesses." 
-        />
-        <meta 
-          name="keywords" 
-          content="web development services, SEO services, digital marketing, social media marketing, branding design, e-commerce development, website maintenance, UI UX design, automation services, cloud hosting, local SEO, content marketing" 
-        />
-        <meta property="og:title" content="Professional Web Development & Digital Marketing Services | Team Nirosha" />
-        <meta property="og:description" content="Complete digital agency services from design to development, SEO to social media. Expert solutions for growing businesses." />
-        <meta property="og:type" content="website" />
-      </Helmet> */}
-      
       <section className="section services services-page">
         {/* Hero Section */}
         {!searchQuery && (

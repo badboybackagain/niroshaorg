@@ -277,8 +277,12 @@ fi
 # Create zip file
 if [ "$DEPLOY_SOURCE" = ".next/standalone" ]; then
     echo -e "${YELLOW}Zipping standalone build...${NC}"
-    # Copy config.js into standalone folder temporarily so it gets included in zip
-    if [ -f "config.js" ]; then
+    # Copy .env file into standalone folder temporarily so it gets included in zip
+    if [ -f ".env" ]; then
+        cp .env .next/standalone/.env
+        echo -e "${GREEN}✓ Copied .env to standalone folder${NC}"
+    elif [ -f "config.js" ]; then
+        # Fallback: if .env doesn't exist, try config.js
         cp config.js .next/standalone/config.js
         echo -e "${GREEN}✓ Copied config.js to standalone folder${NC}"
     fi
@@ -286,24 +290,34 @@ if [ "$DEPLOY_SOURCE" = ".next/standalone" ]; then
     zip -r "$ZIP_PATH" . -q -x "*.DS_Store" -x "*/\.*" -x "*/node_modules/.cache/*" -x "*/.next/cache/*"
     cd ../..
     # Remove temporary copy
+    if [ -f ".next/standalone/.env" ]; then
+        rm -f .next/standalone/.env
+    fi
     if [ -f ".next/standalone/config.js" ]; then
         rm -f .next/standalone/config.js
     fi
-    if [ -f "config.js" ]; then
+    if [ -f ".env" ]; then
+        echo -e "${GREEN}✓ .env file included in zip${NC}"
+    elif [ -f "config.js" ]; then
         echo -e "${GREEN}✓ config.js included in zip${NC}"
     else
-        echo -e "${YELLOW}⚠ config.js not found - Gmail credentials may need to be configured on server${NC}"
+        echo -e "${YELLOW}⚠ Neither .env nor config.js found - Gmail credentials may need to be configured on server${NC}"
     fi
 else
     echo -e "${YELLOW}Zipping Next.js build files...${NC}"
     zip -r "$ZIP_PATH" .next public package.json package-lock.json -q -x "*.DS_Store" -x "*/\.*" -x "*/.next/cache/*" -x "*/node_modules/.cache/*"
-    # Add config.js to the zip if it exists
-    if [ -f "config.js" ]; then
+    # Add .env file to the zip if it exists (preferred)
+    if [ -f ".env" ]; then
+        echo -e "${YELLOW}Adding .env to zip...${NC}"
+        zip -u "$ZIP_PATH" .env -q
+        echo -e "${GREEN}✓ .env file added to zip${NC}"
+    elif [ -f "config.js" ]; then
+        # Fallback: add config.js if .env doesn't exist
         echo -e "${YELLOW}Adding config.js to zip...${NC}"
         zip -u "$ZIP_PATH" config.js -q
         echo -e "${GREEN}✓ config.js added to zip${NC}"
     else
-        echo -e "${YELLOW}⚠ config.js not found - Gmail credentials may need to be configured on server${NC}"
+        echo -e "${YELLOW}⚠ Neither .env nor config.js found - Gmail credentials may need to be configured on server${NC}"
     fi
 fi
 

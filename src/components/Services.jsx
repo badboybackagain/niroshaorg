@@ -42,6 +42,7 @@ const ServiceCard = ({ service, index }) => {
       <Link 
         href={service.slug}
         className="service-card-read-more"
+        suppressHydrationWarning
       >
         Read More
         <FiArrowRight style={{ marginLeft: '6px' }} />
@@ -230,7 +231,7 @@ const Services = () => {
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <Link href="/services" className="btn btn-primary">View All Services</Link>
+          <Link href="/services" className="btn btn-primary" suppressHydrationWarning>View All Services</Link>
         </div>
       </div>
     </section>

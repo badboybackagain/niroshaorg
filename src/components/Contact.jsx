@@ -504,8 +504,8 @@ const Contact = () => {
             <div className="info-decoration info-decoration-1"></div>
             <div className="info-decoration info-decoration-2"></div>
             <h2 className="info-title">Contact Information</h2>
-            <div className="contact-info-cards">
-              <a href="tel:+919403891938" className="contact-info-card">
+            <div className="contact-info-cards" suppressHydrationWarning>
+              <a href="tel:+919403891938" className="contact-info-card" suppressHydrationWarning>
                 <div className="info-icon">
                   <FiPhone />
                 </div>
@@ -515,7 +515,7 @@ const Contact = () => {
               </div>
               </a>
 
-              <a href="https://wa.me/919403891938" target="_blank" rel="noopener noreferrer" className="contact-info-card">
+              <a href="https://wa.me/919403891938" target="_blank" rel="noopener noreferrer" className="contact-info-card" suppressHydrationWarning>
                 <div className="info-icon">
                   <FiMessageCircle />
                 </div>
@@ -525,7 +525,7 @@ const Contact = () => {
                 </div>
                 </a>
 
-              <a href="mailto:info@nirosha.org" className="contact-info-card">
+              <a href="mailto:info@nirosha.org" className="contact-info-card" suppressHydrationWarning>
                 <div className="info-icon">
                   <FiMail />
                 </div>

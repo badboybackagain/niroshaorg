@@ -161,12 +161,14 @@ const Navbar = () => {
               <Link 
                 href="/" 
                 className={`nav-link ${pathname === '/' ? 'active' : ''}`}
+                suppressHydrationWarning
               >
                 <span>HOME</span>
               </Link>
               <Link 
                 href="/about" 
                 className={`nav-link ${pathname === '/about' ? 'active' : ''}`}
+                suppressHydrationWarning
               >
                 <span>ABOUT</span>
               </Link>
@@ -186,6 +188,7 @@ const Navbar = () => {
                   href="/services" 
                   className="nav-link"
                   ref={servicesLinkRef}
+                  suppressHydrationWarning
                 >
                   <span>SERVICES</span>
                   <FiChevronDown className="dropdown-icon" />
@@ -208,6 +211,7 @@ const Navbar = () => {
                     href="/services" 
                     className="services-dropdown-item services-dropdown-all"
                     onClick={() => setServicesDropdownOpen(false)}
+                    suppressHydrationWarning
                   >
                     <span>All Services</span>
                   </Link>
@@ -218,6 +222,7 @@ const Navbar = () => {
                       href={`/services/${service.slug}`}
                       className={`services-dropdown-item ${pathname === `/services/${service.slug}` ? 'active' : ''}`}
                       onClick={() => setServicesDropdownOpen(false)}
+                      suppressHydrationWarning
                     >
                       <span>{service.title}</span>
                     </Link>
@@ -228,12 +233,14 @@ const Navbar = () => {
               <Link 
                 href="/blog" 
                 className={`nav-link ${pathname?.startsWith('/blog') ? 'active' : ''}`}
+                suppressHydrationWarning
               >
                 <span>BLOG</span>
               </Link>
               <Link 
                 href="/contact" 
                 className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}
+                suppressHydrationWarning
               >
                 <span>CONTACT</span>
               </Link>
@@ -269,11 +276,13 @@ const Navbar = () => {
         <div 
           className={`mobile-menu ${isOpen ? 'active' : ''}`}
           onClick={(e) => e.stopPropagation()}
+          suppressHydrationWarning
         >
           <Link 
             href="/" 
             className={`mobile-menu-link ${pathname === '/' ? 'active' : ''}`} 
             onClick={() => setIsOpen(false)}
+            suppressHydrationWarning
           >
             <span>Home</span>
           </Link>
@@ -281,6 +290,7 @@ const Navbar = () => {
             href="/about" 
             className={`mobile-menu-link ${pathname === '/about' ? 'active' : ''}`} 
             onClick={() => setIsOpen(false)}
+            suppressHydrationWarning
           >
             <span>About</span>
           </Link>
@@ -301,6 +311,7 @@ const Navbar = () => {
                     setIsOpen(false)
                     setMobileServicesOpen(false)
                   }}
+                  suppressHydrationWarning
                 >
                   <span>All Services</span>
                 </Link>
@@ -313,6 +324,7 @@ const Navbar = () => {
                       setIsOpen(false)
                       setMobileServicesOpen(false)
                     }}
+                    suppressHydrationWarning
                   >
                     <span>{service.title}</span>
                   </Link>
@@ -324,6 +336,7 @@ const Navbar = () => {
             href="/blog" 
             className={`mobile-menu-link ${pathname?.startsWith('/blog') ? 'active' : ''}`} 
             onClick={() => setIsOpen(false)}
+            suppressHydrationWarning
           >
             <span>BLOG</span>
           </Link>
@@ -331,6 +344,7 @@ const Navbar = () => {
             href="/contact" 
             className={`mobile-menu-link ${pathname === '/contact' ? 'active' : ''}`} 
             onClick={() => setIsOpen(false)}
+            suppressHydrationWarning
           >
             <span>CONTACT</span>
           </Link>
@@ -346,15 +360,18 @@ const Navbar = () => {
               <FiSearch />
             </button>
           </form>
-          <a 
-            href="https://calendly.com/nirosha-info/30min" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-primary mobile-menu-cta" 
-            onClick={() => setIsOpen(false)}
-          >
-            <span>Free Consultation</span>
-          </a>
+          <span suppressHydrationWarning style={{ display: 'inline-block' }}>
+            <a 
+              href="https://calendly.com/nirosha-info/30min" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-primary mobile-menu-cta" 
+              onClick={() => setIsOpen(false)}
+              suppressHydrationWarning
+            >
+              <span>Free Consultation</span>
+            </a>
+          </span>
         </div>
       </div>
     </>

@@ -326,8 +326,8 @@ const Testimonials = () => {
         
         {/* View all reviews link */}
         {testimonials.length > 0 && (
-          <div className="testimonials-footer">
-            <a href="#reviews" className="view-all-reviews-link">
+          <div className="testimonials-footer" suppressHydrationWarning>
+            <a href="#reviews" className="view-all-reviews-link" suppressHydrationWarning>
               Check all {totalReviewsCount} {totalReviewsCount === 1 ? 'review' : 'reviews'}
             </a>
           </div>

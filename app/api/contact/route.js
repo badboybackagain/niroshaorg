@@ -1,65 +1,30 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
-import { getGmailCredentials } from '@/lib/config-loader'
-import { existsSync } from 'fs'
-import { join } from 'path'
+import { getISTISOString, formatISTDateTime } from '@/lib/timezone'
 
-// Direct config loader as fallback - tries multiple locations
-async function loadConfigDirect() {
-  // Try multiple possible locations for config.js
-  const possiblePaths = [
-    join(process.cwd(), 'config.js'),  // Current working directory
-    '/var/www/5fcedb5f-4188-4356-a8e9-4f09d27e27af/public_html/config.js',  // Absolute path
-    join(process.cwd(), '..', 'config.js'),  // Parent directory
-    join(process.cwd(), '.next', 'standalone', 'config.js'),  // Standalone location
-  ]
+// Get Gmail credentials from environment variables
+function getGmailCredentials() {
+  const gmailUser = process.env.GMAIL_USER?.trim()
+  const gmailPassword = process.env.GMAIL_PASSWORD?.trim()
   
-  for (const configPath of possiblePaths) {
-    if (existsSync(configPath)) {
-      try {
-        const absolutePath = configPath.startsWith('/') ? configPath : join(process.cwd(), configPath)
-        const configUrl = `file://${absolutePath}`
-        console.log('🔍 Trying to load config from:', configUrl)
-        const configModule = await import(configUrl)
-        const config = configModule?.config || configModule?.default || null
-        if (config && config.gmail) {
-          console.log('✅ Successfully loaded config directly from:', configPath)
-          console.log('✅ Gmail user:', config.gmail.user)
-          return config
-        }
-      } catch (e) {
-        console.error('❌ Failed to load config from', configPath, ':', e.message)
-        continue
-      }
-    }
+  if (!gmailUser || !gmailPassword) {
+    return null
   }
   
-  console.warn('⚠️ config.js not found in any of the checked locations')
-  return null
+  return {
+    user: gmailUser,
+    password: gmailPassword
+  }
 }
 
-// Get nodemailer transporter with credentials from config file or environment variables
-async function getTransporter() {
-  let credentials = await getGmailCredentials()
-  
-  // Fallback: try direct load if config-loader failed
-  if (!credentials) {
-    console.log('Config-loader failed, trying direct load...')
-    const directConfig = await loadConfigDirect()
-    if (directConfig?.gmail?.user && directConfig?.gmail?.password) {
-      credentials = {
-        user: directConfig.gmail.user.trim(),
-        password: directConfig.gmail.password.trim()
-      }
-      console.log('✅ Loaded config directly, Gmail user:', credentials.user)
-    }
-  }
+// Get nodemailer transporter with credentials from environment variables
+function getTransporter() {
+  const credentials = getGmailCredentials()
 
   if (!credentials) {
     throw new Error(
       'Gmail credentials not configured. ' +
-      'Please create config.js file in project root with Gmail credentials, ' +
-      'or set GMAIL_USER and GMAIL_PASSWORD environment variables.'
+      'Please set GMAIL_USER and GMAIL_PASSWORD environment variables.'
     )
   }
 
@@ -108,21 +73,8 @@ export async function POST(request) {
       ? serviceInterested.join(', ') 
       : serviceInterested
 
-    // Get Gmail user from config or environment
-    let credentials = await getGmailCredentials()
-    
-    // Fallback: try direct load if config-loader failed
-    if (!credentials) {
-      console.log('Config-loader failed in route, trying direct load...')
-      const directConfig = await loadConfigDirect()
-      if (directConfig?.gmail?.user && directConfig?.gmail?.password) {
-        credentials = {
-          user: directConfig.gmail.user.trim(),
-          password: directConfig.gmail.password.trim()
-        }
-        console.log('✅ Loaded config directly in route, Gmail user:', credentials.user)
-      }
-    }
+    // Get Gmail user from environment variables
+    const credentials = getGmailCredentials()
     
     if (!credentials) {
       return NextResponse.json(
@@ -146,7 +98,7 @@ export async function POST(request) {
     // Don't await - let it run asynchronously without blocking the response
     ;(async () => {
       try {
-        const mailTransporter = getTransporter()
+        const mailTransporter = await Promise.resolve(getTransporter())
 
         // Send form data to webhook
         try {
@@ -159,7 +111,7 @@ export async function POST(request) {
             email,
             serviceInterested: Array.isArray(serviceInterested) ? serviceInterested : [serviceInterested],
             comments: comments || '',
-            submittedAt: new Date().toISOString(),
+            submittedAt: getISTISOString(),
             source: 'nirosha.org-contact-form'
           }
 
@@ -244,7 +196,7 @@ export async function POST(request) {
                     This email was sent from the contact form on <a href="https://nirosha.org" style="color: #667eea; text-decoration: none;">nirosha.org</a>
                   </p>
                   <p style="color: #999; font-size: 11px; margin: 5px 0;">
-                    Submitted at: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })}
+                    Submitted at: ${formatISTDateTime(new Date(), { dateStyle: 'medium', timeStyle: 'short' })}
                   </p>
                 </div>
               </div>
@@ -264,7 +216,7 @@ Services Interested In: ${servicesList}
 ${comments ? `\nComments/Project Details:\n${comments}` : ''}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Submitted at: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })}
+Submitted at: ${formatISTDateTime(new Date(), { dateStyle: 'medium', timeStyle: 'short' })}
 This email was sent from the contact form on nirosha.org
       `
         }

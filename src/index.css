@@ -6320,6 +6320,7 @@ body:after {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  position: relative;
 }
 .blog-layout {
   display: grid;
@@ -6625,6 +6626,7 @@ body:after {
   display: flex;
   align-items: flex-end;
   margin-bottom: 0;
+  margin-top: 100px;
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
 }
@@ -6822,6 +6824,7 @@ body:after {
   align-items: start;
   padding: 0 2rem 4rem;
   overflow-x: hidden;
+  position: relative;
 }
 .blog-detail-main {
   min-width: 0;
@@ -6833,15 +6836,38 @@ body:after {
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: -webkit-sticky;
   position: sticky;
   top: 100px;
-  max-height: calc(50vh - 60px);
+  max-height: calc(100vh - 140px);
   overflow-y: auto;
-  z-index: 10;
+  overflow-x: hidden;
+  z-index: 100;
   align-self: flex-start;
   flex-shrink: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+/* Custom scrollbar for table of contents */
+.table-of-contents::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table-of-contents::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-of-contents::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.table-of-contents::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
 
 /* Mobile Bubble Button */
@@ -6973,6 +6999,29 @@ body:after {
   transform: translateX(5px);
 }
 
+/* Icon styling in blog-channel-comparison */
+.blog-channel-comparison .blog-icon-wrapper {
+  font-size: 2.5rem !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 80px !important;
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 12px !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .blog-channel-comparison .blog-icon-wrapper {
+    font-size: 2rem !important;
+    min-width: 60px !important;
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
 .blog-process-flow > div {
   transition: transform 0.3s ease;
 }
@@ -7031,8 +7080,13 @@ body:after {
     flex-direction: column !important;
   }
 
-  .blog-channel-comparison > div > div:first-child {
+  .blog-channel-comparison > div > div > div:first-child {
     margin-bottom: 0 !important;
+    font-size: 2rem !important;
+    min-width: 50px !important;
+    width: 50px !important;
+    height: 50px !important;
+    align-self: flex-start;
   }
 
   /* Fix any inline grid styles that cause overflow */
@@ -7156,8 +7210,19 @@ body:after {
   flex-direction: column;
   gap: 2rem;
   align-items: stretch;
+  position: relative;
+  align-self: start;
+  height: fit-content;
 }
+
+/* Ensure table of contents doesn't overlap with other sidebar sections */
+.blog-sidebar .table-of-contents {
+  flex-shrink: 0;
+  margin-bottom: 3rem !important;
+}
+
 .blog-sidebar-section {
+  flex-shrink: 0;
   background: #fff;
   border-radius: 12px;
   padding: 2rem;
@@ -7455,6 +7520,7 @@ body:after {
   }
   .blog-detail-hero {
     min-height: 450px;
+    margin-top: 100px;
   }
   
   .blog-hero-content .container {
@@ -7472,12 +7538,13 @@ body:after {
     gap: 3rem;
   }
   
-  /* On tablet, keep TOC visible but not sticky */
+  /* On tablet, keep TOC sticky */
   .table-of-contents {
-    position: static;
-    max-height: none;
-    margin-bottom: 2rem;
-    top: auto;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 140px);
+    margin-bottom: 3rem;
+    z-index: 100;
   }
   
   /* Hide mobile bubble on tablet */
@@ -7602,6 +7669,7 @@ body:after {
   }
   .blog-detail-hero {
     min-height: 400px;
+    margin-top: 90px;
   }
   
   .blog-hero-content .container {
@@ -7813,6 +7881,7 @@ body:after {
   }
   .blog-detail-hero {
     min-height: 350px;
+    margin-top: 80px;
   }
   
   .blog-hero-content .container {

@@ -21,30 +21,30 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/services">Services</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/" suppressHydrationWarning>Home</Link></li>
+              <li><Link href="/about" suppressHydrationWarning>About</Link></li>
+              <li><Link href="/services" suppressHydrationWarning>Services</Link></li>
+              <li><Link href="/contact" suppressHydrationWarning>Contact</Link></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4 className="footer-heading">Contact</h4>
-            <ul className="footer-contact">
+            <ul className="footer-contact" suppressHydrationWarning>
               <li>
-                <a href="tel:+919403891938" aria-label="Call Team Nirosha at +91-9403891938">
+                <a href="tel:+919403891938" aria-label="Call Team Nirosha at +91-9403891938" suppressHydrationWarning>
                   <FiPhone />
                   <span>+91-9403891938</span>
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/919403891938" target="_blank" rel="noopener noreferrer" aria-label="Contact Team Nirosha on WhatsApp">
+                <a href="https://wa.me/919403891938" target="_blank" rel="noopener noreferrer" aria-label="Contact Team Nirosha on WhatsApp" suppressHydrationWarning>
                   <FiMessageCircle />
                   <span>WhatsApp: +91-9403891938</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@nirosha.org" aria-label="Email Team Nirosha at info@nirosha.org">
+                <a href="mailto:info@nirosha.org" aria-label="Email Team Nirosha at info@nirosha.org" suppressHydrationWarning>
                   <FiMail />
                   <span>info@nirosha.org</span>
                 </a>
@@ -60,14 +60,17 @@ const Footer = () => {
           
           <div className="footer-section">
             <h4 className="footer-heading">Get Started</h4>
-            <a 
-              href="https://calendly.com/nirosha-info/30min" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-primary footer-cta"
-            >
-              Book a Free Consultation
-            </a>
+            <div suppressHydrationWarning>
+              <a 
+                href="https://calendly.com/nirosha-info/30min" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary footer-cta"
+                suppressHydrationWarning
+              >
+                Book a Free Consultation
+              </a>
+            </div>
           </div>
         </div>
         

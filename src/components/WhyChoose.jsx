@@ -100,7 +100,7 @@ const WhyChoose = () => {
           <p className="why-choose-closing-text">
             When you work with Team Nirosha, technology becomes your strength - not a headache.
           </p>
-          <Link href="/contact" className="btn btn-primary why-choose-cta">
+          <Link href="/contact" className="btn btn-primary why-choose-cta" suppressHydrationWarning>
             Talk to Team Nirosha
             <FiArrowRight style={{ marginLeft: '8px' }} />
           </Link>

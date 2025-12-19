@@ -21,12 +21,12 @@ const CTA = () => {
           <p className="cta-subtitle">
             Ready to transform your digital presence? Let's talk about your project.
           </p>
-          <div className="cta-buttons">
-            <a href="https://calendly.com/nirosha-info/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <div className="cta-buttons" suppressHydrationWarning>
+            <a href="https://calendly.com/nirosha-info/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary" suppressHydrationWarning>
               Get a Free Consultation
               <FiArrowRight style={{ marginLeft: '8px' }} />
             </a>
-            <Link href="/contact" className="btn btn-secondary">
+            <Link href="/contact" className="btn btn-secondary" suppressHydrationWarning>
               <FiPhone style={{ marginRight: '8px' }} />
               Contact Us
             </Link>

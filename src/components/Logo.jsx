@@ -40,6 +40,7 @@ const Logo = ({ size = 'default', className = '' }) => {
         href="/" 
         className={`logo-link logo-text-fallback ${className}`}
         aria-label="Team Nirosha Home"
+        suppressHydrationWarning
       >
         <span className="logo-text">Nirosha</span>
       </Link>
@@ -56,6 +57,7 @@ const Logo = ({ size = 'default', className = '' }) => {
       href="/" 
       className={`logo-link logo-with-text ${className}`}
       aria-label="Team Nirosha Home"
+      suppressHydrationWarning
     >
       <picture>
         {/* WebP sources with srcset */}

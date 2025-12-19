@@ -60,21 +60,6 @@ const BlogDetailPage = ({ params }) => {
 
   return (
     <>
-      {/* Metadata is handled in app/blog/[slug]/page.jsx */}
-      {/* <Helmet>
-        <title>{blog.seoTitle || blog.title} | Team Nirosha</title>
-        <meta name="description" content={blog.seoDescription || blog.excerpt} />
-        <meta name="keywords" content={blog.seoKeywords} />
-        <meta property="og:title" content={blog.title} />
-        <meta property="og:description" content={blog.excerpt} />
-        <meta property="og:image" content={blog.imageSlug ? `/cache/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
-        <meta property="og:url" content={currentUrl} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={blog.title} />
-        <meta name="twitter:description" content={blog.excerpt} />
-        <meta name="twitter:image" content={blog.imageSlug ? `/cache/blog/${blog.imageSlug}-featured.webp` : blog.featuredImage} />
-      </Helmet> */}
       <ArticleSchema blog={blog} />
       <BreadcrumbSchema 
         items={[
@@ -144,6 +129,7 @@ const BlogDetailPage = ({ params }) => {
                 ref={contentRef}
                 className={`blog-detail-content ${contentVisible ? 'animate-fadeInUp' : ''}`}
                 dangerouslySetInnerHTML={{ __html: processBlogContent(blog.content, blog.category) }}
+                suppressHydrationWarning
               />
 
               <ShareButtons 
@@ -158,7 +144,7 @@ const BlogDetailPage = ({ params }) => {
               
               <div className="blog-sidebar-section">
                 <h3 className="blog-sidebar-title">
-                  {categoryBlogs.length > 0 ? `Latest in ${blog.category}` : `More from ${blog.category}`}
+                  {categoryBlogs.length > 0 ? `More in ${blog.category}` : `More from ${blog.category}`}
                 </h3>
                 {categoryBlogs.length > 0 ? (
                   <div className="blog-sidebar-list">
@@ -167,6 +153,7 @@ const BlogDetailPage = ({ params }) => {
                         key={relatedBlog.id}
                         href={`/blog/${relatedBlog.slug}`}
                         className="blog-sidebar-item"
+                        suppressHydrationWarning
                       >
                         <div className="blog-sidebar-image">
                           {relatedBlog.imageSlug ? (

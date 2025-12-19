@@ -197,12 +197,6 @@ const BlogListingPage = () => {
 
   return (
     <>
-      {/* Metadata is handled in app/blog/page.jsx */}
-      {/* <Helmet>
-        <title>Blog | Team Nirosha - Digital Agency Insights & Tips</title>
-        <meta name="description" content="Read our latest blog posts on web development, SEO, digital marketing, branding, and more. Expert insights from Team Nirosha digital agency." />
-        <meta name="keywords" content="digital marketing blog, web development blog, SEO tips, branding blog, digital agency blog" />
-      </Helmet> */}
       <BlogSchema />
       
       {/* Hero Section with Featured Blogs */}

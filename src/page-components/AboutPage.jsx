@@ -159,13 +159,6 @@ const AboutPage = () => {
 
   return (
     <>
-      {/* Metadata is handled in app/about/page.jsx */}
-      {/* <Helmet>
-        <title>About Us - Team Nirosha | Your Trusted Digital Partner</title>
-        <meta name="description" content="Meet Team Nirosha - a trusted digital agency in India providing web development, SEO, automation, and cloud services. Learn about our team and our mission to deliver exceptional digital solutions." />
-        <meta name="keywords" content="Team Nirosha, about us, digital agency India, web development team, IT solutions provider" />
-      </Helmet> */}
-
       {/* Hero Section */}
       <section className="about-page-hero-section">
         <div className="iridescence-background"></div>

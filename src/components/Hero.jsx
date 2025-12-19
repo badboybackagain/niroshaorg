@@ -60,7 +60,7 @@ const Hero = () => {
         <div className="hero-content">
           {/* LCP element - render immediately without delay */}
           <div className="hero-badge">
-            <span>Your Trusted Digital Partner – Team Nirosha</span>
+            <span>Your Trusted Digital Partner - Team Nirosha</span>
           </div>
           <h1 
             ref={titleRef}
@@ -76,12 +76,12 @@ const Hero = () => {
             SEO services, website maintenance AMC, business automation solutions, SaaS development, and cloud hosting 
             services. We're your trusted IT solutions provider, helping businesses scale with secure, reliable technology.
           </p>
-          <div className="hero-cta">
-            <Link href="/contact" className="btn btn-white">
+          <div className="hero-cta" suppressHydrationWarning>
+            <Link href="/contact" className="btn btn-white" suppressHydrationWarning>
               Let's Build Your Digital Future
               <FiArrowRight style={{ marginLeft: '8px' }} />
             </Link>
-            <a href="https://calendly.com/nirosha-info/30min" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ borderColor: 'rgba(255, 255, 255, 0.3)', color: 'white' }}>
+            <a href="https://calendly.com/nirosha-info/30min" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ borderColor: 'rgba(255, 255, 255, 0.3)', color: 'white' }} suppressHydrationWarning>
               <FiCalendar style={{ marginRight: '8px' }} />
               Book a Free Consultation
             </a>

@@ -191,7 +191,7 @@ const About = () => {
               </div>
 
               <div className="about-cta">
-                <Link href="/about" className="btn btn-primary">
+                <Link href="/about" className="btn btn-primary" suppressHydrationWarning>
                   Know More About Team Nirosha
                   <FiArrowRight style={{ marginLeft: '8px' }} />
                 </Link>
