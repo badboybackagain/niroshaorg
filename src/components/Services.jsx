@@ -1,7 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import Link from 'next/link'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { 
   FiGlobe, 
   FiTrendingUp, 
@@ -20,26 +22,141 @@ import {
   FiMonitor,
   FiArrowRight
 } from 'react-icons/fi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+
+// Register ScrollTrigger
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const ServiceCard = ({ service, index }) => {
-  const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
+  const cardRef = useRef(null)
+  const iconRef = useRef(null)
+  const titleRef = useRef(null)
+  const itemsRef = useRef(null)
+  const linkRef = useRef(null)
+
+  useEffect(() => {
+    const card = cardRef.current
+    if (!card) return
+
+    const icon = iconRef.current
+    const title = titleRef.current
+    const items = itemsRef.current
+    const link = linkRef.current
+
+    // Set initial states
+    gsap.set([icon, title, items, link], { opacity: 0 })
+    gsap.set(icon, { scale: 0, rotation: -180 })
+    gsap.set(title, { y: 20 })
+    gsap.set(items, { y: 30 })
+    gsap.set(link, { x: -20, opacity: 0 })
+
+    // Create scroll trigger animation
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    })
+
+    // Staggered animation sequence
+    tl.to(icon, {
+      scale: 1,
+      rotation: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: 'back.out(1.7)'
+    })
+    .to(title, {
+      y: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: 'power3.out'
+    }, '-=0.3')
+    .to(items, {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, '-=0.4')
+    .to(link, {
+      x: 0,
+      opacity: 1,
+      duration: 0.4,
+      ease: 'power2.out'
+    }, '-=0.3')
+
+    // Hover animations
+    const handleMouseEnter = () => {
+      gsap.to(card, {
+        y: -8,
+        scale: 1.02,
+        duration: 0.4,
+        ease: 'power2.out'
+      })
+      gsap.to(icon, {
+        scale: 1.15,
+        rotation: 5,
+        duration: 0.4,
+        ease: 'power2.out'
+      })
+      gsap.to(link, {
+        x: 5,
+        duration: 0.3,
+        ease: 'power2.out'
+      })
+    }
+
+    const handleMouseLeave = () => {
+      gsap.to(card, {
+        y: 0,
+        scale: 1,
+        duration: 0.4,
+        ease: 'power2.out'
+      })
+      gsap.to(icon, {
+        scale: 1,
+        rotation: 0,
+        duration: 0.4,
+        ease: 'power2.out'
+      })
+      gsap.to(link, {
+        x: 0,
+        duration: 0.3,
+        ease: 'power2.out'
+      })
+    }
+
+    card.addEventListener('mouseenter', handleMouseEnter)
+    card.addEventListener('mouseleave', handleMouseLeave)
+
+    return () => {
+      card.removeEventListener('mouseenter', handleMouseEnter)
+      card.removeEventListener('mouseleave', handleMouseLeave)
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger === card) {
+          trigger.kill()
+        }
+      })
+    }
+  }, [])
 
   return (
     <div 
-      ref={ref}
-      key={index}
-      className={`service-card ${isVisible ? 'animate-fadeInUp' : ''}`}
-      style={{ animationDelay: `${index * 100}ms` }}
+      ref={cardRef}
+      className="service-card"
+      data-index={index}
     >
-      <div className="service-icon">{service.icon}</div>
-      <h3 className="service-title">{service.title}</h3>
-      <ul className="service-items">
+      <div ref={iconRef} className="service-icon">{service.icon}</div>
+      <h3 ref={titleRef} className="service-title">{service.title}</h3>
+      <ul ref={itemsRef} className="service-items">
         {service.items.map((item, idx) => (
           <li key={idx}>{item}</li>
         ))}
       </ul>
       <Link 
+        ref={linkRef}
         href={service.slug}
         className="service-card-read-more"
         suppressHydrationWarning
@@ -52,7 +169,134 @@ const ServiceCard = ({ service, index }) => {
 }
 
 const Services = () => {
-  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 })
+  const sectionRef = useRef(null)
+  const titleRef = useRef(null)
+  const subtitleRef = useRef(null)
+  const gridRef = useRef(null)
+  const buttonRef = useRef(null)
+  const bgTextureRef = useRef(null)
+  const bgOrbsRef = useRef([])
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    // Create animated background orbs
+    const orbs = []
+    for (let i = 0; i < 6; i++) {
+      const orb = document.createElement('div')
+      orb.className = 'services-bg-orb'
+      orb.style.cssText = `
+        position: absolute;
+        width: ${200 + i * 50}px;
+        height: ${200 + i * 50}px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(37, 99, 235, ${0.15 - i * 0.02}) 0%, transparent 70%);
+        filter: blur(40px);
+        pointer-events: none;
+        z-index: 0;
+      `
+      section.appendChild(orb)
+      orbs.push(orb)
+      bgOrbsRef.current.push(orb)
+    }
+
+    // Set initial states
+    gsap.set([titleRef.current, subtitleRef.current], { opacity: 0, y: 30 })
+    gsap.set(buttonRef.current, { opacity: 0, scale: 0.9 })
+    gsap.set(bgTextureRef.current, { opacity: 0, scale: 1.1 })
+    gsap.set(orbs, { opacity: 0, scale: 0 })
+
+    // Animate orbs positions on scroll
+    orbs.forEach((orb, i) => {
+      const xPos = (i % 2 === 0 ? -1 : 1) * (100 + i * 30)
+      const yPos = (i < 3 ? -1 : 1) * (100 + i * 20)
+      
+      gsap.to(orb, {
+        x: xPos,
+        y: yPos,
+        opacity: 0.6,
+        scale: 1,
+        duration: 2 + i * 0.3,
+        ease: 'power1.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1
+        }
+      })
+
+      // Continuous floating animation
+      gsap.to(orb, {
+        x: `+=${(i % 2 === 0 ? 1 : -1) * 30}`,
+        y: `+=${(i < 3 ? 1 : -1) * 20}`,
+        duration: 3 + i * 0.5,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true
+      })
+    })
+
+    // Create master timeline
+    const masterTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      }
+    })
+
+    // Background texture animation
+    masterTl.to(bgTextureRef.current, {
+      opacity: 1,
+      scale: 1,
+      duration: 1.2,
+      ease: 'power2.out'
+    })
+    // Title animation
+    .to(titleRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, '-=0.6')
+    // Subtitle animation
+    .to(subtitleRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, '-=0.4')
+    // Button animation
+    .to(buttonRef.current, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.5,
+      ease: 'back.out(1.7)'
+    }, '-=0.2')
+
+    // Parallax effect for background texture
+    gsap.to(bgTextureRef.current, {
+      y: -100,
+      scrollTrigger: {
+        trigger: section,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1
+      }
+    })
+
+    return () => {
+      orbs.forEach(orb => orb.remove())
+      bgOrbsRef.current = []
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger === section) {
+          trigger.kill()
+        }
+      })
+    }
+  }, [])
 
   const services = [
     {
@@ -214,24 +458,32 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="section services">
-      <div className="container">
-        <h2 
-          ref={titleRef}
-          className={`section-title ${titleVisible ? 'animate-fadeInUp' : ''}`}
-        >
+    <section ref={sectionRef} id="services" className="section services">
+      {/* Animated Background Texture */}
+      <div ref={bgTextureRef} className="services-bg-texture"></div>
+      
+      {/* Content */}
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <h2 ref={titleRef} className="section-title">
           Our Services
         </h2>
-        <p className="section-subtitle">
+        <p ref={subtitleRef} className="section-subtitle">
           Complete web agency services from design to development, SEO to social media, and everything in between
         </p>
-        <div className="services-grid">
+        <div ref={gridRef} className="services-grid">
           {services.slice(0, 6).map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <Link href="/services" className="btn btn-primary" suppressHydrationWarning>View All Services</Link>
+          <Link 
+            ref={buttonRef}
+            href="/services" 
+            className="btn btn-primary" 
+            suppressHydrationWarning
+          >
+            View All Services
+          </Link>
         </div>
       </div>
     </section>

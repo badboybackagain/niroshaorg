@@ -9,7 +9,6 @@ import Process from '../components/Process'
 import Industries from '../components/Industries'
 import TechnologyStack from '../components/TechnologyStack'
 import Testimonials from '../components/Testimonials'
-import CTA from '../components/CTA'
 
 const HomePage = () => {
   return (
@@ -24,7 +23,6 @@ const HomePage = () => {
       <Industries />
       <TechnologyStack />
       <Testimonials />
-      <CTA />
     </>
   )
 }

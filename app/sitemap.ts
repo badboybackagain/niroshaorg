@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
-import { blogPosts } from '@/data/blogData'
+import { blogPosts, blogCategories } from '@/data/blogData'
 import { extractServiceSlugs } from '@/lib/sitemapUtils'
+import { categoryToSlug } from '@/utils/categorySlug'
 
 const SITE_URL = 'https://nirosha.org'
 
@@ -66,5 +67,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes]
+  // Blog category routes (SEO-friendly URLs)
+  const categoryRoutes: MetadataRoute.Sitemap = blogCategories.map(category => ({
+    url: `${SITE_URL}/blog/category/${categoryToSlug(category)}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }))
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...categoryRoutes]
 }

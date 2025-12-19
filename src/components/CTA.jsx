@@ -1,38 +1,109 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { FiArrowRight, FiPhone } from 'react-icons/fi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { FiArrowRight } from 'react-icons/fi'
+
+// Register ScrollTrigger
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const CTA = () => {
-  const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
+  const sectionRef = useRef(null)
+  const contentRef = useRef(null)
+  const titleRef = useRef(null)
+  const buttonRef = useRef(null)
+  const graphicRef = useRef(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    // Set initial states
+    gsap.set([titleRef.current, buttonRef.current], { opacity: 0, y: 30 })
+    gsap.set(graphicRef.current, { opacity: 0, scale: 0.8, rotation: -10 })
+
+    // Create animation timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      }
+    })
+
+    tl.to(graphicRef.current, {
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+      duration: 1,
+      ease: 'back.out(1.7)'
+    })
+    .to(titleRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, '-=0.5')
+    .to(buttonRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, '-=0.4')
+
+    // Continuous floating animation for graphic
+    gsap.to(graphicRef.current, {
+      y: '+=20',
+      rotation: '+=5',
+      duration: 3,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true
+    })
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger === section) {
+          trigger.kill()
+        }
+      })
+    }
+  }, [])
 
   return (
-    <section id="contact" className="section cta">
-      <div className="container">
-        <div 
-          ref={ref}
-          className={`cta-content ${isVisible ? 'animate-fadeInUp' : ''}`}
-        >
-          <h2 className="cta-title">
-            Let Team Nirosha handle your technology, so you can focus on growing your business.
+    <section ref={sectionRef} id="contact" className="cta-banner">
+      <div className="cta-banner-content">
+        <div className="cta-banner-left">
+          <h2 ref={titleRef} className="cta-banner-title">
+            Ready to Elevate Your Business with Digital Solutions?
           </h2>
-          <p className="cta-subtitle">
-            Ready to transform your digital presence? Let's talk about your project.
-          </p>
-          <div className="cta-buttons" suppressHydrationWarning>
-            <a href="https://calendly.com/nirosha-info/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary" suppressHydrationWarning>
-              Get a Free Consultation
-              <FiArrowRight style={{ marginLeft: '8px' }} />
-            </a>
-            <Link href="/contact" className="btn btn-secondary" suppressHydrationWarning>
-              <FiPhone style={{ marginRight: '8px' }} />
-              Contact Us
-            </Link>
-          </div>
+        </div>
+        
+        <div ref={graphicRef} className="cta-banner-graphic">
+          <div className="cta-graphic-element"></div>
+        </div>
+        
+        <div className="cta-banner-right">
+          <a 
+            ref={buttonRef}
+            href="https://calendly.com/nirosha-info/30min" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="cta-banner-button"
+            suppressHydrationWarning
+          >
+            Get Started Today
+            <span className="cta-button-icon">
+              <FiArrowRight />
+            </span>
+          </a>
         </div>
       </div>
+      <div className="cta-wave-bottom"></div>
     </section>
   )
 }

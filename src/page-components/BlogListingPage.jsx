@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { FiCalendar, FiClock, FiTag, FiArrowRight, FiUser } from 'react-icons/fi'
+import { useSearchParams, useRouter } from 'next/navigation'
+import { FiCalendar, FiClock, FiTag, FiArrowRight, FiUser, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { blogPosts, blogCategories, getFeaturedBlogs, getRecentBlogs } from '../data/blogData'
 import BlogImage from '../components/BlogImage'
 import BlogSchema from '../components/BlogSchema'
+import { categoryToSlug } from '../utils/categorySlug'
 
 // Category color mapping
 const getCategoryColor = (category) => {
@@ -46,7 +48,8 @@ const BlogCard = ({ blog, index, layout = 'vertical' }) => {
       href={`/blog/${blog.slug}`}
       ref={ref}
       className={`blog-card ${isHorizontal ? 'blog-card-horizontal' : ''} ${isVisible ? 'animate-fadeInUp' : ''}`}
-      style={{ animationDelay: `${index * 100}ms` }}
+      style={{ '--animation-delay': `${index * 100}` }}
+      suppressHydrationWarning
     >
       <div className="blog-card-image">
         {blog.imageSlug ? (
@@ -97,7 +100,7 @@ const HeroFeaturedCard = ({ blog }) => {
   }
 
   return (
-    <Link href={`/blog/${blog.slug}`} className="hero-featured-main">
+    <Link href={`/blog/${blog.slug}`} className="hero-featured-main" suppressHydrationWarning>
       <div className="hero-featured-image">
         {blog.imageSlug ? (
           <BlogImage 
@@ -135,7 +138,7 @@ const HeroSideCard = ({ blog }) => {
   }
 
   return (
-    <Link href={`/blog/${blog.slug}`} className="hero-side-card">
+    <Link href={`/blog/${blog.slug}`} className="hero-side-card" suppressHydrationWarning>
       <div className="hero-side-image">
         {blog.imageSlug ? (
           <BlogImage 
@@ -166,34 +169,101 @@ const HeroSideCard = ({ blog }) => {
   )
 }
 
-const BlogListingPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+const BlogListingPage = ({ initialCategory = null }) => {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'All')
   const [currentPage, setCurrentPage] = useState(1)
   const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [titleMounted, setTitleMounted] = useState(false)
+
+  // Get page from URL (for pagination on category pages)
+  useEffect(() => {
+    const page = parseInt(searchParams.get('page') || '1', 10)
+    setCurrentPage(page)
+    
+    // Only read category from URL if not provided as prop (for backward compatibility)
+    if (!initialCategory) {
+      const category = searchParams.get('category') || 'All'
+      setSelectedCategory(category)
+    }
+  }, [searchParams, initialCategory])
+
+  // Make title visible immediately when category is selected
+  useEffect(() => {
+    if (selectedCategory !== 'All') {
+      // Small delay to ensure DOM is ready, then make visible
+      const timer = setTimeout(() => {
+        setTitleMounted(true)
+      }, 100)
+      return () => clearTimeout(timer)
+    } else {
+      setTitleMounted(false)
+    }
+  }, [selectedCategory])
 
   const featuredBlogs = getFeaturedBlogs(4)
   const mainFeatured = featuredBlogs[0]
   const sideFeatured = featuredBlogs.slice(1, 4)
-  const featuredBlogIds = new Set(featuredBlogs.map(b => b.id))
   
-  // Get all posts (excluding featured from main listing)
-  const allPosts = blogPosts.filter(blog => !featuredBlogIds.has(blog.id))
+  // Get all posts - include ALL 13 posts in main listing
+  // Featured blogs can appear in both hero section and main listing
+  // Sort by publish date (newest first)
+  const allPosts = [...blogPosts]
+    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
   
   const filteredBlogs = selectedCategory === 'All' 
     ? allPosts
-    : blogPosts.filter(blog => blog.category === selectedCategory)
+    : [...blogPosts]
+        .filter(blog => blog.category === selectedCategory)
+        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
 
-  // Pagination settings
-  const postsPerPage = 9
+  // Pagination settings - show 6 blogs per page
+  const postsPerPage = 6
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage)
   const startIndex = (currentPage - 1) * postsPerPage
   const endIndex = startIndex + postsPerPage
   const paginatedBlogs = filteredBlogs.slice(startIndex, endIndex)
 
-  // Reset to page 1 when category changes
-  useEffect(() => {
+  // Update URL when page or category changes - use SEO-friendly URLs
+  const updateURL = (page, category) => {
+    if (category !== 'All') {
+      // Use SEO-friendly URL: /blog/category/web-development?page=2
+      const categorySlug = categoryToSlug(category)
+      const params = new URLSearchParams()
+      if (page > 1) params.set('page', page.toString())
+      const queryString = params.toString()
+      router.push(`/blog/category/${categorySlug}${queryString ? `?${queryString}` : ''}`, { scroll: false })
+    } else {
+      // For "All" category, use /blog?page=2
+      const params = new URLSearchParams()
+      if (page > 1) params.set('page', page.toString())
+      const queryString = params.toString()
+      router.push(`/blog${queryString ? `?${queryString}` : ''}`, { scroll: false })
+    }
+  }
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage)
+      updateURL(newPage, selectedCategory)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category)
     setCurrentPage(1)
-  }, [selectedCategory])
+    updateURL(1, category)
+  }
+
+  // Reset to page 1 when category changes or if current page is invalid
+  useEffect(() => {
+    if (totalPages > 0 && currentPage > totalPages) {
+      setCurrentPage(1)
+      updateURL(1, selectedCategory)
+    }
+  }, [selectedCategory, totalPages])
 
   return (
     <>
@@ -230,7 +300,7 @@ const BlogListingPage = () => {
             <div className="blog-main-content">
               {selectedCategory === 'All' && (
                 <>
-                  {/* All Posts Grid - 3 columns, 9 per page */}
+                  {/* All Posts Grid - 3 columns, 6 per page */}
                   {paginatedBlogs.length > 0 && (
                     <div className="blog-section">
                       <div className="blog-grid">
@@ -240,35 +310,101 @@ const BlogListingPage = () => {
                       </div>
                       
                       {/* Pagination */}
-                      {totalPages > 1 && (
+                      {filteredBlogs.length > postsPerPage && (
                         <div className="blog-pagination">
-                          <button
-                            className="pagination-button"
-                            onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                            disabled={currentPage === 1}
-                          >
-                            Previous
-                          </button>
-                          
-                          <div className="pagination-numbers">
-                            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                              <button
-                                key={page}
-                                className={`pagination-number ${currentPage === page ? 'active' : ''}`}
-                                onClick={() => setCurrentPage(page)}
-                              >
-                                {page}
-                              </button>
-                            ))}
+                          <div className="pagination-info">
+                            Showing {startIndex + 1}-{Math.min(endIndex, filteredBlogs.length)} of {filteredBlogs.length} posts
                           </div>
                           
-                          <button
-                            className="pagination-button"
-                            onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                            disabled={currentPage === totalPages}
-                          >
-                            Next
-                          </button>
+                          <div className="pagination-controls">
+                            <button
+                              className="pagination-button pagination-prev"
+                              onClick={() => handlePageChange(currentPage - 1)}
+                              disabled={currentPage === 1}
+                              aria-label="Previous page"
+                            >
+                              <FiChevronLeft />
+                              <span>Previous</span>
+                            </button>
+                            
+                            <div className="pagination-numbers">
+                              {(() => {
+                                const pages = []
+                                const maxVisible = 7
+                                let startPage = 1
+                                let endPage = totalPages
+
+                                if (totalPages > maxVisible) {
+                                  if (currentPage <= 4) {
+                                    endPage = maxVisible
+                                  } else if (currentPage >= totalPages - 3) {
+                                    startPage = totalPages - maxVisible + 1
+                                  } else {
+                                    startPage = currentPage - 3
+                                    endPage = currentPage + 3
+                                  }
+                                }
+
+                                if (startPage > 1) {
+                                  pages.push(
+                                    <button
+                                      key={1}
+                                      className="pagination-number"
+                                      onClick={() => handlePageChange(1)}
+                                    >
+                                      1
+                                    </button>
+                                  )
+                                  if (startPage > 2) {
+                                    pages.push(
+                                      <span key="ellipsis-start" className="pagination-ellipsis">...</span>
+                                    )
+                                  }
+                                }
+
+                                for (let i = startPage; i <= endPage; i++) {
+                                  pages.push(
+                                    <button
+                                      key={i}
+                                      className={`pagination-number ${currentPage === i ? 'active' : ''}`}
+                                      onClick={() => handlePageChange(i)}
+                                    >
+                                      {i}
+                                    </button>
+                                  )
+                                }
+
+                                if (endPage < totalPages) {
+                                  if (endPage < totalPages - 1) {
+                                    pages.push(
+                                      <span key="ellipsis-end" className="pagination-ellipsis">...</span>
+                                    )
+                                  }
+                                  pages.push(
+                                    <button
+                                      key={totalPages}
+                                      className="pagination-number"
+                                      onClick={() => handlePageChange(totalPages)}
+                                    >
+                                      {totalPages}
+                                    </button>
+                                  )
+                                }
+
+                                return pages
+                              })()}
+                            </div>
+                            
+                            <button
+                              className="pagination-button pagination-next"
+                              onClick={() => handlePageChange(currentPage + 1)}
+                              disabled={currentPage === totalPages}
+                              aria-label="Next page"
+                            >
+                              <span>Next</span>
+                              <FiChevronRight />
+                            </button>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -281,7 +417,7 @@ const BlogListingPage = () => {
                 <div className="blog-section">
                   <div 
                     ref={titleRef}
-                    className={`blog-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
+                    className={`blog-header ${titleVisible || titleMounted ? 'animate-fadeInUp' : ''}`}
                   >
                     <h1 className="page-title">{selectedCategory} Blog Posts | Team Nirosha</h1>
                     <p className="page-subtitle">
@@ -298,35 +434,101 @@ const BlogListingPage = () => {
                       </div>
                       
                       {/* Pagination */}
-                      {totalPages > 1 && (
+                      {filteredBlogs.length > postsPerPage && (
                         <div className="blog-pagination">
-                          <button
-                            className="pagination-button"
-                            onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                            disabled={currentPage === 1}
-                          >
-                            Previous
-                          </button>
-                          
-                          <div className="pagination-numbers">
-                            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                              <button
-                                key={page}
-                                className={`pagination-number ${currentPage === page ? 'active' : ''}`}
-                                onClick={() => setCurrentPage(page)}
-                              >
-                                {page}
-                              </button>
-                            ))}
+                          <div className="pagination-info">
+                            Showing {startIndex + 1}-{Math.min(endIndex, filteredBlogs.length)} of {filteredBlogs.length} posts
                           </div>
                           
-                          <button
-                            className="pagination-button"
-                            onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                            disabled={currentPage === totalPages}
-                          >
-                            Next
-                          </button>
+                          <div className="pagination-controls">
+                            <button
+                              className="pagination-button pagination-prev"
+                              onClick={() => handlePageChange(currentPage - 1)}
+                              disabled={currentPage === 1}
+                              aria-label="Previous page"
+                            >
+                              <FiChevronLeft />
+                              <span>Previous</span>
+                            </button>
+                            
+                            <div className="pagination-numbers">
+                              {(() => {
+                                const pages = []
+                                const maxVisible = 7
+                                let startPage = 1
+                                let endPage = totalPages
+
+                                if (totalPages > maxVisible) {
+                                  if (currentPage <= 4) {
+                                    endPage = maxVisible
+                                  } else if (currentPage >= totalPages - 3) {
+                                    startPage = totalPages - maxVisible + 1
+                                  } else {
+                                    startPage = currentPage - 3
+                                    endPage = currentPage + 3
+                                  }
+                                }
+
+                                if (startPage > 1) {
+                                  pages.push(
+                                    <button
+                                      key={1}
+                                      className="pagination-number"
+                                      onClick={() => handlePageChange(1)}
+                                    >
+                                      1
+                                    </button>
+                                  )
+                                  if (startPage > 2) {
+                                    pages.push(
+                                      <span key="ellipsis-start" className="pagination-ellipsis">...</span>
+                                    )
+                                  }
+                                }
+
+                                for (let i = startPage; i <= endPage; i++) {
+                                  pages.push(
+                                    <button
+                                      key={i}
+                                      className={`pagination-number ${currentPage === i ? 'active' : ''}`}
+                                      onClick={() => handlePageChange(i)}
+                                    >
+                                      {i}
+                                    </button>
+                                  )
+                                }
+
+                                if (endPage < totalPages) {
+                                  if (endPage < totalPages - 1) {
+                                    pages.push(
+                                      <span key="ellipsis-end" className="pagination-ellipsis">...</span>
+                                    )
+                                  }
+                                  pages.push(
+                                    <button
+                                      key={totalPages}
+                                      className="pagination-number"
+                                      onClick={() => handlePageChange(totalPages)}
+                                    >
+                                      {totalPages}
+                                    </button>
+                                  )
+                                }
+
+                                return pages
+                              })()}
+                            </div>
+                            
+                            <button
+                              className="pagination-button pagination-next"
+                              onClick={() => handlePageChange(currentPage + 1)}
+                              disabled={currentPage === totalPages}
+                              aria-label="Next page"
+                            >
+                              <span>Next</span>
+                              <FiChevronRight />
+                            </button>
+                          </div>
                         </div>
                       )}
                     </>
@@ -347,19 +549,31 @@ const BlogListingPage = () => {
                 <div className="blog-filters-sidebar">
                   <button
                     className={`filter-button-sidebar ${selectedCategory === 'All' ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory('All')}
+                    onClick={() => handleCategoryChange('All')}
+                    style={selectedCategory === 'All' ? { background: '#2563eb', color: '#fff' } : {}}
                   >
                     All Posts
                   </button>
-                  {blogCategories.map(category => (
-                    <button
-                      key={category}
-                      className={`filter-button-sidebar ${selectedCategory === category ? 'active' : ''}`}
-                      onClick={() => setSelectedCategory(category)}
-                    >
-                      {category}
-                    </button>
-                  ))}
+                  {blogCategories.map(category => {
+                    const categoryColor = getCategoryColor(category)
+                    const isActive = selectedCategory === category
+                    return (
+                      <button
+                        key={category}
+                        className={`filter-button-sidebar ${isActive ? 'active' : ''}`}
+                        onClick={() => handleCategoryChange(category)}
+                        style={isActive ? { 
+                          background: categoryColor, 
+                          color: '#fff',
+                          borderLeft: `4px solid ${categoryColor}`
+                        } : {
+                          borderLeft: `4px solid ${categoryColor}`
+                        }}
+                      >
+                        {category}
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             </aside>

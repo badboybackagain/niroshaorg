@@ -3,6 +3,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import CTA from './CTA'
 import ScrollToTopButton from './ScrollToTopButton'
 import ContactBubbles from './ContactBubbles'
 import ScrollSmootherWrapper from './ScrollSmootherWrapper'
@@ -23,6 +24,7 @@ const Layout = ({ children }) => {
           <main id="main-content">
             {children}
           </main>
+          <CTA />
           <Footer />
         </div>
       </div>
