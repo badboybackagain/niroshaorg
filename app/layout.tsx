@@ -3,6 +3,7 @@ import Layout from '@/components/Layout'
 import OrganizationSchema from '@/components/OrganizationSchema'
 import WebsiteSchema from '@/components/WebsiteSchema'
 import ScrollToTop from '@/components/ScrollToTop'
+import GTMConsentWrapper from '@/components/GTMConsentWrapper'
 
 export const metadata = {
   title: 'Team Nirosha - Web Development, SEO & Digital Marketing Agency',
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
         for better UX and don't affect functionality.
       */}
       <body suppressHydrationWarning>
+        <GTMConsentWrapper />
         <Layout>
           {children}
         </Layout>
