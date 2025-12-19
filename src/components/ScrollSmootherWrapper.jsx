@@ -2,11 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-// Register ScrollTrigger
-gsap.registerPlugin(ScrollTrigger)
+import { gsap, ScrollTrigger } from '@/utils/gsapConfig'
 
 /**
  * ScrollSmootherWrapper component

@@ -11,6 +11,8 @@
     "regenerate-blog-cache": "node scripts/regenerate-blog-cache.js",
     "process-images:team": "node scripts/process-images.js team",
     "process-images:client-logos": "node scripts/process-images.js client-logos",
+    "process-images:portfolio-logos": "node scripts/process-images.js portfolio-logos",
+    "process-images:portfolio-all": "node scripts/process-images.js portfolio-logos && node scripts/process-images.js portfolio-business-card && node scripts/process-images.js portfolio-id-cards && node scripts/process-images.js portfolio-brochure-cover && node scripts/process-images.js portfolio-posters && node scripts/process-images.js portfolio-packaging && node scripts/process-images.js portfolio-social-media-posts && node scripts/process-images.js portfolio-backdrop && node scripts/process-images.js portfolio-magazine-ad",
     "fetch-reviews": "node scripts/fetch-google-reviews-puppeteer.js",
     "fetch-reviews-basic": "node scripts/fetch-google-reviews.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
@@ -31,13 +33,13 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^4.11.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18",
     "three": "^0.182.0"
   },
   "devDependencies": {
     "@types/react": "19.2.7",
     "shadcn": "^3.6.1",
-    "sharp": "^0.34.5",
     "typescript": "5.9.3"
   }
 }

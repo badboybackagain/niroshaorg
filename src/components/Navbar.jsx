@@ -11,6 +11,7 @@ import { servicesData } from '../data/servicesData.jsx'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [scrollDirection, setScrollDirection] = useState('down')
   const [searchQuery, setSearchQuery] = useState('')
   const [isSearchFocused, setIsSearchFocused] = useState(false)
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
@@ -20,14 +21,46 @@ const Navbar = () => {
   const router = useRouter()
   const servicesDropdownRef = useRef(null)
   const servicesLinkRef = useRef(null)
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      const currentScrollY = window.scrollY
+      setScrolled(currentScrollY > 50)
+      
+      // Only track scroll direction on mobile (screen width <= 768px)
+      if (window.innerWidth <= 768 && !isOpen) {
+        // Don't hide navbar at the very top
+        if (currentScrollY < 10) {
+          setScrollDirection('down')
+        } else if (currentScrollY > lastScrollY.current) {
+          // Scrolling down - hide navbar
+          setScrollDirection('up')
+        } else if (currentScrollY < lastScrollY.current) {
+          // Scrolling up - show navbar
+          setScrollDirection('down')
+        }
+        lastScrollY.current = currentScrollY
+      } else {
+        // Reset on desktop or when menu is open
+        setScrollDirection('down')
+      }
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    
+    const handleResize = () => {
+      // Reset scroll direction on resize
+      if (window.innerWidth > 768) {
+        setScrollDirection('down')
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [isOpen])
 
   useEffect(() => {
     setIsOpen(false)
@@ -151,7 +184,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''} ${scrollDirection === 'up' ? 'scroll-up' : 'scroll-down'}`}>
         <div className="container">
           <div className="nav-content">
             <div className="nav-brand">

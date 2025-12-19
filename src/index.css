@@ -510,6 +510,30 @@ body:after {
   padding: 0.75rem 0;
   gap: 0.6rem;
 }
+
+/* Mobile scroll hide/show behavior - only on mobile */
+@media (max-width: 768px) {
+  .navbar.scroll-up {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar.scroll-down {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Ensure navbar is visible at top of page */
+  .navbar:not(.scrolled).scroll-down {
+    transform: translateY(0);
+  }
+  
+  /* Don't hide navbar when menu is open */
+  .navbar.menu-open {
+    transform: translateY(0) !important;
+  }
+}
+
 .nav-brand {
   display: flex;
   align-items: center;
@@ -6713,8 +6737,8 @@ body:after {
     justify-content: center;
   }
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   .service-card {
     min-height: 360px;

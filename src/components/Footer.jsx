@@ -3,15 +3,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { FiArrowUp, FiFacebook, FiLinkedin, FiInstagram, FiTwitter, FiPhone, FiMail, FiMapPin, FiMessageCircle } from 'react-icons/fi'
 import Logo from './Logo'
 import { servicesData } from '../data/servicesData.jsx'
-
-// Register ScrollTrigger
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 const Footer = () => {
   const footerRef = useRef(null)
@@ -27,10 +21,12 @@ const Footer = () => {
 
   useEffect(() => {
     const footer = footerRef.current
-    if (!footer) return
+    if (!footer || !scrollTopRef.current) return
 
     // Animate scroll to top button
     const handleScroll = () => {
+      if (!scrollTopRef.current) return
+      
       if (window.scrollY > 300) {
         gsap.to(scrollTopRef.current, {
           opacity: 1,
@@ -48,8 +44,15 @@ const Footer = () => {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      // Kill any running GSAP animations on scrollTopRef
+      if (scrollTopRef.current) {
+        gsap.killTweensOf(scrollTopRef.current)
+      }
+    }
   }, [])
 
   const handleScrollToTop = () => {

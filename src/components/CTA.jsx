@@ -2,14 +2,8 @@
 
 import React, { useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap, ScrollTrigger } from '@/utils/gsapConfig'
 import { FiArrowRight } from 'react-icons/fi'
-
-// Register ScrollTrigger
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 const CTA = () => {
   const sectionRef = useRef(null)
@@ -22,56 +16,53 @@ const CTA = () => {
     const section = sectionRef.current
     if (!section) return
 
-    // Set initial states
-    gsap.set([titleRef.current, buttonRef.current], { opacity: 0, y: 30 })
-    gsap.set(graphicRef.current, { opacity: 0, scale: 0.8, rotation: -10 })
+    // Use gsap.context for proper cleanup
+    const ctx = gsap.context(() => {
+      // Set initial states
+      gsap.set([titleRef.current, buttonRef.current], { opacity: 0, y: 30 })
+      gsap.set(graphicRef.current, { opacity: 0, scale: 0.8, rotation: -10 })
 
-    // Create animation timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
-    })
-
-    tl.to(graphicRef.current, {
-      opacity: 1,
-      scale: 1,
-      rotation: 0,
-      duration: 1,
-      ease: 'back.out(1.7)'
-    })
-    .to(titleRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, '-=0.5')
-    .to(buttonRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'power3.out'
-    }, '-=0.4')
-
-    // Continuous floating animation for graphic
-    gsap.to(graphicRef.current, {
-      y: '+=20',
-      rotation: '+=5',
-      duration: 3,
-      ease: 'sine.inOut',
-      repeat: -1,
-      yoyo: true
-    })
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.vars.trigger === section) {
-          trigger.kill()
+      // Create animation timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
         }
       })
-    }
+
+      tl.to(graphicRef.current, {
+        opacity: 1,
+        scale: 1,
+        rotation: 0,
+        duration: 1,
+        ease: 'back.out(1.7)'
+      })
+      .to(titleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.5')
+      .to(buttonRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power3.out'
+      }, '-=0.4')
+
+      // Continuous floating animation for graphic
+      gsap.to(graphicRef.current, {
+        y: '+=20',
+        rotation: '+=5',
+        duration: 3,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true
+      })
+    }, section)
+
+    return () => ctx.revert()
   }, [])
 
   return (

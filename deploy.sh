@@ -43,8 +43,8 @@ if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
     echo "      Use --with-cache to generate and upload image cache files."
     echo ""
     echo "Deployment Process:"
-    echo "  The script creates a zip file and automatically uploads it to the production server."
-    echo "  The zip file is then automatically extracted in the public_html folder."
+    echo "  The script creates a tar.gz archive and automatically uploads it to the production server."
+    echo "  The archive is then automatically extracted in the public_html folder."
     echo ""
     exit 0
 fi
@@ -168,7 +168,7 @@ if [ "$FORCE_FULL_DEPLOY" = false ] && [ -f "$DEPLOY_TIMESTAMP_FILE" ]; then
     
     # Find SOURCE files modified after last deployment (not .next files)
     # Check src/, public/, app/, package.json, next.config, etc.
-    SOURCE_CHANGED=$(find src app public -type f -newer "$DEPLOY_TIMESTAMP_FILE" 2>/dev/null | head -1)
+    SOURCE_CHANGED=$(find src app public lib -type f -newer "$DEPLOY_TIMESTAMP_FILE" 2>/dev/null | head -1)
     CONFIG_CHANGED=$(find . -maxdepth 1 -type f \( -name "package.json" -o -name "next.config.*" -o -name "*.config.js" -o -name "*.config.ts" \) -newer "$DEPLOY_TIMESTAMP_FILE" 2>/dev/null | head -1)
     
     if [ -n "$SOURCE_CHANGED" ] || [ -n "$CONFIG_CHANGED" ]; then
@@ -191,7 +191,26 @@ else
     FORCE_FULL_DEPLOY=true
 fi
 
-echo -e "${GREEN}Step 1: Building Next.js production files...${NC}"
+echo -e "${GREEN}Step 1: Ensuring blog image cache exists...${NC}"
+# Always ensure blog cache exists BEFORE building (required for blog images)
+if [ ! -d "public/cache/blog" ] || [ -z "$(ls -A public/cache/blog 2>/dev/null)" ]; then
+    echo -e "${YELLOW}⚠ Blog cache is missing or empty - regenerating...${NC}"
+    npm run regenerate-blog-cache
+    echo -e "${GREEN}✓ Blog cache regenerated${NC}"
+else
+    BLOG_CACHE_COUNT=$(find public/cache/blog -type f 2>/dev/null | wc -l | tr -d ' ')
+    echo -e "${GREEN}✓ Blog cache exists (${BLOG_CACHE_COUNT} files)${NC}"
+fi
+
+# Verify blog images exist
+if [ ! -d "public/images/blog" ]; then
+    echo -e "${YELLOW}⚠ Blog images directory not found${NC}"
+else
+    BLOG_IMG_COUNT=$(find public/images/blog -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.webp" \) 2>/dev/null | wc -l | tr -d ' ')
+    echo -e "${GREEN}✓ Blog source images found (${BLOG_IMG_COUNT} files)${NC}"
+fi
+
+echo -e "${GREEN}Step 2: Building Next.js production files...${NC}"
 echo -e "${YELLOW}Note: This script deploys Next.js build files (.next folder and public folder).${NC}"
 echo -e "${YELLOW}Server files (server/ directory) are NOT deployed and will not be overwritten.${NC}"
 
@@ -200,7 +219,7 @@ if [ "$GENERATE_CACHE" = true ]; then
     echo -e "${YELLOW}Generating image cache (this may take a while)...${NC}"
     npm run build
 else
-    echo -e "${YELLOW}Skipping image cache generation (use --with-cache to enable)${NC}"
+    echo -e "${YELLOW}Skipping full image cache generation (use --with-cache to enable)${NC}"
     # Run generate-sitemap and build without running image processing
     # This skips the prebuild hook by running next build directly
     npm run generate-sitemap
@@ -217,15 +236,72 @@ if [ ! -d ".next" ]; then
     exit 1
 fi
 
+# CRITICAL: Ensure blog cache and images exist BEFORE copying to standalone
+echo -e "${YELLOW}Pre-deployment verification...${NC}"
+if [ ! -d "public/cache/blog" ] || [ -z "$(ls -A public/cache/blog 2>/dev/null)" ]; then
+    echo -e "${YELLOW}⚠ Blog cache missing - regenerating...${NC}"
+    npm run regenerate-blog-cache
+fi
+
+if [ ! -d "public/images/blog" ]; then
+    echo -e "${RED}⚠ Blog source images directory missing!${NC}"
+fi
+
+BLOG_CACHE_COUNT=$(find public/cache/blog -type f 2>/dev/null | wc -l | tr -d ' ')
+BLOG_IMG_COUNT=$(find public/images/blog -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.webp" \) 2>/dev/null | wc -l | tr -d ' ')
+echo -e "${GREEN}✓ Blog cache: ${BLOG_CACHE_COUNT} files${NC}"
+echo -e "${GREEN}✓ Blog images: ${BLOG_IMG_COUNT} files${NC}"
+
 # For standalone output, prepare the deployment folder
 if [ -d ".next/standalone" ]; then
     echo -e "${GREEN}Detected standalone build output${NC}"
     echo -e "${YELLOW}Preparing standalone deployment...${NC}"
     
-    # Copy public folder to standalone
+    # Copy public folder to standalone (includes images AND cache)
     if [ -d "public" ]; then
+        echo -e "${YELLOW}Copying public folder to standalone (including images and cache)...${NC}"
+        # Remove existing public in standalone to ensure clean copy
+        if [ -d ".next/standalone/public" ]; then
+            rm -rf .next/standalone/public
+        fi
+        # Copy entire public folder including cache
         cp -r public .next/standalone/public
         echo -e "${GREEN}✓ Copied public folder to standalone${NC}"
+        
+        # Verify blog images are included
+        if [ -d ".next/standalone/public/images/blog" ]; then
+            STANDALONE_BLOG_IMG=$(find .next/standalone/public/images/blog -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.webp" \) 2>/dev/null | wc -l | tr -d ' ')
+            if [ "$STANDALONE_BLOG_IMG" -eq "$BLOG_IMG_COUNT" ]; then
+                echo -e "${GREEN}✓ Blog source images verified in standalone (${STANDALONE_BLOG_IMG} files)${NC}"
+            else
+                echo -e "${YELLOW}⚠ Blog images count mismatch: expected ${BLOG_IMG_COUNT}, found ${STANDALONE_BLOG_IMG}${NC}"
+            fi
+        else
+            echo -e "${RED}⚠ Blog source images missing in standalone!${NC}"
+        fi
+        
+        # Verify all cache folders are included
+        if [ -d ".next/standalone/public/cache" ]; then
+            CACHE_DIRS=$(find .next/standalone/public/cache -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+            TOTAL_CACHE_FILES=$(find .next/standalone/public/cache -type f 2>/dev/null | wc -l | tr -d ' ')
+            echo -e "${GREEN}✓ Cache folders in standalone: ${CACHE_DIRS} directories, ${TOTAL_CACHE_FILES} files${NC}"
+            
+            # Verify specific cache folders
+            if [ -d ".next/standalone/public/cache/blog" ]; then
+                STANDALONE_BLOG_CACHE=$(find .next/standalone/public/cache/blog -type f 2>/dev/null | wc -l | tr -d ' ')
+                echo -e "${GREEN}  - Blog cache: ${STANDALONE_BLOG_CACHE} files${NC}"
+            fi
+            if [ -d ".next/standalone/public/cache/client-logos" ]; then
+                STANDALONE_CLIENT_LOGOS=$(find .next/standalone/public/cache/client-logos -type f 2>/dev/null | wc -l | tr -d ' ')
+                echo -e "${GREEN}  - Client logos cache: ${STANDALONE_CLIENT_LOGOS} files${NC}"
+            fi
+            if [ -d ".next/standalone/public/cache/team" ]; then
+                STANDALONE_TEAM_CACHE=$(find .next/standalone/public/cache/team -type f 2>/dev/null | wc -l | tr -d ' ')
+                echo -e "${GREEN}  - Team cache: ${STANDALONE_TEAM_CACHE} files${NC}"
+            fi
+        else
+            echo -e "${RED}⚠ Cache directory missing in standalone!${NC}"
+        fi
     fi
     
     # Copy .next/static to standalone/.next/static
@@ -243,41 +319,25 @@ else
     DEPLOY_SOURCE="."
 fi
 
-# Remove cache directories from public if --with-cache flag is not provided
-if [ "$GENERATE_CACHE" = false ]; then
-    echo -e "${YELLOW}Removing cache directories from public folder...${NC}"
-    # Remove the main cache directory (which contains blog, client-logos, team subdirectories)
-    if [ -d "public/cache" ]; then
-        rm -rf public/cache
-        echo -e "${GREEN}✓ Removed public/cache directory${NC}"
-    fi
-    # Also check for any cache directories nested elsewhere (defensive)
-    find public -type d -name "cache" -not -path "*/node_modules/*" 2>/dev/null | while read -r cache_dir; do
-        if [ -d "$cache_dir" ]; then
-            rm -rf "$cache_dir"
-            echo -e "${GREEN}✓ Removed $cache_dir${NC}"
-        fi
-    done
-fi
 
 echo -e "${GREEN}✓ Build completed successfully${NC}"
 echo ""
 
-# Step 2: Create zip file for deployment
-echo -e "${GREEN}Step 2: Creating zip file for deployment...${NC}"
+# Step 2: Create tar.gz archive for deployment
+echo -e "${GREEN}Step 2: Creating tar.gz archive for deployment...${NC}"
 
-ZIP_NAME="nirosha-deployment-$(date +%Y%m%d-%H%M%S).zip"
-ZIP_PATH="/tmp/$ZIP_NAME"
+ARCHIVE_NAME="nirosha-deployment-$(date +%Y%m%d-%H%M%S).tar.gz"
+ARCHIVE_PATH="/tmp/$ARCHIVE_NAME"
 
-# Remove old zip if exists
-if [ -f "$ZIP_PATH" ]; then
-    rm -f "$ZIP_PATH"
+# Remove old archive if exists
+if [ -f "$ARCHIVE_PATH" ]; then
+    rm -f "$ARCHIVE_PATH"
 fi
 
-# Create zip file
+# Create tar.gz archive
 if [ "$DEPLOY_SOURCE" = ".next/standalone" ]; then
-    echo -e "${YELLOW}Zipping standalone build...${NC}"
-    # Copy .env file into standalone folder temporarily so it gets included in zip
+    echo -e "${YELLOW}Creating tar.gz archive from standalone build...${NC}"
+    # Copy .env file into standalone folder temporarily so it gets included in archive
     if [ -f ".env" ]; then
         cp .env .next/standalone/.env
         echo -e "${GREEN}✓ Copied .env to standalone folder${NC}"
@@ -286,9 +346,87 @@ if [ "$DEPLOY_SOURCE" = ".next/standalone" ]; then
         cp config.js .next/standalone/config.js
         echo -e "${GREEN}✓ Copied config.js to standalone folder${NC}"
     fi
+    # Verify files exist before zipping
+    echo -e "${YELLOW}Verifying files before zipping...${NC}"
+    if [ -d ".next/standalone/public/images/blog" ]; then
+        STANDALONE_IMG_COUNT=$(find .next/standalone/public/images/blog -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.webp" \) 2>/dev/null | wc -l | tr -d ' ')
+        echo -e "${GREEN}✓ Blog images in standalone: ${STANDALONE_IMG_COUNT} files${NC}"
+    else
+        echo -e "${RED}⚠ Blog images directory missing in standalone!${NC}"
+    fi
+    
+    # Verify all cache folders are included
+    if [ -d ".next/standalone/public/cache" ]; then
+        CACHE_DIRS=$(find .next/standalone/public/cache -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+        TOTAL_CACHE_FILES=$(find .next/standalone/public/cache -type f 2>/dev/null | wc -l | tr -d ' ')
+        echo -e "${GREEN}✓ All cache folders in standalone: ${CACHE_DIRS} directories, ${TOTAL_CACHE_FILES} files${NC}"
+    else
+        echo -e "${RED}⚠ Cache directory missing in standalone!${NC}"
+    fi
+    
     cd .next/standalone
-    zip -r "$ZIP_PATH" . -q -x "*.DS_Store" -x "*/\.*" -x "*/node_modules/.cache/*" -x "*/.next/cache/*"
+    echo -e "${YELLOW}Creating tar.gz archive from standalone directory...${NC}"
+    # Create tar.gz - IMPORTANT: Include ALL public files (images, ALL cache folders, etc.)
+    # Only exclude system files and build cache, NOT public content or cache
+    # Suppress macOS extended attribute warnings and exclude AppleDouble files
+    if tar -czf "$ARCHIVE_PATH" \
+        --exclude="*.DS_Store" \
+        --exclude="._*" \
+        --exclude="*/._*" \
+        --exclude="*/node_modules/.cache/*" \
+        --exclude="*/.next/cache/*" \
+        --exclude="*/.git/*" \
+        --no-xattrs \
+        . 2>&1 | grep -v "Ignoring unknown extended header" | tee /tmp/tar-output.log; then
+        echo -e "${GREEN}✓ Tar.gz archive created successfully${NC}"
+    else
+        echo -e "${RED}⚠ Warning: Archive creation had errors, checking file...${NC}"
+        cat /tmp/tar-output.log | tail -20
+    fi
     cd ../..
+    
+    # Verify archive integrity
+    echo -e "${YELLOW}Verifying archive integrity...${NC}"
+    if tar -tzf "$ARCHIVE_PATH" > /dev/null 2>&1; then
+        echo -e "${GREEN}✓ Archive integrity verified${NC}"
+    else
+        echo -e "${RED}✗ ERROR: Archive is corrupted!${NC}"
+        echo -e "${YELLOW}Attempting to test archive...${NC}"
+        tar -tzf "$ARCHIVE_PATH" 2>&1 | head -30
+        echo -e "${RED}Please check the archive creation process${NC}"
+    fi
+    
+    # Double-check: Verify the archive actually contains the files
+    echo -e "${YELLOW}Double-checking archive contents...${NC}"
+    if ! tar -tzf "$ARCHIVE_PATH" 2>/dev/null | grep -q "public/images/blog.*\.png"; then
+        echo -e "${RED}⚠ WARNING: Blog images may not be in archive!${NC}"
+    fi
+    if ! tar -tzf "$ARCHIVE_PATH" 2>/dev/null | grep -q "public/cache"; then
+        echo -e "${YELLOW}⚠ WARNING: Cache folders may not be in archive!${NC}"
+    fi
+    
+    # Verify archive contains the files
+    echo -e "${YELLOW}Verifying archive contents...${NC}"
+    ARCHIVE_BLOG_IMG=$(tar -tzf "$ARCHIVE_PATH" 2>/dev/null | grep "public/images/blog" | grep -E "\.(png|jpg|webp)$" | wc -l | tr -d ' ')
+    ARCHIVE_BLOG_CACHE=$(tar -tzf "$ARCHIVE_PATH" 2>/dev/null | grep "public/cache/blog" | wc -l | tr -d ' ')
+    ARCHIVE_CLIENT_LOGOS=$(tar -tzf "$ARCHIVE_PATH" 2>/dev/null | grep "public/cache/client-logos" | wc -l | tr -d ' ')
+    ARCHIVE_TEAM_CACHE=$(tar -tzf "$ARCHIVE_PATH" 2>/dev/null | grep "public/cache/team" | wc -l | tr -d ' ')
+    echo -e "${GREEN}✓ Archive contains ${ARCHIVE_BLOG_IMG} blog images${NC}"
+    echo -e "${GREEN}✓ Archive contains ${ARCHIVE_BLOG_CACHE} blog cache files${NC}"
+    echo -e "${GREEN}✓ Archive contains ${ARCHIVE_CLIENT_LOGOS} client-logos cache files${NC}"
+    echo -e "${GREEN}✓ Archive contains ${ARCHIVE_TEAM_CACHE} team cache files${NC}"
+    
+    if [ "$ARCHIVE_BLOG_IMG" -lt 10 ]; then
+        echo -e "${RED}⚠ WARNING: Archive seems to be missing blog images!${NC}"
+        echo -e "${YELLOW}Expected: ~13 blog images${NC}"
+        echo -e "${YELLOW}Found: ${ARCHIVE_BLOG_IMG} images${NC}"
+    fi
+    
+    if [ "$ARCHIVE_BLOG_CACHE" -lt 100 ]; then
+        echo -e "${YELLOW}⚠ WARNING: Archive seems to be missing blog cache files!${NC}"
+        echo -e "${YELLOW}Expected: ~156 cache files${NC}"
+        echo -e "${YELLOW}Found: ${ARCHIVE_BLOG_CACHE} cache files${NC}"
+    fi
     # Remove temporary copy
     if [ -f ".next/standalone/.env" ]; then
         rm -f .next/standalone/.env
@@ -304,42 +442,95 @@ if [ "$DEPLOY_SOURCE" = ".next/standalone" ]; then
         echo -e "${YELLOW}⚠ Neither .env nor config.js found - Gmail credentials may need to be configured on server${NC}"
     fi
 else
-    echo -e "${YELLOW}Zipping Next.js build files...${NC}"
-    zip -r "$ZIP_PATH" .next public package.json package-lock.json -q -x "*.DS_Store" -x "*/\.*" -x "*/.next/cache/*" -x "*/node_modules/.cache/*"
-    # Add .env file to the zip if it exists (preferred)
+    echo -e "${YELLOW}Creating tar.gz archive from Next.js build files...${NC}"
+    # Verify public/images/blog and all cache folders exist before archiving
+    if [ -d "public/images/blog" ]; then
+        BLOG_IMG_COUNT=$(find public/images/blog -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.webp" \) 2>/dev/null | wc -l | tr -d ' ')
+        echo -e "${GREEN}✓ Blog images to include: ${BLOG_IMG_COUNT} files${NC}"
+    fi
+    if [ -d "public/cache" ]; then
+        CACHE_DIRS=$(find public/cache -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+        TOTAL_CACHE_FILES=$(find public/cache -type f 2>/dev/null | wc -l | tr -d ' ')
+        echo -e "${GREEN}✓ All cache folders to include: ${CACHE_DIRS} directories, ${TOTAL_CACHE_FILES} files${NC}"
+        # Show breakdown by folder
+        for cache_dir in public/cache/*/; do
+            if [ -d "$cache_dir" ]; then
+                dir_name=$(basename "$cache_dir")
+                file_count=$(find "$cache_dir" -type f 2>/dev/null | wc -l | tr -d ' ')
+                echo -e "${GREEN}  - ${dir_name}: ${file_count} files${NC}"
+            fi
+        done
+    fi
+    # Create tar.gz - INCLUDING all cache folders (blog, client-logos, team, etc.)
+    # Only exclude build cache, NOT public cache folders
+    # Suppress macOS extended attribute warnings and exclude AppleDouble files
+    if tar -czf "$ARCHIVE_PATH" \
+        --exclude="*.DS_Store" \
+        --exclude="._*" \
+        --exclude="*/._*" \
+        --exclude="*/.next/cache/*" \
+        --exclude="*/node_modules/.cache/*" \
+        --exclude="*/.git/*" \
+        --no-xattrs \
+        .next public package.json package-lock.json 2>&1 | grep -v "Ignoring unknown extended header" | tee /tmp/tar-output.log; then
+        echo -e "${GREEN}✓ Tar.gz archive created successfully${NC}"
+    else
+        echo -e "${RED}⚠ Warning: Archive creation had errors${NC}"
+        cat /tmp/tar-output.log | tail -20
+    fi
+    
+    # Verify archive integrity
+    echo -e "${YELLOW}Verifying archive integrity...${NC}"
+    if tar -tzf "$ARCHIVE_PATH" > /dev/null 2>&1; then
+        echo -e "${GREEN}✓ Archive integrity verified${NC}"
+    else
+        echo -e "${RED}✗ ERROR: Archive is corrupted!${NC}"
+        tar -tzf "$ARCHIVE_PATH" 2>&1 | head -30
+    fi
+    # Add .env file to the archive if it exists (preferred)
     if [ -f ".env" ]; then
-        echo -e "${YELLOW}Adding .env to zip...${NC}"
-        zip -u "$ZIP_PATH" .env -q
-        echo -e "${GREEN}✓ .env file added to zip${NC}"
+        echo -e "${YELLOW}Adding .env to archive...${NC}"
+        tar -czf "$ARCHIVE_PATH" --append .env 2>/dev/null || tar -czf "$ARCHIVE_PATH" .env
+        echo -e "${GREEN}✓ .env file added to archive${NC}"
     elif [ -f "config.js" ]; then
         # Fallback: add config.js if .env doesn't exist
-        echo -e "${YELLOW}Adding config.js to zip...${NC}"
-        zip -u "$ZIP_PATH" config.js -q
-        echo -e "${GREEN}✓ config.js added to zip${NC}"
+        echo -e "${YELLOW}Adding config.js to archive...${NC}"
+        tar -czf "$ARCHIVE_PATH" --append config.js 2>/dev/null || tar -czf "$ARCHIVE_PATH" config.js
+        echo -e "${GREEN}✓ config.js added to archive${NC}"
     else
         echo -e "${YELLOW}⚠ Neither .env nor config.js found - Gmail credentials may need to be configured on server${NC}"
     fi
 fi
 
-if [ ! -f "$ZIP_PATH" ]; then
-    echo -e "${RED}Error: Failed to create zip file!${NC}"
+if [ ! -f "$ARCHIVE_PATH" ]; then
+    echo -e "${RED}Error: Failed to create archive!${NC}"
     exit 1
 fi
 
-ZIP_SIZE=$(du -h "$ZIP_PATH" | cut -f1)
-echo -e "${GREEN}✓ Zip file created: $ZIP_NAME (${ZIP_SIZE})${NC}"
+ARCHIVE_SIZE=$(du -h "$ARCHIVE_PATH" | cut -f1)
+echo -e "${GREEN}✓ Archive created: $ARCHIVE_NAME (${ARCHIVE_SIZE})${NC}"
 echo ""
 
-# Step 3: Upload zip file to server
-echo -e "${GREEN}Step 3: Uploading zip file to production server...${NC}"
+# Step 3: Upload archive to server
+echo -e "${GREEN}Step 3: Uploading archive to production server...${NC}"
 
 # Check if sshpass is available (for password authentication)
 if command -v sshpass &> /dev/null; then
     echo -e "${YELLOW}Uploading to $SSH_USER@$SSH_HOST:$SSH_TARGET_DIR/${NC}"
-    if sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$ZIP_PATH" "$SSH_USER@$SSH_HOST:$SSH_TARGET_DIR/$ZIP_NAME"; then
-        echo -e "${GREEN}✓ Zip file uploaded successfully${NC}"
+    if sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$ARCHIVE_PATH" "$SSH_USER@$SSH_HOST:$SSH_TARGET_DIR/$ARCHIVE_NAME"; then
+        echo -e "${GREEN}✓ Archive uploaded successfully${NC}"
+        # Verify upload completed by checking file size on server
+        echo -e "${YELLOW}Verifying upload integrity...${NC}"
+        LOCAL_SIZE=$(stat -f%z "$ARCHIVE_PATH" 2>/dev/null || stat -c%s "$ARCHIVE_PATH" 2>/dev/null)
+        REMOTE_SIZE=$(sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SSH_USER@$SSH_HOST" "stat -c%s $SSH_TARGET_DIR/$ARCHIVE_NAME 2>/dev/null || stat -f%z $SSH_TARGET_DIR/$ARCHIVE_NAME 2>/dev/null || echo 0")
+        if [ "$LOCAL_SIZE" = "$REMOTE_SIZE" ] && [ "$LOCAL_SIZE" != "0" ]; then
+            echo -e "${GREEN}✓ Upload verified: ${LOCAL_SIZE} bytes${NC}"
+        else
+            echo -e "${YELLOW}⚠ Size mismatch: local=${LOCAL_SIZE}, remote=${REMOTE_SIZE}${NC}"
+            echo -e "${YELLOW}Continuing anyway...${NC}"
+        fi
     else
-        echo -e "${RED}Error: Failed to upload zip file!${NC}"
+        echo -e "${RED}Error: Failed to upload archive!${NC}"
         exit 1
     fi
 elif command -v ssh &> /dev/null; then
@@ -350,19 +541,56 @@ elif command -v ssh &> /dev/null; then
     # Try with expect if available
     if command -v expect &> /dev/null; then
         expect <<EOF
-spawn scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$ZIP_PATH" "$SSH_USER@$SSH_HOST:$SSH_TARGET_DIR/$ZIP_NAME"
+set timeout 600
+spawn scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$ARCHIVE_PATH" "$SSH_USER@$SSH_HOST:$SSH_TARGET_DIR/$ARCHIVE_NAME"
 expect {
-    "password:" {
+    -re "(password:|Password:)" {
         send "$SSH_PASS\r"
         exp_continue
     }
-    eof
+    timeout {
+        puts "Upload timed out after 10 minutes"
+        exit 1
+    }
+    eof {
+        # Upload completed
+    }
+}
+set wait_result [wait]
+if {[lindex \$wait_result 3] != 0} {
+    exit 1
 }
 EOF
-        if [ $? -eq 0 ]; then
-            echo -e "${GREEN}✓ Zip file uploaded successfully${NC}"
+        UPLOAD_EXIT_CODE=$?
+        if [ $UPLOAD_EXIT_CODE -eq 0 ]; then
+            echo -e "${GREEN}✓ Archive uploaded successfully${NC}"
+            # Verify upload
+            echo -e "${YELLOW}Verifying upload integrity...${NC}"
+            LOCAL_SIZE=$(stat -f%z "$ARCHIVE_PATH" 2>/dev/null || stat -c%s "$ARCHIVE_PATH" 2>/dev/null)
+            REMOTE_SIZE=$(expect <<INNER_EOF
+set timeout 30
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SSH_USER@$SSH_HOST" "stat -c%s $SSH_TARGET_DIR/$ARCHIVE_NAME 2>/dev/null || stat -f%z $SSH_TARGET_DIR/$ARCHIVE_NAME 2>/dev/null || echo 0"
+expect {
+    -re "(password:|Password:)" {
+        send "$SSH_PASS\r"
+        exp_continue
+    }
+    timeout {
+        puts "0"
+        exit 1
+    }
+    eof
+}
+INNER_EOF
+)
+            if [ "$LOCAL_SIZE" = "$REMOTE_SIZE" ] && [ "$LOCAL_SIZE" != "0" ]; then
+                echo -e "${GREEN}✓ Upload verified: ${LOCAL_SIZE} bytes${NC}"
+            else
+                echo -e "${YELLOW}⚠ Size mismatch: local=${LOCAL_SIZE}, remote=${REMOTE_SIZE}${NC}"
+                echo -e "${YELLOW}Continuing anyway...${NC}"
+            fi
         else
-            echo -e "${RED}Error: Failed to upload zip file!${NC}"
+            echo -e "${RED}Error: Failed to upload archive!${NC}"
             exit 1
         fi
     else
@@ -377,37 +605,107 @@ else
     exit 1
 fi
 
-# Step 4: Unzip file on server
-echo -e "${GREEN}Step 4: Extracting zip file on production server...${NC}"
+# Step 4: Extract archive on server
+echo -e "${GREEN}Step 4: Extracting archive on production server...${NC}"
 
-# Create SSH command to unzip
-# For standalone builds, the zip contains contents of .next/standalone/
-# When unzipped, files go directly to public_html/ (where server.js will be)
-# config.js should also be at public_html/ level
-UNZIP_CMD="cd $SSH_TARGET_DIR && unzip -o $ZIP_NAME && rm -f $ZIP_NAME && echo '✓ Files extracted successfully'"
+# Create SSH command to extract tar.gz archive
+# For standalone builds, the archive contains contents of .next/standalone/
+# When extracted, files go directly to public_html/ (where server.js will be)
+# Archive includes blog cache, so no server-side generation needed
+# Create a simpler command that avoids complex shell syntax issues
+# Simplify verification - just check directories exist, let script handle details
+# Create command that will be passed through bash -c to avoid expect parsing issues
+# Use test instead of [ to avoid expect parsing issues
+# Simplified extraction command to avoid hanging issues
+# Use double quotes for echo messages to avoid single quote escaping issues
+EXTRACT_CMD_RAW="cd $SSH_TARGET_DIR && echo Step 1: Cleaning AppleDouble files && find . -name '._*' -type f -delete 2>/dev/null && echo Step 2: Verifying archive && test -f $ARCHIVE_NAME && tar -tzf $ARCHIVE_NAME > /dev/null 2>&1 && echo Step 3: Extracting archive && tar -xzf $ARCHIVE_NAME 2>&1 | grep -v 'Ignoring unknown extended header' && echo Step 4: Cleaning AppleDouble files again && find . -name '._*' -type f -delete 2>/dev/null && echo Step 5: Verifying deployment && test -d public/images/blog && echo Blog images: OK || echo Blog images: MISSING && test -d public/cache && CACHE_COUNT=\$(find public/cache -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l) && echo Cache folders: \$CACHE_COUNT || echo Cache: MISSING && echo Step 6: Removing archive && rm -f $ARCHIVE_NAME && echo Deployment complete"
 
 if command -v sshpass &> /dev/null; then
-    if sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SSH_USER@$SSH_HOST" "$UNZIP_CMD"; then
-        echo -e "${GREEN}✓ Zip file extracted successfully${NC}"
+    # Write extraction script to server to avoid quote escaping issues
+    echo -e "${YELLOW}Creating extraction script on server...${NC}"
+    sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SSH_USER@$SSH_HOST" "cat > /tmp/extract-deploy.sh <<'DEPLOY_SCRIPT'
+cd $SSH_TARGET_DIR
+echo Step 1: Cleaning AppleDouble files
+find . -name '._*' -type f -delete 2>/dev/null
+echo Step 2: Verifying archive
+test -f $ARCHIVE_NAME && tar -tzf $ARCHIVE_NAME > /dev/null 2>&1
+echo Step 3: Extracting archive
+tar -xzf $ARCHIVE_NAME 2>&1 | grep -v 'Ignoring unknown extended header'
+echo Step 4: Cleaning AppleDouble files again
+find . -name '._*' -type f -delete 2>/dev/null
+echo Step 5: Verifying deployment
+test -d public/images/blog && echo Blog images: OK || echo Blog images: MISSING
+test -d public/cache && echo Cache: OK || echo Cache: MISSING
+echo Step 6: Removing archive
+rm -f $ARCHIVE_NAME
+echo Deployment complete
+DEPLOY_SCRIPT
+" > /dev/null 2>&1
+    
+    echo -e "${YELLOW}Extracting archive (this may take a few minutes)...${NC}"
+    if sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ServerAliveInterval=60 "$SSH_USER@$SSH_HOST" "bash /tmp/extract-deploy.sh && rm -f /tmp/extract-deploy.sh"; then
+        echo -e "${GREEN}✓ Archive extracted successfully${NC}"
     else
-        echo -e "${RED}Error: Failed to extract zip file on server!${NC}"
+        echo -e "${RED}Error: Failed to extract archive on server!${NC}"
         exit 1
     fi
 elif command -v expect &> /dev/null; then
+    # Use a simpler approach - write command to a temp script on server
+    # This avoids all quote escaping issues
     expect <<EOF
-spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SSH_USER@$SSH_HOST" "$UNZIP_CMD"
+set timeout 900
+# First, write the extraction script to server
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SSH_USER@$SSH_HOST" "cat > /tmp/extract-deploy.sh <<'DEPLOY_SCRIPT'
+cd $SSH_TARGET_DIR
+echo Step 1: Cleaning AppleDouble files
+find . -name '._*' -type f -delete 2>/dev/null
+echo Step 2: Verifying archive
+test -f $ARCHIVE_NAME && tar -tzf $ARCHIVE_NAME > /dev/null 2>&1
+echo Step 3: Extracting archive
+tar -xzf $ARCHIVE_NAME 2>&1 | grep -v 'Ignoring unknown extended header'
+echo Step 4: Cleaning AppleDouble files again
+find . -name '._*' -type f -delete 2>/dev/null
+echo Step 5: Verifying deployment
+test -d public/images/blog && echo Blog images: OK || echo Blog images: MISSING
+test -d public/cache && echo Cache: OK || echo Cache: MISSING
+echo Step 6: Removing archive
+rm -f $ARCHIVE_NAME
+echo Deployment complete
+DEPLOY_SCRIPT
+"
 expect {
-    "password:" {
+    -re "(password:|Password:)" {
         send "$SSH_PASS\r"
         exp_continue
     }
     eof
 }
+wait
+
+# Now execute the script
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SSH_USER@$SSH_HOST" "bash /tmp/extract-deploy.sh && rm -f /tmp/extract-deploy.sh"
+expect {
+    -re "(password:|Password:)" {
+        send "$SSH_PASS\r"
+        exp_continue
+    }
+    timeout {
+        puts "Command timed out after 15 minutes"
+        exit 1
+    }
+    eof {
+        # Command completed
+    }
+}
+set wait_result [wait]
+if {[lindex \$wait_result 3] != 0} {
+    exit 1
+}
 EOF
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✓ Zip file extracted successfully${NC}"
+        echo -e "${GREEN}✓ Archive extracted successfully${NC}"
     else
-        echo -e "${RED}Error: Failed to extract zip file on server!${NC}"
+        echo -e "${RED}Error: Failed to extract archive on server!${NC}"
         exit 1
     fi
 else
@@ -415,9 +713,9 @@ else
     exit 1
 fi
 
-# Clean up local zip file
-rm -f "$ZIP_PATH"
-echo -e "${GREEN}✓ Local zip file cleaned up${NC}"
+# Clean up local archive file
+rm -f "$ARCHIVE_PATH"
+echo -e "${GREEN}✓ Local archive file cleaned up${NC}"
 echo ""
 
 # Update deployment timestamp after successful deployment
