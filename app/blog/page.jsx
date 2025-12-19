@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import { redirect } from 'next/navigation'
 import BlogListingPage from '@/page-components/BlogListingPage'
 import BlogSchemaServer from '@/components/BlogSchemaServer'
@@ -68,9 +67,8 @@ export default async function Blog({ searchParams }) {
   return (
     <>
       <BlogSchemaServer />
-      <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading blog posts...</div>}>
-        <BlogListingPage />
-      </Suspense>
+      <BlogListingPage />
     </>
   )
 }
+

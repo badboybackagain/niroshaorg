@@ -25,7 +25,7 @@
       "@/hooks/*": ["./src/hooks/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/data/*": ["./src/data/*"],
-      "@/lib/*": ["./lib/*"]
+      "@/lib/*": ["./src/lib/*"]
     },
     "plugins": [
       {

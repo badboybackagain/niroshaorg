@@ -553,6 +553,7 @@ const Contact = () => {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-primary"
+                suppressHydrationWarning
               >
                 Book a Free Consultation
               </a>
@@ -586,6 +587,7 @@ const Contact = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="map-link"
+                  suppressHydrationWarning
                 >
                   View on Google Maps →
                 </a>

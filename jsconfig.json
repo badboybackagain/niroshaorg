@@ -8,7 +8,7 @@
       "@/hooks/*": ["./src/hooks/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/data/*": ["./src/data/*"],
-      "@/lib/*": ["./lib/*"]
+      "@/lib/*": ["./src/lib/*"]
     }
   },
   "exclude": ["node_modules", ".next", "dist", "build"]

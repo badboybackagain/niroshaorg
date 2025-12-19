@@ -5,24 +5,53 @@ import React, { useState, useEffect } from 'react'
 const ConsentBanner = ({ onConsentChange }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
+  const [cookiePreferences, setCookiePreferences] = useState({
+    essential: true, // Always true, can't be disabled
+    analytics: false,
+    marketing: false
+  })
 
   useEffect(() => {
+    // Ensure we're on the client side
+    setMounted(true)
+    
     // Check if user has already made a choice
-    const consent = localStorage.getItem('gtm-consent')
-    if (!consent) {
-      // Show banner after a short delay for better UX
-      setTimeout(() => {
-        setIsVisible(true)
-        setIsAnimating(true)
-      }, 500)
+    if (typeof window !== 'undefined') {
+      try {
+        const consent = localStorage.getItem('gtm-consent')
+        console.log('[ConsentBanner] Checking consent:', consent)
+        if (!consent) {
+          // Show banner after a short delay for better UX
+          console.log('[ConsentBanner] No consent found, showing banner')
+          setTimeout(() => {
+            console.log('[ConsentBanner] Setting visible and animating')
+            setIsVisible(true)
+            setIsAnimating(true)
+          }, 500)
+        } else {
+          // If consent already exists, notify parent immediately
+          console.log('[ConsentBanner] Consent exists:', consent)
+          onConsentChange(consent === 'accepted')
+        }
+      } catch (error) {
+        // If localStorage is not available, show banner anyway
+        console.warn('[ConsentBanner] localStorage not available, showing consent banner:', error)
+        setTimeout(() => {
+          setIsVisible(true)
+          setIsAnimating(true)
+        }, 500)
+      }
     } else {
-      // If consent already exists, notify parent immediately
-      onConsentChange(consent === 'accepted')
+      console.log('[ConsentBanner] Window not available (SSR)')
     }
   }, [onConsentChange])
 
   const handleAccept = () => {
-    localStorage.setItem('gtm-consent', 'accepted')
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('gtm-consent', 'accepted')
+    }
     setIsAnimating(false)
     setTimeout(() => {
       setIsVisible(false)
@@ -31,7 +60,9 @@ const ConsentBanner = ({ onConsentChange }) => {
   }
 
   const handleReject = () => {
-    localStorage.setItem('gtm-consent', 'rejected')
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('gtm-consent', 'rejected')
+    }
     setIsAnimating(false)
     setTimeout(() => {
       setIsVisible(false)
@@ -39,45 +70,492 @@ const ConsentBanner = ({ onConsentChange }) => {
     }, 300)
   }
 
-  if (!isVisible) return null
+  const handleOpenSettings = () => {
+    setShowSettings(true)
+  }
+
+  const handleCloseSettings = () => {
+    setShowSettings(false)
+  }
+
+  const handleTogglePreference = (category) => {
+    if (category === 'essential') return // Essential cookies can't be disabled
+    setCookiePreferences(prev => ({
+      ...prev,
+      [category]: !prev[category]
+    }))
+  }
+
+  const handleSaveSettings = () => {
+    // If any non-essential cookies are enabled, consider it as accepted
+    const hasNonEssential = cookiePreferences.analytics || cookiePreferences.marketing
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('gtm-consent', hasNonEssential ? 'accepted' : 'rejected')
+      localStorage.setItem('gtm-cookie-preferences', JSON.stringify(cookiePreferences))
+    }
+    setIsAnimating(false)
+    setShowSettings(false)
+    setTimeout(() => {
+      setIsVisible(false)
+      onConsentChange(hasNonEssential)
+    }, 300)
+  }
+
+  // Don't render until mounted (client-side only) to avoid hydration issues
+  if (!mounted) {
+    console.log('[ConsentBanner] Not mounted yet, returning null')
+    return null
+  }
+  if (!isVisible) {
+    console.log('[ConsentBanner] Not visible yet, returning null. isVisible:', isVisible, 'isAnimating:', isAnimating)
+    return null
+  }
+  
+  console.log('[ConsentBanner] Rendering banner')
 
   return (
-    <div
-      className={`fixed bottom-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isAnimating ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-      }`}
-    >
-      <div className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Cookie Consent
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                We use cookies and similar technologies to enhance your browsing experience, 
-                analyze site traffic, and personalize content. By clicking "Accept All", you 
-                consent to our use of cookies. You can also choose to reject non-essential cookies.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 w-full sm:w-auto">
-              <button
-                onClick={handleReject}
-                className="px-6 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200 whitespace-nowrap"
-              >
-                Reject
-              </button>
-              <button
-                onClick={handleAccept}
-                className="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors duration-200 whitespace-nowrap shadow-sm"
-              >
-                Accept All
-              </button>
-            </div>
-          </div>
+    <>
+      {/* Backdrop/Overlay */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 99998,
+          opacity: isAnimating ? 1 : 0,
+          transition: 'opacity 0.3s ease',
+          pointerEvents: isAnimating ? 'auto' : 'none'
+        }}
+        onClick={handleReject}
+      />
+      
+      {/* Modal */}
+      <div
+        style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: isAnimating ? 'translate(-50%, -50%)' : 'translate(-50%, -40%)',
+          opacity: isAnimating ? 1 : 0,
+          zIndex: 99999,
+          width: '90%',
+          maxWidth: '520px',
+          backgroundColor: '#ffffff',
+          borderRadius: '12px',
+          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
+          transition: 'all 0.3s ease',
+          pointerEvents: isAnimating ? 'auto' : 'none',
+          padding: '32px'
+        }}
+      >
+        {/* Title */}
+        <h2
+          style={{
+            fontSize: '24px',
+            fontWeight: '600',
+            color: '#1a1a1a',
+            margin: '0 0 16px 0',
+            lineHeight: '1.3'
+          }}
+        >
+          About cookies on this site
+        </h2>
+        
+        {/* Description */}
+        <p
+          style={{
+            fontSize: '15px',
+            lineHeight: '1.6',
+            color: '#4a4a4a',
+            margin: '0 0 12px 0'
+          }}
+        >
+          We use cookies to collect and analyse information on site performance and usage, to provide social media features and to enhance and customise content and advertisements.
+        </p>
+        
+        {/* Learn More Link */}
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            // You can add a link to your privacy policy or cookie policy here
+            window.open('/privacy', '_blank')
+          }}
+          style={{
+            fontSize: '15px',
+            color: '#2563eb',
+            textDecoration: 'underline',
+            cursor: 'pointer',
+            display: 'inline-block',
+            marginBottom: '24px'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.color = '#1e40af'
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.color = '#2563eb'
+          }}
+        >
+          Learn more
+        </a>
+        
+        {/* Buttons */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '12px',
+            justifyContent: 'flex-end',
+            marginTop: '24px'
+          }}
+        >
+          <button
+            onClick={handleAccept}
+            style={{
+              padding: '12px 24px',
+              fontSize: '15px',
+              fontWeight: '600',
+              color: '#ffffff',
+              background: '#dc2626',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = '#b91c1c'
+              e.target.style.transform = 'translateY(-1px)'
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = '#dc2626'
+              e.target.style.transform = 'translateY(0)'
+            }}
+          >
+            Allow all cookies
+          </button>
+          
+          <button
+            onClick={handleReject}
+            style={{
+              padding: '12px 24px',
+              fontSize: '15px',
+              fontWeight: '600',
+              color: '#ffffff',
+              background: '#dc2626',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = '#b91c1c'
+              e.target.style.transform = 'translateY(-1px)'
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = '#dc2626'
+              e.target.style.transform = 'translateY(0)'
+            }}
+          >
+            Deny all
+          </button>
+          
+          <button
+            onClick={handleOpenSettings}
+            style={{
+              padding: '12px 24px',
+              fontSize: '15px',
+              fontWeight: '500',
+              color: '#1a1a1a',
+              background: '#ffffff',
+              border: '1px solid #d1d1d1',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.borderColor = '#9a9a9a'
+              e.target.style.backgroundColor = '#f5f5f5'
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.borderColor = '#d1d1d1'
+              e.target.style.backgroundColor = '#ffffff'
+            }}
+          >
+            Cookie settings
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* Cookie Settings Modal */}
+      {showSettings && (
+        <>
+          {/* Settings Modal Backdrop */}
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              zIndex: 100000,
+            }}
+            onClick={handleCloseSettings}
+          />
+          <div
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 100001,
+              width: '90%',
+              maxWidth: '600px',
+              backgroundColor: '#ffffff',
+              borderRadius: '12px',
+              boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)',
+              padding: '32px',
+              maxHeight: '80vh',
+              overflowY: 'auto'
+            }}
+          >
+          <h2
+            style={{
+              fontSize: '24px',
+              fontWeight: '600',
+              color: '#1a1a1a',
+              margin: '0 0 24px 0',
+              lineHeight: '1.3'
+            }}
+          >
+            Cookie Settings
+          </h2>
+          
+          <p
+            style={{
+              fontSize: '15px',
+              lineHeight: '1.6',
+              color: '#4a4a4a',
+              margin: '0 0 24px 0'
+            }}
+          >
+            Manage your cookie preferences. You can enable or disable different types of cookies below.
+          </p>
+
+          {/* Essential Cookies */}
+          <div
+            style={{
+              padding: '20px',
+              border: '1px solid #e5e5e5',
+              borderRadius: '8px',
+              marginBottom: '16px',
+              backgroundColor: '#f9f9f9'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
+              <div style={{ flex: 1 }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a1a', margin: '0 0 4px 0' }}>
+                  Essential Cookies
+                </h3>
+                <p style={{ fontSize: '14px', color: '#666666', margin: 0, lineHeight: '1.5' }}>
+                  These cookies are necessary for the website to function and cannot be switched off. They are usually only set in response to actions made by you.
+                </p>
+              </div>
+              <div
+                style={{
+                  width: '48px',
+                  height: '28px',
+                  backgroundColor: '#2563eb',
+                  borderRadius: '14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'flex-start',
+                  padding: '2px',
+                  marginLeft: '16px',
+                  cursor: 'not-allowed',
+                  opacity: 0.6
+                }}
+              >
+                <div
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    backgroundColor: '#ffffff',
+                    borderRadius: '50%',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                  }}
+                />
+              </div>
+            </div>
+            <span style={{ fontSize: '12px', color: '#999999', fontStyle: 'italic' }}>Always active</span>
+          </div>
+
+          {/* Analytics Cookies */}
+          <div
+            style={{
+              padding: '20px',
+              border: '1px solid #e5e5e5',
+              borderRadius: '8px',
+              marginBottom: '16px'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <div style={{ flex: 1 }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a1a', margin: '0 0 4px 0' }}>
+                  Analytics Cookies
+                </h3>
+                <p style={{ fontSize: '14px', color: '#666666', margin: 0, lineHeight: '1.5' }}>
+                  These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.
+                </p>
+              </div>
+              <div
+                onClick={() => handleTogglePreference('analytics')}
+                style={{
+                  width: '48px',
+                  height: '28px',
+                  backgroundColor: cookiePreferences.analytics ? '#2563eb' : '#d1d1d1',
+                  borderRadius: '14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: cookiePreferences.analytics ? 'flex-end' : 'flex-start',
+                  padding: '2px',
+                  marginLeft: '16px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    backgroundColor: '#ffffff',
+                    borderRadius: '50%',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                    transition: 'all 0.3s ease'
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Marketing Cookies */}
+          <div
+            style={{
+              padding: '20px',
+              border: '1px solid #e5e5e5',
+              borderRadius: '8px',
+              marginBottom: '24px'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <div style={{ flex: 1 }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a1a', margin: '0 0 4px 0' }}>
+                  Marketing Cookies
+                </h3>
+                <p style={{ fontSize: '14px', color: '#666666', margin: 0, lineHeight: '1.5' }}>
+                  These cookies are used to deliver advertisements and track campaign performance. They may be set by advertising partners.
+                </p>
+              </div>
+              <div
+                onClick={() => handleTogglePreference('marketing')}
+                style={{
+                  width: '48px',
+                  height: '28px',
+                  backgroundColor: cookiePreferences.marketing ? '#2563eb' : '#d1d1d1',
+                  borderRadius: '14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: cookiePreferences.marketing ? 'flex-end' : 'flex-start',
+                  padding: '2px',
+                  marginLeft: '16px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    backgroundColor: '#ffffff',
+                    borderRadius: '50%',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                    transition: 'all 0.3s ease'
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: '12px',
+              justifyContent: 'flex-end'
+            }}
+          >
+            <button
+              onClick={handleCloseSettings}
+              style={{
+                padding: '12px 24px',
+                fontSize: '15px',
+                fontWeight: '500',
+                color: '#1a1a1a',
+                background: '#ffffff',
+                border: '1px solid #d1d1d1',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                whiteSpace: 'nowrap'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.borderColor = '#9a9a9a'
+                e.target.style.backgroundColor = '#f5f5f5'
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.borderColor = '#d1d1d1'
+                e.target.style.backgroundColor = '#ffffff'
+              }}
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleSaveSettings}
+              style={{
+                padding: '12px 24px',
+                fontSize: '15px',
+                fontWeight: '600',
+                color: '#ffffff',
+                background: '#2563eb',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                whiteSpace: 'nowrap'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = '#1e40af'
+                e.target.style.transform = 'translateY(-1px)'
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = '#2563eb'
+                e.target.style.transform = 'translateY(0)'
+              }}
+            >
+              Save Preferences
+            </button>
+          </div>
+        </div>
+        </>
+      )}
+    </>
   )
 }
 

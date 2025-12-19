@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { FiCalendar, FiClock, FiTag, FiArrowRight, FiUser, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
@@ -169,7 +169,8 @@ const HeroSideCard = ({ blog }) => {
   )
 }
 
-const BlogListingPage = ({ initialCategory = null }) => {
+// Component that uses useSearchParams - must be wrapped in Suspense
+const BlogListingContent = ({ initialCategory = null }) => {
   const searchParams = useSearchParams()
   const router = useRouter()
   const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'All')
@@ -581,6 +582,15 @@ const BlogListingPage = ({ initialCategory = null }) => {
         </div>
       </section>
     </>
+  )
+}
+
+// Main component that wraps the content in Suspense
+const BlogListingPage = ({ initialCategory = null }) => {
+  return (
+    <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading blog posts...</div>}>
+      <BlogListingContent initialCategory={initialCategory} />
+    </Suspense>
   )
 }
 

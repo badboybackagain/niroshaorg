@@ -39,9 +39,11 @@ const GTMConsentWrapper = () => {
     setConsentGranted(granted)
   }
 
+  // Always show consent banner, even if GTM ID is not set
+  // The banner will appear on first visit or if consent hasn't been given
   return (
     <>
-      <GoogleTagManager gtmId={gtmId} consentGranted={consentGranted} />
+      {gtmId && <GoogleTagManager gtmId={gtmId} consentGranted={consentGranted} />}
       <ConsentBanner onConsentChange={handleConsentChange} />
     </>
   )
