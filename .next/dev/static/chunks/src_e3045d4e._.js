@@ -95,30 +95,36 @@ const SquaresBackground = ({ direction = 'right', speed = 0.5, borderColor = 'rg
             if (!ctx) return;
             const resizeCanvas = {
                 "SquaresBackground.useEffect.resizeCanvas": ()=>{
-                    // Ensure canvas fills the full parent container
-                    const parent = canvas.parentElement;
-                    let displayWidth, displayHeight;
-                    if (parent) {
-                        const rect = parent.getBoundingClientRect();
-                        displayWidth = rect.width;
-                        displayHeight = rect.height;
-                    } else {
-                        displayWidth = canvas.offsetWidth || window.innerWidth;
-                        displayHeight = canvas.offsetHeight || window.innerHeight;
-                    }
-                    // Use actual pixel dimensions for crisp rendering
-                    const dpr = window.devicePixelRatio || 1;
-                    canvas.width = displayWidth * dpr;
-                    canvas.height = displayHeight * dpr;
-                    // Set display size
-                    canvas.style.width = displayWidth + 'px';
-                    canvas.style.height = displayHeight + 'px';
-                    // Reset transform and scale for high DPI
-                    ctx.setTransform(1, 0, 0, 1, 0, 0);
-                    ctx.scale(dpr, dpr);
-                    // Recalculate grid based on display size
-                    numSquaresX.current = Math.ceil(displayWidth / squareSize) + 1;
-                    numSquaresY.current = Math.ceil(displayHeight / squareSize) + 1;
+                    // Batch layout reads in requestAnimationFrame to avoid forced reflows
+                    requestAnimationFrame({
+                        "SquaresBackground.useEffect.resizeCanvas": ()=>{
+                            if (!canvas || !ctx) return;
+                            // Ensure canvas fills the full parent container
+                            const parent = canvas.parentElement;
+                            let displayWidth, displayHeight;
+                            if (parent) {
+                                const rect = parent.getBoundingClientRect();
+                                displayWidth = rect.width;
+                                displayHeight = rect.height;
+                            } else {
+                                displayWidth = canvas.offsetWidth || window.innerWidth;
+                                displayHeight = canvas.offsetHeight || window.innerHeight;
+                            }
+                            // Use actual pixel dimensions for crisp rendering
+                            const dpr = window.devicePixelRatio || 1;
+                            canvas.width = displayWidth * dpr;
+                            canvas.height = displayHeight * dpr;
+                            // Set display size
+                            canvas.style.width = displayWidth + 'px';
+                            canvas.style.height = displayHeight + 'px';
+                            // Reset transform and scale for high DPI
+                            ctx.setTransform(1, 0, 0, 1, 0, 0);
+                            ctx.scale(dpr, dpr);
+                            // Recalculate grid based on display size
+                            numSquaresX.current = Math.ceil(displayWidth / squareSize) + 1;
+                            numSquaresY.current = Math.ceil(displayHeight / squareSize) + 1;
+                        }
+                    }["SquaresBackground.useEffect.resizeCanvas"]);
                 }
             }["SquaresBackground.useEffect.resizeCanvas"];
             // Use ResizeObserver for better resize detection
@@ -135,10 +141,12 @@ const SquaresBackground = ({ direction = 'right', speed = 0.5, borderColor = 'rg
             setTimeout(resizeCanvas, 0);
             const drawGrid = {
                 "SquaresBackground.useEffect.drawGrid": ()=>{
-                    if (!ctx) return;
-                    // Use display dimensions for drawing (context is already scaled)
-                    const displayWidth = canvas.offsetWidth || canvas.width / (window.devicePixelRatio || 1);
-                    const displayHeight = canvas.offsetHeight || canvas.height / (window.devicePixelRatio || 1);
+                    if (!ctx || !canvas) return;
+                    // Use cached dimensions or canvas dimensions to avoid forced reflows
+                    // Calculate from canvas.width/height which are already set, avoiding layout reads
+                    const dpr = window.devicePixelRatio || 1;
+                    const displayWidth = canvas.width / dpr;
+                    const displayHeight = canvas.height / dpr;
                     ctx.clearRect(0, 0, displayWidth, displayHeight);
                     const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
                     const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
@@ -185,19 +193,25 @@ const SquaresBackground = ({ direction = 'right', speed = 0.5, borderColor = 'rg
             }["SquaresBackground.useEffect.updateAnimation"];
             const handleMouseMove = {
                 "SquaresBackground.useEffect.handleMouseMove": (event)=>{
-                    const rect = canvas.getBoundingClientRect();
-                    const mouseX = event.clientX - rect.left;
-                    const mouseY = event.clientY - rect.top;
-                    const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
-                    const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
-                    const hoveredSquareX = Math.floor((mouseX + gridOffset.current.x - startX) / squareSize);
-                    const hoveredSquareY = Math.floor((mouseY + gridOffset.current.y - startY) / squareSize);
-                    if (!hoveredSquareRef.current || hoveredSquareRef.current.x !== hoveredSquareX || hoveredSquareRef.current.y !== hoveredSquareY) {
-                        hoveredSquareRef.current = {
-                            x: hoveredSquareX,
-                            y: hoveredSquareY
-                        };
-                    }
+                    // Batch layout read in requestAnimationFrame to avoid forced reflows
+                    requestAnimationFrame({
+                        "SquaresBackground.useEffect.handleMouseMove": ()=>{
+                            if (!canvas) return;
+                            const rect = canvas.getBoundingClientRect();
+                            const mouseX = event.clientX - rect.left;
+                            const mouseY = event.clientY - rect.top;
+                            const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
+                            const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
+                            const hoveredSquareX = Math.floor((mouseX + gridOffset.current.x - startX) / squareSize);
+                            const hoveredSquareY = Math.floor((mouseY + gridOffset.current.y - startY) / squareSize);
+                            if (!hoveredSquareRef.current || hoveredSquareRef.current.x !== hoveredSquareX || hoveredSquareRef.current.y !== hoveredSquareY) {
+                                hoveredSquareRef.current = {
+                                    x: hoveredSquareX,
+                                    y: hoveredSquareY
+                                };
+                            }
+                        }
+                    }["SquaresBackground.useEffect.handleMouseMove"]);
                 }
             }["SquaresBackground.useEffect.handleMouseMove"];
             const handleMouseLeave = {
@@ -230,7 +244,7 @@ const SquaresBackground = ({ direction = 'right', speed = 0.5, borderColor = 'rg
         className: "squares-background"
     }, void 0, false, {
         fileName: "[project]/src/components/SquaresBackground.jsx",
-        lineNumber: 166,
+        lineNumber: 177,
         columnNumber: 10
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -537,14 +551,14 @@ const AboutPage = ()=>{
                         className: "iridescence-background"
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/AboutPage.jsx",
-                        lineNumber: 171,
+                        lineNumber: 164,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "iridescence-overlay"
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/AboutPage.jsx",
-                        lineNumber: 172,
+                        lineNumber: 165,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -560,7 +574,7 @@ const AboutPage = ()=>{
                                         children: "About Team Nirosha"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/AboutPage.jsx",
-                                        lineNumber: 179,
+                                        lineNumber: 172,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -568,7 +582,7 @@ const AboutPage = ()=>{
                                         children: "About Team Nirosha - Digital Agency | Web Development & SEO Experts"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/AboutPage.jsx",
-                                        lineNumber: 180,
+                                        lineNumber: 173,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -576,29 +590,29 @@ const AboutPage = ()=>{
                                         children: "We don't just build websites - we build secure, scalable digital systems that support real business growth."
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/AboutPage.jsx",
-                                        lineNumber: 181,
+                                        lineNumber: 174,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/AboutPage.jsx",
-                                lineNumber: 175,
+                                lineNumber: 168,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                            lineNumber: 174,
+                            lineNumber: 167,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/AboutPage.jsx",
-                        lineNumber: 173,
+                        lineNumber: 166,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/page-components/AboutPage.jsx",
-                lineNumber: 170,
+                lineNumber: 163,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -615,7 +629,7 @@ const AboutPage = ()=>{
                                     children: "Team Nirosha is a trusted digital agency in India, providing comprehensive web development, SEO, automation, and cloud services. We focus on quality, transparency, and results - technology that works while you sleep."
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                                    lineNumber: 196,
+                                    lineNumber: 189,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -625,26 +639,26 @@ const AboutPage = ()=>{
                                             children: "Our business-first approach means we understand your goals before we write a single line of code. We're hands-on, responsive, and accountable - trusted by businesses, startups, and educational institutions across India. We solve real problems with scalable solutions that grow with your business."
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                                            lineNumber: 202,
+                                            lineNumber: 195,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "With years of combined experience, our team brings expertise in modern web technologies, cloud infrastructure, SEO optimization, and business automation. We're not just developers - we're your partners in digital transformation."
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                                            lineNumber: 207,
+                                            lineNumber: 200,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                                    lineNumber: 201,
+                                    lineNumber: 194,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                            lineNumber: 192,
+                            lineNumber: 185,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -656,7 +670,7 @@ const AboutPage = ()=>{
                                     children: "Our Core Values"
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                                    lineNumber: 219,
+                                    lineNumber: 212,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -668,18 +682,18 @@ const AboutPage = ()=>{
                                             delay: index * 100
                                         }, index, false, {
                                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                                            lineNumber: 222,
+                                            lineNumber: 215,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                                    lineNumber: 220,
+                                    lineNumber: 213,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                            lineNumber: 215,
+                            lineNumber: 208,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -693,7 +707,7 @@ const AboutPage = ()=>{
                                     hoverFillColor: "rgba(100, 100, 100, 0.08)"
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                                    lineNumber: 235,
+                                    lineNumber: 228,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -711,7 +725,7 @@ const AboutPage = ()=>{
                                             children: "Meet Our Team"
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                                            lineNumber: 243,
+                                            lineNumber: 236,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -722,7 +736,7 @@ const AboutPage = ()=>{
                                             children: "We're a team of passionate professionals dedicated to delivering exceptional digital solutions. Each member brings unique expertise and a commitment to excellence."
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                                            lineNumber: 244,
+                                            lineNumber: 237,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -735,12 +749,12 @@ const AboutPage = ()=>{
                                                     index: index
                                                 }, index, false, {
                                                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                                                    lineNumber: 250,
+                                                    lineNumber: 243,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                                            lineNumber: 248,
+                                            lineNumber: 241,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -751,19 +765,19 @@ const AboutPage = ()=>{
                                             children: "Together, we're building the future of digital solutions, one project at a time."
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                                            lineNumber: 253,
+                                            lineNumber: 246,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                                    lineNumber: 242,
+                                    lineNumber: 235,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                            lineNumber: 234,
+                            lineNumber: 227,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -779,29 +793,29 @@ const AboutPage = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/AboutPage.jsx",
-                                        lineNumber: 263,
+                                        lineNumber: 256,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/AboutPage.jsx",
-                                lineNumber: 261,
+                                lineNumber: 254,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/AboutPage.jsx",
-                            lineNumber: 260,
+                            lineNumber: 253,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/page-components/AboutPage.jsx",
-                    lineNumber: 191,
+                    lineNumber: 184,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/AboutPage.jsx",
-                lineNumber: 190,
+                lineNumber: 183,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]

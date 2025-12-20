@@ -350,20 +350,23 @@ void main() {
             });
             meshRef.current = mesh;
             const updatePlacement = ()=>{
-                if (!containerRef.current || !renderer) return;
-                renderer.dpr = Math.min(window.devicePixelRatio, 2);
-                const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
-                renderer.setSize(wCSS, hCSS);
-                const dpr = renderer.dpr;
-                const w = wCSS * dpr;
-                const h = hCSS * dpr;
-                uniforms.iResolution.value = [
-                    w,
-                    h
-                ];
-                const { anchor, dir } = getAnchorAndDir(raysOrigin, w, h);
-                uniforms.rayPos.value = anchor;
-                uniforms.rayDir.value = dir;
+                // Batch layout reads in requestAnimationFrame to avoid forced reflows
+                requestAnimationFrame(()=>{
+                    if (!containerRef.current || !renderer) return;
+                    renderer.dpr = Math.min(window.devicePixelRatio, 2);
+                    const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
+                    renderer.setSize(wCSS, hCSS);
+                    const dpr = renderer.dpr;
+                    const w = wCSS * dpr;
+                    const h = hCSS * dpr;
+                    uniforms.iResolution.value = [
+                        w,
+                        h
+                    ];
+                    const { anchor, dir } = getAnchorAndDir(raysOrigin, w, h);
+                    uniforms.rayPos.value = anchor;
+                    uniforms.rayDir.value = dir;
+                });
             };
             const loop = (t)=>{
                 if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
@@ -453,11 +456,15 @@ void main() {
         u.mouseInfluence.value = mouseInfluence;
         u.noiseAmount.value = noiseAmount;
         u.distortion.value = distortion;
-        const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
-        const dpr = renderer.dpr;
-        const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr);
-        u.rayPos.value = anchor;
-        u.rayDir.value = dir;
+        // Batch layout reads in requestAnimationFrame to avoid forced reflows
+        requestAnimationFrame(()=>{
+            if (!containerRef.current || !renderer) return;
+            const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
+            const dpr = renderer.dpr;
+            const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr);
+            u.rayPos.value = anchor;
+            u.rayDir.value = dir;
+        });
     }, [
         raysColor,
         raysSpeed,
@@ -474,13 +481,17 @@ void main() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleMouseMove = (e)=>{
             if (!containerRef.current || !rendererRef.current) return;
-            const rect = containerRef.current.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width;
-            const y = (e.clientY - rect.top) / rect.height;
-            mouseRef.current = {
-                x,
-                y
-            };
+            // Batch layout read in requestAnimationFrame to avoid forced reflows
+            requestAnimationFrame(()=>{
+                if (!containerRef.current) return;
+                const rect = containerRef.current.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                mouseRef.current = {
+                    x,
+                    y
+                };
+            });
         };
         if (followMouse) {
             window.addEventListener('mousemove', handleMouseMove);
@@ -494,7 +505,7 @@ void main() {
         className: `light-rays-background ${className}`.trim()
     }, void 0, false, {
         fileName: "[project]/src/components/LightRaysBackground.jsx",
-        lineNumber: 395,
+        lineNumber: 406,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

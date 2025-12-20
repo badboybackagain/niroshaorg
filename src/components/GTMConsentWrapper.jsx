@@ -1,9 +1,14 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
+import dynamic from 'next/dynamic'
 import ConsentBanner from './ConsentBanner'
-import GoogleTagManager from './GoogleTagManager'
 import { getConsent } from '@/lib/consent'
+
+// Dynamically import GoogleTagManager to avoid blocking initial render
+const GoogleTagManager = dynamic(() => import('./GoogleTagManager'), {
+  ssr: false,
+})
 
 /**
  * GTM Consent Wrapper Component
@@ -20,14 +25,18 @@ import { getConsent } from '@/lib/consent'
  */
 const GTMConsentWrapper = () => {
   const [consentGranted, setConsentGranted] = useState(false)
-  const [gtmId, setGtmId] = useState(null)
+  const [mounted, setMounted] = useState(false)
+  
+  // Memoize GTM ID to avoid re-reading on every render
+  const gtmId = useMemo(() => {
+    if (typeof window === 'undefined') return null
+    return process.env.NEXT_PUBLIC_GTM_ID || null
+  }, [])
 
   useEffect(() => {
-    // Get GTM ID from environment variable
-    // Format: GTM-XXXXXXX (e.g., GTM-ABC123)
-    const id = process.env.NEXT_PUBLIC_GTM_ID
-    setGtmId(id || null)
-
+    // Mark as mounted
+    setMounted(true)
+    
     // Check existing consent
     const existingConsent = getConsent()
     if (existingConsent === 'accepted') {
@@ -37,6 +46,11 @@ const GTMConsentWrapper = () => {
 
   const handleConsentChange = (granted) => {
     setConsentGranted(granted)
+  }
+
+  // Don't render until mounted to avoid hydration issues
+  if (!mounted) {
+    return null
   }
 
   // Always show consent banner, even if GTM ID is not set
@@ -50,3 +64,4 @@ const GTMConsentWrapper = () => {
 }
 
 export default GTMConsentWrapper
+

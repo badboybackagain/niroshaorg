@@ -1,0 +1,59 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+set SSH_HOST "37.27.54.247"
+set SSH_USER "nirosha_1"
+set SSH_PASS "Celorita13jan!!"
+set SSH_TARGET_DIR "public_html"
+
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $SSH_USER@$SSH_HOST
+
+expect {
+    "password:" {
+        send "$SSH_PASS\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd $SSH_TARGET_DIR && pwd\r"
+        expect "$ "
+        
+        send "echo '=== Checking Node.js processes ==='\r"
+        expect "$ "
+        send "ps aux | grep -E 'node|next' | grep -v grep\r"
+        expect "$ "
+        
+        send "echo '=== Checking ports ==='\r"
+        expect "$ "
+        send "netstat -tlnp 2>/dev/null | grep -E ':3000|:80|:443' || ss -tlnp 2>/dev/null | grep -E ':3000|:80|:443' || echo 'netstat/ss not available'\r"
+        expect "$ "
+        
+        send "echo '=== Checking server.js content ==='\r"
+        expect "$ "
+        send "head -30 server.js\r"
+        expect "$ "
+        
+        send "echo '=== Checking if PM2 is running ==='\r"
+        expect "$ "
+        send "pm2 list 2>/dev/null || echo 'PM2 not installed or not running'\r"
+        expect "$ "
+        
+        send "echo '=== Checking systemd services ==='\r"
+        expect "$ "
+        send "systemctl list-units --type=service --state=running | grep -i node || systemctl list-units --type=service --state=running | grep -i next || echo 'No Node.js systemd services found'\r"
+        expect "$ "
+        
+        send "echo '=== Testing if we can start server ==='\r"
+        expect "$ "
+        send "cd $SSH_TARGET_DIR && test -f server.js && echo 'server.js exists' || echo 'server.js missing'\r"
+        expect "$ "
+        
+        send "echo '=== Checking .next/static accessibility ==='\r"
+        expect "$ "
+        send "ls -la .next/static/chunks/ | head -10\r"
+        expect "$ "
+        
+        send "exit\r"
+        expect eof
+    }
+    eof
+}

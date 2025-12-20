@@ -54,13 +54,15 @@ const ClientLogos = () => {
                     type="image/webp"
                   />
                   <img
-                    src={`/cache/client-logos/${logoName}.png`}
-                    srcSet={`/cache/client-logos/${logoName}.png 1x, /cache/client-logos/${logoName}@2x.png 2x`}
+                    src={`/cache/client-logos/${logoName}.webp`}
+                    srcSet={`/cache/client-logos/${logoName}.webp 1x, /cache/client-logos/${logoName}@2x.webp 2x`}
                     alt={`${logoName.replace(/-/g, ' ')} logo`}
                     loading="lazy"
                     className="client-logo-image"
-                    width="200"
-                    height="auto"
+                    width="120"
+                    height="80"
+                    sizes="(max-width: 480px) 140px, (max-width: 768px) 160px, 180px"
+                    decoding="async"
                   />
                 </picture>
               </div>

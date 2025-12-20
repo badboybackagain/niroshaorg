@@ -1,9 +1,19 @@
+// Import CSS - Next.js will extract this, but we'll defer it with DeferredCSS component
 import './globals.css'
 import Layout from '@/components/Layout'
 import OrganizationSchema from '@/components/OrganizationSchema'
 import WebsiteSchema from '@/components/WebsiteSchema'
 import ScrollToTop from '@/components/ScrollToTop'
 import GTMConsentWrapper from '@/components/GTMConsentWrapper'
+import CriticalCSS from '@/components/CriticalCSS'
+import DeferredCSS from '@/components/DeferredCSS'
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+}
 
 export const metadata = {
   title: 'Team Nirosha - Web Development, SEO & Digital Marketing Agency',
@@ -52,6 +62,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Defer non-critical CSS loading - must run before CSS loads */}
+        <DeferredCSS />
+        {/* Inline critical CSS for above-the-fold content - prevents render blocking */}
+        <CriticalCSS />
+        {/* Resource hints - preconnect to critical origins for faster resource loading */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        {/* Preload critical resources */}
+        <link rel="preload" href="/logo.webp" as="image" type="image/webp" fetchPriority="high" />
         <OrganizationSchema />
         <WebsiteSchema />
         <ScrollToTop />

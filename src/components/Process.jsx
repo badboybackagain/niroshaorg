@@ -53,36 +53,44 @@ const Process = () => {
   ]
 
   useEffect(() => {
+    let rafId = null
+    
     const handleScroll = () => {
-      const section = processSectionRef.current
-      if (!section) return
-
-      const sectionTop = section.offsetTop
-      const sectionHeight = section.offsetHeight
-      const windowHeight = window.innerHeight
-      const scrollY = window.scrollY || window.pageYOffset
-
-      // Calculate scroll progress within the section
-      // Section starts becoming visible when scrollY + windowHeight >= sectionTop
-      const scrollIntoView = scrollY + windowHeight - sectionTop
+      // Cancel any pending animation frame
+      if (rafId) cancelAnimationFrame(rafId)
       
-      if (scrollIntoView < 0) {
-        // Section not yet in view, show only first step
-        setVisibleSteps(1)
-        return
-      }
+      // Batch layout reads in requestAnimationFrame to avoid forced reflows
+      rafId = requestAnimationFrame(() => {
+        const section = processSectionRef.current
+        if (!section) return
 
-      // Calculate progress (0 to 1) as we scroll through the section
-      const scrollProgress = Math.min(scrollIntoView / (sectionHeight * 0.8), 1)
-      
-      // Reveal steps progressively
-      // Each step appears at 20% intervals (0%, 20%, 40%, 60%, 80%, 100%)
-      const stepsToShow = Math.min(
-        Math.max(1, Math.ceil(scrollProgress * steps.length)),
-        steps.length
-      )
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+        const windowHeight = window.innerHeight
+        const scrollY = window.scrollY || window.pageYOffset
 
-      setVisibleSteps(stepsToShow)
+        // Calculate scroll progress within the section
+        // Section starts becoming visible when scrollY + windowHeight >= sectionTop
+        const scrollIntoView = scrollY + windowHeight - sectionTop
+        
+        if (scrollIntoView < 0) {
+          // Section not yet in view, show only first step
+          setVisibleSteps(1)
+          return
+        }
+
+        // Calculate progress (0 to 1) as we scroll through the section
+        const scrollProgress = Math.min(scrollIntoView / (sectionHeight * 0.8), 1)
+        
+        // Reveal steps progressively
+        // Each step appears at 20% intervals (0%, 20%, 40%, 60%, 80%, 100%)
+        const stepsToShow = Math.min(
+          Math.max(1, Math.ceil(scrollProgress * steps.length)),
+          steps.length
+        )
+
+        setVisibleSteps(stepsToShow)
+      })
     }
 
     // Initial check
@@ -92,6 +100,7 @@ const Process = () => {
     window.addEventListener('resize', handleScroll, { passive: true })
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId)
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleScroll)
     }

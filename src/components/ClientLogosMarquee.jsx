@@ -86,10 +86,8 @@ const ClientLogosMarquee = () => {
     const initAnimation = async () => {
       await preloadImages()
       
-      // Force a reflow to ensure accurate measurements
-      track.offsetHeight
-      
-      // Small delay to ensure layout is stable
+      // Use double requestAnimationFrame to ensure layout is stable
+      // This batches layout reads and avoids forced reflows
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           startAnimation()
@@ -163,14 +161,16 @@ const ClientLogosMarquee = () => {
                     type="image/webp"
                   />
                   <img
-                    src={`/cache/client-logos/${logoName}.png`}
-                    srcSet={`/cache/client-logos/${logoName}.png 1x, /cache/client-logos/${logoName}@2x.png 2x`}
+                    src={`/cache/client-logos/${logoName}.webp`}
+                    srcSet={`/cache/client-logos/${logoName}.webp 1x, /cache/client-logos/${logoName}@2x.webp 2x`}
                     alt={`${logoName.replace(/-/g, ' ')} logo`}
                     className="client-logo-marquee-image"
                     loading="eager"
-                    width="200"
-                    height="auto"
+                    width="120"
+                    height="60"
+                    sizes="(max-width: 480px) 120px, (max-width: 768px) 150px, 180px"
                     decoding="async"
+                    fetchPriority="low"
                   />
                 </picture>
               </div>

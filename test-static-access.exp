@@ -1,0 +1,52 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+set SSH_HOST "37.27.54.247"
+set SSH_USER "nirosha_1"
+set SSH_PASS "Celorita13jan!!"
+set SSH_TARGET_DIR "public_html"
+
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $SSH_USER@$SSH_HOST
+
+expect {
+    "password:" {
+        send "$SSH_PASS\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd $SSH_TARGET_DIR\r"
+        expect "$ "
+        
+        send "echo '=== Testing static file access via localhost ==='\r"
+        expect "$ "
+        send "curl -I http://localhost:3000/_next/static/chunks/3c2be8ff7d60619a.js 2>&1 | head -10\r"
+        expect "$ "
+        
+        send "echo '=== Testing a file that exists ==='\r"
+        expect "$ "
+        send "ls -la .next/static/chunks/ | grep -E '\.js$' | head -3 | awk '{print \$9}'\r"
+        expect "$ "
+        
+        send "FIRST_CHUNK=\$(ls .next/static/chunks/*.js 2>/dev/null | head -1 | xargs basename) && echo \"Testing: \$FIRST_CHUNK\" && curl -I \"http://localhost:3000/_next/static/chunks/\$FIRST_CHUNK\" 2>&1 | head -10\r"
+        expect "$ "
+        
+        send "echo '=== Checking nginx configuration ==='\r"
+        expect "$ "
+        send "find /etc/nginx -name '*nirosha*' -o -name '*default*' 2>/dev/null | head -5\r"
+        expect "$ "
+        
+        send "echo '=== Checking if nginx is running ==='\r"
+        expect "$ "
+        send "ps aux | grep nginx | grep -v grep || echo 'nginx not running'\r"
+        expect "$ "
+        
+        send "echo '=== Testing external access ==='\r"
+        expect "$ "
+        send "curl -I https://nirosha.org/_next/static/chunks/3c2be8ff7d60619a.js 2>&1 | head -15\r"
+        expect "$ "
+        
+        send "exit\r"
+        expect eof
+    }
+    eof
+}

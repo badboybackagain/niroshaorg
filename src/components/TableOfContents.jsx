@@ -98,15 +98,18 @@ const TableOfContents = ({ content }) => {
   const scrollToHeading = (id) => {
     const element = document.getElementById(id)
     if (element) {
-      const offset = 100 // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
+      // Batch layout read in requestAnimationFrame to avoid forced reflows
+      requestAnimationFrame(() => {
+        const offset = 100 // Account for fixed header
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - offset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+        setActiveId(id)
       })
-      setActiveId(id)
     }
   }
 

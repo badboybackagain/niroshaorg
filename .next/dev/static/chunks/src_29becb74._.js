@@ -93,46 +93,52 @@ const DotGridBackground = ({ dotSize = 2, gap = 30, color = 'rgba(255, 255, 255,
             if (!container) return;
             const createDots = {
                 "DotGridBackground.useEffect.createDots": ()=>{
-                    const rect = container.getBoundingClientRect();
-                    if (rect.width === 0 || rect.height === 0) {
-                        // Retry after a short delay if container not ready
-                        setTimeout(createDots, 100);
-                        return;
-                    }
-                    const cols = Math.ceil(rect.width / gap) + 1;
-                    const rows = Math.ceil(rect.height / gap) + 1;
-                    // Clear existing dots
-                    container.innerHTML = '';
-                    dotsRef.current = [];
-                    // Create dots
-                    for(let i = 0; i < rows; i++){
-                        for(let j = 0; j < cols; j++){
-                            const dot = document.createElement('div');
-                            dot.className = 'dot-grid-dot';
-                            const x = j * gap;
-                            const y = i * gap;
-                            dot.style.cssText = `
-            position: absolute;
-            width: ${dotSize}px;
-            height: ${dotSize}px;
-            background: ${color};
-            border-radius: 50%;
-            left: ${x}px;
-            top: ${y}px;
-            transform: translate(-50%, -50%);
-            transition: background 0.3s ease, transform 0.3s ease;
-            pointer-events: none;
-            will-change: transform, background, opacity;
-            box-shadow: 0 0 2px ${color};
-          `;
-                            container.appendChild(dot);
-                            dotsRef.current.push({
-                                element: dot,
-                                x: x,
-                                y: y
-                            });
+                    // Batch layout read in requestAnimationFrame to avoid forced reflows
+                    requestAnimationFrame({
+                        "DotGridBackground.useEffect.createDots": ()=>{
+                            if (!container) return;
+                            const rect = container.getBoundingClientRect();
+                            if (rect.width === 0 || rect.height === 0) {
+                                // Retry after a short delay if container not ready
+                                setTimeout(createDots, 100);
+                                return;
+                            }
+                            const cols = Math.ceil(rect.width / gap) + 1;
+                            const rows = Math.ceil(rect.height / gap) + 1;
+                            // Clear existing dots
+                            container.innerHTML = '';
+                            dotsRef.current = [];
+                            // Create dots
+                            for(let i = 0; i < rows; i++){
+                                for(let j = 0; j < cols; j++){
+                                    const dot = document.createElement('div');
+                                    dot.className = 'dot-grid-dot';
+                                    const x = j * gap;
+                                    const y = i * gap;
+                                    dot.style.cssText = `
+              position: absolute;
+              width: ${dotSize}px;
+              height: ${dotSize}px;
+              background: ${color};
+              border-radius: 50%;
+              left: ${x}px;
+              top: ${y}px;
+              transform: translate(-50%, -50%);
+              transition: background 0.3s ease, transform 0.3s ease;
+              pointer-events: none;
+              will-change: transform, background, opacity;
+              box-shadow: 0 0 2px ${color};
+            `;
+                                    container.appendChild(dot);
+                                    dotsRef.current.push({
+                                        element: dot,
+                                        x: x,
+                                        y: y
+                                    });
+                                }
+                            }
                         }
-                    }
+                    }["DotGridBackground.useEffect.createDots"]);
                 }
             }["DotGridBackground.useEffect.createDots"];
             const updateDots = {
@@ -141,38 +147,43 @@ const DotGridBackground = ({ dotSize = 2, gap = 30, color = 'rgba(255, 255, 255,
                         animationFrameRef.current = requestAnimationFrame(updateDots);
                         return;
                     }
-                    const rect = container.getBoundingClientRect();
-                    if (rect.width === 0 || rect.height === 0) {
-                        animationFrameRef.current = requestAnimationFrame(updateDots);
-                        return;
-                    }
-                    const mouseX = mousePosition.current.x - rect.left;
-                    const mouseY = mousePosition.current.y - rect.top;
-                    dotsRef.current.forEach({
-                        "DotGridBackground.useEffect.updateDots": (dot)=>{
-                            const dx = dot.x - mouseX;
-                            const dy = dot.y - mouseY;
-                            const distance = Math.sqrt(dx * dx + dy * dy);
-                            if (distance < hoverRadius) {
-                                const intensity = 1 - distance / hoverRadius;
-                                const scale = 1 + intensity * 0.5;
-                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(dot.element, {
-                                    background: hoverColor,
-                                    scale: scale,
-                                    duration: 0.3,
-                                    ease: 'power2.out'
-                                });
-                            } else {
-                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(dot.element, {
-                                    background: color,
-                                    scale: 1,
-                                    duration: 0.3,
-                                    ease: 'power2.out'
-                                });
+                    // Batch layout read in requestAnimationFrame to avoid forced reflows
+                    requestAnimationFrame({
+                        "DotGridBackground.useEffect.updateDots": ()=>{
+                            const rect = container.getBoundingClientRect();
+                            if (rect.width === 0 || rect.height === 0) {
+                                animationFrameRef.current = requestAnimationFrame(updateDots);
+                                return;
                             }
+                            const mouseX = mousePosition.current.x - rect.left;
+                            const mouseY = mousePosition.current.y - rect.top;
+                            dotsRef.current.forEach({
+                                "DotGridBackground.useEffect.updateDots": (dot)=>{
+                                    const dx = dot.x - mouseX;
+                                    const dy = dot.y - mouseY;
+                                    const distance = Math.sqrt(dx * dx + dy * dy);
+                                    if (distance < hoverRadius) {
+                                        const intensity = 1 - distance / hoverRadius;
+                                        const scale = 1 + intensity * 0.5;
+                                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(dot.element, {
+                                            background: hoverColor,
+                                            scale: scale,
+                                            duration: 0.3,
+                                            ease: 'power2.out'
+                                        });
+                                    } else {
+                                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(dot.element, {
+                                            background: color,
+                                            scale: 1,
+                                            duration: 0.3,
+                                            ease: 'power2.out'
+                                        });
+                                    }
+                                }
+                            }["DotGridBackground.useEffect.updateDots"]);
+                            animationFrameRef.current = requestAnimationFrame(updateDots);
                         }
                     }["DotGridBackground.useEffect.updateDots"]);
-                    animationFrameRef.current = requestAnimationFrame(updateDots);
                 }
             }["DotGridBackground.useEffect.updateDots"];
             const handleMouseMove = {
@@ -194,19 +205,24 @@ const DotGridBackground = ({ dotSize = 2, gap = 30, color = 'rgba(255, 255, 255,
             // Initial setup with delay to ensure container is ready
             const initTimeout = setTimeout({
                 "DotGridBackground.useEffect.initTimeout": ()=>{
-                    const rect = container.getBoundingClientRect();
-                    if (rect.width > 0 && rect.height > 0) {
-                        createDots();
-                        updateDots();
-                    } else {
-                        // Retry if container not ready
-                        setTimeout({
-                            "DotGridBackground.useEffect.initTimeout": ()=>{
+                    // Batch layout read in requestAnimationFrame to avoid forced reflows
+                    requestAnimationFrame({
+                        "DotGridBackground.useEffect.initTimeout": ()=>{
+                            const rect = container.getBoundingClientRect();
+                            if (rect.width > 0 && rect.height > 0) {
                                 createDots();
                                 updateDots();
+                            } else {
+                                // Retry if container not ready
+                                setTimeout({
+                                    "DotGridBackground.useEffect.initTimeout": ()=>{
+                                        createDots();
+                                        updateDots();
+                                    }
+                                }["DotGridBackground.useEffect.initTimeout"], 200);
                             }
-                        }["DotGridBackground.useEffect.initTimeout"], 200);
-                    }
+                        }
+                    }["DotGridBackground.useEffect.initTimeout"]);
                 }
             }["DotGridBackground.useEffect.initTimeout"], 100);
             // Event listeners
@@ -250,7 +266,7 @@ const DotGridBackground = ({ dotSize = 2, gap = 30, color = 'rgba(255, 255, 255,
         }
     }, void 0, false, {
         fileName: "[project]/src/components/DotGridBackground.jsx",
-        lineNumber: 162,
+        lineNumber: 172,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -597,7 +613,7 @@ const ServicesPage = ()=>{
                             className: "services-hero-background"
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/ServicesPage.jsx",
-                            lineNumber: 161,
+                            lineNumber: 145,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$DotGridBackground$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -608,7 +624,7 @@ const ServicesPage = ()=>{
                             hoverRadius: 120
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/ServicesPage.jsx",
-                            lineNumber: 162,
+                            lineNumber: 146,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -634,20 +650,20 @@ const ServicesPage = ()=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                lineNumber: 176,
+                                                lineNumber: 160,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "12+ Professional Services"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                lineNumber: 177,
+                                                lineNumber: 161,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 175,
+                                        lineNumber: 159,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -658,7 +674,7 @@ const ServicesPage = ()=>{
                                         children: "Digital Services - Web Development, SEO, Marketing & Cloud Solutions"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 179,
+                                        lineNumber: 163,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -669,7 +685,7 @@ const ServicesPage = ()=>{
                                         children: "From custom web development and SEO optimization to social media marketing and cloud infrastructure, we provide end-to-end digital services that drive real results. Our expert team combines technical expertise with strategic thinking to deliver solutions that help your business scale and succeed online."
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 182,
+                                        lineNumber: 166,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -686,20 +702,20 @@ const ServicesPage = ()=>{
                                                         className: "benefit-icon"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                        lineNumber: 195,
+                                                        lineNumber: 179,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Results-Driven Approach"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                        lineNumber: 196,
+                                                        lineNumber: 180,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                lineNumber: 194,
+                                                lineNumber: 178,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -709,20 +725,20 @@ const ServicesPage = ()=>{
                                                         className: "benefit-icon"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                        lineNumber: 199,
+                                                        lineNumber: 183,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Expert Team"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                        lineNumber: 200,
+                                                        lineNumber: 184,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                lineNumber: 198,
+                                                lineNumber: 182,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -732,43 +748,43 @@ const ServicesPage = ()=>{
                                                         className: "benefit-icon"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                        lineNumber: 203,
+                                                        lineNumber: 187,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Proven Track Record"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                        lineNumber: 204,
+                                                        lineNumber: 188,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                lineNumber: 202,
+                                                lineNumber: 186,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 189,
+                                        lineNumber: 173,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                lineNumber: 170,
+                                lineNumber: 154,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/ServicesPage.jsx",
-                            lineNumber: 169,
+                            lineNumber: 153,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/page-components/ServicesPage.jsx",
-                    lineNumber: 160,
+                    lineNumber: 144,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -789,7 +805,7 @@ const ServicesPage = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 220,
+                                        lineNumber: 204,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -803,7 +819,7 @@ const ServicesPage = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 223,
+                                        lineNumber: 207,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -814,25 +830,25 @@ const ServicesPage = ()=>{
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiX"], {}, void 0, false, {
                                                     fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                                    lineNumber: 228,
+                                                    lineNumber: 212,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " Clear Search"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                            lineNumber: 227,
+                                            lineNumber: 211,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 226,
+                                        lineNumber: 210,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                lineNumber: 216,
+                                lineNumber: 200,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 ref: titleRef,
@@ -843,7 +859,7 @@ const ServicesPage = ()=>{
                                         children: "Explore Our Services"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 237,
+                                        lineNumber: 221,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -855,13 +871,13 @@ const ServicesPage = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 238,
+                                        lineNumber: 222,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                lineNumber: 233,
+                                lineNumber: 217,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             filteredServices.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -873,12 +889,12 @@ const ServicesPage = ()=>{
                                         slug: service.slug
                                     }, service.slug, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 250,
+                                        lineNumber: 234,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                lineNumber: 245,
+                                lineNumber: 229,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)) : searchQuery ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "no-results",
@@ -887,14 +903,14 @@ const ServicesPage = ()=>{
                                         className: "no-results-icon"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 255,
+                                        lineNumber: 239,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                         children: "No services found"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 256,
+                                        lineNumber: 240,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -905,7 +921,7 @@ const ServicesPage = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 257,
+                                        lineNumber: 241,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -914,30 +930,30 @@ const ServicesPage = ()=>{
                                         children: "View All Services"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                        lineNumber: 258,
+                                        lineNumber: 242,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/ServicesPage.jsx",
-                                lineNumber: 254,
+                                lineNumber: 238,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)) : null
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/page-components/ServicesPage.jsx",
-                        lineNumber: 214,
+                        lineNumber: 198,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/ServicesPage.jsx",
-                    lineNumber: 213,
+                    lineNumber: 197,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/page-components/ServicesPage.jsx",
-            lineNumber: 157,
+            lineNumber: 141,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false);

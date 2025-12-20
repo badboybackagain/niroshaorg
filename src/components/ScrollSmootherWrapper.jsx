@@ -81,8 +81,28 @@ const ScrollSmootherWrapper = () => {
       }
     }
 
-    // Small delay to ensure DOM is ready, then initialize
-    const timeoutId = setTimeout(initSmoother, 100)
+    // Defer ScrollSmoother initialization until after initial render and user interaction
+    // This improves initial page load performance
+    const initAfterLoad = () => {
+      if (document.readyState === 'complete') {
+        // Wait for idle time to initialize
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(initSmoother, { timeout: 2000 })
+        } else {
+          setTimeout(initSmoother, 1000)
+        }
+      } else {
+        window.addEventListener('load', () => {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(initSmoother, { timeout: 2000 })
+          } else {
+            setTimeout(initSmoother, 1000)
+          }
+        }, { once: true })
+      }
+    }
+    
+    const timeoutId = setTimeout(initAfterLoad, 500)
 
     return () => {
       clearTimeout(timeoutId)
@@ -100,3 +120,4 @@ const ScrollSmootherWrapper = () => {
 }
 
 export default ScrollSmootherWrapper
+

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/abhishek/niroshaorg/app/not-found.jsx"],"sourcesContent":["import NotFoundPage from '@/page-components/NotFoundPage'\n\nexport default function NotFound() {\n  return <NotFoundPage />\n}\n"],"names":[],"mappings":";;;;;;;;;;;;AAEe,SAAS;IACtB,qBAAO,8OAAC;;;;;AACV"}}]
+}

@@ -84,19 +84,19 @@ const ServiceCard = ({ service, index }) => {
     // Hover animations
     const handleMouseEnter = () => {
       gsap.to(card, {
-        y: -8,
-        scale: 1.02,
-        duration: 0.4,
+        y: -4,
+        scale: 1.01,
+        duration: 0.3,
         ease: 'power2.out'
       })
       gsap.to(icon, {
-        scale: 1.15,
-        rotation: 5,
-        duration: 0.4,
+        scale: 1.1,
+        rotation: 3,
+        duration: 0.3,
         ease: 'power2.out'
       })
       gsap.to(link, {
-        x: 5,
+        x: 4,
         duration: 0.3,
         ease: 'power2.out'
       })
@@ -168,8 +168,6 @@ const Services = () => {
   const subtitleRef = useRef(null)
   const gridRef = useRef(null)
   const buttonRef = useRef(null)
-  const bgTextureRef = useRef(null)
-  const bgOrbsRef = useRef([])
 
   useEffect(() => {
     const section = sectionRef.current
@@ -177,62 +175,9 @@ const Services = () => {
 
     // Use gsap.context for proper cleanup
     const ctx = gsap.context(() => {
-      // Create animated background orbs
-      const orbs = []
-      for (let i = 0; i < 6; i++) {
-        const orb = document.createElement('div')
-        orb.className = 'services-bg-orb'
-        orb.style.cssText = `
-          position: absolute;
-          width: ${200 + i * 50}px;
-          height: ${200 + i * 50}px;
-          border-radius: 50%;
-          background: radial-gradient(circle, rgba(37, 99, 235, ${0.15 - i * 0.02}) 0%, transparent 70%);
-          filter: blur(40px);
-          pointer-events: none;
-          z-index: 0;
-        `
-        section.appendChild(orb)
-        orbs.push(orb)
-        bgOrbsRef.current.push(orb)
-      }
-
       // Set initial states
-      gsap.set([titleRef.current, subtitleRef.current], { opacity: 0, y: 30 })
-      gsap.set(buttonRef.current, { opacity: 0, scale: 0.9 })
-      gsap.set(bgTextureRef.current, { opacity: 0, scale: 1.1 })
-      gsap.set(orbs, { opacity: 0, scale: 0 })
-
-      // Animate orbs positions on scroll
-      orbs.forEach((orb, i) => {
-        const xPos = (i % 2 === 0 ? -1 : 1) * (100 + i * 30)
-        const yPos = (i < 3 ? -1 : 1) * (100 + i * 20)
-        
-        gsap.to(orb, {
-          x: xPos,
-          y: yPos,
-          opacity: 0.6,
-          scale: 1,
-          duration: 2 + i * 0.3,
-          ease: 'power1.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-          }
-        })
-
-        // Continuous floating animation
-        gsap.to(orb, {
-          x: `+=${(i % 2 === 0 ? 1 : -1) * 30}`,
-          y: `+=${(i < 3 ? 1 : -1) * 20}`,
-          duration: 3 + i * 0.5,
-          ease: 'sine.inOut',
-          repeat: -1,
-          yoyo: true
-        })
-      })
+      gsap.set([titleRef.current, subtitleRef.current], { opacity: 0, y: 20 })
+      gsap.set(buttonRef.current, { opacity: 0, scale: 0.95 })
 
       // Create master timeline
       const masterTl = gsap.timeline({
@@ -243,55 +188,30 @@ const Services = () => {
         }
       })
 
-      // Background texture animation
-      masterTl.to(bgTextureRef.current, {
-        opacity: 1,
-        scale: 1,
-        duration: 1.2,
-        ease: 'power2.out'
-      })
       // Title animation
-      .to(titleRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-      }, '-=0.6')
-      // Subtitle animation
-      .to(subtitleRef.current, {
+      masterTl.to(titleRef.current, {
         opacity: 1,
         y: 0,
         duration: 0.6,
         ease: 'power3.out'
-      }, '-=0.4')
+      })
+      // Subtitle animation
+      .to(subtitleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power3.out'
+      }, '-=0.3')
       // Button animation
       .to(buttonRef.current, {
         opacity: 1,
         scale: 1,
-        duration: 0.5,
-        ease: 'back.out(1.7)'
+        duration: 0.4,
+        ease: 'power2.out'
       }, '-=0.2')
-
-      // Parallax effect for background texture
-      gsap.to(bgTextureRef.current, {
-        y: -100,
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1
-        }
-      })
     }, section)
 
     return () => {
-      // Remove orbs before context cleanup
-      bgOrbsRef.current.forEach(orb => {
-        if (orb && orb.parentNode) {
-          orb.remove()
-        }
-      })
-      bgOrbsRef.current = []
       // Revert all GSAP animations and ScrollTriggers
       ctx.revert()
     }
@@ -458,8 +378,8 @@ const Services = () => {
 
   return (
     <section ref={sectionRef} id="services" className="section services">
-      {/* Animated Background Texture */}
-      <div ref={bgTextureRef} className="services-bg-texture"></div>
+      {/* Background Texture */}
+      <div className="services-bg-texture"></div>
       
       {/* Content */}
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
@@ -470,11 +390,11 @@ const Services = () => {
           Complete web agency services from design to development, SEO to social media, and everything in between
         </p>
         <div ref={gridRef} className="services-grid">
-          {services.slice(0, 6).map((service, index) => (
+          {services.slice(0, 8).map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <Link 
             ref={buttonRef}
             href="/services" 

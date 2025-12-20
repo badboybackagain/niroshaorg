@@ -1,0 +1,56 @@
+#!/usr/bin/expect -f
+
+set timeout 60
+set SSH_HOST "37.27.54.247"
+set SSH_USER "nirosha_1"
+set SSH_PASS "Celorita13jan!!"
+set SSH_TARGET_DIR "public_html"
+
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $SSH_USER@$SSH_HOST
+
+expect {
+    "password:" {
+        send "$SSH_PASS\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd $SSH_TARGET_DIR\r"
+        expect "$ "
+        
+        send "echo '=== Checking build manifest ==='\r"
+        expect "$ "
+        send "cat .next/BUILD_ID 2>/dev/null || echo 'BUILD_ID not found'\r"
+        expect "$ "
+        
+        send "echo '=== Listing all chunk files ==='\r"
+        expect "$ "
+        send "ls -1 .next/static/chunks/*.js 2>/dev/null | wc -l\r"
+        expect "$ "
+        
+        send "echo '=== Checking for the missing file ==='\r"
+        expect "$ "
+        send "ls -la .next/static/chunks/3c2be8ff7d60619a.js 2>/dev/null || echo 'File 3c2be8ff7d60619a.js NOT FOUND'\r"
+        expect "$ "
+        
+        send "echo '=== Checking build manifest for references ==='\r"
+        expect "$ "
+        send "grep -r '3c2be8ff7d60619a' .next/ 2>/dev/null | head -5 || echo 'File not referenced in build'\r"
+        expect "$ "
+        
+        send "echo '=== Checking when files were last modified ==='\r"
+        expect "$ "
+        send "ls -lt .next/static/chunks/*.js 2>/dev/null | head -5\r"
+        expect "$ "
+        
+        send "echo '=== Recommendation: Need to redeploy ==='\r"
+        expect "$ "
+        send "echo 'The missing chunk file indicates the deployment is incomplete or outdated.'\r"
+        expect "$ "
+        send "echo 'Solution: Run ./deploy.sh from local machine to update all files.'\r"
+        expect "$ "
+        
+        send "exit\r"
+        expect eof
+    }
+    eof
+}

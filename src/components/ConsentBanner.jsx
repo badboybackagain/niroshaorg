@@ -21,30 +21,41 @@ const ConsentBanner = ({ onConsentChange }) => {
     if (typeof window !== 'undefined') {
       try {
         const consent = localStorage.getItem('gtm-consent')
-        console.log('[ConsentBanner] Checking consent:', consent)
         if (!consent) {
-          // Show banner after a short delay for better UX
-          console.log('[ConsentBanner] No consent found, showing banner')
-          setTimeout(() => {
-            console.log('[ConsentBanner] Setting visible and animating')
+          // Defer showing banner until after initial page load to not block rendering
+          // Use requestIdleCallback if available, otherwise setTimeout
+          const showBanner = () => {
             setIsVisible(true)
-            setIsAnimating(true)
-          }, 500)
+            // Small delay before animation for smoother UX
+            requestAnimationFrame(() => {
+              setIsAnimating(true)
+            })
+          }
+          
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(showBanner, { timeout: 2000 })
+          } else {
+            setTimeout(showBanner, 1000)
+          }
         } else {
           // If consent already exists, notify parent immediately
-          console.log('[ConsentBanner] Consent exists:', consent)
           onConsentChange(consent === 'accepted')
         }
       } catch (error) {
         // If localStorage is not available, show banner anyway
-        console.warn('[ConsentBanner] localStorage not available, showing consent banner:', error)
-        setTimeout(() => {
+        const showBanner = () => {
           setIsVisible(true)
-          setIsAnimating(true)
-        }, 500)
+          requestAnimationFrame(() => {
+            setIsAnimating(true)
+          })
+        }
+        
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(showBanner, { timeout: 2000 })
+        } else {
+          setTimeout(showBanner, 1000)
+        }
       }
-    } else {
-      console.log('[ConsentBanner] Window not available (SSR)')
     }
   }, [onConsentChange])
 
@@ -102,16 +113,9 @@ const ConsentBanner = ({ onConsentChange }) => {
   }
 
   // Don't render until mounted (client-side only) to avoid hydration issues
-  if (!mounted) {
-    console.log('[ConsentBanner] Not mounted yet, returning null')
+  if (!mounted || !isVisible) {
     return null
   }
-  if (!isVisible) {
-    console.log('[ConsentBanner] Not visible yet, returning null. isVisible:', isVisible, 'isAnimating:', isAnimating)
-    return null
-  }
-  
-  console.log('[ConsentBanner] Rendering banner')
 
   return (
     <>
@@ -559,3 +563,4 @@ const ConsentBanner = ({ onConsentChange }) => {
 }
 
 export default ConsentBanner
+

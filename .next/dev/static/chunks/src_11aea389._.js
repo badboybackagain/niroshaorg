@@ -363,20 +363,25 @@ void main() {
                     meshRef.current = mesh;
                     const updatePlacement = {
                         "LightRaysBackground.useEffect.initializeWebGL.updatePlacement": ()=>{
-                            if (!containerRef.current || !renderer) return;
-                            renderer.dpr = Math.min(window.devicePixelRatio, 2);
-                            const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
-                            renderer.setSize(wCSS, hCSS);
-                            const dpr = renderer.dpr;
-                            const w = wCSS * dpr;
-                            const h = hCSS * dpr;
-                            uniforms.iResolution.value = [
-                                w,
-                                h
-                            ];
-                            const { anchor, dir } = getAnchorAndDir(raysOrigin, w, h);
-                            uniforms.rayPos.value = anchor;
-                            uniforms.rayDir.value = dir;
+                            // Batch layout reads in requestAnimationFrame to avoid forced reflows
+                            requestAnimationFrame({
+                                "LightRaysBackground.useEffect.initializeWebGL.updatePlacement": ()=>{
+                                    if (!containerRef.current || !renderer) return;
+                                    renderer.dpr = Math.min(window.devicePixelRatio, 2);
+                                    const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
+                                    renderer.setSize(wCSS, hCSS);
+                                    const dpr = renderer.dpr;
+                                    const w = wCSS * dpr;
+                                    const h = hCSS * dpr;
+                                    uniforms.iResolution.value = [
+                                        w,
+                                        h
+                                    ];
+                                    const { anchor, dir } = getAnchorAndDir(raysOrigin, w, h);
+                                    uniforms.rayPos.value = anchor;
+                                    uniforms.rayDir.value = dir;
+                                }
+                            }["LightRaysBackground.useEffect.initializeWebGL.updatePlacement"]);
                         }
                     }["LightRaysBackground.useEffect.initializeWebGL.updatePlacement"];
                     const loop = {
@@ -476,11 +481,17 @@ void main() {
             u.mouseInfluence.value = mouseInfluence;
             u.noiseAmount.value = noiseAmount;
             u.distortion.value = distortion;
-            const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
-            const dpr = renderer.dpr;
-            const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr);
-            u.rayPos.value = anchor;
-            u.rayDir.value = dir;
+            // Batch layout reads in requestAnimationFrame to avoid forced reflows
+            requestAnimationFrame({
+                "LightRaysBackground.useEffect": ()=>{
+                    if (!containerRef.current || !renderer) return;
+                    const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
+                    const dpr = renderer.dpr;
+                    const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr);
+                    u.rayPos.value = anchor;
+                    u.rayDir.value = dir;
+                }
+            }["LightRaysBackground.useEffect"]);
         }
     }["LightRaysBackground.useEffect"], [
         raysColor,
@@ -500,13 +511,19 @@ void main() {
             const handleMouseMove = {
                 "LightRaysBackground.useEffect.handleMouseMove": (e)=>{
                     if (!containerRef.current || !rendererRef.current) return;
-                    const rect = containerRef.current.getBoundingClientRect();
-                    const x = (e.clientX - rect.left) / rect.width;
-                    const y = (e.clientY - rect.top) / rect.height;
-                    mouseRef.current = {
-                        x,
-                        y
-                    };
+                    // Batch layout read in requestAnimationFrame to avoid forced reflows
+                    requestAnimationFrame({
+                        "LightRaysBackground.useEffect.handleMouseMove": ()=>{
+                            if (!containerRef.current) return;
+                            const rect = containerRef.current.getBoundingClientRect();
+                            const x = (e.clientX - rect.left) / rect.width;
+                            const y = (e.clientY - rect.top) / rect.height;
+                            mouseRef.current = {
+                                x,
+                                y
+                            };
+                        }
+                    }["LightRaysBackground.useEffect.handleMouseMove"]);
                 }
             }["LightRaysBackground.useEffect.handleMouseMove"];
             if (followMouse) {
@@ -524,7 +541,7 @@ void main() {
         className: `light-rays-background ${className}`.trim()
     }, void 0, false, {
         fileName: "[project]/src/components/LightRaysBackground.jsx",
-        lineNumber: 395,
+        lineNumber: 406,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

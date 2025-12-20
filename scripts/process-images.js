@@ -36,7 +36,9 @@ const imageConfigs = {
     sourceDir: path.join(imagesDir, 'client-logos'),
     cacheDir: path.join(cacheDir, 'client-logos'),
     sizes: {
-      default: { width: 200, height: null } // Maintain aspect ratio
+      // Generate smaller sizes that match actual display dimensions
+      // Desktop: max 80px display = 160px @2x, so 120px @1x (auto-generates 240px @2x) is optimal
+      default: { width: 120, height: null } // 1x: 120px width, script auto-generates 240px @2x
     },
     fit: 'contain',
     processAll: true
@@ -348,9 +350,10 @@ async function processImage(inputFile, config) {
           background: { r: 255, g: 255, b: 255, alpha: 0 } // Transparent background
         })
         .png({ 
-          quality: 90, 
+          quality: 85, 
           compressionLevel: 9,
-          adaptiveFiltering: true
+          adaptiveFiltering: true,
+          palette: true // Use palette for better compression on logos
         })
         .toFile(outputPath)
 
@@ -373,8 +376,9 @@ async function processImage(inputFile, config) {
           background: { r: 255, g: 255, b: 255, alpha: 0 } // Transparent background
         })
         .webp({ 
-          quality: 85,
-          effort: 6
+          quality: 80, // Slightly lower quality for better compression
+          effort: 6, // Higher effort for better compression
+          nearLossless: false // Allow some loss for better file size
         })
         .toFile(outputPath)
 

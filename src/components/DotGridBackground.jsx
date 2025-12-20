@@ -22,49 +22,53 @@ const DotGridBackground = ({
     if (!container) return;
 
     const createDots = () => {
-      const rect = container.getBoundingClientRect();
-      if (rect.width === 0 || rect.height === 0) {
-        // Retry after a short delay if container not ready
-        setTimeout(createDots, 100);
-        return;
-      }
-      
-      const cols = Math.ceil(rect.width / gap) + 1;
-      const rows = Math.ceil(rect.height / gap) + 1;
-      
-      // Clear existing dots
-      container.innerHTML = '';
-      dotsRef.current = [];
-
-      // Create dots
-      for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-          const dot = document.createElement('div');
-          dot.className = 'dot-grid-dot';
-          const x = j * gap;
-          const y = i * gap;
-          dot.style.cssText = `
-            position: absolute;
-            width: ${dotSize}px;
-            height: ${dotSize}px;
-            background: ${color};
-            border-radius: 50%;
-            left: ${x}px;
-            top: ${y}px;
-            transform: translate(-50%, -50%);
-            transition: background 0.3s ease, transform 0.3s ease;
-            pointer-events: none;
-            will-change: transform, background, opacity;
-            box-shadow: 0 0 2px ${color};
-          `;
-          container.appendChild(dot);
-          dotsRef.current.push({
-            element: dot,
-            x: x,
-            y: y
-          });
+      // Batch layout read in requestAnimationFrame to avoid forced reflows
+      requestAnimationFrame(() => {
+        if (!container) return
+        const rect = container.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) {
+          // Retry after a short delay if container not ready
+          setTimeout(createDots, 100);
+          return;
         }
-      }
+        
+        const cols = Math.ceil(rect.width / gap) + 1;
+        const rows = Math.ceil(rect.height / gap) + 1;
+        
+        // Clear existing dots
+        container.innerHTML = '';
+        dotsRef.current = [];
+
+        // Create dots
+        for (let i = 0; i < rows; i++) {
+          for (let j = 0; j < cols; j++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot-grid-dot';
+            const x = j * gap;
+            const y = i * gap;
+            dot.style.cssText = `
+              position: absolute;
+              width: ${dotSize}px;
+              height: ${dotSize}px;
+              background: ${color};
+              border-radius: 50%;
+              left: ${x}px;
+              top: ${y}px;
+              transform: translate(-50%, -50%);
+              transition: background 0.3s ease, transform 0.3s ease;
+              pointer-events: none;
+              will-change: transform, background, opacity;
+              box-shadow: 0 0 2px ${color};
+            `;
+            container.appendChild(dot);
+            dotsRef.current.push({
+              element: dot,
+              x: x,
+              y: y
+            });
+          }
+        }
+      })
     };
 
     const updateDots = () => {
@@ -73,41 +77,44 @@ const DotGridBackground = ({
         return;
       }
       
-      const rect = container.getBoundingClientRect();
-      if (rect.width === 0 || rect.height === 0) {
-        animationFrameRef.current = requestAnimationFrame(updateDots);
-        return;
-      }
-      
-      const mouseX = mousePosition.current.x - rect.left;
-      const mouseY = mousePosition.current.y - rect.top;
-
-      dotsRef.current.forEach(dot => {
-        const dx = dot.x - mouseX;
-        const dy = dot.y - mouseY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < hoverRadius) {
-          const intensity = 1 - (distance / hoverRadius);
-          const scale = 1 + intensity * 0.5;
-          
-          gsap.to(dot.element, {
-            background: hoverColor,
-            scale: scale,
-            duration: 0.3,
-            ease: 'power2.out'
-          });
-        } else {
-          gsap.to(dot.element, {
-            background: color,
-            scale: 1,
-            duration: 0.3,
-            ease: 'power2.out'
-          });
+      // Batch layout read in requestAnimationFrame to avoid forced reflows
+      requestAnimationFrame(() => {
+        const rect = container.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) {
+          animationFrameRef.current = requestAnimationFrame(updateDots);
+          return;
         }
-      });
+        
+        const mouseX = mousePosition.current.x - rect.left;
+        const mouseY = mousePosition.current.y - rect.top;
 
-      animationFrameRef.current = requestAnimationFrame(updateDots);
+        dotsRef.current.forEach(dot => {
+          const dx = dot.x - mouseX;
+          const dy = dot.y - mouseY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < hoverRadius) {
+            const intensity = 1 - (distance / hoverRadius);
+            const scale = 1 + intensity * 0.5;
+            
+            gsap.to(dot.element, {
+              background: hoverColor,
+              scale: scale,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
+          } else {
+            gsap.to(dot.element, {
+              background: color,
+              scale: 1,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
+          }
+        });
+
+        animationFrameRef.current = requestAnimationFrame(updateDots);
+      })
     };
 
     const handleMouseMove = (e) => {
@@ -120,17 +127,20 @@ const DotGridBackground = ({
 
     // Initial setup with delay to ensure container is ready
     const initTimeout = setTimeout(() => {
-      const rect = container.getBoundingClientRect();
-      if (rect.width > 0 && rect.height > 0) {
-        createDots();
-        updateDots();
-      } else {
-        // Retry if container not ready
-        setTimeout(() => {
+      // Batch layout read in requestAnimationFrame to avoid forced reflows
+      requestAnimationFrame(() => {
+        const rect = container.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
           createDots();
           updateDots();
-        }, 200);
-      }
+        } else {
+          // Retry if container not ready
+          setTimeout(() => {
+            createDots();
+            updateDots();
+          }, 200);
+        }
+      })
     }, 100);
 
     // Event listeners

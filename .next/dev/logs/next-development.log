@@ -1,1069 +1,580 @@
-[00:00:01.012] Server  LOG      ✓ Ready in 774ms
-[00:00:20.111] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:20.670] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/page.jsx and app/page.tsx resolve to /
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/about/page.jsx and app/about/page.tsx resolve to /about
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/page.jsx and app/blog/page.tsx resolve to /blog
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/contact/page.jsx and app/contact/page.tsx resolve to /contact
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/page.jsx and app/services/page.tsx resolve to /services
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/[slug]/page.jsx and app/blog/[slug]/page.tsx resolve to /blog/[slug]
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/[slug]/page.jsx and app/services/[slug]/page.tsx resolve to /services/[slug]
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/page.jsx and app/page.tsx resolve to /
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/about/page.jsx and app/about/page.tsx resolve to /about
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/page.jsx and app/blog/page.tsx resolve to /blog
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/contact/page.jsx and app/contact/page.tsx resolve to /contact
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/page.jsx and app/services/page.tsx resolve to /services
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/[slug]/page.jsx and app/blog/[slug]/page.tsx resolve to /blog/[slug]
+[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/[slug]/page.jsx and app/services/[slug]/page.tsx resolve to /services/[slug]
+[00:00:00.519] Server  LOG      ✓ Ready in 350ms
+[00:00:02.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.885] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.375] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:18.215] Browser LOG     ScrollSmoother initialized successfully
+[00:00:18.215] Browser LOG     ScrollSmoother initialized successfully
+[00:00:18.215] Browser LOG     ScrollSmoother initialized successfully
+[00:00:21.048] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:22.191] Browser LOG     ScrollSmoother initialized successfully
+[00:00:28.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.859] Browser LOG     ScrollSmoother initialized successfully
+[00:00:38.989] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/compiled/next-server/pages-turbo.runtime.dev.js
+- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[root-of-the-server]__e6a4d965._.js
+- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[turbopack]_runtime.js
+- /Users/abhishek/niroshaorg/.next/dev/server/app/about/page.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/require.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/build/utils.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/options.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/index.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:00:39.021] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/compiled/next-server/pages-turbo.runtime.dev.js
+- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[root-of-the-server]__e6a4d965._.js
+- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[turbopack]_runtime.js
+- /Users/abhishek/niroshaorg/.next/dev/server/app/about/page.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/require.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/build/utils.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/options.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/index.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:00:39.089] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:00:39.104] Server  ERROR   Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:00:39.140] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
+[00:00:39.172] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
+[00:00:39.192] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:00:39.217] Server  ERROR   Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:00:42.764] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.956] Browser LOG     ScrollSmoother initialized successfully
+[00:00:45.285] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:46.391] Browser LOG     ScrollSmoother initialized successfully
+[00:05:19.575] Browser LOG     ScrollSmoother initialized successfully
+[00:05:20.535] Browser LOG     ScrollSmoother initialized successfully
+[00:07:14.475] Server  LOG      ✓ Compiled in 42ms
+[00:07:15.602] Server  LOG      ✓ Compiled in 5ms
+[00:07:18.866] Server  LOG      ✓ Compiled in 10ms
+[00:07:19.693] Server  LOG      ✓ Compiled in 26ms
+[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
+Parsing ecmascript source code failed
+  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
+  156 |       }
+> 157 |     };
+      |      ^
+  158 |
+  159 |     const handleMouseLeave = () => {
+  160 |       hoveredSquareRef.current = null;
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+Expected ',', got ';'
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+Import traces:
+  Client Component Browser:
+    ./src/components/SquaresBackground.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
 
-%s%s https://react.dev/link/hydration-mismatch 
+  Client Component SSR:
+    ./src/components/SquaresBackground.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
+[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
+Parsing ecmascript source code failed
+  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
+  156 |       }
+> 157 |     };
+      |      ^
+  158 |
+  159 |     const handleMouseLeave = () => {
+  160 |       hoveredSquareRef.current = null;
 
-  ...
-    <AppDevOverlayErrorBoundary globalError={[...]}>
-      <ReplaySsrOnlyErrors>
-      <DevRootHTTPAccessFallbackBoundary>
-        <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-          <HTTPAccessFallbackErrorBoundary pathname="/contact" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-            <RedirectBoundary>
-              <RedirectErrorBoundary router={{...}}>
-                <Head>
-                <__next_root_layout_boundary__>
-                  <SegmentViewNode type="layout" pagePath="layout.jsx">
-                    <SegmentTrieNode>
-                    <link>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <RootLayout>
-                      <html lang="en" suppressHydrationWarning={true}>
-                        <head>
-                        <body suppressHydrationWarning={true}>
-                          <Layout>
-                            <div className="App" suppressHydrationWarning={true}>
-                              <Navbar>
-                                ...
-                                  <div className="nav-content">
-                                    <div className="nav-brand">
-                                      <Logo size="default" className="navbar-logo">
-                                        <LinkComponent href="/" className="logo-link ..." aria-label="Team Niros...">
-                                          <a
-                                            className="logo-link logo-with-text navbar-logo"
-                                            aria-label="Team Nirosha Home"
-                                            ref={function}
-                                            onClick={function onClick}
-                                            onMouseEnter={function onMouseEnter}
-                                            onTouchStart={function onTouchStart}
-                                            href="/"
--                                           contenteditable="false"
--                                           style={{cursor:"pointer"}}
-                                          >
-                                    <div className="nav-links-...">
-                                      <LinkComponent href="/" className={"nav-link "}>
-                                        <a
-                                          className={"nav-link "}
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                      <LinkComponent href="/about" className={"nav-link "}>
-                                        <a
-                                          className={"nav-link "}
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/about"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                      <div className={"nav-link..."} onMouseEnter={function onMouseEnter} ...>
-                                        <LinkComponent href="/services" className="nav-link" ref={{current:null}}>
-                                          <a
-                                            className="nav-link"
-                                            ref={function}
-                                            onClick={function onClick}
-                                            onMouseEnter={function onMouseEnter}
-                                            onTouchStart={function onTouchStart}
-                                            href="/services"
--                                           contenteditable="false"
--                                           style={{cursor:"pointer"}}
-                                          >
-                                      <LinkComponent href="/blog" className={"nav-link "}>
-                                        <a
-                                          className={"nav-link "}
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/blog"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                      <LinkComponent href="/contact" className="nav-link a...">
-                                        <a
-                                          className="nav-link active"
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/contact"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                    ...
-                                <div className={"mobile-m..."} onClick={function onClick}>
-                                  <div className={"mobile-m..."} onClick={function onClick}>
-                                    <LinkComponent href="/" className={"mobile-m..."} onClick={function onClick}>
-                                      <a
-                                        className={"mobile-menu-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <LinkComponent href="/about" className={"mobile-m..."} onClick={function onClick}>
-                                      <a
-                                        className={"mobile-menu-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/about"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <div>
-                                    <LinkComponent href="/blog" className={"mobile-m..."} onClick={function onClick}>
-                                      <a
-                                        className={"mobile-menu-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/blog"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <LinkComponent href="/contact" className="mobile-men..." onClick={function onClick}>
-                                      <a
-                                        className="mobile-menu-link active"
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/contact"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <form>
-                                    <a
-                                      href="https://calendly.com/nirosha-info/30min"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="btn btn-primary mobile-menu-cta"
-                                      onClick={function onClick}
--                                     contenteditable="false"
--                                     style={{cursor:"pointer"}}
-                                    >
-                              <ScrollSmootherWrapper>
-                              <div id="smooth-wra...">
-                                <div id="smooth-con...">
-                                  ...
-                                    <div className="container">
-                                      <div>
-                                      <div className="contact-co...">
-                                        <div>
-                                        <div ref={{current:null}} className={"contact-..."}>
-                                          <div>
-                                          <div>
-                                          <h2>
-                                          <div className="contact-in...">
-                                            <a
-                                              href="tel:+919403891938"
-                                              className="contact-info-card"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-                                            <a
-                                              href="https://wa.me/919403891938"
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              className="contact-info-card"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-                                            <a
-                                              href="mailto:info@nirosha.org"
-                                              className="contact-info-card"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-                                            ...
-                                          <div className="contact-cta">
-                                            <h3>
-                                            <a
-                                              href="https://calendly.com/nirosha-info/30min"
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              className="btn btn-primary"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-+                                             Book a Free Consultation
-                                      <div ref={{current:null}} className={"map-wrap..."}>
-                                        <div>
-                                        <div>
-                                        <h2>
-                                        <div className="map-container">
-                                          <iframe>
-                                          <div className="map-note">
-                                            <p>
-                                              <a
-                                                href="https://share.google/ypdNfDOVtHYeFsUiU"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="map-link"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-+                                               View on Google Maps →
-                                  ...
-                                    <div className="container">
-                                      <div className="footer-con...">
-                                        <div className="footer-sec...">
-                                          <Logo size="small" className="footer-logo">
-                                            <LinkComponent href="/" className="logo-link ..." aria-label="Team Niros...">
-                                              <a
-                                                className="logo-link logo-with-text footer-logo"
-                                                aria-label="Team Nirosha Home"
-                                                ref={function}
-                                                onClick={function onClick}
-                                                onMouseEnter={function onMouseEnter}
-                                                onTouchStart={function onTouchStart}
-                                                href="/"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                          ...
-                                        <div className="footer-sec...">
-                                          <h4>
-                                          <ul className="footer-links">
-                                            <li>
-                                              <LinkComponent href="/">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 Home
-                                            <li>
-                                              <LinkComponent href="/about">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/about"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 About
-                                            <li>
-                                              <LinkComponent href="/services">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/services"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 Services
-                                            <li>
-                                              <LinkComponent href="/contact">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/contact"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 Contact
-                                        <div className="footer-sec...">
-                                          <h4>
-                                          <ul className="footer-con...">
-                                            <li>
-                                              <a
-                                                href="tel:+919403891938"
-                                                aria-label="Call Team Nirosha at +91-9403891938"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                            <li>
-                                              <a
-                                                href="https://wa.me/919403891938"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="Contact Team Nirosha on WhatsApp"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                            <li>
-                                              <a
-                                                href="mailto:info@nirosha.org"
-                                                aria-label="Email Team Nirosha at info@nirosha.org"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                            ...
-                                        <div className="footer-sec...">
-                                          <h4>
-                                          <a
-                                            href="https://calendly.com/nirosha-info/30min"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn btn-primary footer-cta"
--                                           contenteditable="false"
--                                           style={{cursor:"pointer"}}
-                                          >
-+                                           Book a Free Consultation
-                                      ...
-                              <ScrollToTopButton>
-                              <ContactBubbles>
-                                <div className="contact-bu..." onMouseEnter={function onMouseEnter} ...>
-                                  <a
-                                    href="https://wa.me/919403891938"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={"contact-bubble whatsapp-bubble "}
-                                    aria-label="Contact us on WhatsApp"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                                  <a
-                                    href="tel:+919403891938"
-                                    className={"contact-bubble call-bubble "}
-                                    aria-label="Call us"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                                <div className="contact-mo...">
-                                  <a
-                                    href="https://wa.me/919403891938"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="contact-mobile-item whatsapp-item"
-                                    aria-label="Contact us on WhatsApp"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                                  <a
-                                    href="tel:+919403891938"
-                                    className="contact-mobile-item call-item"
-                                    aria-label="Call us"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                ...
+Expected ',', got ';'
 
-[00:00:20.670] Browser LOG     📝 Contact component mounted
-[00:00:20.670] Browser LOG     📍 You should see this message in the browser console (F12 → Console tab)
-[00:00:20.806] Browser LOG     ScrollSmoother initialized successfully
-[00:19:48.555] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:48.981] Browser LOG     📝 Contact component mounted
-[00:19:48.981] Browser LOG     📍 You should see this message in the browser console (F12 → Console tab)
-[00:19:49.111] Browser LOG     ScrollSmoother initialized successfully
-[00:19:56.994] Browser LOG     🔘 Submit button clicked!
-[00:19:56.994] Browser LOG     🚀 handleSubmit called!
-[00:19:56.994] Browser LOG     ✅ preventDefault called
-[00:19:56.994] Browser LOG     📋 Current formData: {"comments":"teste","countryCode":"+91","email":"abhishek.mba@gmail.com","fullName":"Abhishek Tiwari","serviceInterested":["Branding & Design","Web Maintenance"],"website":"","whatsappNumber":"9028446832"}
-[00:19:56.994] Browser LOG     🔍 Checking honeypot fields...
-[00:19:56.994] Browser LOG       - website:  (should be empty - honeypot)
-[00:19:56.994] Browser LOG     ✅ Honeypot check passed
-[00:19:56.994] Browser LOG     🔍 Checking service selection...
-[00:19:56.994] Browser LOG       - serviceInterested: ["Branding & Design","Web Maintenance"]
-[00:19:56.994] Browser LOG       - serviceInterested.length: 2
-[00:19:56.995] Browser LOG     ✅ Service validation passed
-[00:19:56.995] Browser LOG     ✅ All validation passed, starting submission...
-[00:19:56.995] Browser LOG     Sending request to: /api/contact
-[00:19:56.995] Browser LOG     Form data: {"countryCode":"+91","email":"abhishek.mba@gmail.com","fullName":"Abhishek Tiwari","serviceInterested":["Branding & Design","Web Maintenance"],"whatsappNumber":"9028446832"}
-[00:19:57.139] Server  LOG     🔗 Sending form data to webhook...
-[00:19:57.860] Server  LOG     ✅ Webhook called successfully
-[00:20:01.655] Server  LOG     Admin email sent: "<38bf7a0e-16ed-dd5d-dffc-8fc3119f2558@nirosha.org>"
-[00:20:01.656] Server  LOG     User email sent: "<4a0f5506-fb02-173f-b9a2-a10e46868ea3@nirosha.org>"
-[00:20:01.656] Server  LOG     📱 Sending WhatsApp message...
-[00:20:02.501] Server  LOG     ✅ WhatsApp message sent successfully: {}
-[00:20:02.608] Browser LOG     Response status: 200
-[00:20:02.608] Browser LOG     Response headers: {"connection":"keep-alive","content-type":"application/json","date":"Thu, 18 Dec 2025 06:57:21 GMT","keep-alive":"timeout=5","transfer-encoding":"chunked","vary":"rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"}
-[00:20:02.608] Browser LOG     Content-Type: application/json
-[00:20:02.608] Browser LOG     ✅ Success! Response: {"adminEmailId":"<38bf7a0e-16ed-dd5d-dffc-8fc3119f2558@nirosha.org>","message":"Emails sent successfully and WhatsApp message sent","success":true,"userEmailId":"<4a0f5506-fb02-173f-b9a2-a10e46868ea3@nirosha.org>","whatsappSent":true}
-[00:21:16.238] Server  LOG     🔗 Sending form data to webhook...
-[00:21:16.325] Browser LOG     🔘 Submit button clicked!
-[00:21:16.325] Browser LOG     🚀 handleSubmit called!
-[00:21:16.325] Browser LOG     ✅ preventDefault called
-[00:21:16.326] Browser LOG     📋 Current formData: {"comments":"local","countryCode":"+91","email":"abhishek.mba@gmail.com","fullName":"Abhishek Tiwari","phone":"","serviceInterested":["Web Maintenance"],"website":"","whatsappNumber":"9028446832"}
-[00:21:16.326] Browser LOG     🔍 Checking honeypot fields...
-[00:21:16.326] Browser LOG       - website:  (should be empty - honeypot)
-[00:21:16.326] Browser LOG     ✅ Honeypot check passed
-[00:21:16.326] Browser LOG     🔍 Checking service selection...
-[00:21:16.326] Browser LOG       - serviceInterested: ["Web Maintenance"]
-[00:21:16.326] Browser LOG       - serviceInterested.length: 1
-[00:21:16.326] Browser LOG     ✅ Service validation passed
-[00:21:16.326] Browser LOG     ✅ All validation passed, starting submission...
-[00:21:16.326] Browser LOG     Sending request to: /api/contact
-[00:21:16.326] Browser LOG     Form data: {"countryCode":"+91","email":"abhishek.mba@gmail.com","fullName":"Abhishek Tiwari","serviceInterested":["Web Maintenance"],"whatsappNumber":"9028446832"}
-[00:21:16.752] Server  LOG     ✅ Webhook called successfully
-[00:21:19.640] Server  LOG     Admin email sent: "<49e36d75-f676-8cb1-1b8a-6fb1ed3107d6@nirosha.org>"
-[00:21:19.644] Server  LOG     User email sent: "<e40be891-e4bb-e66f-8255-50c2f197fb11@nirosha.org>"
-[00:21:19.644] Server  LOG     📱 Sending WhatsApp message...
-[00:21:20.465] Server  LOG     ✅ WhatsApp message sent successfully: {}
-[00:21:20.574] Browser LOG     Response status: 200
-[00:21:20.574] Browser LOG     Response headers: {"connection":"keep-alive","content-type":"application/json","date":"Thu, 18 Dec 2025 06:58:39 GMT","keep-alive":"timeout=5","transfer-encoding":"chunked","vary":"rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"}
-[00:21:20.574] Browser LOG     Content-Type: application/json
-[00:21:20.574] Browser LOG     ✅ Success! Response: {"adminEmailId":"<49e36d75-f676-8cb1-1b8a-6fb1ed3107d6@nirosha.org>","message":"Emails sent successfully and WhatsApp message sent","success":true,"userEmailId":"<e40be891-e4bb-e66f-8255-50c2f197fb11@nirosha.org>","whatsappSent":true}
-[00:25:24.367] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:25:24.972] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+Import traces:
+  Client Component Browser:
+    ./src/components/SquaresBackground.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+  Client Component SSR:
+    ./src/components/SquaresBackground.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
+[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
+Parsing ecmascript source code failed
+  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
+  156 |       }
+> 157 |     };
+      |      ^
+  158 |
+  159 |     const handleMouseLeave = () => {
+  160 |       hoveredSquareRef.current = null;
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+Expected ',', got ';'
 
-%s%s https://react.dev/link/hydration-mismatch 
+Import traces:
+  Client Component Browser:
+    ./src/components/SquaresBackground.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
 
-  ...
-    <AppDevOverlayErrorBoundary globalError={[...]}>
-      <ReplaySsrOnlyErrors>
-      <DevRootHTTPAccessFallbackBoundary>
-        <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-          <HTTPAccessFallbackErrorBoundary pathname="/contact" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-            <RedirectBoundary>
-              <RedirectErrorBoundary router={{...}}>
-                <Head>
-                <__next_root_layout_boundary__>
-                  <SegmentViewNode type="layout" pagePath="layout.jsx">
-                    <SegmentTrieNode>
-                    <link>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <script>
-                    <RootLayout>
-                      <html lang="en" suppressHydrationWarning={true}>
-                        <head>
-                        <body suppressHydrationWarning={true}>
-                          <Layout>
-                            <div className="App" suppressHydrationWarning={true}>
-                              <Navbar>
-                                ...
-                                  <div className="nav-content">
-                                    <div className="nav-brand">
-                                      <Logo size="default" className="navbar-logo">
-                                        <LinkComponent href="/" className="logo-link ..." aria-label="Team Niros...">
-                                          <a
-                                            className="logo-link logo-with-text navbar-logo"
-                                            aria-label="Team Nirosha Home"
-                                            ref={function}
-                                            onClick={function onClick}
-                                            onMouseEnter={function onMouseEnter}
-                                            onTouchStart={function onTouchStart}
-                                            href="/"
--                                           contenteditable="false"
--                                           style={{cursor:"pointer"}}
-                                          >
-                                    <div className="nav-links-...">
-                                      <LinkComponent href="/" className={"nav-link "}>
-                                        <a
-                                          className={"nav-link "}
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                      <LinkComponent href="/about" className={"nav-link "}>
-                                        <a
-                                          className={"nav-link "}
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/about"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                      <div className={"nav-link..."} onMouseEnter={function onMouseEnter} ...>
-                                        <LinkComponent href="/services" className="nav-link" ref={{current:null}}>
-                                          <a
-                                            className="nav-link"
-                                            ref={function}
-                                            onClick={function onClick}
-                                            onMouseEnter={function onMouseEnter}
-                                            onTouchStart={function onTouchStart}
-                                            href="/services"
--                                           contenteditable="false"
--                                           style={{cursor:"pointer"}}
-                                          >
-                                      <LinkComponent href="/blog" className={"nav-link "}>
-                                        <a
-                                          className={"nav-link "}
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/blog"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                      <LinkComponent href="/contact" className="nav-link a...">
-                                        <a
-                                          className="nav-link active"
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/contact"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                    ...
-                                <div className={"mobile-m..."} onClick={function onClick}>
-                                  <div className={"mobile-m..."} onClick={function onClick}>
-                                    <LinkComponent href="/" className={"mobile-m..."} onClick={function onClick}>
-                                      <a
-                                        className={"mobile-menu-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <LinkComponent href="/about" className={"mobile-m..."} onClick={function onClick}>
-                                      <a
-                                        className={"mobile-menu-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/about"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <div>
-                                    <LinkComponent href="/blog" className={"mobile-m..."} onClick={function onClick}>
-                                      <a
-                                        className={"mobile-menu-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/blog"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <LinkComponent href="/contact" className="mobile-men..." onClick={function onClick}>
-                                      <a
-                                        className="mobile-menu-link active"
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/contact"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <form>
-                                    <a
-                                      href="https://calendly.com/nirosha-info/30min"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="btn btn-primary mobile-menu-cta"
-                                      onClick={function onClick}
--                                     contenteditable="false"
--                                     style={{cursor:"pointer"}}
-                                    >
-                              <ScrollSmootherWrapper>
-                              <div id="smooth-wra...">
-                                <div id="smooth-con...">
-                                  ...
-                                    <div className="container">
-                                      <div>
-                                      <div className="contact-co...">
-                                        <div>
-                                        <div ref={{current:null}} className={"contact-..."}>
-                                          <div>
-                                          <div>
-                                          <h2>
-                                          <div className="contact-in...">
-                                            <a
-                                              href="tel:+919403891938"
-                                              className="contact-info-card"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-                                            <a
-                                              href="https://wa.me/919403891938"
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              className="contact-info-card"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-                                            <a
-                                              href="mailto:info@nirosha.org"
-                                              className="contact-info-card"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-                                            ...
-                                          <div className="contact-cta">
-                                            <h3>
-                                            <a
-                                              href="https://calendly.com/nirosha-info/30min"
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              className="btn btn-primary"
--                                             contenteditable="false"
--                                             style={{cursor:"pointer"}}
-                                            >
-+                                             Book a Free Consultation
-                                      <div ref={{current:null}} className={"map-wrap..."}>
-                                        <div>
-                                        <div>
-                                        <h2>
-                                        <div className="map-container">
-                                          <iframe>
-                                          <div className="map-note">
-                                            <p>
-                                              <a
-                                                href="https://share.google/ypdNfDOVtHYeFsUiU"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="map-link"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-+                                               View on Google Maps →
-                                  ...
-                                    <div className="container">
-                                      <div className="footer-con...">
-                                        <div className="footer-sec...">
-                                          <Logo size="small" className="footer-logo">
-                                            <LinkComponent href="/" className="logo-link ..." aria-label="Team Niros...">
-                                              <a
-                                                className="logo-link logo-with-text footer-logo"
-                                                aria-label="Team Nirosha Home"
-                                                ref={function}
-                                                onClick={function onClick}
-                                                onMouseEnter={function onMouseEnter}
-                                                onTouchStart={function onTouchStart}
-                                                href="/"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                          ...
-                                        <div className="footer-sec...">
-                                          <h4>
-                                          <ul className="footer-links">
-                                            <li>
-                                              <LinkComponent href="/">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 Home
-                                            <li>
-                                              <LinkComponent href="/about">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/about"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 About
-                                            <li>
-                                              <LinkComponent href="/services">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/services"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 Services
-                                            <li>
-                                              <LinkComponent href="/contact">
-                                                <a
-                                                  ref={function}
-                                                  onClick={function onClick}
-                                                  onMouseEnter={function onMouseEnter}
-                                                  onTouchStart={function onTouchStart}
-                                                  href="/contact"
--                                                 contenteditable="false"
--                                                 style={{cursor:"pointer"}}
-                                                >
-+                                                 Contact
-                                        <div className="footer-sec...">
-                                          <h4>
-                                          <ul className="footer-con...">
-                                            <li>
-                                              <a
-                                                href="tel:+919403891938"
-                                                aria-label="Call Team Nirosha at +91-9403891938"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                            <li>
-                                              <a
-                                                href="https://wa.me/919403891938"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="Contact Team Nirosha on WhatsApp"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                            <li>
-                                              <a
-                                                href="mailto:info@nirosha.org"
-                                                aria-label="Email Team Nirosha at info@nirosha.org"
--                                               contenteditable="false"
--                                               style={{cursor:"pointer"}}
-                                              >
-                                            ...
-                                        <div className="footer-sec...">
-                                          <h4>
-                                          <a
-                                            href="https://calendly.com/nirosha-info/30min"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn btn-primary footer-cta"
--                                           contenteditable="false"
--                                           style={{cursor:"pointer"}}
-                                          >
-+                                           Book a Free Consultation
-                                      ...
-                              <ScrollToTopButton>
-                              <ContactBubbles>
-                                <div className="contact-bu..." onMouseEnter={function onMouseEnter} ...>
-                                  <a
-                                    href="https://wa.me/919403891938"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={"contact-bubble whatsapp-bubble "}
-                                    aria-label="Contact us on WhatsApp"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                                  <a
-                                    href="tel:+919403891938"
-                                    className={"contact-bubble call-bubble "}
-                                    aria-label="Call us"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                                <div className="contact-mo...">
-                                  <a
-                                    href="https://wa.me/919403891938"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="contact-mobile-item whatsapp-item"
-                                    aria-label="Contact us on WhatsApp"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                                  <a
-                                    href="tel:+919403891938"
-                                    className="contact-mobile-item call-item"
-                                    aria-label="Call us"
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                ...
+  Client Component SSR:
+    ./src/components/SquaresBackground.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
+[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
+Parsing ecmascript source code failed
+  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
+  156 |       }
+> 157 |     };
+      |      ^
+  158 |
+  159 |     const handleMouseLeave = () => {
+  160 |       hoveredSquareRef.current = null;
 
-[00:25:24.972] Browser LOG     📝 Contact component mounted
-[00:25:24.972] Browser LOG     📍 You should see this message in the browser console (F12 → Console tab)
-[00:25:25.088] Browser LOG     ScrollSmoother initialized successfully
-[00:25:57.783] Server  LOG     🔗 Sending form data to webhook...
-[00:25:57.890] Browser LOG     🔘 Submit button clicked!
-[00:25:57.890] Browser LOG     🚀 handleSubmit called!
-[00:25:57.890] Browser LOG     ✅ preventDefault called
-[00:25:57.890] Browser LOG     📋 Current formData: {"comments":"Local final","countryCode":"+91","email":"abhishek.mba@gmail.com","fullName":"Abhishek Tiwari","serviceInterested":["Digital Marketing","Branding & Design"],"website":"","whatsappNumber":"9028446832"}
-[00:25:57.890] Browser LOG     🔍 Checking honeypot fields...
-[00:25:57.890] Browser LOG       - website:  (should be empty - honeypot)
-[00:25:57.890] Browser LOG     ✅ Honeypot check passed
-[00:25:57.890] Browser LOG     🔍 Checking service selection...
-[00:25:57.890] Browser LOG       - serviceInterested: ["Digital Marketing","Branding & Design"]
-[00:25:57.890] Browser LOG       - serviceInterested.length: 2
-[00:25:57.890] Browser LOG     ✅ Service validation passed
-[00:25:57.890] Browser LOG     ✅ All validation passed, starting submission...
-[00:25:57.890] Browser LOG     Sending request to: /api/contact
-[00:25:57.890] Browser LOG     Form data: {"countryCode":"+91","email":"abhishek.mba@gmail.com","fullName":"Abhishek Tiwari","serviceInterested":["Digital Marketing","Branding & Design"],"whatsappNumber":"9028446832"}
-[00:25:57.890] Browser LOG     Response status: 200
-[00:25:57.890] Browser LOG     Response headers: {"connection":"keep-alive","content-type":"application/json","date":"Thu, 18 Dec 2025 07:03:16 GMT","keep-alive":"timeout=5","transfer-encoding":"chunked","vary":"rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"}
-[00:25:57.890] Browser LOG     Content-Type: application/json
-[00:25:57.890] Browser LOG     ✅ Success! Response: {"message":"Form submitted successfully. We will get back to you soon!","success":true}
-[00:25:58.304] Server  LOG     ✅ Webhook called successfully
-[00:26:04.740] Server  LOG     Admin email sent: "<2b89b40b-0244-f6e3-838f-6f34f41545bb@nirosha.org>"
-[00:26:04.742] Server  LOG     User email sent: "<8498dce0-7782-b11d-200a-b80f1aeb4f09@nirosha.org>"
-[00:26:04.743] Server  LOG     📱 Sending WhatsApp message...
-[00:26:05.573] Server  LOG     ✅ WhatsApp message sent successfully: {}
-[00:31:26.000] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:31:26.687] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+Expected ',', got ';'
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+Import traces:
+  Client Component Browser:
+    ./src/components/SquaresBackground.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Client Component Browser]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+  Client Component SSR:
+    ./src/components/SquaresBackground.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Client Component SSR]
+    ./src/page-components/AboutPage.jsx [Server Component]
+    ./app/about/page.tsx [Server Component]
+[00:07:31.520] Server  LOG      ✓ Compiled in 49ms
+[00:07:36.103] Server  LOG      ✓ Compiled in 12ms
+[00:07:41.008] Server  LOG      ✓ Compiled in 7ms
+[00:07:41.158] Server  LOG      ✓ Compiled in 40ms
+[00:07:47.654] Server  LOG      ✓ Compiled in 7ms
+[00:08:13.088] Server  LOG      ✓ Compiled in 37ms
+[00:17:22.808] Server  LOG      ✓ Compiled in 56ms
+[00:17:26.653] Server  LOG      ✓ Compiled in 200ms
+[00:17:28.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:28.358] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:28.568] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:28.915] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:43.224] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:43.233] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:43.570] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:44.025] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:49.245] Browser LOG     ScrollSmoother initialized successfully
+[00:17:49.249] Browser LOG     ScrollSmoother initialized successfully
+[00:17:49.250] Browser LOG     ScrollSmoother initialized successfully
+[00:17:49.250] Browser LOG     ScrollSmoother initialized successfully
+[00:18:17.166] Browser LOG     ScrollSmoother initialized successfully
+[00:18:18.268] Browser LOG     ScrollSmoother initialized successfully
+[00:18:21.099] Browser LOG     ScrollSmoother initialized successfully
+[00:18:24.385] Browser LOG     ScrollSmoother initialized successfully
+[00:18:26.141] Server  LOG      ✓ Compiled in 32ms
+[00:18:26.205] Browser LOG     ScrollSmoother initialized successfully
+[00:18:27.342] Browser LOG     ScrollSmoother initialized successfully
+[00:18:58.402] Browser LOG     ScrollSmoother initialized successfully
+[00:19:10.126] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:11.377] Browser LOG     ScrollSmoother initialized successfully
+[00:19:21.086] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
+[00:19:21.120] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
+[00:19:21.152] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:19:21.172] Server  ERROR   Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:19:21.223] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
+[00:19:21.251] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
+[00:19:21.284] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:19:21.298] Server  ERROR   Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:19:25.913] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:27.534] Browser LOG     ScrollSmoother initialized successfully
+[00:19:29.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:30.474] Browser LOG     ScrollSmoother initialized successfully
+[00:22:23.378] Browser LOG     ScrollSmoother initialized successfully
+[00:23:32.901] Browser LOG     ScrollSmoother initialized successfully
+[00:23:33.750] Browser LOG     ScrollSmoother initialized successfully
+[00:23:50.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:51.609] Browser LOG     ScrollSmoother initialized successfully
+[00:24:19.391] Browser LOG     ScrollSmoother initialized successfully
+[00:27:23.679] Browser LOG     ScrollSmoother initialized successfully
+[00:28:47.006] Server  LOG      ✓ Compiled in 40ms
+[00:28:59.636] Server  LOG      ✓ Compiled in 9ms
+[00:29:00.215] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
 
-https://react.dev/link/hydration-mismatch
+Previous: %s
+Incoming: %s useEffect [] [[object Object]]
+[00:29:20.527] Server  LOG      ✓ Compiled in 601ms
+[00:29:21.051] Server  LOG      ✓ Compiled in 9ms
+[00:29:21.206] Browser ERROR   ./src/page-components/PortfolioPage.jsx:173:10
+Parsing ecmascript source code failed
+  171 |             })}
+  172 |           </div>
+> 173 |         </div>
+      |          ^^^^^
+  174 |       </section>
+  175 |     </div>
+  176 |   )
 
-  ...
-    <DevRootHTTPAccessFallbackBoundary>
-      <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-        <HTTPAccessFallbackErrorBoundary pathname="/contact" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-          <RedirectBoundary>
-            <RedirectErrorBoundary router={{...}}>
-              <Head>
-              <__next_root_layout_boundary__>
-                <SegmentViewNode type="layout" pagePath="layout.jsx">
-                  <SegmentTrieNode>
-                  <link>
-                  <script>
-                  <script>
-                  <script>
-                  <script>
-                  <script>
-                  <script>
-                  <script>
-                  <script>
-                  <RootLayout>
-                    <html lang="en" suppressHydrationWarning={true}>
-                      <head>
-                      <body suppressHydrationWarning={true}>
-                        <Layout>
-                          <div className="App" suppressHydrationWarning={true}>
-                            <Navbar>
-                              ...
-                                <div className="nav-content">
-                                  <div className="nav-brand">
-                                    <Logo size="default" className="navbar-logo">
-                                      <LinkComponent href="/" className="logo-link ..." aria-label="Team Niros...">
-                                        <a
-                                          className="logo-link logo-with-text navbar-logo"
-                                          aria-label="Team Nirosha Home"
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                  <div className="nav-links-...">
-                                    <LinkComponent href="/" className={"nav-link "}>
-                                      <a
-                                        className={"nav-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <LinkComponent href="/about" className={"nav-link "}>
-                                      <a
-                                        className={"nav-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/about"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <div className={"nav-link..."} onMouseEnter={function onMouseEnter} ...>
-                                      <LinkComponent href="/services" className="nav-link" ref={{current:null}}>
-                                        <a
-                                          className="nav-link"
-                                          ref={function}
-                                          onClick={function onClick}
-                                          onMouseEnter={function onMouseEnter}
-                                          onTouchStart={function onTouchStart}
-                                          href="/services"
--                                         contenteditable="false"
--                                         style={{cursor:"pointer"}}
-                                        >
-                                    <LinkComponent href="/blog" className={"nav-link "}>
-                                      <a
-                                        className={"nav-link "}
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/blog"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                    <LinkComponent href="/contact" className="nav-link a...">
-                                      <a
-                                        className="nav-link active"
-                                        ref={function}
-                                        onClick={function onClick}
-                                        onMouseEnter={function onMouseEnter}
-                                        onTouchStart={function onTouchStart}
-                                        href="/contact"
--                                       contenteditable="false"
--                                       style={{cursor:"pointer"}}
-                                      >
-                                  ...
-                              <div className={"mobile-m..."} onClick={function onClick}>
-                                <div className={"mobile-m..."} onClick={function onClick}>
-                                  <LinkComponent href="/" className={"mobile-m..."} onClick={function onClick}>
-                                    <a
-                                      className={"mobile-menu-link "}
-                                      ref={function}
-                                      onClick={function onClick}
-                                      onMouseEnter={function onMouseEnter}
-                                      onTouchStart={function onTouchStart}
-                                      href="/"
--                                     contenteditable="false"
--                                     style={{cursor:"pointer"}}
-                                    >
-                                  <LinkComponent href="/about" className={"mobile-m..."} onClick={function onClick}>
-                                    <a
-                                      className={"mobile-menu-link "}
-                                      ref={function}
-                                      onClick={function onClick}
-                                      onMouseEnter={function onMouseEnter}
-                                      onTouchStart={function onTouchStart}
-                                      href="/about"
--                                     contenteditable="false"
--                                     style={{cursor:"pointer"}}
-                                    >
-                                  <div>
-                                  <LinkComponent href="/blog" className={"mobile-m..."} onClick={function onClick}>
-                                    <a
-                                      className={"mobile-menu-link "}
-                                      ref={function}
-                                      onClick={function onClick}
-                                      onMouseEnter={function onMouseEnter}
-                                      onTouchStart={function onTouchStart}
-                                      href="/blog"
--                                     contenteditable="false"
--                                     style={{cursor:"pointer"}}
-                                    >
-                                  <LinkComponent href="/contact" className="mobile-men..." onClick={function onClick}>
-                                    <a
-                                      className="mobile-menu-link active"
-                                      ref={function}
-                                      onClick={function onClick}
-                                      onMouseEnter={function onMouseEnter}
-                                      onTouchStart={function onTouchStart}
-                                      href="/contact"
--                                     contenteditable="false"
--                                     style={{cursor:"pointer"}}
-                                    >
-                                  <form>
-                                  <a
-                                    href="https://calendly.com/nirosha-info/30min"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-primary mobile-menu-cta"
-                                    onClick={function onClick}
--                                   contenteditable="false"
--                                   style={{cursor:"pointer"}}
-                                  >
-                            <ScrollSmootherWrapper>
-                            ...
-                              <div className="contact-co...">
-                                <div ref={{current:null}} className={"contact-..."}>
-                                  <div>
-                                  <div>
-                                  <h2>
-                                  <form className="contact-form" onSubmit={function handleSubmit} noValidate={true}>
-                                    <div className="form-group">
--                                     <div
--                                       data-lastpass-icon-root=""
--                                       style={{position:"relative",height:"0px",width:"0px",display:"initial",float:"left"}}
--                                     >
-                                    ...
-                                ...
-                            ...
-              ...
+Unterminated regexp literal
 
-[00:31:26.687] Browser LOG     📝 Contact component mounted
-[00:31:26.687] Browser LOG     📍 You should see this message in the browser console (F12 → Console tab)
-[00:31:26.687] Browser LOG     📝 Contact component mounted
-[00:31:26.687] Browser LOG     📍 You should see this message in the browser console (F12 → Console tab)
-[00:31:26.820] Browser LOG     ScrollSmoother initialized successfully
-[00:32:15.286] Server  LOG      ✓ Compiled in 30ms
-[00:32:16.164] Server  LOG      ✓ Compiled in 24ms
-[00:32:23.336] Server  LOG      ✓ Compiled in 15ms
-[00:32:24.838] Server  LOG      ✓ Compiled in 17ms
-[00:32:33.057] Server  LOG      ✓ Compiled in 16ms
-[00:38:29.334] Server  LOG     ServiceDetail page - resolvedParams: {}
-[00:38:29.641] Browser LOG     ServiceDetailPage - Full params object: {
-  "slug": "local-seo"
-}
-[00:38:29.641] Browser LOG     ServiceDetailPage - Extracted slug: local-seo
-[00:38:29.641] Browser LOG     ServiceDetailPage - Type of params: object
-[00:38:29.641] Browser LOG     ServiceDetailPage - Available service keys: ["web-development","branding-design","seo-services","local-seo","social-media-marketing","digital-marketing","content-services","ecommerce-solutions","web-maintenance","ui-ux-design","automation-saas","cloud-infrastructure"]
-[00:38:29.641] Browser LOG     ServiceDetailPage - Looking for slug: local-seo
-[00:38:29.641] Browser LOG     ServiceDetailPage - Service data exists? true
-[00:38:29.641] Browser LOG     ServiceDetailPage - Service data: {"benefits":["Appear in \"near me\" searches","More visibility in Google Maps","Increased local website traffic","More phone calls and store visits","Better online reputation","Competitive advantage in local market"],"description":["For local businesses, appearing in local search results is crucial. When someone searches for services \"near me\" or in your city, you want to be at the top of those results.","Local SEO helps your business get found by customers in your geographic area. We optimize your Google Business Profile, build local citations, manage reviews, and create location-specific content to improve your local search visibility.","Our local SEO services are designed specifically for businesses that serve customers in specific locations, helping you compete effectively in local markets and drive foot traffic and phone calls."],"faqs":[{"answer":"Local SEO helps your business appear in local search results when people search for services in your area. It's essential for businesses that serve customers in specific locations, as it helps you get found by nearby customers searching for your services.","question":"What is local SEO and why do I need it?"},{"answer":"We optimize your Google Business Profile by ensuring complete and accurate information, adding high-quality photos, managing categories, optimizing descriptions, setting up attributes, and encouraging customer reviews. We also ensure your profile is verified and active.","question":"How do you optimize my Google Business Profile?"},{"answer":"Local citations are mentions of your business name, address, and phone number (NAP) on other websites. Consistent citations across directories and local sites help Google verify your business information and improve your local search rankings.","question":"What are local citations and why are they important?"},{"answer":"Local SEO results typically start appearing within 2-4 months, though this varies based on competition and your current local presence. We provide monthly reports tracking your local search visibility and rankings.","question":"How long does it take to see local SEO results?"},{"answer":"Yes! We help you get more positive Google reviews through strategic approaches and provide review management services. We also help you respond to reviews professionally to maintain a positive online reputation.","question":"Do you help with Google reviews?"},{"answer":"Absolutely! We can optimize multiple Google Business Profiles for each location and create location-specific content and landing pages. This helps each location rank in its respective local area.","question":"Can local SEO help my business if I have multiple locations?"}],"features":[{"description":"Optimize and manage your GMB listing for maximum visibility","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Google Business Profile"},{"description":"Build consistent NAP (Name, Address, Phone) citations across directories","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Local Citations"},{"description":"Acquire local backlinks from relevant local websites and directories","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Local Link Building"},{"description":"Ensure consistent business information across all platforms","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"NAP Consistency"},{"description":"Strategies to get more positive reviews and manage your online reputation","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Review Management"},{"description":"Create location-specific content that ranks for local keywords","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Local Content Strategy"}],"heroDescription":"Dominate local search results and attract customers in your area with proven local SEO strategies.","process":[{"description":"Analyze your current local presence, citations, and GMB optimization","title":"Local SEO Audit"},{"description":"Optimize your Google Business Profile with complete information and photos","title":"GMB Optimization"},{"description":"Build consistent citations across major local directories and platforms","title":"Citation Building"},{"description":"Implement strategies to generate positive reviews and manage reputation","title":"Review Strategy"},{"description":"Create local content and build local backlinks to improve rankings","title":"Local Content & Links"}],"seoKeywords":"local SEO, Google Business Profile optimization, local search optimization, local citations, NAP consistency, local SEO services","slug":"local-seo","title":"Local SEO"}
-[00:38:29.641] Browser LOG     ServiceDetailPage - Full params object: {
-  "slug": "local-seo"
-}
-[00:38:29.641] Browser LOG     ServiceDetailPage - Extracted slug: local-seo
-[00:38:29.641] Browser LOG     ServiceDetailPage - Type of params: object
-[00:38:29.641] Browser LOG     ServiceDetailPage - Available service keys: ["web-development","branding-design","seo-services","local-seo","social-media-marketing","digital-marketing","content-services","ecommerce-solutions","web-maintenance","ui-ux-design","automation-saas","cloud-infrastructure"]
-[00:38:29.641] Browser LOG     ServiceDetailPage - Looking for slug: local-seo
-[00:38:29.641] Browser LOG     ServiceDetailPage - Service data exists? true
-[00:38:29.641] Browser LOG     ServiceDetailPage - Service data: {"benefits":["Appear in \"near me\" searches","More visibility in Google Maps","Increased local website traffic","More phone calls and store visits","Better online reputation","Competitive advantage in local market"],"description":["For local businesses, appearing in local search results is crucial. When someone searches for services \"near me\" or in your city, you want to be at the top of those results.","Local SEO helps your business get found by customers in your geographic area. We optimize your Google Business Profile, build local citations, manage reviews, and create location-specific content to improve your local search visibility.","Our local SEO services are designed specifically for businesses that serve customers in specific locations, helping you compete effectively in local markets and drive foot traffic and phone calls."],"faqs":[{"answer":"Local SEO helps your business appear in local search results when people search for services in your area. It's essential for businesses that serve customers in specific locations, as it helps you get found by nearby customers searching for your services.","question":"What is local SEO and why do I need it?"},{"answer":"We optimize your Google Business Profile by ensuring complete and accurate information, adding high-quality photos, managing categories, optimizing descriptions, setting up attributes, and encouraging customer reviews. We also ensure your profile is verified and active.","question":"How do you optimize my Google Business Profile?"},{"answer":"Local citations are mentions of your business name, address, and phone number (NAP) on other websites. Consistent citations across directories and local sites help Google verify your business information and improve your local search rankings.","question":"What are local citations and why are they important?"},{"answer":"Local SEO results typically start appearing within 2-4 months, though this varies based on competition and your current local presence. We provide monthly reports tracking your local search visibility and rankings.","question":"How long does it take to see local SEO results?"},{"answer":"Yes! We help you get more positive Google reviews through strategic approaches and provide review management services. We also help you respond to reviews professionally to maintain a positive online reputation.","question":"Do you help with Google reviews?"},{"answer":"Absolutely! We can optimize multiple Google Business Profiles for each location and create location-specific content and landing pages. This helps each location rank in its respective local area.","question":"Can local SEO help my business if I have multiple locations?"}],"features":[{"description":"Optimize and manage your GMB listing for maximum visibility","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Google Business Profile"},{"description":"Build consistent NAP (Name, Address, Phone) citations across directories","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Local Citations"},{"description":"Acquire local backlinks from relevant local websites and directories","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Local Link Building"},{"description":"Ensure consistent business information across all platforms","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"NAP Consistency"},{"description":"Strategies to get more positive reviews and manage your online reputation","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Review Management"},{"description":"Create location-specific content that ranks for local keywords","icon":{"_owner":{"_debugHookTypes":null,"_debugInfo":null,"_debugNeedsRemount":false,"_debugOwner":"[Object]","_debugStack":{},"_debugTask":"[Object]","actualDuration":23.399999976158142,"actualStartTime":1928.7999999523163,"alternate":null,"child":"[Object]","childLanes":0,"deletions":null,"dependencies":null,"elementType":"[Object]","flags":32769,"index":0,"key":null,"lanes":0,"memoizedProps":"[Object]","memoizedState":null,"mode":27,"pendingProps":"[Object]","ref":null,"refCleanup":null,"return":"[Object]","selfBaseDuration":12.600000023841858,"sibling":null,"stateNode":null,"subtreeFlags":0,"tag":0,"treeBaseDuration":0,"updateQueue":null},"_store":{},"key":null,"props":{}},"title":"Local Content Strategy"}],"heroDescription":"Dominate local search results and attract customers in your area with proven local SEO strategies.","process":[{"description":"Analyze your current local presence, citations, and GMB optimization","title":"Local SEO Audit"},{"description":"Optimize your Google Business Profile with complete information and photos","title":"GMB Optimization"},{"description":"Build consistent citations across major local directories and platforms","title":"Citation Building"},{"description":"Implement strategies to generate positive reviews and manage reputation","title":"Review Strategy"},{"description":"Create local content and build local backlinks to improve rankings","title":"Local Content & Links"}],"seoKeywords":"local SEO, Google Business Profile optimization, local search optimization, local citations, NAP consistency, local SEO services","slug":"local-seo","title":"Local SEO"}
-[00:38:29.641] Browser LOG     ScrollSmoother initialized successfully
-[00:38:37.383] Browser LOG     ScrollSmoother initialized successfully
-[00:43:45.344] Server  LOG      ✓ Compiled in 11ms
-[00:43:56.135] Server  LOG      ✓ Compiled in 19ms
-[00:43:58.622] Server  LOG      ✓ Compiled in 4ms
-[00:44:30.394] Server  LOG      ✓ Compiled in 85ms
-[00:45:28.939] Browser LOG     ScrollSmoother initialized successfully
-[01:39:35.291] Browser LOG     ScrollSmoother initialized successfully
-[04:37:20.756] Server  LOG      ✓ Compiled in 104ms
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:21.206] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:21.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:173:10
+Parsing ecmascript source code failed
+  171 |             })}
+  172 |           </div>
+> 173 |         </div>
+      |          ^^^^^
+  174 |       </section>
+  175 |     </div>
+  176 |   )
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:21.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:21.220] Browser ERROR   ./src/page-components/PortfolioPage.jsx:173:10
+Parsing ecmascript source code failed
+  171 |             })}
+  172 |           </div>
+> 173 |         </div>
+      |          ^^^^^
+  174 |       </section>
+  175 |     </div>
+  176 |   )
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:21.220] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:44.229] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:44.230] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:29:44.230] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:33:03.251] Server  ERROR    ⨯ ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+
+
+[00:33:03.305] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:33:03.326] Server  ERROR   ModuleBuildError: ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+
+
+[00:33:03.367] Server  ERROR    ⨯ Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:33:03.385] Server  ERROR   Error: Cannot find module 'critters'
+Require stack:
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
+- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
+[00:33:04.206] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:33:04.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:33:04.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:33:04.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
+Parsing ecmascript source code failed
+  174 |               <p>No portfolio categories available.</p>
+  175 |             </div>
+> 176 |           )}
+      |            ^
+  177 |         </div>
+  178 |       </section>
+  179 |     </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/page-components/PortfolioPage.jsx
+    ./app/portfolio/page.tsx
+[00:34:56.027] Server  LOG      ✓ Compiled in 348ms
+[00:40:28.901] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:29.696] Browser LOG     ScrollSmoother initialized successfully
+[00:41:17.093] Browser LOG     ScrollSmoother initialized successfully
+[00:41:31.514] Browser LOG     ScrollSmoother initialized successfully
+[00:41:33.625] Browser WARN    Invalid scope
+[00:41:33.625] Browser WARN    Invalid scope
+[00:41:33.625] Browser LOG     ScrollSmoother initialized successfully
+[00:41:36.542] Browser LOG     ScrollSmoother initialized successfully
+[00:41:37.596] Browser WARN    Invalid scope
+[00:41:37.596] Browser WARN    Invalid scope
+[00:41:37.596] Browser LOG     ScrollSmoother initialized successfully

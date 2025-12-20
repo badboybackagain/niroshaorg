@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "eeeaa31786e8c8678fa5a47d0d934608",
-    "previewModeSigningKey": "4b2b691c433ab6b7cee89e16ba9437b474ba4af56b12f17d755644e0e9f87d57",
-    "previewModeEncryptionKey": "85623a1350884fbe6cc8c0e52c5aac1474957fa126b63aed2b691cca4aa9a640"
-  }
-}
+{"version":4,"routes":{"/portfolio/logos":{},"/portfolio/business-card":{},"/portfolio/id-cards":{},"/portfolio/brochure-cover":{},"/portfolio/posters":{},"/portfolio/packaging":{},"/portfolio/social-media-posts":{},"/portfolio/backdrop":{},"/portfolio/magazine-ad":{}},"dynamicRoutes":{"/portfolio/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/portfolio/[slug]","routeRegex":"^\\/portfolio\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"bab9b57964b829efe8a5b45ff9c46ee4","previewModeSigningKey":"b84eee8ee859049550f0348644bdc57143f8bbc7779d463a6feff54c143d677e","previewModeEncryptionKey":"dbd6958ef0536ee475d768598050f4f93b1932b7e26354bee9c5dbc6a76ea8c4"}}

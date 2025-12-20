@@ -69,25 +69,34 @@ const Navbar = () => {
   }, [pathname])
 
   // Calculate dropdown position when it opens or on scroll/resize
+  // Use requestAnimationFrame to batch layout reads and avoid forced reflows
   useEffect(() => {
+    let rafId = null
+    
     const updatePosition = () => {
       if (servicesDropdownOpen && servicesLinkRef.current) {
-        const rect = servicesLinkRef.current.getBoundingClientRect()
-        setDropdownPosition({
-          top: rect.bottom + 8,
-          left: rect.left
+        // Batch layout reads in requestAnimationFrame to avoid forced reflows
+        rafId = requestAnimationFrame(() => {
+          if (servicesLinkRef.current) {
+            const rect = servicesLinkRef.current.getBoundingClientRect()
+            setDropdownPosition({
+              top: rect.bottom + 8,
+              left: rect.left
+            })
+          }
         })
       }
     }
 
     if (servicesDropdownOpen) {
       updatePosition()
-      window.addEventListener('scroll', updatePosition, true)
-      window.addEventListener('resize', updatePosition)
+      window.addEventListener('scroll', updatePosition, { passive: true, capture: true })
+      window.addEventListener('resize', updatePosition, { passive: true })
     }
 
     return () => {
-      window.removeEventListener('scroll', updatePosition, true)
+      if (rafId) cancelAnimationFrame(rafId)
+      window.removeEventListener('scroll', updatePosition, { capture: true })
       window.removeEventListener('resize', updatePosition)
     }
   }, [servicesDropdownOpen])

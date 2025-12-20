@@ -1671,6 +1671,267 @@ const blogPosts = [
         seoTitle: 'Cloud & Infrastructure: Complete Guide to Scalable and Secure Solutions in 2025 | Cloud Services',
         seoDescription: 'Master cloud infrastructure with comprehensive guide. Learn about cloud hosting, scalability, security, performance optimization, and how to build robust infrastructure supporting business growth. Expert cloud infrastructure services by Team Nirosha.',
         seoKeywords: 'cloud infrastructure, cloud hosting, cloud services, IaaS, PaaS, cloud computing, cloud migration, cloud security, scalable infrastructure, cloud solutions, cloud hosting services, cloud infrastructure management, cloud architecture, cloud hosting company, cloud services provider, cloud infrastructure services, cloud solutions provider'
+    },
+    {
+        id: 13,
+        slug: 'will-google-penalize-ai-content',
+        title: 'Will Google Penalize AI-Written Content? - What Google Actually Says and How to Use AI Without Hurting SEO',
+        excerpt: 'Learn whether Google penalizes AI-written content, read Google\'s official guidance, and follow 8 practical rules to use AI responsibly so your site benefits - not gets penalized. Discover what Google actually says about AI-generated content and how to use it safely for SEO.',
+        category: 'Content Services',
+        author: 'Team Nirosha',
+        publishDate: '2025-01-20',
+        readTime: '10 min read',
+        featuredImage: '/cache/blog/google-ai-content-penalty-featured.webp',
+        imageAlt: 'Google AI content penalty guide showing how to use AI content safely for SEO',
+        imageSlug: 'google-ai-content-penalty',
+        featured: true,
+        content: `
+      <p>Everyone's asking the same terrifying question: if I use ChatGPT or Bard to write blog posts, will Google punish my site? The short, honest answer is: <strong>Google does not automatically penalize content simply because it was produced with AI</strong>, but it will demote or remove content that's low-quality, misleading, or created to manipulate rankings. Below I lay out exactly what Google has said, what that means in plain English, and 8 concrete steps to use AI responsibly so your site benefits - not gets penalized.</p>
+
+      <h2>What Google Actually Says (Facts & Quotes)</h2>
+
+      <p>Google's official guidance is straightforward: AI-generated text is handled under the same long-standing policies and quality policies as other content. As Google put it, <strong>"AI-generated content fits into our long-standing approach to show helpful content to people on Search."</strong> (<a href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <div class="blog-channel-comparison" style="background: var(--bg-light); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+        <div style="display: grid; gap: 1.5rem;">
+          <div style="display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; align-items: start; padding: 1.5rem; background: white; border-radius: 8px;">
+            <div class="blog-icon-wrapper" style="font-size: 2.5rem; font-weight: 700; color: #2563eb; line-height: 1; display: flex; align-items: center; justify-content: center; min-width: 80px; width: 80px; height: 80px; background: rgba(37, 99, 235, 0.1); border-radius: 12px; flex-shrink: 0;">📋</div>
+            <div>
+              <p style="margin: 0 0 0.5rem; font-weight: 600;">Google's Core Principle</p>
+              <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Google focuses on rewarding high-quality content, regardless of whether it's human or AI-generated. Using AI to manipulate search rankings violates Google's spam policies, but AI's use for creating helpful content is acceptable.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; align-items: start; padding: 1.5rem; background: white; border-radius: 8px;">
+            <div class="blog-icon-wrapper" style="font-size: 2.5rem; font-weight: 700; color: #10b981; line-height: 1; display: flex; align-items: center; justify-content: center; min-width: 80px; width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; flex-shrink: 0;">✅</div>
+            <div>
+              <p style="margin: 0 0 0.5rem; font-weight: 600;">Quality Over Method</p>
+              <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Google's ranking systems are designed to surface helpful, reliable, people-first content. They evaluate content based on usefulness, originality, and trustworthiness - not by how the words were generated.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; align-items: start; padding: 1.5rem; background: white; border-radius: 8px;">
+            <div class="blog-icon-wrapper" style="font-size: 2.5rem; font-weight: 700; color: #f59e0b; line-height: 1; display: flex; align-items: center; justify-content: center; min-width: 80px; width: 80px; height: 80px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; flex-shrink: 0;">⚠️</div>
+            <div>
+              <p style="margin: 0 0 0.5rem; font-weight: 600;">What Gets Penalized</p>
+              <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Content created primarily to manipulate search rankings rather than to help people will be devalued. Mass-produced, low-quality AI content without human oversight is what Google flags as problematic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>More specifically, Google's ranking systems are designed to surface helpful, reliable, people-first content, and they provide a checklist for evaluating whether a page meets that bar. If content is created primarily to manipulate search rankings rather than to help people, it will be devalued. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <p>Historically, Google has warned that automatically generated content created to manipulate ranking can be considered spam; Google engineers and Search Advocates have repeatedly cautioned against publishing bulk machine-generated pages with little human oversight. This was raised publicly in Google Search office hours and coverage by SEO press. (<a href="https://www.searchenginejournal.com/google-says-ai-generated-content-is-against-guidelines/444916/" target="_blank" rel="noopener noreferrer">Search Engine Journal</a>)</p>
+
+      <p>Most recently, Google's quality-rater guidance and industry reporting show that reviewers are being asked to watch for low-quality pages where the main content is primarily produced by automated or generative AI - and these pages can earn the "lowest" quality rating if they fail to provide real value. That matters because the same human-led signals are used to shape algorithmic updates. (<a href="https://searchengineland.com/google-quality-raters-content-ai-generated-454161" target="_blank" rel="noopener noreferrer">Search Engine Land</a>)</p>
+
+      <p>Finally, Google is actively policing broader abuse patterns - for example, networks of low-value, outsourced or "parasite" sites that publish AI churn to exploit authority - and has taken enforcement action where sites publish low-value, affiliate or scraped content at scale. If you outsource bulk AI writing without quality control, you risk being hit by those site-level measures. (<a href="https://www.theverge.com/2024/11/19/24299762/google-search-parasite-seo-publishers-advon" target="_blank" rel="noopener noreferrer">The Verge</a>)</p>
+
+      <h2>What This Really Means for You</h2>
+
+      <div class="blog-infographic-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 10px;">
+          <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">AI = Tool</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">Google judges pages by usefulness, originality, and trustworthiness - not by how the words were generated. If your AI draft answers real user questions and demonstrates expertise, it can rank.</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 1.5rem; border-radius: 10px;">
+          <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">Mass Content = Risk</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">AI content published at scale without human editing (thin, repetitive, or purely SEO-targeted) is what Google flags as problematic. That's the risky pattern - not the mere use of a model.</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 1.5rem; border-radius: 10px;">
+          <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">Site Reputation Matters</div>
+          <div style="font-size: 0.9rem; opacity: 0.9;">Google evaluates whole sites, not just pages. A site filled with low-value, AI-only pages can suffer reduced visibility across many queries.</div>
+        </div>
+      </div>
+
+      <h3>AI = Tool. Google Judges Pages by Usefulness, Originality, and Trustworthiness</h3>
+      <p>Google judges pages by usefulness, originality, and trustworthiness - not by how the words were generated. If your AI draft answers real user questions and demonstrates expertise, it can rank. The key is ensuring your content provides genuine value to readers, regardless of how it was initially created. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h3>Mass, Shallow AI Content = Risk</h3>
+      <p>AI content published at scale without human editing (thin, repetitive, or purely SEO-targeted) is what Google flags as problematic. That's the risky pattern - not the mere use of a model. When you publish hundreds of AI-generated articles that are only superficially different, Google's systems can identify and penalize this pattern. (<a href="https://www.searchenginejournal.com/google-says-ai-generated-content-is-against-guidelines/444916/" target="_blank" rel="noopener noreferrer">Search Engine Journal</a>)</p>
+
+      <h3>Site Reputation Matters</h3>
+      <p>Google evaluates whole sites, not just pages. A site filled with low-value, AI-only pages can suffer reduced visibility across many queries. This means one bad page might not hurt you, but a pattern of low-quality content across your site can impact your entire domain's performance. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h2>8 Practical Rules to Publish AI-Assisted Content Safely (and Successfully)</h2>
+
+      <div class="blog-process-flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">1</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; color: white;">Start with User Intent</h3>
+          <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Always ask: what question is the reader trying to solve? Answer that first; SEO follows. This echoes Google's "people-first" guidance.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">2</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; color: white;">Add Human Expertise</h3>
+          <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Use AI to draft, but layer in case studies, personal examples, interviews, data, screenshots - things an LLM can't invent. Original insights separate you from low-value pages.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">3</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; color: white;">Edit for Voice & Errors</h3>
+          <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Edit every AI draft for factual accuracy, tone, and specificity. AI hallucinations are real - fix them before publishing.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">4</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; color: white;">Cite Sources</h3>
+          <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">When you rely on data or third-party claims, link and quote sources. Google values transparency and trust signals.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">5</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; color: white;">Avoid Bulk Outsourcing</h3>
+          <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Don't farm out massive volumes of AI articles that are only superficially different - that's the pattern Google penalizes.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); color: white; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">6</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem; color: white;">Focus on E-E-A-T</h3>
+          <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Demonstrate Experience, Expertise, Authoritativeness, and Trustworthiness - author bios, credentials, and primary research help.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">7</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem;">Measure Engagement</h3>
+          <p style="margin: 0; font-size: 0.9rem;">Track on-page time, CTR, and return visitors. Low engagement is an early sign Google may devalue content.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333; padding: 2rem; border-radius: 12px;">
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">8</div>
+          <h3 style="margin: 0 0 0.75rem; font-size: 1.25rem;">Improve or Remove</h3>
+          <p style="margin: 0; font-size: 0.9rem;">If new AI content underperforms or brings negative signals, update or consolidate it - Google favors continuous improvement.</p>
+        </div>
+      </div>
+
+      <h3>1. Start with User Intent</h3>
+      <p>Always ask: what question is the reader trying to solve? Answer that first; SEO follows. This echoes Google's "people-first" guidance. Before you even start writing, understand what your audience needs. Use AI to help structure your response, but ensure the core message addresses real user problems. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h3>2. Add Human Expertise and Unique Value</h3>
+      <p>Use AI to draft, but layer in case studies, personal examples, interviews, data, screenshots - things an LLM can't invent. Original insights separate you from low-value pages. This is where human expertise becomes critical. Share real experiences, unique data points, or insights that only someone with hands-on experience can provide. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h3>3. Edit for Voice & Errors</h3>
+      <p>Edit every AI draft for factual accuracy, tone, and specificity. AI hallucinations are real - fix them before publishing. AI tools can make mistakes, provide outdated information, or generate content that doesn't match your brand voice. Always fact-check and refine. (<a href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h3>4. Cite Sources and Be Transparent</h3>
+      <p>When you rely on data or third-party claims, link and quote sources. Google values transparency and trust signals. Proper attribution not only builds trust with readers but also signals to Google that your content is well-researched and reliable. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h3>5. Avoid Bulk Outsourcing of AI Content</h3>
+      <p>Don't farm out massive volumes of AI articles that are only superficially different - that's the pattern Google penalizes. Quality over quantity always wins. It's better to publish fewer, high-quality pieces than hundreds of thin, repetitive articles. (<a href="https://www.theverge.com/2024/11/19/24299762/google-search-parasite-seo-publishers-advon" target="_blank" rel="noopener noreferrer">The Verge</a>)</p>
+
+      <h3>6. Focus on E-E-A-T</h3>
+      <p>Demonstrate Experience, Expertise, Authoritativeness, and Trustworthiness - author bios, credentials, and primary research help. Show readers why they should trust your content. Include author information, credentials, and evidence of real expertise in the topic. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h3>7. Measure Engagement, Not Just Rank</h3>
+      <p>Track on-page time, CTR, and return visitors. Low engagement is an early sign Google may devalue content. If users are bouncing quickly or not engaging with your content, Google will notice and may reduce your visibility. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h3>8. Be Ready to Improve or Remove Poor Pages</h3>
+      <p>If new AI content underperforms or brings negative signals, update or consolidate it - Google favors continuous improvement. Don't let underperforming content sit on your site. Regularly audit and improve your content based on performance data.</p>
+
+      <h2>Quick FAQ: Common Questions About AI Content and Google</h2>
+
+      <div class="blog-channel-comparison" style="background: var(--bg-light); border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+        <div style="display: grid; gap: 1.5rem;">
+          <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid #2563eb;">
+            <h3 style="margin: 0 0 0.75rem; color: #2563eb;">Does Google penalize AI content?</h3>
+            <p style="margin: 0; color: var(--text-dark);">No, Google does not automatically penalize content simply because it was produced with AI. Google penalizes low-quality, misleading, or manipulative content regardless of how it was created.</p>
+          </div>
+          <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid #10b981;">
+            <h3 style="margin: 0 0 0.75rem; color: #10b981;">Can AI-generated content rank on Google?</h3>
+            <p style="margin: 0; color: var(--text-dark);">Yes, if the content is helpful, original, and demonstrates expertise. Google judges content by quality, not by the tool used to create it. AI-assisted content that provides real value can rank just as well as human-written content.</p>
+          </div>
+          <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid #f59e0b;">
+            <h3 style="margin: 0 0 0.75rem; color: #f59e0b;">What makes AI content risky for SEO?</h3>
+            <p style="margin: 0; color: var(--text-dark);">Publishing mass volumes of thin, repetitive AI content without human editing or oversight is risky. Content created primarily to manipulate rankings rather than help users will be devalued by Google.</p>
+          </div>
+          <div style="padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+            <h3 style="margin: 0 0 0.75rem; color: #8b5cf6;">Should I disclose AI use in my content?</h3>
+            <p style="margin: 0; color: var(--text-dark);">Google recommends adding AI or automation disclosures when it would be reasonably expected. For content where readers might wonder "How was this created?", transparency helps build trust.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Real-World Example: Using AI Responsibly</h2>
+
+      <p>Let's say you're writing a blog post about "Best Practices for Local SEO." Here's how to use AI responsibly:</p>
+
+      <p><strong>Step 1:</strong> Use AI to generate an initial outline and draft based on your keyword research and user intent analysis.</p>
+
+      <p><strong>Step 2:</strong> Add your own expertise - include real case studies from your <a href="/services/local-seo">local SEO services</a>, specific examples from client work, and insights from your experience.</p>
+
+      <p><strong>Step 3:</strong> Fact-check everything. Verify statistics, update outdated information, and ensure all claims are accurate.</p>
+
+      <p><strong>Step 4:</strong> Add unique value - include screenshots, data visualizations, or proprietary research that AI couldn't generate.</p>
+
+      <p><strong>Step 5:</strong> Edit for your brand voice and ensure the content flows naturally and provides genuine value to readers.</p>
+
+      <p>This approach uses AI as a tool to enhance your content creation process while ensuring the final output is high-quality, original, and valuable to readers.</p>
+
+      <h2>How Team Nirosha Uses AI in Content Creation</h2>
+
+      <p>At Team Nirosha, we use AI as a tool to enhance our content creation process, not replace human expertise. Our approach includes:</p>
+
+      <ul>
+        <li><strong>Research Assistance:</strong> AI helps us gather initial information and identify key points to cover</li>
+        <li><strong>Drafting Support:</strong> We use AI to create initial drafts that we then heavily edit and enhance</li>
+        <li><strong>Fact-Checking:</strong> Every AI-generated claim is verified by our team before publication</li>
+        <li><strong>Human Expertise:</strong> All content includes real examples from our <a href="/services/seo-services">SEO services</a>, <a href="/services/web-development">web development</a>, and client work</li>
+        <li><strong>Quality Control:</strong> Multiple rounds of editing ensure accuracy, brand voice, and value</li>
+      </ul>
+
+      <p>This hybrid approach allows us to create more content while maintaining the high quality standards that Google rewards. Our <a href="/services/content-services">content services</a> combine AI efficiency with human expertise to deliver results.</p>
+
+      <h2>Final Takeaways</h2>
+
+      <div class="blog-stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: #fff; border: 2px solid #2563eb; border-radius: 12px; padding: 1.5rem;">
+          <div style="font-size: 2rem; font-weight: 800; color: #2563eb; margin-bottom: 0.5rem;">✅</div>
+          <div style="color: var(--text-dark); font-weight: 600; margin-bottom: 0.5rem;">Google doesn't automatically punish AI-authored text</div>
+          <div style="color: var(--text-light); font-size: 0.9rem;">It penalizes low-value, manipulative, or automated content meant to game search.</div>
+        </div>
+        <div style="background: #fff; border: 2px solid #10b981; border-radius: 12px; padding: 1.5rem;">
+          <div style="font-size: 2rem; font-weight: 800; color: #10b981; margin-bottom: 0.5rem;">🚀</div>
+          <div style="color: var(--text-dark); font-weight: 600; margin-bottom: 0.5rem;">Use AI as a speed tool</div>
+          <div style="color: var(--text-light); font-size: 0.9rem;">Make your output distinctly human - add expertise, links, and real value. That's how you turn AI into SEO advantage instead of risk.</div>
+        </div>
+      </div>
+
+      <p><strong>Google doesn't automatically punish AI-authored text.</strong> It penalizes low-value, manipulative, or automated content meant to game search. The key is understanding that Google cares about content quality, not content creation method. (<a href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <p><strong>Use AI as a speed tool; make your output distinctly human</strong> - add expertise, links, and real value. That's how you turn AI into SEO advantage instead of risk. When used responsibly, AI can help you create more content faster while maintaining quality standards that Google rewards. (<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google for Developers</a>)</p>
+
+      <h2>Conclusion</h2>
+
+      <p>The question isn't whether you can use AI for content creation - you can. The question is whether you're using it responsibly to create valuable content that serves your audience. Google's guidance is clear: focus on creating helpful, reliable, people-first content, regardless of the tools you use to create it.</p>
+
+      <p>By following the 8 practical rules outlined in this guide, you can use AI to enhance your content creation process while ensuring your content meets Google's quality standards. Remember, AI is a tool - how you use it determines whether it helps or hurts your SEO efforts.</p>
+
+      <p>At Team Nirosha, we help businesses create high-quality, SEO-optimized content that ranks. Our <a href="/services/seo-services">SEO services</a> and <a href="/services/content-services">content services</a> combine best practices with modern tools to deliver results. Whether you're using AI or traditional content creation methods, we ensure your content strategy aligns with Google's guidelines and your business goals.</p>
+
+      <p>Ready to create content that ranks? <a href="/contact">Contact Team Nirosha</a> today to discuss your content and SEO needs.</p>
+
+      <p><em>Have you experimented with AI content creation? Share your experiences in the comments below - we'd love to hear what's working for you!</em></p>
+
+      <h2>References</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+          <span style="position: absolute; left: 0;">1.</span>
+          <a href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">Google Search's guidance about AI-generated content</a> - Google for Developers
+        </li>
+        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+          <span style="position: absolute; left: 0;">2.</span>
+          <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Creating Helpful, Reliable, People-First Content</a> - Google Search Central
+        </li>
+        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+          <span style="position: absolute; left: 0;">3.</span>
+          <a href="https://www.searchenginejournal.com/google-says-ai-generated-content-is-against-guidelines/444916/" target="_blank" rel="noopener noreferrer">Google Says AI Generated Content Is Against Guidelines</a> - Search Engine Journal
+        </li>
+        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+          <span style="position: absolute; left: 0;">4.</span>
+          <a href="https://searchengineland.com/google-quality-raters-content-ai-generated-454161" target="_blank" rel="noopener noreferrer">Google quality raters now assess whether content is AI-generated</a> - Search Engine Land
+        </li>
+        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+          <span style="position: absolute; left: 0;">5.</span>
+          <a href="https://www.theverge.com/2024/11/19/24299762/google-search-parasite-seo-publishers-advon" target="_blank" rel="noopener noreferrer">Google is further cracking down on sites publishing 'parasite SEO' content</a> - The Verge
+        </li>
+      </ul>
+    `,
+        seoTitle: 'Will Google Penalize AI Content? What Google Says & How to Publish Safely',
+        seoDescription: 'Learn whether Google penalizes AI-written content, read Google\'s own guidance, and follow 8 practical rules to use AI without hurting your SEO. Discover what Google actually says about AI-generated content and how to use it safely.',
+        seoKeywords: 'Google AI content penalty, AI generated content Google, does Google penalize AI content, AI content SEO, Google AI content guidelines, AI written content Google, ChatGPT SEO, AI content ranking, Google AI content policy, AI content best practices, Google search AI content, AI content strategy, SEO AI content, Google penalties AI, AI content optimization'
     }
 ];
 const getBlogBySlug = (slug)=>{
@@ -1960,6 +2221,8 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fi/index.esm.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useScrollAnimation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/data/blogData.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$BlogImage$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/BlogImage.jsx [app-client] (ecmascript)");
@@ -1967,6 +2230,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$BlogSch
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 'use client';
+;
 ;
 ;
 ;
@@ -2011,8 +2275,9 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
         ref: ref,
         className: `blog-card ${isHorizontal ? 'blog-card-horizontal' : ''} ${isVisible ? 'animate-fadeInUp' : ''}`,
         style: {
-            animationDelay: `${index * 100}ms`
+            '--animation-delay': `${index * 100}`
         },
+        suppressHydrationWarning: true,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "blog-card-image",
@@ -2024,7 +2289,7 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
                         className: "blog-card-img"
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 53,
+                        lineNumber: 55,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                         src: blog.featuredImage || '/cache/blog/placeholder.jpg',
@@ -2032,7 +2297,7 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
                         loading: "lazy"
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 60,
+                        lineNumber: 62,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2044,18 +2309,18 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
                             children: blog.category
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                            lineNumber: 67,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 66,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                lineNumber: 51,
+                lineNumber: 53,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2066,7 +2331,7 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
                         children: blog.title
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 71,
+                        lineNumber: 73,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2080,7 +2345,7 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
                                         children: blog.author.charAt(0)
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                        lineNumber: 74,
+                                        lineNumber: 76,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2088,29 +2353,13 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
                                         children: blog.author
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                        lineNumber: 77,
+                                        lineNumber: 79,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 73,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "blog-meta-separator",
-                                children: "•"
-                            }, void 0, false, {
-                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 79,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "blog-meta-date",
-                                children: formatDate(blog.publishDate)
-                            }, void 0, false, {
-                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 80,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2122,29 +2371,45 @@ const BlogCard = ({ blog, index, layout = 'vertical' })=>{
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "blog-meta-date",
+                                children: formatDate(blog.publishDate)
+                            }, void 0, false, {
+                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                lineNumber: 82,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "blog-meta-separator",
+                                children: "•"
+                            }, void 0, false, {
+                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                lineNumber: 83,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "blog-meta-readtime",
                                 children: blog.readTime
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 82,
+                                lineNumber: 84,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 72,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                lineNumber: 70,
+                lineNumber: 72,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-        lineNumber: 45,
+        lineNumber: 46,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2166,6 +2431,7 @@ const HeroFeaturedCard = ({ blog })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         href: `/blog/${blog.slug}`,
         className: "hero-featured-main",
+        suppressHydrationWarning: true,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "hero-featured-image",
             children: [
@@ -2176,7 +2442,7 @@ const HeroFeaturedCard = ({ blog })=>{
                     className: "hero-featured-img"
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 103,
+                    lineNumber: 105,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                     src: blog.featuredImage || '/cache/blog/placeholder.jpg',
@@ -2184,7 +2450,7 @@ const HeroFeaturedCard = ({ blog })=>{
                     loading: "lazy"
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 110,
+                    lineNumber: 112,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2196,12 +2462,12 @@ const HeroFeaturedCard = ({ blog })=>{
                         children: blog.category
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 117,
+                        lineNumber: 119,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 116,
+                    lineNumber: 118,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2211,23 +2477,23 @@ const HeroFeaturedCard = ({ blog })=>{
                         children: blog.title
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 120,
+                        lineNumber: 122,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 119,
+                    lineNumber: 121,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-            lineNumber: 101,
+            lineNumber: 103,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-        lineNumber: 100,
+        lineNumber: 102,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2244,6 +2510,7 @@ const HeroSideCard = ({ blog })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         href: `/blog/${blog.slug}`,
         className: "hero-side-card",
+        suppressHydrationWarning: true,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "hero-side-image",
@@ -2254,7 +2521,7 @@ const HeroSideCard = ({ blog })=>{
                     className: "hero-side-img"
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 141,
+                    lineNumber: 143,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                     src: blog.featuredImage || '/cache/blog/placeholder.jpg',
@@ -2262,12 +2529,12 @@ const HeroSideCard = ({ blog })=>{
                     loading: "lazy"
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 148,
+                    lineNumber: 150,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                lineNumber: 139,
+                lineNumber: 141,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2278,7 +2545,7 @@ const HeroSideCard = ({ blog })=>{
                         children: blog.title
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 156,
+                        lineNumber: 158,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2287,22 +2554,6 @@ const HeroSideCard = ({ blog })=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "hero-side-author",
                                 children: blog.author
-                            }, void 0, false, {
-                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 158,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "blog-meta-separator",
-                                children: "•"
-                            }, void 0, false, {
-                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 159,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "hero-side-date",
-                                children: formatDate(blog.publishDate)
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
                                 lineNumber: 160,
@@ -2317,66 +2568,165 @@ const HeroSideCard = ({ blog })=>{
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "hero-side-date",
+                                children: formatDate(blog.publishDate)
+                            }, void 0, false, {
+                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                lineNumber: 162,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "blog-meta-separator",
+                                children: "•"
+                            }, void 0, false, {
+                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                lineNumber: 163,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "hero-side-readtime",
                                 children: blog.readTime
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 162,
+                                lineNumber: 164,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 157,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                lineNumber: 155,
+                lineNumber: 157,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-        lineNumber: 138,
+        lineNumber: 140,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
 _c2 = HeroSideCard;
-const BlogListingPage = ()=>{
+const BlogListingPage = ({ initialCategory = null })=>{
     _s1();
-    const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('All');
+    const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"])();
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialCategory || 'All');
     const [currentPage, setCurrentPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [titleRef, titleVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"])({
         threshold: 0.2
     });
+    const [titleMounted, setTitleMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Get page from URL (for pagination on category pages)
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "BlogListingPage.useEffect": ()=>{
+            const page = parseInt(searchParams.get('page') || '1', 10);
+            setCurrentPage(page);
+            // Only read category from URL if not provided as prop (for backward compatibility)
+            if (!initialCategory) {
+                const category = searchParams.get('category') || 'All';
+                setSelectedCategory(category);
+            }
+        }
+    }["BlogListingPage.useEffect"], [
+        searchParams,
+        initialCategory
+    ]);
+    // Make title visible immediately when category is selected
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "BlogListingPage.useEffect": ()=>{
+            if (selectedCategory !== 'All') {
+                // Small delay to ensure DOM is ready, then make visible
+                const timer = setTimeout({
+                    "BlogListingPage.useEffect.timer": ()=>{
+                        setTitleMounted(true);
+                    }
+                }["BlogListingPage.useEffect.timer"], 100);
+                return ({
+                    "BlogListingPage.useEffect": ()=>clearTimeout(timer)
+                })["BlogListingPage.useEffect"];
+            } else {
+                setTitleMounted(false);
+            }
+        }
+    }["BlogListingPage.useEffect"], [
+        selectedCategory
+    ]);
     const featuredBlogs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getFeaturedBlogs"])(4);
     const mainFeatured = featuredBlogs[0];
     const sideFeatured = featuredBlogs.slice(1, 4);
-    const featuredBlogIds = new Set(featuredBlogs.map((b)=>b.id));
-    // Get all posts (excluding featured from main listing)
-    const allPosts = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["blogPosts"].filter((blog)=>!featuredBlogIds.has(blog.id));
-    const filteredBlogs = selectedCategory === 'All' ? allPosts : __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["blogPosts"].filter((blog)=>blog.category === selectedCategory);
-    // Pagination settings
-    const postsPerPage = 9;
+    // Get all posts - include ALL 13 posts in main listing
+    // Featured blogs can appear in both hero section and main listing
+    // Sort by publish date (newest first)
+    const allPosts = [
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["blogPosts"]
+    ].sort((a, b)=>new Date(b.publishDate) - new Date(a.publishDate));
+    const filteredBlogs = selectedCategory === 'All' ? allPosts : [
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["blogPosts"]
+    ].filter((blog)=>blog.category === selectedCategory).sort((a, b)=>new Date(b.publishDate) - new Date(a.publishDate));
+    // Pagination settings - show 6 blogs per page
+    const postsPerPage = 6;
     const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
     const startIndex = (currentPage - 1) * postsPerPage;
     const endIndex = startIndex + postsPerPage;
     const paginatedBlogs = filteredBlogs.slice(startIndex, endIndex);
-    // Reset to page 1 when category changes
+    // Update URL when page or category changes - use SEO-friendly URLs
+    const updateURL = (page, category)=>{
+        if (category !== 'All') {
+            // Use SEO-friendly URL: /blog/category/web-development?page=2
+            const categorySlug = categoryToSlug(category);
+            const params = new URLSearchParams();
+            if (page > 1) params.set('page', page.toString());
+            const queryString = params.toString();
+            router.push(`/blog/category/${categorySlug}${queryString ? `?${queryString}` : ''}`, {
+                scroll: false
+            });
+        } else {
+            // For "All" category, use /blog?page=2
+            const params = new URLSearchParams();
+            if (page > 1) params.set('page', page.toString());
+            const queryString = params.toString();
+            router.push(`/blog${queryString ? `?${queryString}` : ''}`, {
+                scroll: false
+            });
+        }
+    };
+    const handlePageChange = (newPage)=>{
+        if (newPage >= 1 && newPage <= totalPages) {
+            setCurrentPage(newPage);
+            updateURL(newPage, selectedCategory);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    };
+    const handleCategoryChange = (category)=>{
+        setSelectedCategory(category);
+        setCurrentPage(1);
+        updateURL(1, category);
+    };
+    // Reset to page 1 when category changes or if current page is invalid
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "BlogListingPage.useEffect": ()=>{
-            setCurrentPage(1);
+            if (totalPages > 0 && currentPage > totalPages) {
+                setCurrentPage(1);
+                updateURL(1, selectedCategory);
+            }
         }
     }["BlogListingPage.useEffect"], [
-        selectedCategory
+        selectedCategory,
+        totalPages
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$BlogSchema$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                lineNumber: 206,
+                lineNumber: 269,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             mainFeatured && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2390,7 +2740,7 @@ const BlogListingPage = ()=>{
                                 blog: mainFeatured
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 213,
+                                lineNumber: 276,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             sideFeatured.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2399,28 +2749,28 @@ const BlogListingPage = ()=>{
                                         blog: blog
                                     }, blog.id, false, {
                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                        lineNumber: 217,
+                                        lineNumber: 280,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                lineNumber: 215,
+                                lineNumber: 278,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                        lineNumber: 212,
+                        lineNumber: 275,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 211,
+                    lineNumber: 274,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                lineNumber: 210,
+                lineNumber: 273,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2436,7 +2786,7 @@ const BlogListingPage = ()=>{
                                     children: "Digital Marketing & Web Development Blog | Team Nirosha"
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                    lineNumber: 230,
+                                    lineNumber: 293,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2444,13 +2794,13 @@ const BlogListingPage = ()=>{
                                     children: "Expert insights, tips, and strategies for growing your digital presence"
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                    lineNumber: 231,
+                                    lineNumber: 294,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                            lineNumber: 229,
+                            lineNumber: 292,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2471,65 +2821,177 @@ const BlogListingPage = ()=>{
                                                                 layout: "vertical"
                                                             }, blog.id, false, {
                                                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                lineNumber: 244,
+                                                                lineNumber: 307,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 305,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                    totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    filteredBlogs.length > postsPerPage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "blog-pagination",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                className: "pagination-button",
-                                                                onClick: ()=>setCurrentPage((prev)=>Math.max(1, prev - 1)),
-                                                                disabled: currentPage === 1,
-                                                                children: "Previous"
-                                                            }, void 0, false, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "pagination-info",
+                                                                children: [
+                                                                    "Showing ",
+                                                                    startIndex + 1,
+                                                                    "-",
+                                                                    Math.min(endIndex, filteredBlogs.length),
+                                                                    " of ",
+                                                                    filteredBlogs.length,
+                                                                    " posts"
+                                                                ]
+                                                            }, void 0, true, {
                                                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                lineNumber: 251,
+                                                                lineNumber: 314,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "pagination-numbers",
-                                                                children: Array.from({
-                                                                    length: totalPages
-                                                                }, (_, i)=>i + 1).map((page)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        className: `pagination-number ${currentPage === page ? 'active' : ''}`,
-                                                                        onClick: ()=>setCurrentPage(page),
-                                                                        children: page
-                                                                    }, page, false, {
+                                                                className: "pagination-controls",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                        className: "pagination-button pagination-prev",
+                                                                        onClick: ()=>handlePageChange(currentPage - 1),
+                                                                        disabled: currentPage === 1,
+                                                                        "aria-label": "Previous page",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiChevronLeft"], {}, void 0, false, {
+                                                                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                lineNumber: 325,
+                                                                                columnNumber: 31
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                children: "Previous"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                lineNumber: 326,
+                                                                                columnNumber: 31
+                                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                                        ]
+                                                                    }, void 0, true, {
                                                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                        lineNumber: 261,
-                                                                        columnNumber: 31
-                                                                    }, ("TURBOPACK compile-time value", void 0)))
-                                                            }, void 0, false, {
+                                                                        lineNumber: 319,
+                                                                        columnNumber: 29
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "pagination-numbers",
+                                                                        children: (()=>{
+                                                                            const pages = [];
+                                                                            const maxVisible = 7;
+                                                                            let startPage = 1;
+                                                                            let endPage = totalPages;
+                                                                            if (totalPages > maxVisible) {
+                                                                                if (currentPage <= 4) {
+                                                                                    endPage = maxVisible;
+                                                                                } else if (currentPage >= totalPages - 3) {
+                                                                                    startPage = totalPages - maxVisible + 1;
+                                                                                } else {
+                                                                                    startPage = currentPage - 3;
+                                                                                    endPage = currentPage + 3;
+                                                                                }
+                                                                            }
+                                                                            if (startPage > 1) {
+                                                                                pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                    className: "pagination-number",
+                                                                                    onClick: ()=>handlePageChange(1),
+                                                                                    children: "1"
+                                                                                }, 1, false, {
+                                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                    lineNumber: 349,
+                                                                                    columnNumber: 37
+                                                                                }, ("TURBOPACK compile-time value", void 0)));
+                                                                                if (startPage > 2) {
+                                                                                    pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                        className: "pagination-ellipsis",
+                                                                                        children: "..."
+                                                                                    }, "ellipsis-start", false, {
+                                                                                        fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                        lineNumber: 359,
+                                                                                        columnNumber: 39
+                                                                                    }, ("TURBOPACK compile-time value", void 0)));
+                                                                                }
+                                                                            }
+                                                                            for(let i = startPage; i <= endPage; i++){
+                                                                                pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                    className: `pagination-number ${currentPage === i ? 'active' : ''}`,
+                                                                                    onClick: ()=>handlePageChange(i),
+                                                                                    children: i
+                                                                                }, i, false, {
+                                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                    lineNumber: 366,
+                                                                                    columnNumber: 37
+                                                                                }, ("TURBOPACK compile-time value", void 0)));
+                                                                            }
+                                                                            if (endPage < totalPages) {
+                                                                                if (endPage < totalPages - 1) {
+                                                                                    pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                        className: "pagination-ellipsis",
+                                                                                        children: "..."
+                                                                                    }, "ellipsis-end", false, {
+                                                                                        fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                        lineNumber: 379,
+                                                                                        columnNumber: 39
+                                                                                    }, ("TURBOPACK compile-time value", void 0)));
+                                                                                }
+                                                                                pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                    className: "pagination-number",
+                                                                                    onClick: ()=>handlePageChange(totalPages),
+                                                                                    children: totalPages
+                                                                                }, totalPages, false, {
+                                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                    lineNumber: 383,
+                                                                                    columnNumber: 37
+                                                                                }, ("TURBOPACK compile-time value", void 0)));
+                                                                            }
+                                                                            return pages;
+                                                                        })()
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                        lineNumber: 329,
+                                                                        columnNumber: 29
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                        className: "pagination-button pagination-next",
+                                                                        onClick: ()=>handlePageChange(currentPage + 1),
+                                                                        disabled: currentPage === totalPages,
+                                                                        "aria-label": "Next page",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                children: "Next"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                lineNumber: 403,
+                                                                                columnNumber: 31
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiChevronRight"], {}, void 0, false, {
+                                                                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                lineNumber: 404,
+                                                                                columnNumber: 31
+                                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                        lineNumber: 397,
+                                                                        columnNumber: 29
+                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                ]
+                                                            }, void 0, true, {
                                                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                lineNumber: 259,
-                                                                columnNumber: 27
-                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                className: "pagination-button",
-                                                                onClick: ()=>setCurrentPage((prev)=>Math.min(totalPages, prev + 1)),
-                                                                disabled: currentPage === totalPages,
-                                                                children: "Next"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                lineNumber: 271,
+                                                                lineNumber: 318,
                                                                 columnNumber: 27
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                        lineNumber: 250,
+                                                        lineNumber: 313,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                lineNumber: 241,
+                                                lineNumber: 304,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false),
@@ -2538,7 +3000,7 @@ const BlogListingPage = ()=>{
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     ref: titleRef,
-                                                    className: `blog-header ${titleVisible ? 'animate-fadeInUp' : ''}`,
+                                                    className: `blog-header ${titleVisible || titleMounted ? 'animate-fadeInUp' : ''}`,
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                                             className: "page-title",
@@ -2548,7 +3010,7 @@ const BlogListingPage = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                            lineNumber: 292,
+                                                            lineNumber: 421,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2561,13 +3023,13 @@ const BlogListingPage = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                            lineNumber: 293,
+                                                            lineNumber: 422,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                    lineNumber: 288,
+                                                    lineNumber: 417,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 paginatedBlogs.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -2580,59 +3042,171 @@ const BlogListingPage = ()=>{
                                                                     layout: "vertical"
                                                                 }, blog.id, false, {
                                                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                    lineNumber: 302,
+                                                                    lineNumber: 431,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                            lineNumber: 300,
+                                                            lineNumber: 429,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
-                                                        totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        filteredBlogs.length > postsPerPage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "blog-pagination",
                                                             children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                    className: "pagination-button",
-                                                                    onClick: ()=>setCurrentPage((prev)=>Math.max(1, prev - 1)),
-                                                                    disabled: currentPage === 1,
-                                                                    children: "Previous"
-                                                                }, void 0, false, {
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "pagination-info",
+                                                                    children: [
+                                                                        "Showing ",
+                                                                        startIndex + 1,
+                                                                        "-",
+                                                                        Math.min(endIndex, filteredBlogs.length),
+                                                                        " of ",
+                                                                        filteredBlogs.length,
+                                                                        " posts"
+                                                                    ]
+                                                                }, void 0, true, {
                                                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                    lineNumber: 309,
+                                                                    lineNumber: 438,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "pagination-numbers",
-                                                                    children: Array.from({
-                                                                        length: totalPages
-                                                                    }, (_, i)=>i + 1).map((page)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                            className: `pagination-number ${currentPage === page ? 'active' : ''}`,
-                                                                            onClick: ()=>setCurrentPage(page),
-                                                                            children: page
-                                                                        }, page, false, {
+                                                                    className: "pagination-controls",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                            className: "pagination-button pagination-prev",
+                                                                            onClick: ()=>handlePageChange(currentPage - 1),
+                                                                            disabled: currentPage === 1,
+                                                                            "aria-label": "Previous page",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiChevronLeft"], {}, void 0, false, {
+                                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                    lineNumber: 449,
+                                                                                    columnNumber: 31
+                                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    children: "Previous"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                    lineNumber: 450,
+                                                                                    columnNumber: 31
+                                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                                            ]
+                                                                        }, void 0, true, {
                                                                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                            lineNumber: 319,
-                                                                            columnNumber: 31
-                                                                        }, ("TURBOPACK compile-time value", void 0)))
-                                                                }, void 0, false, {
+                                                                            lineNumber: 443,
+                                                                            columnNumber: 29
+                                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "pagination-numbers",
+                                                                            children: (()=>{
+                                                                                const pages = [];
+                                                                                const maxVisible = 7;
+                                                                                let startPage = 1;
+                                                                                let endPage = totalPages;
+                                                                                if (totalPages > maxVisible) {
+                                                                                    if (currentPage <= 4) {
+                                                                                        endPage = maxVisible;
+                                                                                    } else if (currentPage >= totalPages - 3) {
+                                                                                        startPage = totalPages - maxVisible + 1;
+                                                                                    } else {
+                                                                                        startPage = currentPage - 3;
+                                                                                        endPage = currentPage + 3;
+                                                                                    }
+                                                                                }
+                                                                                if (startPage > 1) {
+                                                                                    pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                        className: "pagination-number",
+                                                                                        onClick: ()=>handlePageChange(1),
+                                                                                        children: "1"
+                                                                                    }, 1, false, {
+                                                                                        fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                        lineNumber: 473,
+                                                                                        columnNumber: 37
+                                                                                    }, ("TURBOPACK compile-time value", void 0)));
+                                                                                    if (startPage > 2) {
+                                                                                        pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                            className: "pagination-ellipsis",
+                                                                                            children: "..."
+                                                                                        }, "ellipsis-start", false, {
+                                                                                            fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                            lineNumber: 483,
+                                                                                            columnNumber: 39
+                                                                                        }, ("TURBOPACK compile-time value", void 0)));
+                                                                                    }
+                                                                                }
+                                                                                for(let i = startPage; i <= endPage; i++){
+                                                                                    pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                        className: `pagination-number ${currentPage === i ? 'active' : ''}`,
+                                                                                        onClick: ()=>handlePageChange(i),
+                                                                                        children: i
+                                                                                    }, i, false, {
+                                                                                        fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                        lineNumber: 490,
+                                                                                        columnNumber: 37
+                                                                                    }, ("TURBOPACK compile-time value", void 0)));
+                                                                                }
+                                                                                if (endPage < totalPages) {
+                                                                                    if (endPage < totalPages - 1) {
+                                                                                        pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                            className: "pagination-ellipsis",
+                                                                                            children: "..."
+                                                                                        }, "ellipsis-end", false, {
+                                                                                            fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                            lineNumber: 503,
+                                                                                            columnNumber: 39
+                                                                                        }, ("TURBOPACK compile-time value", void 0)));
+                                                                                    }
+                                                                                    pages.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                        className: "pagination-number",
+                                                                                        onClick: ()=>handlePageChange(totalPages),
+                                                                                        children: totalPages
+                                                                                    }, totalPages, false, {
+                                                                                        fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                        lineNumber: 507,
+                                                                                        columnNumber: 37
+                                                                                    }, ("TURBOPACK compile-time value", void 0)));
+                                                                                }
+                                                                                return pages;
+                                                                            })()
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                            lineNumber: 453,
+                                                                            columnNumber: 29
+                                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                            className: "pagination-button pagination-next",
+                                                                            onClick: ()=>handlePageChange(currentPage + 1),
+                                                                            disabled: currentPage === totalPages,
+                                                                            "aria-label": "Next page",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    children: "Next"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                    lineNumber: 527,
+                                                                                    columnNumber: 31
+                                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiChevronRight"], {}, void 0, false, {
+                                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                                    lineNumber: 528,
+                                                                                    columnNumber: 31
+                                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/src/page-components/BlogListingPage.jsx",
+                                                                            lineNumber: 521,
+                                                                            columnNumber: 29
+                                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                                    ]
+                                                                }, void 0, true, {
                                                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                    lineNumber: 317,
-                                                                    columnNumber: 27
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                    className: "pagination-button",
-                                                                    onClick: ()=>setCurrentPage((prev)=>Math.min(totalPages, prev + 1)),
-                                                                    disabled: currentPage === totalPages,
-                                                                    children: "Next"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                                    lineNumber: 329,
+                                                                    lineNumber: 442,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                            lineNumber: 308,
+                                                            lineNumber: 437,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
@@ -2642,24 +3216,24 @@ const BlogListingPage = ()=>{
                                                         children: "No blog posts found in this category."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                        lineNumber: 341,
+                                                        lineNumber: 536,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                    lineNumber: 340,
+                                                    lineNumber: 535,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                            lineNumber: 287,
+                                            lineNumber: 416,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                    lineNumber: 236,
+                                    lineNumber: 299,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
@@ -2672,7 +3246,7 @@ const BlogListingPage = ()=>{
                                                 children: "Topics"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                lineNumber: 352,
+                                                lineNumber: 547,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2680,61 +3254,78 @@ const BlogListingPage = ()=>{
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         className: `filter-button-sidebar ${selectedCategory === 'All' ? 'active' : ''}`,
-                                                        onClick: ()=>setSelectedCategory('All'),
+                                                        onClick: ()=>handleCategoryChange('All'),
+                                                        style: selectedCategory === 'All' ? {
+                                                            background: '#2563eb',
+                                                            color: '#fff'
+                                                        } : {},
                                                         children: "All Posts"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                        lineNumber: 354,
+                                                        lineNumber: 549,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["blogCategories"].map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                            className: `filter-button-sidebar ${selectedCategory === category ? 'active' : ''}`,
-                                                            onClick: ()=>setSelectedCategory(category),
+                                                    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["blogCategories"].map((category)=>{
+                                                        const categoryColor = getCategoryColor(category);
+                                                        const isActive = selectedCategory === category;
+                                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            className: `filter-button-sidebar ${isActive ? 'active' : ''}`,
+                                                            onClick: ()=>handleCategoryChange(category),
+                                                            style: isActive ? {
+                                                                background: categoryColor,
+                                                                color: '#fff',
+                                                                borderLeft: `4px solid ${categoryColor}`
+                                                            } : {
+                                                                borderLeft: `4px solid ${categoryColor}`
+                                                            },
                                                             children: category
                                                         }, category, false, {
                                                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                            lineNumber: 361,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)))
+                                                            lineNumber: 560,
+                                                            columnNumber: 23
+                                                        }, ("TURBOPACK compile-time value", void 0));
+                                                    })
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                                lineNumber: 353,
+                                                lineNumber: 548,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                        lineNumber: 351,
+                                        lineNumber: 546,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                                    lineNumber: 349,
+                                    lineNumber: 544,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                            lineNumber: 234,
+                            lineNumber: 297,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                    lineNumber: 227,
+                    lineNumber: 290,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/BlogListingPage.jsx",
-                lineNumber: 226,
+                lineNumber: 289,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true);
 };
-_s1(BlogListingPage, "NJ3bk0Fda9YA+p4TPSZcIAlPvcI=", false, function() {
+_s1(BlogListingPage, "7rBQnSEl6YysLig+GyOuKkNviCc=", false, function() {
     return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"]
     ];
 });

@@ -1,33 +1,37 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Script from 'next/script'
 
 const GoogleTagManager = ({ gtmId, consentGranted }) => {
-  useEffect(() => {
-    if (!gtmId || typeof window === 'undefined') return
+  const scriptLoadedRef = useRef(false)
+  const consentInitializedRef = useRef(false)
 
+  // Initialize dataLayer only once
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     // Initialize dataLayer before GTM loads
     window.dataLayer = window.dataLayer || []
     
-    // Initialize consent mode with default 'denied' state
-    // This should be set BEFORE GTM loads
-    if (!window.dataLayer.find(item => item.event === 'consent')) {
+    // Initialize consent mode with default 'denied' state only once
+    if (!consentInitializedRef.current) {
       window.dataLayer.push({
         'consent': 'default',
         'analytics_storage': 'denied',
         'ad_storage': 'denied',
         'wait_for_update': 500,
       })
+      consentInitializedRef.current = true
     }
-  }, [gtmId])
+  }, [])
 
+  // Update consent when user makes a choice
   useEffect(() => {
-    if (!gtmId || typeof window === 'undefined') return
+    if (!gtmId || typeof window === 'undefined' || !window.dataLayer) return
 
-    // Update consent when user makes a choice
-    // This uses the gtag consent API format
-    if (window.dataLayer) {
+    // Only update if consent has changed and script is loaded
+    if (scriptLoadedRef.current) {
       window.dataLayer.push({
         'event': 'consent_update',
         'analytics_storage': consentGranted ? 'granted' : 'denied',
@@ -36,23 +40,20 @@ const GoogleTagManager = ({ gtmId, consentGranted }) => {
     }
   }, [gtmId, consentGranted])
 
-  if (!gtmId) return null
+  // Only load GTM if consent is granted
+  if (!gtmId || !consentGranted) return null
 
   return (
     <>
-      {/* GTM Script - Load with consent mode, will respect user's choice */}
+      {/* GTM Script - Load lazily only after consent is granted */}
       <Script
         id="gtm-script"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
+        onLoad={() => {
+          scriptLoadedRef.current = true
+        }}
         dangerouslySetInnerHTML={{
           __html: `
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              'consent': 'default',
-              'analytics_storage': 'denied',
-              'ad_storage': 'denied',
-              'wait_for_update': 500
-            });
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -61,7 +62,7 @@ const GoogleTagManager = ({ gtmId, consentGranted }) => {
           `,
         }}
       />
-      {/* GTM Noscript fallback */}
+      {/* GTM Noscript fallback - only show if consent granted */}
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
@@ -75,3 +76,4 @@ const GoogleTagManager = ({ gtmId, consentGranted }) => {
 }
 
 export default GoogleTagManager
+

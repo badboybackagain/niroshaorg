@@ -1,0 +1,69 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+set SSH_HOST "37.27.54.247"
+set SSH_USER "nirosha_1"
+set SSH_PASS "Celorita13jan!!"
+set SSH_TARGET_DIR "public_html"
+
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $SSH_USER@$SSH_HOST
+
+expect {
+    "password:" {
+        send "$SSH_PASS\r"
+        exp_continue
+    }
+    "$ " {
+        send "cd $SSH_TARGET_DIR && pwd\r"
+        expect "$ "
+        
+        send "echo '=== Current Directory Structure ==='\r"
+        expect "$ "
+        send "ls -la | head -20\r"
+        expect "$ "
+        
+        send "echo '=== Looking for server.js ==='\r"
+        expect "$ "
+        send "find . -name 'server.js' -type f 2>/dev/null | head -5\r"
+        expect "$ "
+        
+        send "echo '=== Checking .next directory ==='\r"
+        expect "$ "
+        send "test -d .next && ls -la .next/ | head -15 || echo '.next directory not found'\r"
+        expect "$ "
+        
+        send "echo '=== Checking for .next/standalone ==='\r"
+        expect "$ "
+        send "test -d .next/standalone && (echo 'Found .next/standalone'; ls -la .next/standalone/ | head -15) || echo '.next/standalone not found'\r"
+        expect "$ "
+        
+        send "echo '=== CRITICAL: Checking for .next/static files ==='\r"
+        expect "$ "
+        send "test -d .next/static && (echo 'Found .next/static in root'; find .next/static -type f | wc -l; find .next/static/chunks -type f 2>/dev/null | head -5) || echo '.next/static NOT found in root'\r"
+        expect "$ "
+        
+        send "test -d .next/standalone/.next/static && (echo 'Found .next/static in standalone'; find .next/standalone/.next/static -type f | wc -l; find .next/standalone/.next/static/chunks -type f 2>/dev/null | head -5) || echo '.next/static NOT found in standalone/.next/static'\r"
+        expect "$ "
+        
+        send "echo '=== Checking where server is running from ==='\r"
+        expect "$ "
+        send "ps aux | grep -E 'node.*server' | grep -v grep | head -3\r"
+        expect "$ "
+        
+        send "echo '=== Checking if static files are accessible via web ==='\r"
+        expect "$ "
+        send "curl -I http://localhost:3000/_next/static/chunks/ 2>/dev/null | head -5 || echo 'Cannot check localhost (server may not be running)'\r"
+        expect "$ "
+        
+        send "echo '=== Summary: Static Files Location ==='\r"
+        expect "$ "
+        send "echo 'Checking all possible locations:'\r"
+        expect "$ "
+        send "for path in .next/static .next/standalone/.next/static; do test -d \"\$path\" && echo \"Found: \$path (\$(find \$path -type f 2>/dev/null | wc -l) files)\" || true; done\r"
+        expect "$ "
+        
+        send "exit\r"
+        expect eof
+    }
+    eof
+}

@@ -10,12 +10,15 @@ const smoothScrollTo = (target, offset = 0) => {
     : target
   
   if (element) {
-    const elementPosition = element.getBoundingClientRect().top
-    const offsetPosition = elementPosition + window.pageYOffset - offset
-    
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
+    // Batch layout read in requestAnimationFrame to avoid forced reflows
+    requestAnimationFrame(() => {
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     })
   }
 }

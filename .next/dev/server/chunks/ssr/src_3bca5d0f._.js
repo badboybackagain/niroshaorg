@@ -1251,10 +1251,12 @@ const Contact = ()=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "contact-info-cards",
+                                        suppressHydrationWarning: true,
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "tel:+919403891938",
                                                 className: "contact-info-card",
+                                                suppressHydrationWarning: true,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "info-icon",
@@ -1301,6 +1303,7 @@ const Contact = ()=>{
                                                 target: "_blank",
                                                 rel: "noopener noreferrer",
                                                 className: "contact-info-card",
+                                                suppressHydrationWarning: true,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "info-icon",
@@ -1345,6 +1348,7 @@ const Contact = ()=>{
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "mailto:info@nirosha.org",
                                                 className: "contact-info-card",
+                                                suppressHydrationWarning: true,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "info-icon",
@@ -1450,6 +1454,7 @@ const Contact = ()=>{
                                                 target: "_blank",
                                                 rel: "noopener noreferrer",
                                                 className: "btn btn-primary",
+                                                suppressHydrationWarning: true,
                                                 children: "Book a Free Consultation"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.jsx",
@@ -1482,14 +1487,14 @@ const Contact = ()=>{
                                 className: "map-decoration map-decoration-1"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 568,
+                                lineNumber: 569,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "map-decoration map-decoration-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 569,
+                                lineNumber: 570,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1497,7 +1502,7 @@ const Contact = ()=>{
                                 children: "Find Us"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 570,
+                                lineNumber: 571,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1517,7 +1522,7 @@ const Contact = ()=>{
                                         title: "Nirosha Enterprises | Web Designer - Hadapsar, Pune"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 572,
+                                        lineNumber: 573,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1528,32 +1533,33 @@ const Contact = ()=>{
                                                 target: "_blank",
                                                 rel: "noopener noreferrer",
                                                 className: "map-link",
+                                                suppressHydrationWarning: true,
                                                 children: "View on Google Maps →"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 584,
+                                                lineNumber: 585,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Contact.jsx",
-                                            lineNumber: 583,
+                                            lineNumber: 584,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 582,
+                                        lineNumber: 583,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 571,
+                                lineNumber: 572,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 564,
+                        lineNumber: 565,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]

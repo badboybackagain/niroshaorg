@@ -1,0 +1,17 @@
+# Modern browsers only - targets browsers that support ES2021+ features
+# This reduces bundle size by not transpiling modern JavaScript features like:
+# Array.prototype.at, Array.prototype.flat, Object.fromEntries, Object.hasOwn, etc.
+# These are all supported in modern browsers (2021+)
+# Targeting browsers from 2021+ ensures no unnecessary polyfills
+last 2 versions
+> 0.2%
+not dead
+not op_mini all
+not ie 11
+not chrome < 92
+not firefox < 90
+not safari < 15
+not edge < 92
+not and_chr < 92
+not and_ff < 90
+not ios_saf < 15

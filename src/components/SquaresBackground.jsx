@@ -24,35 +24,40 @@ const SquaresBackground = ({
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      // Ensure canvas fills the full parent container
-      const parent = canvas.parentElement;
-      let displayWidth, displayHeight;
-      
-      if (parent) {
-        const rect = parent.getBoundingClientRect();
-        displayWidth = rect.width;
-        displayHeight = rect.height;
-      } else {
-        displayWidth = canvas.offsetWidth || window.innerWidth;
-        displayHeight = canvas.offsetHeight || window.innerHeight;
-      }
-      
-      // Use actual pixel dimensions for crisp rendering
-      const dpr = window.devicePixelRatio || 1;
-      canvas.width = displayWidth * dpr;
-      canvas.height = displayHeight * dpr;
-      
-      // Set display size
-      canvas.style.width = displayWidth + 'px';
-      canvas.style.height = displayHeight + 'px';
-      
-      // Reset transform and scale for high DPI
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
-      
-      // Recalculate grid based on display size
-      numSquaresX.current = Math.ceil(displayWidth / squareSize) + 1;
-      numSquaresY.current = Math.ceil(displayHeight / squareSize) + 1;
+      // Batch layout reads in requestAnimationFrame to avoid forced reflows
+      requestAnimationFrame(() => {
+        if (!canvas || !ctx) return
+        
+        // Ensure canvas fills the full parent container
+        const parent = canvas.parentElement;
+        let displayWidth, displayHeight;
+        
+        if (parent) {
+          const rect = parent.getBoundingClientRect();
+          displayWidth = rect.width;
+          displayHeight = rect.height;
+        } else {
+          displayWidth = canvas.offsetWidth || window.innerWidth;
+          displayHeight = canvas.offsetHeight || window.innerHeight;
+        }
+        
+        // Use actual pixel dimensions for crisp rendering
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = displayWidth * dpr;
+        canvas.height = displayHeight * dpr;
+        
+        // Set display size
+        canvas.style.width = displayWidth + 'px';
+        canvas.style.height = displayHeight + 'px';
+        
+        // Reset transform and scale for high DPI
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+        
+        // Recalculate grid based on display size
+        numSquaresX.current = Math.ceil(displayWidth / squareSize) + 1;
+        numSquaresY.current = Math.ceil(displayHeight / squareSize) + 1;
+      })
     };
 
     // Use ResizeObserver for better resize detection
@@ -69,10 +74,12 @@ const SquaresBackground = ({
     setTimeout(resizeCanvas, 0);
 
     const drawGrid = () => {
-      if (!ctx) return;
-      // Use display dimensions for drawing (context is already scaled)
-      const displayWidth = canvas.offsetWidth || canvas.width / (window.devicePixelRatio || 1);
-      const displayHeight = canvas.offsetHeight || canvas.height / (window.devicePixelRatio || 1);
+      if (!ctx || !canvas) return;
+      // Use cached dimensions or canvas dimensions to avoid forced reflows
+      // Calculate from canvas.width/height which are already set, avoiding layout reads
+      const dpr = window.devicePixelRatio || 1;
+      const displayWidth = canvas.width / dpr;
+      const displayHeight = canvas.height / dpr;
       
       ctx.clearRect(0, 0, displayWidth, displayHeight);
 
@@ -127,23 +134,27 @@ const SquaresBackground = ({
     };
 
     const handleMouseMove = (event) => {
-      const rect = canvas.getBoundingClientRect();
-      const mouseX = event.clientX - rect.left;
-      const mouseY = event.clientY - rect.top;
+      // Batch layout read in requestAnimationFrame to avoid forced reflows
+      requestAnimationFrame(() => {
+        if (!canvas) return
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
 
-      const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
-      const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
+        const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
+        const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
 
-      const hoveredSquareX = Math.floor((mouseX + gridOffset.current.x - startX) / squareSize);
-      const hoveredSquareY = Math.floor((mouseY + gridOffset.current.y - startY) / squareSize);
+        const hoveredSquareX = Math.floor((mouseX + gridOffset.current.x - startX) / squareSize);
+        const hoveredSquareY = Math.floor((mouseY + gridOffset.current.y - startY) / squareSize);
 
-      if (
-        !hoveredSquareRef.current ||
-        hoveredSquareRef.current.x !== hoveredSquareX ||
-        hoveredSquareRef.current.y !== hoveredSquareY
-      ) {
-        hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
-      }
+        if (
+          !hoveredSquareRef.current ||
+          hoveredSquareRef.current.x !== hoveredSquareX ||
+          hoveredSquareRef.current.y !== hoveredSquareY
+        ) {
+          hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
+        }
+      })
     };
 
     const handleMouseLeave = () => {
