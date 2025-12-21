@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { FiMenu, FiX, FiSearch, FiChevronDown, FiChevronRight } from 'react-icons/fi'
+import { FiMenu, FiX, FiSearch, FiChevronDown, FiChevronRight, FiHome } from 'react-icons/fi'
 import Logo from './Logo'
 import { servicesData } from '../data/servicesData.jsx'
 
@@ -14,9 +14,11 @@ const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState('down')
   const [searchQuery, setSearchQuery] = useState('')
   const [isSearchFocused, setIsSearchFocused] = useState(false)
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 })
+  const searchModalInputRef = useRef(null)
   const pathname = usePathname()
   const router = useRouter()
   const servicesDropdownRef = useRef(null)
@@ -140,6 +142,27 @@ const Navbar = () => {
     }
   }, [isOpen])
 
+  // Prevent body scroll when search modal is open
+  useEffect(() => {
+    if (isSearchModalOpen) {
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+      // Focus the input when modal opens
+      if (searchModalInputRef.current) {
+        setTimeout(() => {
+          searchModalInputRef.current?.focus()
+        }, 100)
+      }
+    } else {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+  }, [isSearchModalOpen])
+
   // Prevent overflow when dropdown is open
   useEffect(() => {
     if (servicesDropdownOpen) {
@@ -188,7 +211,17 @@ const Navbar = () => {
       // For now, navigate to services page with search query
       router.push(`/services?search=${encodeURIComponent(searchQuery.trim())}`)
       setSearchQuery('')
+      setIsSearchModalOpen(false)
     }
+  }
+
+  const handleSearchIconClick = () => {
+    setIsSearchModalOpen(true)
+  }
+
+  const handleCloseSearchModal = () => {
+    setIsSearchModalOpen(false)
+    setSearchQuery('')
   }
 
   return (
@@ -202,10 +235,11 @@ const Navbar = () => {
             <div className="nav-links-desktop">
               <Link 
                 href="/" 
-                className={`nav-link ${pathname === '/' ? 'active' : ''}`}
+                className={`nav-link nav-link-home ${pathname === '/' ? 'active' : ''}`}
                 suppressHydrationWarning
               >
-                <span>HOME</span>
+                <FiHome className="nav-link-home-icon" />
+                <span className="nav-link-home-text">HOME</span>
               </Link>
               <Link 
                 href="/about" 
@@ -300,7 +334,8 @@ const Navbar = () => {
                 <span>CONTACT</span>
               </Link>
             </div>
-            <form className="nav-search" onSubmit={handleSearch}>
+            {/* Desktop Search - Full Form */}
+            <form className="nav-search nav-search-desktop" onSubmit={handleSearch}>
               <input
                 type="text"
                 placeholder="Search...."
@@ -314,6 +349,14 @@ const Navbar = () => {
                 <FiSearch />
               </button>
             </form>
+            {/* Tablet Search - Icon Only */}
+            <button 
+              className="nav-search-icon-tablet" 
+              onClick={handleSearchIconClick}
+              aria-label="Open search"
+            >
+              <FiSearch />
+            </button>
             <button className={`menu-toggle ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
               <span className="menu-icon">
                 <FiMenu className="menu-open" />
@@ -444,6 +487,44 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {/* Search Modal - Full Page */}
+      {isSearchModalOpen && typeof window !== 'undefined' && createPortal(
+        <div 
+          className="search-modal-overlay"
+          onClick={handleCloseSearchModal}
+        >
+          <div 
+            className="search-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="search-modal-close"
+              onClick={handleCloseSearchModal}
+              aria-label="Close search"
+            >
+              <FiX />
+            </button>
+            <form className="search-modal-form" onSubmit={handleSearch}>
+              <div className="search-modal-input-wrapper">
+                <FiSearch className="search-modal-icon" />
+                <input
+                  ref={searchModalInputRef}
+                  type="text"
+                  placeholder="Search...."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="search-modal-input"
+                  autoFocus
+                />
+              </div>
+              <button type="submit" className="search-modal-submit" aria-label="Search">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>,
+        document.body
+      )}
     </>
   )
 }
