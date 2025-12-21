@@ -17,21 +17,32 @@ const ConsentBanner = ({ onConsentChange }) => {
     // Ensure we're on the client side
     setMounted(true)
     
+    // Helper function to show banner
+    const showBanner = () => {
+      setIsVisible(true)
+      // Small delay before animation for smoother UX
+      requestAnimationFrame(() => {
+        setIsAnimating(true)
+      })
+    }
+    
     // Check if user has already made a choice
     if (typeof window !== 'undefined') {
       try {
+        // Check for force-show flag (for testing/debugging)
+        const forceShow = sessionStorage.getItem('force-show-consent') === 'true'
+        if (forceShow) {
+          // Clear the flag after using it
+          sessionStorage.removeItem('force-show-consent')
+          // Show banner immediately
+          setTimeout(showBanner, 500)
+          return
+        }
+        
         const consent = localStorage.getItem('gtm-consent')
         if (!consent) {
           // Defer showing banner until after initial page load to not block rendering
           // Use requestIdleCallback if available, otherwise setTimeout
-          const showBanner = () => {
-            setIsVisible(true)
-            // Small delay before animation for smoother UX
-            requestAnimationFrame(() => {
-              setIsAnimating(true)
-            })
-          }
-          
           if ('requestIdleCallback' in window) {
             requestIdleCallback(showBanner, { timeout: 2000 })
           } else {
@@ -43,13 +54,6 @@ const ConsentBanner = ({ onConsentChange }) => {
         }
       } catch (error) {
         // If localStorage is not available, show banner anyway
-        const showBanner = () => {
-          setIsVisible(true)
-          requestAnimationFrame(() => {
-            setIsAnimating(true)
-          })
-        }
-        
         if ('requestIdleCallback' in window) {
           requestIdleCallback(showBanner, { timeout: 2000 })
         } else {
@@ -58,6 +62,21 @@ const ConsentBanner = ({ onConsentChange }) => {
       }
     }
   }, [onConsentChange])
+
+  // Expose force show function to window for debugging
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.forceShowConsentBanner = () => {
+        sessionStorage.setItem('force-show-consent', 'true')
+        location.reload()
+      }
+      window.clearConsentBanner = () => {
+        localStorage.removeItem('gtm-consent')
+        localStorage.removeItem('gtm-cookie-preferences')
+        location.reload()
+      }
+    }
+  }, [])
 
   const handleAccept = () => {
     if (typeof window !== 'undefined') {

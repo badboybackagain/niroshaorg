@@ -11,17 +11,12 @@ import {
   FiTrendingUp,
   FiArrowRight
 } from 'react-icons/fi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const TrustCard = ({ trustPoint, index }) => {
-  const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
-
   return (
     <div 
-      ref={ref}
       key={index}
-      className={`trust-card ${isVisible ? 'animate-fadeInUp' : ''}`}
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="trust-card"
     >
       <div className="trust-icon-wrapper">
         <div className="trust-icon">{trustPoint.icon}</div>
@@ -33,10 +28,6 @@ const TrustCard = ({ trustPoint, index }) => {
 }
 
 const WhyChoose = () => {
-  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 })
-  const [subtitleRef, subtitleVisible] = useScrollAnimation({ threshold: 0.2 })
-  const [closingRef, closingVisible] = useScrollAnimation({ threshold: 0.2 })
-
   const trustPoints = [
     {
       icon: <FiTarget />,
@@ -73,16 +64,9 @@ const WhyChoose = () => {
   return (
     <section className="section why-choose">
       <div className="container">
-        <div 
-          ref={titleRef}
-          className={`why-choose-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
-        >
+        <div className="why-choose-header">
           <h2 className="why-choose-title">Why Businesses Trust Team Nirosha</h2>
-          <p 
-            ref={subtitleRef}
-            className={`why-choose-subtitle ${subtitleVisible ? 'animate-fadeInUp' : ''}`}
-            style={{ animationDelay: '200ms' }}
-          >
+          <p className="why-choose-subtitle">
             We don't just build websites or software - we build reliable digital systems that support your business, protect your data, and scale as you grow.
           </p>
         </div>
@@ -93,10 +77,7 @@ const WhyChoose = () => {
           ))}
         </div>
 
-        <div 
-          ref={closingRef}
-          className={`why-choose-closing ${closingVisible ? 'animate-fadeInUp' : ''}`}
-        >
+        <div className="why-choose-closing">
           <p className="why-choose-closing-text">
             When you work with Team Nirosha, technology becomes your strength - not a headache.
           </p>

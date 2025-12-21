@@ -84,8 +84,10 @@ const PortfolioPage = () => {
         ctx = gsap.context(() => {
           // Title animation
           if (titleRef.current) {
+            // Ensure title is visible initially
+            gsap.set(titleRef.current, { opacity: 1 })
             gsap.from(titleRef.current, {
-              opacity: 0,
+              opacity: 1,
               y: 30,
               duration: 0.8,
               ease: 'power2.out',

@@ -30,7 +30,8 @@ const GTMConsentWrapper = () => {
   // Memoize GTM ID to avoid re-reading on every render
   const gtmId = useMemo(() => {
     if (typeof window === 'undefined') return null
-    return process.env.NEXT_PUBLIC_GTM_ID || null
+    const id = process.env.NEXT_PUBLIC_GTM_ID
+    return id && id.trim() ? id.trim() : null
   }, [])
 
   useEffect(() => {
@@ -53,11 +54,15 @@ const GTMConsentWrapper = () => {
     return null
   }
 
-  // Always show consent banner, even if GTM ID is not set
-  // The banner will appear on first visit or if consent hasn't been given
+  // Only render if GTM ID is configured
+  if (!gtmId) {
+    return null
+  }
+
+  // Show consent banner and GTM only if GTM ID is set
   return (
     <>
-      {gtmId && <GoogleTagManager gtmId={gtmId} consentGranted={consentGranted} />}
+      <GoogleTagManager gtmId={gtmId} consentGranted={consentGranted} />
       <ConsentBanner onConsentChange={handleConsentChange} />
     </>
   )
