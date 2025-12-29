@@ -65,14 +65,11 @@ const teamMembers = [
 ]
 
 const TeamMemberCard = ({ member, index }) => {
-  const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
   const [imageError, setImageError] = React.useState(false)
 
   return (
     <div 
-      ref={ref}
-      className={`about-page-team-member-card ${isVisible ? 'animate-fadeInUp' : ''}`}
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="about-page-team-member-card"
     >
       <div className="about-page-team-member-image-wrapper">
         {!imageError ? (
@@ -87,6 +84,8 @@ const TeamMemberCard = ({ member, index }) => {
               alt={member.name}
               className="about-page-team-member-image"
               onError={() => setImageError(true)}
+              loading="lazy"
+              decoding="async"
             />
           </picture>
         ) : (
@@ -225,13 +224,15 @@ const AboutPage = () => {
 
           {/* Team Section */}
           <div className="about-page-team animate-fadeInUp">
-            <SquaresBackground 
-              direction="diagonal"
-              speed={0.5}
-              borderColor="rgba(150, 150, 150, 0.15)"
-              squareSize={60}
-              hoverFillColor="rgba(100, 100, 100, 0.08)"
-            />
+            <div className="squares-background-desktop">
+              <SquaresBackground 
+                direction="diagonal"
+                speed={0.3}
+                borderColor="rgba(150, 150, 150, 0.15)"
+                squareSize={60}
+                hoverFillColor="rgba(100, 100, 100, 0.08)"
+              />
+            </div>
             <div style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}>
               <h2 className="about-page-section-title" style={{ pointerEvents: 'auto' }}>Meet Our Team</h2>
               <p className="about-page-team-intro" style={{ pointerEvents: 'auto' }}>

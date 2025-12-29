@@ -52,15 +52,19 @@ const ScrollSmootherWrapper = () => {
           return
         }
 
+        // Check if mobile device
+        const isMobile = window.innerWidth <= 768
+        
         // Create ScrollSmoother instance
         const smoother = ScrollSmoother.create({
           wrapper: '#smooth-wrapper',
           content: '#smooth-content',
-          smooth: 1, // Time in seconds to "catch up" to native scroll position
-          effects: true, // Enable data-speed and data-lag effects
-          smoothTouch: 0.1, // Smooth scrolling on touch devices (optional, shorter duration)
+          smooth: isMobile ? 0.1 : 0.5, // Much less smoothing on mobile for better performance
+          effects: !isMobile, // Disable effects on mobile for better performance
+          smoothTouch: 0.05, // Minimal smoothing on touch devices
           normalizeScroll: true, // Prevent mobile address bar from hiding/showing
-          ignoreMobileResize: true // Prevent jumps on mobile resize
+          ignoreMobileResize: true, // Prevent jumps on mobile resize
+          ease: isMobile ? 'none' : 'power1.out' // No easing on mobile for instant response
         })
 
         smootherRef.current = smoother
