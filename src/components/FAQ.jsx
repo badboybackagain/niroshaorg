@@ -61,7 +61,7 @@ const FAQ = ({ faqs, serviceTitle }) => {
           ref={titleRef}
           className={`faq-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
         >
-          <h2 className="section-title">Frequently Asked Questions</h2>
+          <h2 className={`section-title ${titleVisible ? 'animate-fadeInUp' : ''}`}>Frequently Asked Questions</h2>
           <p className="faq-subtitle">
             Common questions about our {serviceTitle} services
           </p>

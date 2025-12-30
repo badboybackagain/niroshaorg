@@ -1,580 +1,947 @@
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/page.jsx and app/page.tsx resolve to /
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/about/page.jsx and app/about/page.tsx resolve to /about
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/page.jsx and app/blog/page.tsx resolve to /blog
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/contact/page.jsx and app/contact/page.tsx resolve to /contact
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/page.jsx and app/services/page.tsx resolve to /services
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/[slug]/page.jsx and app/blog/[slug]/page.tsx resolve to /blog/[slug]
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/[slug]/page.jsx and app/services/[slug]/page.tsx resolve to /services/[slug]
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/page.jsx and app/page.tsx resolve to /
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/about/page.jsx and app/about/page.tsx resolve to /about
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/page.jsx and app/blog/page.tsx resolve to /blog
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/contact/page.jsx and app/contact/page.tsx resolve to /contact
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/page.jsx and app/services/page.tsx resolve to /services
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/blog/[slug]/page.jsx and app/blog/[slug]/page.tsx resolve to /blog/[slug]
-[00:00:00.518] Server  WARN     ⚠ Duplicate page detected. app/services/[slug]/page.jsx and app/services/[slug]/page.tsx resolve to /services/[slug]
-[00:00:00.519] Server  LOG      ✓ Ready in 350ms
-[00:00:02.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:02.885] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.375] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:18.215] Browser LOG     ScrollSmoother initialized successfully
-[00:00:18.215] Browser LOG     ScrollSmoother initialized successfully
-[00:00:18.215] Browser LOG     ScrollSmoother initialized successfully
-[00:00:21.048] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:22.191] Browser LOG     ScrollSmoother initialized successfully
-[00:00:28.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:29.859] Browser LOG     ScrollSmoother initialized successfully
-[00:00:38.989] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/compiled/next-server/pages-turbo.runtime.dev.js
-- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[root-of-the-server]__e6a4d965._.js
-- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[turbopack]_runtime.js
-- /Users/abhishek/niroshaorg/.next/dev/server/app/about/page.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/require.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/build/utils.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/options.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/index.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:00:39.021] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/compiled/next-server/pages-turbo.runtime.dev.js
-- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[root-of-the-server]__e6a4d965._.js
-- /Users/abhishek/niroshaorg/.next/dev/server/chunks/ssr/[turbopack]_runtime.js
-- /Users/abhishek/niroshaorg/.next/dev/server/app/about/page.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/require.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/build/utils.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/options.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/build/swc/index.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/router-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:00:39.089] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:00:39.104] Server  ERROR   Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:00:39.140] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
-[00:00:39.172] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
-[00:00:39.192] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:00:39.217] Server  ERROR   Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:00:42.764] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:43.956] Browser LOG     ScrollSmoother initialized successfully
-[00:00:45.285] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:46.391] Browser LOG     ScrollSmoother initialized successfully
-[00:05:19.575] Browser LOG     ScrollSmoother initialized successfully
-[00:05:20.535] Browser LOG     ScrollSmoother initialized successfully
-[00:07:14.475] Server  LOG      ✓ Compiled in 42ms
-[00:07:15.602] Server  LOG      ✓ Compiled in 5ms
-[00:07:18.866] Server  LOG      ✓ Compiled in 10ms
-[00:07:19.693] Server  LOG      ✓ Compiled in 26ms
-[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
-Parsing ecmascript source code failed
-  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
-  156 |       }
-> 157 |     };
-      |      ^
-  158 |
-  159 |     const handleMouseLeave = () => {
-  160 |       hoveredSquareRef.current = null;
+[00:00:00.612] Server  LOG      ✓ Ready in 392ms
+[00:00:05.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.980] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
 
-Expected ',', got ';'
+[00:00:05.981] Browser GROUP   Processing commands (2)
+[00:00:05.981] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:00:05.981] Browser GROUPEND 
+[00:00:05.981] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:00:05.982] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:00:05.986] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:00:05.987] Browser GROUPEND 
+[00:00:05.987] Browser GROUP   Processing GTAG command: ["js", Tue Dec 30 2025 17:29:55 GMT+0530 (India Standard Time)]
+[00:00:05.988] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:00:05.988] Browser GROUPEND 
+[00:00:05.989] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:00:05.989] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:00:05.989] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:00:05.989] Browser GROUP   Sending event "page_view" to undefined
+[00:00:05.989] Browser GROUP   Request parameters:
+[00:00:05.990] Browser LOG     v: 2
+[00:00:05.990] Browser LOG     tid: G-F4SER380S1
+[00:00:05.990] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:00:05.990] Browser LOG     _p: 1767095995620
+[00:00:05.990] Browser LOG     _dbg: 1
+[00:00:05.990] Browser LOG     gcd: 13l3l3l3l1l1
+[00:00:05.990] Browser LOG     npa: 0
+[00:00:05.990] Browser LOG     dma: 0
+[00:00:05.990] Browser LOG     cid: 1271940746.1767023617
+[00:00:05.990] Browser LOG     ul: en-gb
+[00:00:05.990] Browser LOG     sr: 3840x1600
+[00:00:05.990] Browser LOG     uaa: arm
+[00:00:05.990] Browser LOG     uab: 64
+[00:00:05.990] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:00:05.990] Browser LOG     uamb: 0
+[00:00:05.990] Browser LOG     uam: 
+[00:00:05.990] Browser LOG     uap: macOS
+[00:00:05.990] Browser LOG     uapv: 26.1.0
+[00:00:05.990] Browser LOG     uaw: 0
+[00:00:05.990] Browser LOG     are: 1
+[00:00:05.990] Browser LOG     frm: 0
+[00:00:05.990] Browser LOG     pscdl: noapi
+[00:00:05.990] Browser LOG     _eu: AAAAAAQ
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUP   Event parameters:
+[00:00:05.990] Browser LOG     en: page_view
+[00:00:05.990] Browser LOG     _ee: 1
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUP   Shared parameters:
+[00:00:05.990] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938465~115938469~116184927~116184929~116251938~116251940~116682875
+[00:00:05.990] Browser LOG     sid: 1767095986
+[00:00:05.990] Browser LOG     sct: 3
+[00:00:05.990] Browser LOG     seg: 1
+[00:00:05.990] Browser LOG     dl: http://localhost/
+[00:00:05.990] Browser LOG     dr: http://localhost:3000/services/wordpress-website-development
+[00:00:05.990] Browser LOG     dt: Web Development, SEO & Automation Agency | Team Nirosha
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUP   Processing commands (1)
+[00:00:05.990] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUP   Processing commands (1)
+[00:00:05.990] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:00:05.990] Browser GROUPEND 
+[00:00:05.990] Browser GROUPEND 
+[00:00:06.496] Browser LOG     ScrollSmoother initialized successfully
+[00:00:12.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.104] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-Import traces:
-  Client Component Browser:
-    ./src/components/SquaresBackground.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
 
-  Client Component SSR:
-    ./src/components/SquaresBackground.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
-[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
-Parsing ecmascript source code failed
-  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
-  156 |       }
-> 157 |     };
-      |      ^
-  158 |
-  159 |     const handleMouseLeave = () => {
-  160 |       hoveredSquareRef.current = null;
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-Expected ',', got ';'
+%s%s https://react.dev/link/hydration-mismatch 
 
-Import traces:
-  Client Component Browser:
-    ./src/components/SquaresBackground.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
+  ...
+    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="wordpress-..." loading={null}>
+          <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/wordpress..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                  <SegmentViewNode type="page" pagePath="wordpress-...">
+                    <SegmentTrieNode>
+                    <WordPressLandingPageRoute>
+                      <WordPressLandingPage>
+                        <section className="landing-hero" style={{...}}>
+                          <div className="container">
+                            <div ref={{current:null}} className={"landing-..."} style={{...}}>
+                              <div>
+                              <h1>
+                              <p>
+                              <div>
+                              <div style={{display:"flex", ...}}>
+                                <a
+                                  href="https://calendly.com/nirosha-info/30min"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="btn btn-primary"
+                                  style={{
++                                   background: "#fff"
++                                   color: "#667eea"
+-                                   color: "rgb(102, 126, 234)"
++                                   padding: "1rem 2.5rem"
++                                   fontSize: "1.125rem"
++                                   fontWeight: "700"
++                                   borderRadius: "12px"
++                                   textDecoration: "none"
++                                   display: "inline-flex"
+-                                   display: "inline-flex"
++                                   alignItems: "center"
++                                   gap: "0.5rem"
++                                   transition: "all 0.3s ease"
++                                   boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
+-                                   background-image: "initial"
+-                                   background-position-x: "initial"
+-                                   background-position-y: "initial"
+-                                   background-size: "initial"
+-                                   background-repeat: "initial"
+-                                   background-attachment: "initial"
+-                                   background-origin: "initial"
+-                                   background-clip: "initial"
+-                                   background-color: "rgb(255, 255, 255)"
+-                                   padding-top: "1rem"
+-                                   padding-right: "2.5rem"
+-                                   padding-bottom: "1rem"
+-                                   padding-left: "2.5rem"
+-                                   font-size: "1.125rem"
+-                                   font-weight: "700"
+-                                   border-top-left-radius: "12px"
+-                                   border-top-right-radius: "12px"
+-                                   border-bottom-right-radius: "12px"
+-                                   border-bottom-left-radius: "12px"
+-                                   text-decoration-line: "none"
+-                                   text-decoration-thickness: "initial"
+-                                   text-decoration-style: "initial"
+-                                   text-decoration-color: "initial"
+-                                   align-items: "center"
+-                                   row-gap: "0.5rem"
+-                                   column-gap: "0.5rem"
+-                                   transition-behavior: "normal"
+-                                   transition-duration: "0.3s"
+-                                   transition-timing-function: "ease"
+-                                   transition-delay: "0s"
+-                                   transition-property: "all"
+-                                   box-shadow: "rgba(0, 0, 0, 0.2) 0px 4px 20px"
+-                                   cursor: "pointer"
+                                  }}
+                                  onMouseEnter={function onMouseEnter}
+                                  onMouseLeave={function onMouseLeave}
+-                                 contenteditable="false"
+                                >
+                                <a
+                                  href="tel:+919403891938"
+                                  className="btn btn-secondary"
+                                  style={{
++                                   background: "rgba(255, 255, 255, 0.2)"
++                                   backdropFilter: "blur(10px)"
++                                   color: "#fff"
+-                                   color: "rgb(255, 255, 255)"
++                                   padding: "1rem 2.5rem"
++                                   fontSize: "1.125rem"
++                                   fontWeight: "700"
++                                   borderRadius: "12px"
++                                   textDecoration: "none"
++                                   display: "inline-flex"
+-                                   display: "inline-flex"
++                                   alignItems: "center"
++                                   gap: "0.5rem"
++                                   border: "2px solid rgba(255, 255, 255, 0.3)"
++                                   transition: "all 0.3s ease"
+-                                   background-image: "initial"
+-                                   background-position-x: "initial"
+-                                   background-position-y: "initial"
+-                                   background-size: "initial"
+-                                   background-repeat: "initial"
+-                                   background-attachment: "initial"
+-                                   background-origin: "initial"
+-                                   background-clip: "initial"
+-                                   background-color: "rgba(255, 255, 255, 0.2)"
+-                                   backdrop-filter: "blur(10px)"
+-                                   padding-top: "1rem"
+-                                   padding-right: "2.5rem"
+-                                   padding-bottom: "1rem"
+-                                   padding-left: "2.5rem"
+-                                   font-size: "1.125rem"
+-                                   font-weight: "700"
+-                                   border-top-left-radius: "12px"
+-                                   border-top-right-radius: "12px"
+-                                   border-bottom-right-radius: "12px"
+-                                   border-bottom-left-radius: "12px"
+-                                   text-decoration-line: "none"
+-                                   text-decoration-thickness: "initial"
+-                                   text-decoration-style: "initial"
+-                                   text-decoration-color: "initial"
+-                                   align-items: "center"
+-                                   row-gap: "0.5rem"
+-                                   column-gap: "0.5rem"
+-                                   border-top-width: "2px"
+-                                   border-right-width: "2px"
+-                                   border-bottom-width: "2px"
+-                                   border-left-width: "2px"
+-                                   border-top-style: "solid"
+-                                   border-right-style: "solid"
+-                                   border-bottom-style: "solid"
+-                                   border-left-style: "solid"
+-                                   border-top-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-right-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-bottom-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-left-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-image-source: "initial"
+-                                   border-image-slice: "initial"
+-                                   border-image-width: "initial"
+-                                   border-image-outset: "initial"
+-                                   border-image-repeat: "initial"
+-                                   transition-behavior: "normal"
+-                                   transition-duration: "0.3s"
+-                                   transition-timing-function: "ease"
+-                                   transition-delay: "0s"
+-                                   transition-property: "all"
+-                                   cursor: "pointer"
+                                  }}
+                                  onMouseEnter={function onMouseEnter}
+                                  onMouseLeave={function onMouseLeave}
+-                                 contenteditable="false"
+                                >
+                              ...
+                        <section>
+                        <section>
+                        <section className="landing-pr..." style={{padding:"8...", ...}}>
+                          <div className="container">
+                            <div ref={{current:null}} className="">
+                              <h2>
+                              <p>
+                              <div style={{display:"grid", ...}}>
+                                <div ref={{current:null}} className="" style={{...}} onMouseEnter={function onMouseEnter} ...>
+                                  <h3>
+                                  <div>
+                                  <ul>
+                                  <a
+                                    href="https://calendly.com/nirosha-info/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
++                                     display: "block"
+-                                     display: "block"
++                                     width: "100%"
+-                                     width: "100%"
++                                     padding: "1rem"
++                                     borderRadius: "12px"
++                                     textAlign: "center"
++                                     textDecoration: "none"
++                                     fontWeight: "700"
++                                     fontSize: "1.125rem"
++                                     transition: "all 0.3s ease"
++                                     background: "rgba(255, 255, 255, 0.2)"
++                                     color: "#fff"
+-                                     color: "rgb(255, 255, 255)"
++                                     border: "2px solid rgba(255, 255, 255, 0.3)"
+-                                     padding-top: "1rem"
+-                                     padding-right: "1rem"
+-                                     padding-bottom: "1rem"
+-                                     padding-left: "1rem"
+-                                     border-top-left-radius: "12px"
+-                                     border-top-right-radius: "12px"
+-                                     border-bottom-right-radius: "12px"
+-                                     border-bottom-left-radius: "12px"
+-                                     text-align: "center"
+-                                     text-decoration-line: "none"
+-                                     text-decoration-thickness: "initial"
+-                                     text-decoration-style: "initial"
+-                                     text-decoration-color: "initial"
+-                                     font-weight: "700"
+-                                     font-size: "1.125rem"
+-                                     transition-behavior: "normal"
+-                                     transition-duration: "0.3s"
+-                                     transition-timing-function: "ease"
+-                                     transition-delay: "0s"
+-                                     transition-property: "all"
+-                                     background-image: "initial"
+-                                     background-position-x: "initial"
+-                                     background-position-y: "initial"
+-                                     background-size: "initial"
+-                                     background-repeat: "initial"
+-                                     background-attachment: "initial"
+-                                     background-origin: "initial"
+-                                     background-clip: "initial"
+-                                     background-color: "rgba(255, 255, 255, 0.2)"
+-                                     border-top-width: "2px"
+-                                     border-right-width: "2px"
+-                                     border-bottom-width: "2px"
+-                                     border-left-width: "2px"
+-                                     border-top-style: "solid"
+-                                     border-right-style: "solid"
+-                                     border-bottom-style: "solid"
+-                                     border-left-style: "solid"
+-                                     border-top-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-right-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-bottom-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-left-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-image-source: "initial"
+-                                     border-image-slice: "initial"
+-                                     border-image-width: "initial"
+-                                     border-image-outset: "initial"
+-                                     border-image-repeat: "initial"
+-                                     cursor: "pointer"
+                                    }}
+                                    onMouseEnter={function onMouseEnter}
+                                    onMouseLeave={function onMouseLeave}
+-                                   contenteditable="false"
+                                  >
++                                   Get Started Now
+                                <div ref={{current:null}} className="" style={{...}} onMouseEnter={function onMouseEnter} ...>
+                                  <div>
+                                  <h3>
+                                  <div>
+                                  <ul>
+                                  <a
+                                    href="https://calendly.com/nirosha-info/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
++                                     display: "block"
+-                                     display: "block"
++                                     width: "100%"
+-                                     width: "100%"
++                                     padding: "1rem"
++                                     borderRadius: "12px"
++                                     textAlign: "center"
++                                     textDecoration: "none"
++                                     fontWeight: "700"
++                                     fontSize: "1.125rem"
++                                     transition: "all 0.3s ease"
++                                     background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
++                                     color: "#fff"
+-                                     color: "rgb(255, 255, 255)"
++                                     border: "none"
+-                                     padding-top: "1rem"
+-                                     padding-right: "1rem"
+-                                     padding-bottom: "1rem"
+-                                     padding-left: "1rem"
+-                                     border-top-left-radius: "12px"
+-                                     border-top-right-radius: "12px"
+-                                     border-bottom-right-radius: "12px"
+-                                     border-bottom-left-radius: "12px"
+-                                     text-align: "center"
+-                                     text-decoration-line: "none"
+-                                     text-decoration-thickness: "initial"
+-                                     text-decoration-style: "initial"
+-                                     text-decoration-color: "initial"
+-                                     font-weight: "700"
+-                                     font-size: "1.125rem"
+-                                     transition-behavior: "normal"
+-                                     transition-duration: "0.3s"
+-                                     transition-timing-function: "ease"
+-                                     transition-delay: "0s"
+-                                     transition-property: "all"
+-                                     background-image: "linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(118, 75, 1..."
+-                                     background-position-x: "initial"
+-                                     background-position-y: "initial"
+-                                     background-size: "initial"
+-                                     background-repeat: "initial"
+-                                     background-attachment: "initial"
+-                                     background-origin: "initial"
+-                                     background-clip: "initial"
+-                                     background-color: "initial"
+-                                     border-top-width: "initial"
+-                                     border-right-width: "initial"
+-                                     border-bottom-width: "initial"
+-                                     border-left-width: "initial"
+-                                     border-top-style: "none"
+-                                     border-right-style: "none"
+-                                     border-bottom-style: "none"
+-                                     border-left-style: "none"
+-                                     border-top-color: "initial"
+-                                     border-right-color: "initial"
+-                                     border-bottom-color: "initial"
+-                                     border-left-color: "initial"
+-                                     border-image-source: "initial"
+-                                     border-image-slice: "initial"
+-                                     border-image-width: "initial"
+-                                     border-image-outset: "initial"
+-                                     border-image-repeat: "initial"
+-                                     cursor: "pointer"
+                                    }}
+                                    onMouseEnter={function onMouseEnter}
+                                    onMouseLeave={function onMouseLeave}
+-                                   contenteditable="false"
+                                  >
++                                   Get Started Now
+                                <div ref={{current:null}} className="" style={{...}} onMouseEnter={function onMouseEnter} ...>
+                                  <h3>
+                                  <div>
+                                  <ul>
+                                  <a
+                                    href="https://calendly.com/nirosha-info/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
++                                     display: "block"
+-                                     display: "block"
++                                     width: "100%"
+-                                     width: "100%"
++                                     padding: "1rem"
++                                     borderRadius: "12px"
++                                     textAlign: "center"
++                                     textDecoration: "none"
++                                     fontWeight: "700"
++                                     fontSize: "1.125rem"
++                                     transition: "all 0.3s ease"
++                                     background: "rgba(255, 255, 255, 0.2)"
++                                     color: "#fff"
+-                                     color: "rgb(255, 255, 255)"
++                                     border: "2px solid rgba(255, 255, 255, 0.3)"
+-                                     padding-top: "1rem"
+-                                     padding-right: "1rem"
+-                                     padding-bottom: "1rem"
+-                                     padding-left: "1rem"
+-                                     border-top-left-radius: "12px"
+-                                     border-top-right-radius: "12px"
+-                                     border-bottom-right-radius: "12px"
+-                                     border-bottom-left-radius: "12px"
+-                                     text-align: "center"
+-                                     text-decoration-line: "none"
+-                                     text-decoration-thickness: "initial"
+-                                     text-decoration-style: "initial"
+-                                     text-decoration-color: "initial"
+-                                     font-weight: "700"
+-                                     font-size: "1.125rem"
+-                                     transition-behavior: "normal"
+-                                     transition-duration: "0.3s"
+-                                     transition-timing-function: "ease"
+-                                     transition-delay: "0s"
+-                                     transition-property: "all"
+-                                     background-image: "initial"
+-                                     background-position-x: "initial"
+-                                     background-position-y: "initial"
+-                                     background-size: "initial"
+-                                     background-repeat: "initial"
+-                                     background-attachment: "initial"
+-                                     background-origin: "initial"
+-                                     background-clip: "initial"
+-                                     background-color: "rgba(255, 255, 255, 0.2)"
+-                                     border-top-width: "2px"
+-                                     border-right-width: "2px"
+-                                     border-bottom-width: "2px"
+-                                     border-left-width: "2px"
+-                                     border-top-style: "solid"
+-                                     border-right-style: "solid"
+-                                     border-bottom-style: "solid"
+-                                     border-left-style: "solid"
+-                                     border-top-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-right-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-bottom-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-left-color: "rgba(255, 255, 255, 0.3)"
+-                                     border-image-source: "initial"
+-                                     border-image-slice: "initial"
+-                                     border-image-width: "initial"
+-                                     border-image-outset: "initial"
+-                                     border-image-repeat: "initial"
+-                                     cursor: "pointer"
+                                    }}
+                                    onMouseEnter={function onMouseEnter}
+                                    onMouseLeave={function onMouseLeave}
+-                                   contenteditable="false"
+                                  >
++                                   Get Started Now
+                        <section className="landing-cta" style={{padding:"1...", ...}}>
+                          <div className="container">
+                            <div ref={{current:null}} className="" style={{...}}>
+                              <h2>
+                              <p>
+                              <div style={{display:"flex", ...}}>
+                                <a
+                                  href="https://calendly.com/nirosha-info/30min"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{
++                                   background: "#fff"
++                                   color: "#000"
+-                                   color: "rgb(0, 0, 0)"
++                                   padding: "1.25rem 3rem"
++                                   fontSize: "1.25rem"
++                                   fontWeight: "700"
++                                   borderRadius: "12px"
++                                   textDecoration: "none"
++                                   display: "inline-flex"
+-                                   display: "inline-flex"
++                                   alignItems: "center"
++                                   gap: "0.75rem"
++                                   transition: "all 0.3s ease"
++                                   boxShadow: "0 4px 20px rgba(255,255,255,0.2)"
+-                                   background-image: "initial"
+-                                   background-position-x: "initial"
+-                                   background-position-y: "initial"
+-                                   background-size: "initial"
+-                                   background-repeat: "initial"
+-                                   background-attachment: "initial"
+-                                   background-origin: "initial"
+-                                   background-clip: "initial"
+-                                   background-color: "rgb(255, 255, 255)"
+-                                   padding-top: "1.25rem"
+-                                   padding-right: "3rem"
+-                                   padding-bottom: "1.25rem"
+-                                   padding-left: "3rem"
+-                                   font-size: "1.25rem"
+-                                   font-weight: "700"
+-                                   border-top-left-radius: "12px"
+-                                   border-top-right-radius: "12px"
+-                                   border-bottom-right-radius: "12px"
+-                                   border-bottom-left-radius: "12px"
+-                                   text-decoration-line: "none"
+-                                   text-decoration-thickness: "initial"
+-                                   text-decoration-style: "initial"
+-                                   text-decoration-color: "initial"
+-                                   align-items: "center"
+-                                   row-gap: "0.75rem"
+-                                   column-gap: "0.75rem"
+-                                   transition-behavior: "normal"
+-                                   transition-duration: "0.3s"
+-                                   transition-timing-function: "ease"
+-                                   transition-delay: "0s"
+-                                   transition-property: "all"
+-                                   box-shadow: "rgba(255, 255, 255, 0.2) 0px 4px 20px"
+-                                   cursor: "pointer"
+                                  }}
+                                  onMouseEnter={function onMouseEnter}
+                                  onMouseLeave={function onMouseLeave}
+-                                 contenteditable="false"
+                                >
+                                <a
+                                  href="tel:+919403891938"
+                                  style={{
++                                   background: "rgba(255, 255, 255, 0.1)"
++                                   backdropFilter: "blur(10px)"
++                                   color: "#fff"
+-                                   color: "rgb(255, 255, 255)"
++                                   padding: "1.25rem 3rem"
++                                   fontSize: "1.25rem"
++                                   fontWeight: "700"
++                                   borderRadius: "12px"
++                                   textDecoration: "none"
++                                   display: "inline-flex"
+-                                   display: "inline-flex"
++                                   alignItems: "center"
++                                   gap: "0.75rem"
++                                   border: "2px solid rgba(255, 255, 255, 0.3)"
++                                   transition: "all 0.3s ease"
+-                                   background-image: "initial"
+-                                   background-position-x: "initial"
+-                                   background-position-y: "initial"
+-                                   background-size: "initial"
+-                                   background-repeat: "initial"
+-                                   background-attachment: "initial"
+-                                   background-origin: "initial"
+-                                   background-clip: "initial"
+-                                   background-color: "rgba(255, 255, 255, 0.1)"
+-                                   backdrop-filter: "blur(10px)"
+-                                   padding-top: "1.25rem"
+-                                   padding-right: "3rem"
+-                                   padding-bottom: "1.25rem"
+-                                   padding-left: "3rem"
+-                                   font-size: "1.25rem"
+-                                   font-weight: "700"
+-                                   border-top-left-radius: "12px"
+-                                   border-top-right-radius: "12px"
+-                                   border-bottom-right-radius: "12px"
+-                                   border-bottom-left-radius: "12px"
+-                                   text-decoration-line: "none"
+-                                   text-decoration-thickness: "initial"
+-                                   text-decoration-style: "initial"
+-                                   text-decoration-color: "initial"
+-                                   align-items: "center"
+-                                   row-gap: "0.75rem"
+-                                   column-gap: "0.75rem"
+-                                   border-top-width: "2px"
+-                                   border-right-width: "2px"
+-                                   border-bottom-width: "2px"
+-                                   border-left-width: "2px"
+-                                   border-top-style: "solid"
+-                                   border-right-style: "solid"
+-                                   border-bottom-style: "solid"
+-                                   border-left-style: "solid"
+-                                   border-top-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-right-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-bottom-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-left-color: "rgba(255, 255, 255, 0.3)"
+-                                   border-image-source: "initial"
+-                                   border-image-slice: "initial"
+-                                   border-image-width: "initial"
+-                                   border-image-outset: "initial"
+-                                   border-image-repeat: "initial"
+-                                   transition-behavior: "normal"
+-                                   transition-duration: "0.3s"
+-                                   transition-timing-function: "ease"
+-                                   transition-delay: "0s"
+-                                   transition-property: "all"
+-                                   cursor: "pointer"
+                                  }}
+                                  onMouseEnter={function onMouseEnter}
+                                  onMouseLeave={function onMouseLeave}
+-                                 contenteditable="false"
+                                >
+                              <div style={{display:"flex", ...}}>
+                                <div style={{display:"flex", ...}}>
+                                  <FiMessageCircle>
+                                  <a
+                                    href="https://wa.me/919403891938"
+                                    style={{
++                                     color: "#fff"
+-                                     color: "rgb(255, 255, 255)"
++                                     textDecoration: "none"
+-                                     text-decoration-line: "none"
+-                                     text-decoration-thickness: "initial"
+-                                     text-decoration-style: "initial"
+-                                     text-decoration-color: "initial"
+-                                     cursor: "pointer"
+                                    }}
+-                                   contenteditable="false"
+                                  >
++                                   WhatsApp Us
+                                <div style={{display:"flex", ...}}>
+                                  <FiMail>
+                                  <a
+                                    href="mailto:info@nirosha.org"
+                                    style={{
++                                     color: "#fff"
+-                                     color: "rgb(255, 255, 255)"
++                                     textDecoration: "none"
+-                                     text-decoration-line: "none"
+-                                     text-decoration-thickness: "initial"
+-                                     text-decoration-style: "initial"
+-                                     text-decoration-color: "initial"
+-                                     cursor: "pointer"
+                                    }}
+-                                   contenteditable="false"
+                                  >
++                                   info@nirosha.org
+                  ...
+                ...
+      ...
 
-  Client Component SSR:
-    ./src/components/SquaresBackground.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
-[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
-Parsing ecmascript source code failed
-  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
-  156 |       }
-> 157 |     };
-      |      ^
-  158 |
-  159 |     const handleMouseLeave = () => {
-  160 |       hoveredSquareRef.current = null;
+[00:00:13.104] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
 
-Expected ',', got ';'
+[00:00:13.104] Browser GROUP   Processing commands (2)
+[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUP   Processing GTAG command: ["js", Tue Dec 30 2025 17:30:02 GMT+0530 (India Standard Time)]
+[00:00:13.104] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:00:13.104] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:00:13.104] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:00:13.104] Browser GROUP   Sending event "page_view" to undefined
+[00:00:13.104] Browser GROUP   Request parameters:
+[00:00:13.104] Browser LOG     v: 2
+[00:00:13.104] Browser LOG     tid: G-F4SER380S1
+[00:00:13.104] Browser LOG     gtm: 45je5ca1h1v9238261810za200zd9238261810
+[00:00:13.104] Browser LOG     _p: 1767096002907
+[00:00:13.104] Browser LOG     _dbg: 1
+[00:00:13.104] Browser LOG     gcd: 13l3l3l3l1l1
+[00:00:13.104] Browser LOG     npa: 0
+[00:00:13.104] Browser LOG     dma: 0
+[00:00:13.104] Browser LOG     cid: 1271940746.1767023617
+[00:00:13.104] Browser LOG     ul: en-gb
+[00:00:13.104] Browser LOG     sr: 3840x1600
+[00:00:13.104] Browser LOG     uaa: arm
+[00:00:13.104] Browser LOG     uab: 64
+[00:00:13.104] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:00:13.104] Browser LOG     uamb: 0
+[00:00:13.104] Browser LOG     uam: 
+[00:00:13.104] Browser LOG     uap: macOS
+[00:00:13.104] Browser LOG     uapv: 26.1.0
+[00:00:13.104] Browser LOG     uaw: 0
+[00:00:13.104] Browser LOG     are: 1
+[00:00:13.104] Browser LOG     frm: 0
+[00:00:13.104] Browser LOG     pscdl: noapi
+[00:00:13.104] Browser LOG     _eu: AAAAAAQ
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUP   Event parameters:
+[00:00:13.104] Browser LOG     en: page_view
+[00:00:13.104] Browser LOG     _ee: 1
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUP   Shared parameters:
+[00:00:13.104] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938468~116184927~116184929~116251938~116251940~116744867
+[00:00:13.104] Browser LOG     sid: 1767095986
+[00:00:13.104] Browser LOG     sct: 3
+[00:00:13.104] Browser LOG     seg: 1
+[00:00:13.104] Browser LOG     dl: http://localhost/wordpress-landing-page
+[00:00:13.104] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUP   Processing commands (1)
+[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUP   Processing commands (1)
+[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.104] Browser GROUPEND 
+[00:00:13.575] Browser LOG     ScrollSmoother initialized successfully
+[00:00:23.155] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:01:16.073] Browser GROUP   Processing commands (1)
+[00:01:16.073] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[00:01:16.073] Browser GROUPEND 
+[00:01:16.073] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[00:01:16.073] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:01:16.073] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:01:16.073] Browser GROUP   Sending event "scroll" to undefined
+[00:01:16.073] Browser GROUP   Request parameters:
+[00:01:16.073] Browser LOG     v: 2
+[00:01:16.073] Browser LOG     tid: G-F4SER380S1
+[00:01:16.073] Browser LOG     gtm: 45je5ca1h1v9238261810za200zd9238261810
+[00:01:16.073] Browser LOG     _p: 1767096002907
+[00:01:16.073] Browser LOG     _dbg: 1
+[00:01:16.073] Browser LOG     gcd: 13l3l3l3l1l1
+[00:01:16.073] Browser LOG     npa: 0
+[00:01:16.073] Browser LOG     dma: 0
+[00:01:16.073] Browser LOG     cid: 1271940746.1767023617
+[00:01:16.073] Browser LOG     ul: en-gb
+[00:01:16.073] Browser LOG     sr: 3840x1600
+[00:01:16.073] Browser LOG     uaa: arm
+[00:01:16.073] Browser LOG     uab: 64
+[00:01:16.073] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:01:16.073] Browser LOG     uamb: 0
+[00:01:16.073] Browser LOG     uam: 
+[00:01:16.073] Browser LOG     uap: macOS
+[00:01:16.073] Browser LOG     uapv: 26.1.0
+[00:01:16.073] Browser LOG     uaw: 0
+[00:01:16.073] Browser LOG     are: 1
+[00:01:16.073] Browser LOG     frm: 0
+[00:01:16.073] Browser LOG     pscdl: noapi
+[00:01:16.073] Browser LOG     _eu: AEAAAAQ
+[00:01:16.073] Browser GROUPEND 
+[00:01:16.073] Browser GROUP   Event parameters:
+[00:01:16.073] Browser LOG     en: scroll
+[00:01:16.073] Browser LOG     epn.percent_scrolled: 90
+[00:01:16.073] Browser LOG     _et: 62970
+[00:01:16.073] Browser GROUPEND 
+[00:01:16.073] Browser GROUP   Shared parameters:
+[00:01:16.073] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938468~116184927~116184929~116251938~116251940~116744867
+[00:01:16.073] Browser LOG     sid: 1767095986
+[00:01:16.073] Browser LOG     sct: 3
+[00:01:16.073] Browser LOG     seg: 1
+[00:01:16.073] Browser LOG     dl: http://localhost/wordpress-landing-page
+[00:01:16.073] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
+[00:01:16.073] Browser GROUPEND 
+[00:01:16.073] Browser GROUPEND 
+[00:01:16.073] Browser GROUPEND 
+[00:01:16.073] Browser GROUPEND 
+[00:02:50.346] Server  LOG      ✓ Compiled in 65ms
+[00:03:02.296] Server  LOG      ✓ Compiled in 14ms
+[00:03:11.859] Server  LOG      ✓ Compiled in 67ms
+[00:03:17.015] Server  LOG      ✓ Compiled in 17ms
+[00:03:32.584] Server  LOG      ✓ Compiled in 36ms
+[00:03:40.797] Server  LOG      ✓ Compiled in 18ms
+[01:01:25.650] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:26.179] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
 
-Import traces:
-  Client Component Browser:
-    ./src/components/SquaresBackground.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/SquaresBackground.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
-[00:07:20.218] Browser ERROR   ./src/components/SquaresBackground.jsx:157:6
-Parsing ecmascript source code failed
-  155 |         hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
-  156 |       }
-> 157 |     };
-      |      ^
-  158 |
-  159 |     const handleMouseLeave = () => {
-  160 |       hoveredSquareRef.current = null;
-
-Expected ',', got ';'
-
-Import traces:
-  Client Component Browser:
-    ./src/components/SquaresBackground.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Client Component Browser]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/components/SquaresBackground.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Client Component SSR]
-    ./src/page-components/AboutPage.jsx [Server Component]
-    ./app/about/page.tsx [Server Component]
-[00:07:31.520] Server  LOG      ✓ Compiled in 49ms
-[00:07:36.103] Server  LOG      ✓ Compiled in 12ms
-[00:07:41.008] Server  LOG      ✓ Compiled in 7ms
-[00:07:41.158] Server  LOG      ✓ Compiled in 40ms
-[00:07:47.654] Server  LOG      ✓ Compiled in 7ms
-[00:08:13.088] Server  LOG      ✓ Compiled in 37ms
-[00:17:22.808] Server  LOG      ✓ Compiled in 56ms
-[00:17:26.653] Server  LOG      ✓ Compiled in 200ms
-[00:17:28.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:28.358] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:28.568] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:28.915] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:43.224] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:43.233] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:43.570] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:44.025] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:49.245] Browser LOG     ScrollSmoother initialized successfully
-[00:17:49.249] Browser LOG     ScrollSmoother initialized successfully
-[00:17:49.250] Browser LOG     ScrollSmoother initialized successfully
-[00:17:49.250] Browser LOG     ScrollSmoother initialized successfully
-[00:18:17.166] Browser LOG     ScrollSmoother initialized successfully
-[00:18:18.268] Browser LOG     ScrollSmoother initialized successfully
-[00:18:21.099] Browser LOG     ScrollSmoother initialized successfully
-[00:18:24.385] Browser LOG     ScrollSmoother initialized successfully
-[00:18:26.141] Server  LOG      ✓ Compiled in 32ms
-[00:18:26.205] Browser LOG     ScrollSmoother initialized successfully
-[00:18:27.342] Browser LOG     ScrollSmoother initialized successfully
-[00:18:58.402] Browser LOG     ScrollSmoother initialized successfully
-[00:19:10.126] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:11.377] Browser LOG     ScrollSmoother initialized successfully
-[00:19:21.086] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
-[00:19:21.120] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
-[00:19:21.152] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:19:21.172] Server  ERROR   Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:19:21.223] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
-[00:19:21.251] Server  ERROR    ⨯ TypeError: __webpack_require__(...) is not a constructor
-[00:19:21.284] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:19:21.298] Server  ERROR   Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:19:25.913] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:27.534] Browser LOG     ScrollSmoother initialized successfully
-[00:19:29.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:30.474] Browser LOG     ScrollSmoother initialized successfully
-[00:22:23.378] Browser LOG     ScrollSmoother initialized successfully
-[00:23:32.901] Browser LOG     ScrollSmoother initialized successfully
-[00:23:33.750] Browser LOG     ScrollSmoother initialized successfully
-[00:23:50.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:51.609] Browser LOG     ScrollSmoother initialized successfully
-[00:24:19.391] Browser LOG     ScrollSmoother initialized successfully
-[00:27:23.679] Browser LOG     ScrollSmoother initialized successfully
-[00:28:47.006] Server  LOG      ✓ Compiled in 40ms
-[00:28:59.636] Server  LOG      ✓ Compiled in 9ms
-[00:29:00.215] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
-
-Previous: %s
-Incoming: %s useEffect [] [[object Object]]
-[00:29:20.527] Server  LOG      ✓ Compiled in 601ms
-[00:29:21.051] Server  LOG      ✓ Compiled in 9ms
-[00:29:21.206] Browser ERROR   ./src/page-components/PortfolioPage.jsx:173:10
-Parsing ecmascript source code failed
-  171 |             })}
-  172 |           </div>
-> 173 |         </div>
-      |          ^^^^^
-  174 |       </section>
-  175 |     </div>
-  176 |   )
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:21.206] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:21.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:173:10
-Parsing ecmascript source code failed
-  171 |             })}
-  172 |           </div>
-> 173 |         </div>
-      |          ^^^^^
-  174 |       </section>
-  175 |     </div>
-  176 |   )
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:21.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:21.220] Browser ERROR   ./src/page-components/PortfolioPage.jsx:173:10
-Parsing ecmascript source code failed
-  171 |             })}
-  172 |           </div>
-> 173 |         </div>
-      |          ^^^^^
-  174 |       </section>
-  175 |     </div>
-  176 |   )
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:21.220] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:44.229] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:44.230] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:29:44.230] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:33:03.251] Server  ERROR    ⨯ ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-
-
-[00:33:03.305] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:33:03.326] Server  ERROR   ModuleBuildError: ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-
-
-[00:33:03.367] Server  ERROR    ⨯ Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:33:03.385] Server  ERROR   Error: Cannot find module 'critters'
-Require stack:
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/post-process.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/render.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/module.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/route-modules/pages/builtin/_error.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/load-default-error-components.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/dev/next-dev-server.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/next.js
-- /Users/abhishek/niroshaorg/node_modules/next/dist/server/lib/start-server.js
-[00:33:04.206] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:33:04.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:33:04.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:33:04.207] Browser ERROR   ./src/page-components/PortfolioPage.jsx:176:12
-Parsing ecmascript source code failed
-  174 |               <p>No portfolio categories available.</p>
-  175 |             </div>
-> 176 |           )}
-      |            ^
-  177 |         </div>
-  178 |       </section>
-  179 |     </div>
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import trace:
-  Server Component:
-    ./src/page-components/PortfolioPage.jsx
-    ./app/portfolio/page.tsx
-[00:34:56.027] Server  LOG      ✓ Compiled in 348ms
-[00:40:28.901] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:29.696] Browser LOG     ScrollSmoother initialized successfully
-[00:41:17.093] Browser LOG     ScrollSmoother initialized successfully
-[00:41:31.514] Browser LOG     ScrollSmoother initialized successfully
-[00:41:33.625] Browser WARN    Invalid scope
-[00:41:33.625] Browser WARN    Invalid scope
-[00:41:33.625] Browser LOG     ScrollSmoother initialized successfully
-[00:41:36.542] Browser LOG     ScrollSmoother initialized successfully
-[00:41:37.596] Browser WARN    Invalid scope
-[00:41:37.596] Browser WARN    Invalid scope
-[00:41:37.596] Browser LOG     ScrollSmoother initialized successfully
+[01:01:26.179] Browser GROUP   Processing commands (2)
+[01:01:26.179] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUP   Processing GTAG command: ["js", Tue Dec 30 2025 18:31:16 GMT+0530 (India Standard Time)]
+[01:01:26.179] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[01:01:26.179] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[01:01:26.179] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[01:01:26.179] Browser GROUP   Sending event "page_view" to undefined
+[01:01:26.179] Browser GROUP   Request parameters:
+[01:01:26.179] Browser LOG     v: 2
+[01:01:26.179] Browser LOG     tid: G-F4SER380S1
+[01:01:26.179] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[01:01:26.179] Browser LOG     _p: 1767099676004
+[01:01:26.179] Browser LOG     _dbg: 1
+[01:01:26.179] Browser LOG     gcd: 13l3l3l3l1l1
+[01:01:26.179] Browser LOG     npa: 0
+[01:01:26.179] Browser LOG     dma: 0
+[01:01:26.179] Browser LOG     cid: 1271940746.1767023617
+[01:01:26.179] Browser LOG     ul: en-gb
+[01:01:26.179] Browser LOG     sr: 3840x1600
+[01:01:26.179] Browser LOG     uaa: arm
+[01:01:26.179] Browser LOG     uab: 64
+[01:01:26.179] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[01:01:26.179] Browser LOG     uamb: 0
+[01:01:26.179] Browser LOG     uam: 
+[01:01:26.179] Browser LOG     uap: macOS
+[01:01:26.179] Browser LOG     uapv: 26.1.0
+[01:01:26.179] Browser LOG     uaw: 0
+[01:01:26.179] Browser LOG     are: 1
+[01:01:26.179] Browser LOG     frm: 0
+[01:01:26.179] Browser LOG     pscdl: noapi
+[01:01:26.179] Browser LOG     _eu: AAAAAAQ
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUP   Event parameters:
+[01:01:26.179] Browser LOG     en: page_view
+[01:01:26.179] Browser LOG     _ee: 1
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUP   Shared parameters:
+[01:01:26.179] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116682875
+[01:01:26.179] Browser LOG     sid: 1767099675
+[01:01:26.179] Browser LOG     sct: 4
+[01:01:26.179] Browser LOG     seg: 1
+[01:01:26.179] Browser LOG     dl: http://localhost/wordpress-landing-page
+[01:01:26.179] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUP   Processing commands (1)
+[01:01:26.179] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.179] Browser GROUPEND 
+[01:01:26.384] Browser GROUP   Processing commands (1)
+[01:01:26.384] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[01:01:26.384] Browser GROUPEND 
+[01:01:26.384] Browser GROUPEND 
+[01:01:26.673] Browser LOG     ScrollSmoother initialized successfully
+[01:01:36.418] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[01:01:43.251] Browser GROUP   Processing commands (1)
+[01:01:43.251] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[01:01:43.251] Browser GROUPEND 
+[01:01:43.251] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[01:01:43.251] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[01:01:43.251] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[01:01:43.251] Browser GROUP   Sending event "scroll" to undefined
+[01:01:43.251] Browser GROUP   Request parameters:
+[01:01:43.251] Browser LOG     v: 2
+[01:01:43.251] Browser LOG     tid: G-F4SER380S1
+[01:01:43.251] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[01:01:43.251] Browser LOG     _p: 1767099676004
+[01:01:43.251] Browser LOG     _dbg: 1
+[01:01:43.251] Browser LOG     gcd: 13l3l3l3l1l1
+[01:01:43.251] Browser LOG     npa: 0
+[01:01:43.251] Browser LOG     dma: 0
+[01:01:43.251] Browser LOG     cid: 1271940746.1767023617
+[01:01:43.251] Browser LOG     ul: en-gb
+[01:01:43.251] Browser LOG     sr: 3840x1600
+[01:01:43.251] Browser LOG     uaa: arm
+[01:01:43.251] Browser LOG     uab: 64
+[01:01:43.251] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[01:01:43.251] Browser LOG     uamb: 0
+[01:01:43.251] Browser LOG     uam: 
+[01:01:43.251] Browser LOG     uap: macOS
+[01:01:43.251] Browser LOG     uapv: 26.1.0
+[01:01:43.251] Browser LOG     uaw: 0
+[01:01:43.251] Browser LOG     are: 1
+[01:01:43.251] Browser LOG     frm: 0
+[01:01:43.251] Browser LOG     pscdl: noapi
+[01:01:43.251] Browser LOG     _eu: AEAAAAQ
+[01:01:43.251] Browser GROUPEND 
+[01:01:43.251] Browser GROUP   Event parameters:
+[01:01:43.251] Browser LOG     en: scroll
+[01:01:43.251] Browser LOG     epn.percent_scrolled: 90
+[01:01:43.251] Browser LOG     _et: 17068
+[01:01:43.251] Browser GROUPEND 
+[01:01:43.251] Browser GROUP   Shared parameters:
+[01:01:43.251] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116682875
+[01:01:43.251] Browser LOG     sid: 1767099675
+[01:01:43.251] Browser LOG     sct: 4
+[01:01:43.251] Browser LOG     seg: 1
+[01:01:43.251] Browser LOG     dl: http://localhost/wordpress-landing-page
+[01:01:43.251] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
+[01:01:43.251] Browser GROUPEND 
+[01:01:43.251] Browser GROUPEND 
+[01:01:43.251] Browser GROUPEND 
+[01:01:43.251] Browser GROUPEND 
+[01:03:19.841] Server  LOG      ✓ Compiled in 35ms
+[01:03:44.274] Server  LOG      ✓ Compiled in 34ms
+[01:04:08.032] Server  LOG      ✓ Compiled in 36ms
+[04:35:59.993] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:36:00.464] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[04:36:00.872] Browser LOG     ScrollSmoother initialized successfully

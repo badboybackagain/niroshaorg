@@ -178,3 +178,4 @@ const DotGridBackground = ({
 };
 
 export default DotGridBackground;
+

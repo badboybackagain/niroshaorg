@@ -136,10 +136,28 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../../app/services/wordpress-website-development/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/wordpress-website-development">> = Specific
+  const handler = {} as typeof import("../../../app/services/wordpress-website-development/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/terms/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/terms">> = Specific
   const handler = {} as typeof import("../../../app/terms/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/wordpress-landing-page/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/wordpress-landing-page">> = Specific
+  const handler = {} as typeof import("../../../app/wordpress-landing-page/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

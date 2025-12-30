@@ -2083,25 +2083,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fi/index.esm.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useScrollAnimation.js [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
 ;
 ;
 const TrustCard = ({ trustPoint, index })=>{
-    _s();
-    const [ref, isVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"])({
-        threshold: 0.2
-    });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        ref: ref,
-        className: `trust-card ${isVisible ? 'animate-fadeInUp' : ''}`,
-        style: {
-            animationDelay: `${index * 100}ms`
-        },
+        className: "trust-card",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "trust-icon-wrapper",
@@ -2110,12 +2099,12 @@ const TrustCard = ({ trustPoint, index })=>{
                     children: trustPoint.icon
                 }, void 0, false, {
                     fileName: "[project]/src/components/WhyChoose.jsx",
-                    lineNumber: 27,
+                    lineNumber: 22,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 26,
+                lineNumber: 21,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2123,7 +2112,7 @@ const TrustCard = ({ trustPoint, index })=>{
                 children: trustPoint.title
             }, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 29,
+                lineNumber: 24,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2131,38 +2120,23 @@ const TrustCard = ({ trustPoint, index })=>{
                 children: trustPoint.description
             }, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 30,
+                lineNumber: 25,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, index, true, {
         fileName: "[project]/src/components/WhyChoose.jsx",
-        lineNumber: 20,
+        lineNumber: 17,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(TrustCard, "9bzfpXYnG30yGj0ARWuBbJCUP+Y=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"]
-    ];
-});
 _c = TrustCard;
 const WhyChoose = ()=>{
-    _s1();
-    const [titleRef, titleVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"])({
-        threshold: 0.2
-    });
-    const [subtitleRef, subtitleVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"])({
-        threshold: 0.2
-    });
-    const [closingRef, closingVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"])({
-        threshold: 0.2
-    });
     const trustPoints = [
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiTarget"], {}, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 42,
+                lineNumber: 33,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Business-First Thinking',
@@ -2171,7 +2145,7 @@ const WhyChoose = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiShield"], {}, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 47,
+                lineNumber: 38,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Security & Stability by Default',
@@ -2180,7 +2154,7 @@ const WhyChoose = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiZap"], {}, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 52,
+                lineNumber: 43,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Fast, Reliable Support',
@@ -2189,7 +2163,7 @@ const WhyChoose = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiRefreshCw"], {}, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 57,
+                lineNumber: 48,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Long-Term Partnership Approach',
@@ -2198,7 +2172,7 @@ const WhyChoose = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiLayers"], {}, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 62,
+                lineNumber: 53,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'End-to-End Expertise',
@@ -2207,7 +2181,7 @@ const WhyChoose = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiTrendingUp"], {}, void 0, false, {
                 fileName: "[project]/src/components/WhyChoose.jsx",
-                lineNumber: 67,
+                lineNumber: 58,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Built to Scale',
@@ -2220,33 +2194,28 @@ const WhyChoose = ()=>{
             className: "container",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    ref: titleRef,
-                    className: `why-choose-header ${titleVisible ? 'animate-fadeInUp' : ''}`,
+                    className: "why-choose-header",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "why-choose-title",
                             children: "Why Businesses Trust Team Nirosha"
                         }, void 0, false, {
                             fileName: "[project]/src/components/WhyChoose.jsx",
-                            lineNumber: 80,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            ref: subtitleRef,
-                            className: `why-choose-subtitle ${subtitleVisible ? 'animate-fadeInUp' : ''}`,
-                            style: {
-                                animationDelay: '200ms'
-                            },
+                            className: "why-choose-subtitle",
                             children: "We don't just build websites or software - we build reliable digital systems that support your business, protect your data, and scale as you grow."
                         }, void 0, false, {
                             fileName: "[project]/src/components/WhyChoose.jsx",
-                            lineNumber: 81,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/WhyChoose.jsx",
-                    lineNumber: 76,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2256,24 +2225,23 @@ const WhyChoose = ()=>{
                             index: index
                         }, index, false, {
                             fileName: "[project]/src/components/WhyChoose.jsx",
-                            lineNumber: 92,
+                            lineNumber: 76,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/components/WhyChoose.jsx",
-                    lineNumber: 90,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    ref: closingRef,
-                    className: `why-choose-closing ${closingVisible ? 'animate-fadeInUp' : ''}`,
+                    className: "why-choose-closing",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "why-choose-closing-text",
                             children: "When you work with Team Nirosha, technology becomes your strength - not a headache."
                         }, void 0, false, {
                             fileName: "[project]/src/components/WhyChoose.jsx",
-                            lineNumber: 100,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2288,40 +2256,33 @@ const WhyChoose = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/WhyChoose.jsx",
-                                    lineNumber: 105,
+                                    lineNumber: 86,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/WhyChoose.jsx",
-                            lineNumber: 103,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/WhyChoose.jsx",
-                    lineNumber: 96,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/WhyChoose.jsx",
-            lineNumber: 75,
+            lineNumber: 66,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/WhyChoose.jsx",
-        lineNumber: 74,
+        lineNumber: 65,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s1(WhyChoose, "Jm4LtRFoD2DAvr1LQBEWs6wdsrc=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useScrollAnimation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScrollAnimation"]
-    ];
-});
 _c1 = WhyChoose;
 const __TURBOPACK__default__export__ = WhyChoose;
 var _c, _c1;

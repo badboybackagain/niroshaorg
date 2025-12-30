@@ -1,0 +1,80 @@
+.christmasTheme {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.skyCanvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cityBanner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, 
+    #1a1a1a 0%,
+    #2d2d2d 20%,
+    #1a1a1a 40%,
+    #0d0d0d 60%,
+    #1a1a1a 80%,
+    #2d2d2d 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  
+  /* Create city silhouette effect */
+  background-image: 
+    /* Buildings */
+    linear-gradient(to top, transparent 0%, #1a1a1a 10%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 20px,
+      #0d0d0d 20px,
+      #0d0d0d 25px
+    );
+  
+  /* Add some building shapes */
+  box-shadow: 
+    inset -50px 0 30px -20px rgba(0, 0, 0, 0.5),
+    inset 50px 0 30px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* Add Christmas background gradient overlay */
+.christmasTheme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #1e3b70 0%,
+    #29578a 25%,
+    #3a75b6 50%,
+    #a0d3e8 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure the theme doesn't interfere with interactions */
+.christmasTheme * {
+  pointer-events: none;
+}

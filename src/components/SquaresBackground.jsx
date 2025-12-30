@@ -178,3 +178,4 @@ const SquaresBackground = ({
 };
 
 export default SquaresBackground;
+

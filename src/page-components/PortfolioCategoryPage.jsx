@@ -415,3 +415,4 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
 }
 
 export default PortfolioCategoryPage
+

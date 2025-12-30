@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/portfolio/logos":{},"/portfolio/business-card":{},"/portfolio/id-cards":{},"/portfolio/brochure-cover":{},"/portfolio/posters":{},"/portfolio/packaging":{},"/portfolio/social-media-posts":{},"/portfolio/backdrop":{},"/portfolio/magazine-ad":{}},"dynamicRoutes":{"/portfolio/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/portfolio/[slug]","routeRegex":"^\\/portfolio\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"bab9b57964b829efe8a5b45ff9c46ee4","previewModeSigningKey":"b84eee8ee859049550f0348644bdc57143f8bbc7779d463a6feff54c143d677e","previewModeEncryptionKey":"dbd6958ef0536ee475d768598050f4f93b1932b7e26354bee9c5dbc6a76ea8c4"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "a326a926d069e8cf4af74b747aac4c70",
+    "previewModeSigningKey": "f0d4b93f042dd51a6da6bb6b162dfe95b86f7ddf715dff4d48ff5543154d3154",
+    "previewModeEncryptionKey": "b9813124925d29734b6d7e11bb98bfc5b87628c42f7865bc9f6db5a2e04866e8"
+  }
+}

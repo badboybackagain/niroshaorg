@@ -1,8 +1,5 @@
 {
-  "/about/page": "app/about/page.js",
-  "/blog/page": "app/blog/page.js",
   "/page": "app/page.js",
-  "/portfolio/[slug]/page": "app/portfolio/[slug]/page.js",
-  "/portfolio/page": "app/portfolio/page.js",
-  "/services/page": "app/services/page.js"
+  "/services/wordpress-website-development/page": "app/services/wordpress-website-development/page.js",
+  "/wordpress-landing-page/page": "app/wordpress-landing-page/page.js"
 }

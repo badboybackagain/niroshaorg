@@ -210,8 +210,12 @@ const PortfolioPage = ()=>{
                             "PortfolioPage.useEffect.initAnimations": ()=>{
                                 // Title animation
                                 if (titleRef.current) {
+                                    // Ensure title is visible initially
+                                    gsap.set(titleRef.current, {
+                                        opacity: 1
+                                    });
                                     gsap.from(titleRef.current, {
-                                        opacity: 0,
+                                        opacity: 1,
                                         y: 30,
                                         duration: 0.8,
                                         ease: 'power2.out',
@@ -289,7 +293,7 @@ const PortfolioPage = ()=>{
                                     "We Make Shape",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                        lineNumber: 148,
+                                        lineNumber: 150,
                                         columnNumber: 28
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -297,13 +301,13 @@ const PortfolioPage = ()=>{
                                         children: "Digital Beautiful"
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                        lineNumber: 149,
+                                        lineNumber: 151,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                lineNumber: 147,
+                                lineNumber: 149,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -311,23 +315,23 @@ const PortfolioPage = ()=>{
                                 children: "Explore our portfolio of creative designs across various categories"
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                lineNumber: 151,
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                        lineNumber: 146,
+                        lineNumber: 148,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                    lineNumber: 145,
+                    lineNumber: 147,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                lineNumber: 144,
+                lineNumber: 146,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -357,7 +361,7 @@ const PortfolioPage = ()=>{
                                                             type: "image/webp"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                                            lineNumber: 179,
+                                                            lineNumber: 181,
                                                             columnNumber: 31
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -368,18 +372,18 @@ const PortfolioPage = ()=>{
                                                             decoding: "async"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                                            lineNumber: 183,
+                                                            lineNumber: 185,
                                                             columnNumber: 31
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, imageName, true, {
                                                     fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                                    lineNumber: 178,
+                                                    lineNumber: 180,
                                                     columnNumber: 29
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                            lineNumber: 176,
+                                            lineNumber: 178,
                                             columnNumber: 25
                                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "portfolio-category-placeholder",
@@ -388,17 +392,17 @@ const PortfolioPage = ()=>{
                                                 children: category.icon
                                             }, void 0, false, {
                                                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                                lineNumber: 195,
+                                                lineNumber: 197,
                                                 columnNumber: 27
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                            lineNumber: 194,
+                                            lineNumber: 196,
                                             columnNumber: 25
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                        lineNumber: 174,
+                                        lineNumber: 176,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -409,7 +413,7 @@ const PortfolioPage = ()=>{
                                                 children: category.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                                lineNumber: 200,
+                                                lineNumber: 202,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -417,13 +421,13 @@ const PortfolioPage = ()=>{
                                                 children: category.description
                                             }, void 0, false, {
                                                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                                lineNumber: 201,
+                                                lineNumber: 203,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                        lineNumber: 199,
+                                        lineNumber: 201,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -439,29 +443,29 @@ const PortfolioPage = ()=>{
                                                 d: "M5 12h14M12 5l7 7-7 7"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                                lineNumber: 205,
+                                                lineNumber: 207,
                                                 columnNumber: 25
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                            lineNumber: 204,
+                                            lineNumber: 206,
                                             columnNumber: 23
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                        lineNumber: 203,
+                                        lineNumber: 205,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, category.slug, true, {
                                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                                lineNumber: 168,
+                                lineNumber: 170,
                                 columnNumber: 19
                             }, ("TURBOPACK compile-time value", void 0));
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                        lineNumber: 162,
+                        lineNumber: 164,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         style: {
@@ -472,28 +476,28 @@ const PortfolioPage = ()=>{
                             children: "No portfolio categories available."
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                            lineNumber: 214,
+                            lineNumber: 216,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                        lineNumber: 213,
+                        lineNumber: 215,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                    lineNumber: 160,
+                    lineNumber: 162,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/PortfolioPage.jsx",
-                lineNumber: 159,
+                lineNumber: 161,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/page-components/PortfolioPage.jsx",
-        lineNumber: 142,
+        lineNumber: 144,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

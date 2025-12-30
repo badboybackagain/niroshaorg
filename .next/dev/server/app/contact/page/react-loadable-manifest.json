@@ -1,1 +1,39 @@
-{}
+{
+  "[project]/src/components/ContactBubbles.jsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/ContactBubbles.jsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_react-icons_fa_index_esm_7b556bb3.js",
+      "static/chunks/src_components_ContactBubbles_jsx_1878b1f0._.js",
+      "static/chunks/src_components_ContactBubbles_jsx_e3f9505a._.js"
+    ]
+  },
+  "[project]/src/components/ScrollToTopButton.jsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/ScrollToTopButton.jsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_9959548a._.js",
+      "static/chunks/src_components_ScrollToTopButton_jsx_e3f9505a._.js"
+    ]
+  },
+  "[project]/src/components/CTA.jsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/CTA.jsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_components_CTA_jsx_27fd8445._.js",
+      "static/chunks/src_components_CTA_jsx_e3f9505a._.js"
+    ]
+  },
+  "[project]/src/components/themes/ChristmasTheme.jsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/themes/ChristmasTheme.jsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_components_themes_ChristmasTheme_module_da71bb44.css",
+      "static/chunks/src_components_themes_ae65363d._.js",
+      "static/chunks/src_components_themes_ChristmasTheme_jsx_e3f9505a._.js"
+    ]
+  },
+  "[project]/src/components/GoogleTagManager.jsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/GoogleTagManager.jsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_d65d1d34._.js",
+      "static/chunks/src_components_GoogleTagManager_jsx_e3f9505a._.js"
+    ]
+  }
+}

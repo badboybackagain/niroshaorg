@@ -78,3 +78,4 @@ echo "- The site will use gtag.js with G-F4SER380S1"
 echo "- No consent banner will appear"
 echo "- Direct Google Analytics tracking will be active"
 echo ""
+
