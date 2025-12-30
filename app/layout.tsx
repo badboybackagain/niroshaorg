@@ -1,6 +1,7 @@
 // Import CSS - Next.js will extract this, but we'll defer it with DeferredCSS component
 import './globals.css'
 import Layout from '@/components/Layout'
+import ThemeProvider from '@/components/ThemeProvider'
 import OrganizationSchema from '@/components/OrganizationSchema'
 import WebsiteSchema from '@/components/WebsiteSchema'
 import ScrollToTop from '@/components/ScrollToTop'
@@ -13,6 +14,8 @@ import Script from 'next/script'
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
 const GA_MEASUREMENT_ID = 'G-F4SER380S1'
 const USE_GTM = !!GTM_ID
+// Microsoft Clarity Project ID - set in .env.local as NEXT_PUBLIC_CLARITY_ID
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || 'ut70ln5wh3'
 
 export const viewport = {
   width: 'device-width',
@@ -103,8 +106,31 @@ export default function RootLayout({ children }) {
             <link rel="dns-prefetch" href="https://www.google-analytics.com" />
           </>
         )}
+        {/* Microsoft Clarity resource hints */}
+        {CLARITY_ID && (
+          <>
+            <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+            <link rel="dns-prefetch" href="https://www.clarity.ms" />
+          </>
+        )}
         {/* Preload critical resources */}
         <link rel="preload" href="/logo.webp" as="image" type="image/webp" fetchPriority="high" />
+        {/* Microsoft Clarity - Load via Script component */}
+        {CLARITY_ID && (
+          <Script
+            id="microsoft-clarity"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "${CLARITY_ID}");
+              `,
+            }}
+          />
+        )}
         <OrganizationSchema />
         <WebsiteSchema />
         <ScrollToTop />
@@ -117,9 +143,11 @@ export default function RootLayout({ children }) {
       */}
       <body suppressHydrationWarning>
         {USE_GTM && <GTMConsentWrapper />}
-        <Layout>
-          {children}
-        </Layout>
+        <ThemeProvider>
+          <Layout>
+            {children}
+          </Layout>
+        </ThemeProvider>
       </body>
     </html>
   )
