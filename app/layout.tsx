@@ -36,10 +36,10 @@ export const metadata = {
     siteName: 'Team Nirosha',
     images: [
       {
-        url: 'https://nirosha.org/logo.png',
-        width: 600,
-        height: 60,
-        alt: 'Team Nirosha Logo',
+        url: 'https://nirosha.org/ogimage.png',
+        width: 1200,
+        height: 630,
+        alt: 'Team Nirosha - Digital Agency',
       },
     ],
     locale: 'en_US',
@@ -49,7 +49,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Team Nirosha - Digital Agency',
     description: 'Professional digital agency offering web development, SEO, and digital marketing services',
-    images: ['https://nirosha.org/logo.png'],
+    images: ['https://nirosha.org/ogimage.png'],
   },
   robots: {
     index: true,
@@ -64,6 +64,10 @@ export const metadata = {
   },
   verification: {
     // Add your verification codes here if needed
+  },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
