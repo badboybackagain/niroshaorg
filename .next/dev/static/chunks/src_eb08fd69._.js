@@ -1680,6 +1680,7 @@ const ServiceCard = ({ service, index })=>{
                 href: service.slug,
                 className: "service-card-read-more",
                 suppressHydrationWarning: true,
+                "aria-label": `Read more about ${service.title}`,
                 children: [
                     "Read More",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiArrowRight"], {
@@ -1688,7 +1689,7 @@ const ServiceCard = ({ service, index })=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/Services.jsx",
-                        lineNumber: 159,
+                        lineNumber: 160,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -1773,7 +1774,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiGlobe"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 222,
+                lineNumber: 223,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Web Development',
@@ -1790,7 +1791,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiImage"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 235,
+                lineNumber: 236,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Branding & Design',
@@ -1807,7 +1808,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiSearch"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 248,
+                lineNumber: 249,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'SEO Services',
@@ -1824,7 +1825,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMapPin"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 261,
+                lineNumber: 262,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Local SEO',
@@ -1841,7 +1842,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiShare2"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 274,
+                lineNumber: 275,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Social Media Marketing (SMM)',
@@ -1858,7 +1859,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiTarget"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 287,
+                lineNumber: 288,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Digital Marketing',
@@ -1875,7 +1876,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiFileText"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 300,
+                lineNumber: 301,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Content Services',
@@ -1892,7 +1893,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiShoppingCart"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 313,
+                lineNumber: 314,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'E-commerce Solutions',
@@ -1909,7 +1910,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiSettings"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 326,
+                lineNumber: 327,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Web Maintenance & Support',
@@ -1926,7 +1927,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMonitor"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 339,
+                lineNumber: 340,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'UI/UX Design',
@@ -1943,7 +1944,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiZap"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 352,
+                lineNumber: 353,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Automation & SaaS',
@@ -1960,7 +1961,7 @@ const Services = ()=>{
         {
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiCloud"], {}, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 365,
+                lineNumber: 366,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             title: 'Cloud & Infrastructure',
@@ -1984,7 +1985,7 @@ const Services = ()=>{
                 className: "services-bg-texture"
             }, void 0, false, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 382,
+                lineNumber: 383,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2000,7 +2001,7 @@ const Services = ()=>{
                         children: "Our Services"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Services.jsx",
-                        lineNumber: 386,
+                        lineNumber: 387,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2009,7 +2010,7 @@ const Services = ()=>{
                         children: "Complete web agency services from design to development, SEO to social media, and everything in between"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Services.jsx",
-                        lineNumber: 389,
+                        lineNumber: 390,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2020,12 +2021,12 @@ const Services = ()=>{
                                 index: index
                             }, index, false, {
                                 fileName: "[project]/src/components/Services.jsx",
-                                lineNumber: 394,
+                                lineNumber: 395,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Services.jsx",
-                        lineNumber: 392,
+                        lineNumber: 393,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2041,24 +2042,24 @@ const Services = ()=>{
                             children: "View All Services"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Services.jsx",
-                            lineNumber: 398,
+                            lineNumber: 399,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Services.jsx",
-                        lineNumber: 397,
+                        lineNumber: 398,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Services.jsx",
-                lineNumber: 385,
+                lineNumber: 386,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Services.jsx",
-        lineNumber: 380,
+        lineNumber: 381,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

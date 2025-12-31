@@ -1,6 +1,6 @@
-[00:00:00.612] Server  LOG      ✓ Ready in 392ms
-[00:00:05.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.980] Browser LOG     
+[00:00:00.666] Server  LOG      ✓ Ready in 465ms
+[00:00:11.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.791] Browser LOG     
     ____                   _        _____
    / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
   | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
@@ -8,940 +8,129 @@
    \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
                      |___/                    |___/
 
-[00:00:05.981] Browser GROUP   Processing commands (2)
-[00:00:05.981] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
-[00:00:05.981] Browser GROUPEND 
-[00:00:05.981] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
-[00:00:05.982] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
-[00:00:05.986] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
-[00:00:05.987] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
-[00:00:05.987] Browser GROUPEND 
-[00:00:05.987] Browser GROUP   Processing GTAG command: ["js", Tue Dec 30 2025 17:29:55 GMT+0530 (India Standard Time)]
-[00:00:05.988] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
-[00:00:05.988] Browser GROUPEND 
-[00:00:05.989] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
-[00:00:05.989] Browser LOG     Loaded existing client id: 1271940746.1767023617
-[00:00:05.989] Browser LOG     Event would be batched, but batching is disabled in debug mode.
-[00:00:05.989] Browser GROUP   Sending event "page_view" to undefined
-[00:00:05.989] Browser GROUP   Request parameters:
-[00:00:05.990] Browser LOG     v: 2
-[00:00:05.990] Browser LOG     tid: G-F4SER380S1
-[00:00:05.990] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
-[00:00:05.990] Browser LOG     _p: 1767095995620
-[00:00:05.990] Browser LOG     _dbg: 1
-[00:00:05.990] Browser LOG     gcd: 13l3l3l3l1l1
-[00:00:05.990] Browser LOG     npa: 0
-[00:00:05.990] Browser LOG     dma: 0
-[00:00:05.990] Browser LOG     cid: 1271940746.1767023617
-[00:00:05.990] Browser LOG     ul: en-gb
-[00:00:05.990] Browser LOG     sr: 3840x1600
-[00:00:05.990] Browser LOG     uaa: arm
-[00:00:05.990] Browser LOG     uab: 64
-[00:00:05.990] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
-[00:00:05.990] Browser LOG     uamb: 0
-[00:00:05.990] Browser LOG     uam: 
-[00:00:05.990] Browser LOG     uap: macOS
-[00:00:05.990] Browser LOG     uapv: 26.1.0
-[00:00:05.990] Browser LOG     uaw: 0
-[00:00:05.990] Browser LOG     are: 1
-[00:00:05.990] Browser LOG     frm: 0
-[00:00:05.990] Browser LOG     pscdl: noapi
-[00:00:05.990] Browser LOG     _eu: AAAAAAQ
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUP   Event parameters:
-[00:00:05.990] Browser LOG     en: page_view
-[00:00:05.990] Browser LOG     _ee: 1
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUP   Shared parameters:
-[00:00:05.990] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938465~115938469~116184927~116184929~116251938~116251940~116682875
-[00:00:05.990] Browser LOG     sid: 1767095986
-[00:00:05.990] Browser LOG     sct: 3
-[00:00:05.990] Browser LOG     seg: 1
-[00:00:05.990] Browser LOG     dl: http://localhost/
-[00:00:05.990] Browser LOG     dr: http://localhost:3000/services/wordpress-website-development
-[00:00:05.990] Browser LOG     dt: Web Development, SEO & Automation Agency | Team Nirosha
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUP   Processing commands (1)
-[00:00:05.990] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUP   Processing commands (1)
-[00:00:05.990] Browser GROUP   Processing data layer push: {event: "gtm.load"}
-[00:00:05.990] Browser GROUPEND 
-[00:00:05.990] Browser GROUPEND 
-[00:00:06.496] Browser LOG     ScrollSmoother initialized successfully
-[00:00:12.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:13.104] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-        <LoadingBoundary name="wordpress-..." loading={null}>
-          <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-            <RedirectBoundary>
-              <RedirectErrorBoundary router={{...}}>
-                <InnerLayoutRouter url="/wordpress..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-                  <SegmentViewNode type="page" pagePath="wordpress-...">
-                    <SegmentTrieNode>
-                    <WordPressLandingPageRoute>
-                      <WordPressLandingPage>
-                        <section className="landing-hero" style={{...}}>
-                          <div className="container">
-                            <div ref={{current:null}} className={"landing-..."} style={{...}}>
-                              <div>
-                              <h1>
-                              <p>
-                              <div>
-                              <div style={{display:"flex", ...}}>
-                                <a
-                                  href="https://calendly.com/nirosha-info/30min"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="btn btn-primary"
-                                  style={{
-+                                   background: "#fff"
-+                                   color: "#667eea"
--                                   color: "rgb(102, 126, 234)"
-+                                   padding: "1rem 2.5rem"
-+                                   fontSize: "1.125rem"
-+                                   fontWeight: "700"
-+                                   borderRadius: "12px"
-+                                   textDecoration: "none"
-+                                   display: "inline-flex"
--                                   display: "inline-flex"
-+                                   alignItems: "center"
-+                                   gap: "0.5rem"
-+                                   transition: "all 0.3s ease"
-+                                   boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
--                                   background-image: "initial"
--                                   background-position-x: "initial"
--                                   background-position-y: "initial"
--                                   background-size: "initial"
--                                   background-repeat: "initial"
--                                   background-attachment: "initial"
--                                   background-origin: "initial"
--                                   background-clip: "initial"
--                                   background-color: "rgb(255, 255, 255)"
--                                   padding-top: "1rem"
--                                   padding-right: "2.5rem"
--                                   padding-bottom: "1rem"
--                                   padding-left: "2.5rem"
--                                   font-size: "1.125rem"
--                                   font-weight: "700"
--                                   border-top-left-radius: "12px"
--                                   border-top-right-radius: "12px"
--                                   border-bottom-right-radius: "12px"
--                                   border-bottom-left-radius: "12px"
--                                   text-decoration-line: "none"
--                                   text-decoration-thickness: "initial"
--                                   text-decoration-style: "initial"
--                                   text-decoration-color: "initial"
--                                   align-items: "center"
--                                   row-gap: "0.5rem"
--                                   column-gap: "0.5rem"
--                                   transition-behavior: "normal"
--                                   transition-duration: "0.3s"
--                                   transition-timing-function: "ease"
--                                   transition-delay: "0s"
--                                   transition-property: "all"
--                                   box-shadow: "rgba(0, 0, 0, 0.2) 0px 4px 20px"
--                                   cursor: "pointer"
-                                  }}
-                                  onMouseEnter={function onMouseEnter}
-                                  onMouseLeave={function onMouseLeave}
--                                 contenteditable="false"
-                                >
-                                <a
-                                  href="tel:+919403891938"
-                                  className="btn btn-secondary"
-                                  style={{
-+                                   background: "rgba(255, 255, 255, 0.2)"
-+                                   backdropFilter: "blur(10px)"
-+                                   color: "#fff"
--                                   color: "rgb(255, 255, 255)"
-+                                   padding: "1rem 2.5rem"
-+                                   fontSize: "1.125rem"
-+                                   fontWeight: "700"
-+                                   borderRadius: "12px"
-+                                   textDecoration: "none"
-+                                   display: "inline-flex"
--                                   display: "inline-flex"
-+                                   alignItems: "center"
-+                                   gap: "0.5rem"
-+                                   border: "2px solid rgba(255, 255, 255, 0.3)"
-+                                   transition: "all 0.3s ease"
--                                   background-image: "initial"
--                                   background-position-x: "initial"
--                                   background-position-y: "initial"
--                                   background-size: "initial"
--                                   background-repeat: "initial"
--                                   background-attachment: "initial"
--                                   background-origin: "initial"
--                                   background-clip: "initial"
--                                   background-color: "rgba(255, 255, 255, 0.2)"
--                                   backdrop-filter: "blur(10px)"
--                                   padding-top: "1rem"
--                                   padding-right: "2.5rem"
--                                   padding-bottom: "1rem"
--                                   padding-left: "2.5rem"
--                                   font-size: "1.125rem"
--                                   font-weight: "700"
--                                   border-top-left-radius: "12px"
--                                   border-top-right-radius: "12px"
--                                   border-bottom-right-radius: "12px"
--                                   border-bottom-left-radius: "12px"
--                                   text-decoration-line: "none"
--                                   text-decoration-thickness: "initial"
--                                   text-decoration-style: "initial"
--                                   text-decoration-color: "initial"
--                                   align-items: "center"
--                                   row-gap: "0.5rem"
--                                   column-gap: "0.5rem"
--                                   border-top-width: "2px"
--                                   border-right-width: "2px"
--                                   border-bottom-width: "2px"
--                                   border-left-width: "2px"
--                                   border-top-style: "solid"
--                                   border-right-style: "solid"
--                                   border-bottom-style: "solid"
--                                   border-left-style: "solid"
--                                   border-top-color: "rgba(255, 255, 255, 0.3)"
--                                   border-right-color: "rgba(255, 255, 255, 0.3)"
--                                   border-bottom-color: "rgba(255, 255, 255, 0.3)"
--                                   border-left-color: "rgba(255, 255, 255, 0.3)"
--                                   border-image-source: "initial"
--                                   border-image-slice: "initial"
--                                   border-image-width: "initial"
--                                   border-image-outset: "initial"
--                                   border-image-repeat: "initial"
--                                   transition-behavior: "normal"
--                                   transition-duration: "0.3s"
--                                   transition-timing-function: "ease"
--                                   transition-delay: "0s"
--                                   transition-property: "all"
--                                   cursor: "pointer"
-                                  }}
-                                  onMouseEnter={function onMouseEnter}
-                                  onMouseLeave={function onMouseLeave}
--                                 contenteditable="false"
-                                >
-                              ...
-                        <section>
-                        <section>
-                        <section className="landing-pr..." style={{padding:"8...", ...}}>
-                          <div className="container">
-                            <div ref={{current:null}} className="">
-                              <h2>
-                              <p>
-                              <div style={{display:"grid", ...}}>
-                                <div ref={{current:null}} className="" style={{...}} onMouseEnter={function onMouseEnter} ...>
-                                  <h3>
-                                  <div>
-                                  <ul>
-                                  <a
-                                    href="https://calendly.com/nirosha-info/30min"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-+                                     display: "block"
--                                     display: "block"
-+                                     width: "100%"
--                                     width: "100%"
-+                                     padding: "1rem"
-+                                     borderRadius: "12px"
-+                                     textAlign: "center"
-+                                     textDecoration: "none"
-+                                     fontWeight: "700"
-+                                     fontSize: "1.125rem"
-+                                     transition: "all 0.3s ease"
-+                                     background: "rgba(255, 255, 255, 0.2)"
-+                                     color: "#fff"
--                                     color: "rgb(255, 255, 255)"
-+                                     border: "2px solid rgba(255, 255, 255, 0.3)"
--                                     padding-top: "1rem"
--                                     padding-right: "1rem"
--                                     padding-bottom: "1rem"
--                                     padding-left: "1rem"
--                                     border-top-left-radius: "12px"
--                                     border-top-right-radius: "12px"
--                                     border-bottom-right-radius: "12px"
--                                     border-bottom-left-radius: "12px"
--                                     text-align: "center"
--                                     text-decoration-line: "none"
--                                     text-decoration-thickness: "initial"
--                                     text-decoration-style: "initial"
--                                     text-decoration-color: "initial"
--                                     font-weight: "700"
--                                     font-size: "1.125rem"
--                                     transition-behavior: "normal"
--                                     transition-duration: "0.3s"
--                                     transition-timing-function: "ease"
--                                     transition-delay: "0s"
--                                     transition-property: "all"
--                                     background-image: "initial"
--                                     background-position-x: "initial"
--                                     background-position-y: "initial"
--                                     background-size: "initial"
--                                     background-repeat: "initial"
--                                     background-attachment: "initial"
--                                     background-origin: "initial"
--                                     background-clip: "initial"
--                                     background-color: "rgba(255, 255, 255, 0.2)"
--                                     border-top-width: "2px"
--                                     border-right-width: "2px"
--                                     border-bottom-width: "2px"
--                                     border-left-width: "2px"
--                                     border-top-style: "solid"
--                                     border-right-style: "solid"
--                                     border-bottom-style: "solid"
--                                     border-left-style: "solid"
--                                     border-top-color: "rgba(255, 255, 255, 0.3)"
--                                     border-right-color: "rgba(255, 255, 255, 0.3)"
--                                     border-bottom-color: "rgba(255, 255, 255, 0.3)"
--                                     border-left-color: "rgba(255, 255, 255, 0.3)"
--                                     border-image-source: "initial"
--                                     border-image-slice: "initial"
--                                     border-image-width: "initial"
--                                     border-image-outset: "initial"
--                                     border-image-repeat: "initial"
--                                     cursor: "pointer"
-                                    }}
-                                    onMouseEnter={function onMouseEnter}
-                                    onMouseLeave={function onMouseLeave}
--                                   contenteditable="false"
-                                  >
-+                                   Get Started Now
-                                <div ref={{current:null}} className="" style={{...}} onMouseEnter={function onMouseEnter} ...>
-                                  <div>
-                                  <h3>
-                                  <div>
-                                  <ul>
-                                  <a
-                                    href="https://calendly.com/nirosha-info/30min"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-+                                     display: "block"
--                                     display: "block"
-+                                     width: "100%"
--                                     width: "100%"
-+                                     padding: "1rem"
-+                                     borderRadius: "12px"
-+                                     textAlign: "center"
-+                                     textDecoration: "none"
-+                                     fontWeight: "700"
-+                                     fontSize: "1.125rem"
-+                                     transition: "all 0.3s ease"
-+                                     background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-+                                     color: "#fff"
--                                     color: "rgb(255, 255, 255)"
-+                                     border: "none"
--                                     padding-top: "1rem"
--                                     padding-right: "1rem"
--                                     padding-bottom: "1rem"
--                                     padding-left: "1rem"
--                                     border-top-left-radius: "12px"
--                                     border-top-right-radius: "12px"
--                                     border-bottom-right-radius: "12px"
--                                     border-bottom-left-radius: "12px"
--                                     text-align: "center"
--                                     text-decoration-line: "none"
--                                     text-decoration-thickness: "initial"
--                                     text-decoration-style: "initial"
--                                     text-decoration-color: "initial"
--                                     font-weight: "700"
--                                     font-size: "1.125rem"
--                                     transition-behavior: "normal"
--                                     transition-duration: "0.3s"
--                                     transition-timing-function: "ease"
--                                     transition-delay: "0s"
--                                     transition-property: "all"
--                                     background-image: "linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(118, 75, 1..."
--                                     background-position-x: "initial"
--                                     background-position-y: "initial"
--                                     background-size: "initial"
--                                     background-repeat: "initial"
--                                     background-attachment: "initial"
--                                     background-origin: "initial"
--                                     background-clip: "initial"
--                                     background-color: "initial"
--                                     border-top-width: "initial"
--                                     border-right-width: "initial"
--                                     border-bottom-width: "initial"
--                                     border-left-width: "initial"
--                                     border-top-style: "none"
--                                     border-right-style: "none"
--                                     border-bottom-style: "none"
--                                     border-left-style: "none"
--                                     border-top-color: "initial"
--                                     border-right-color: "initial"
--                                     border-bottom-color: "initial"
--                                     border-left-color: "initial"
--                                     border-image-source: "initial"
--                                     border-image-slice: "initial"
--                                     border-image-width: "initial"
--                                     border-image-outset: "initial"
--                                     border-image-repeat: "initial"
--                                     cursor: "pointer"
-                                    }}
-                                    onMouseEnter={function onMouseEnter}
-                                    onMouseLeave={function onMouseLeave}
--                                   contenteditable="false"
-                                  >
-+                                   Get Started Now
-                                <div ref={{current:null}} className="" style={{...}} onMouseEnter={function onMouseEnter} ...>
-                                  <h3>
-                                  <div>
-                                  <ul>
-                                  <a
-                                    href="https://calendly.com/nirosha-info/30min"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-+                                     display: "block"
--                                     display: "block"
-+                                     width: "100%"
--                                     width: "100%"
-+                                     padding: "1rem"
-+                                     borderRadius: "12px"
-+                                     textAlign: "center"
-+                                     textDecoration: "none"
-+                                     fontWeight: "700"
-+                                     fontSize: "1.125rem"
-+                                     transition: "all 0.3s ease"
-+                                     background: "rgba(255, 255, 255, 0.2)"
-+                                     color: "#fff"
--                                     color: "rgb(255, 255, 255)"
-+                                     border: "2px solid rgba(255, 255, 255, 0.3)"
--                                     padding-top: "1rem"
--                                     padding-right: "1rem"
--                                     padding-bottom: "1rem"
--                                     padding-left: "1rem"
--                                     border-top-left-radius: "12px"
--                                     border-top-right-radius: "12px"
--                                     border-bottom-right-radius: "12px"
--                                     border-bottom-left-radius: "12px"
--                                     text-align: "center"
--                                     text-decoration-line: "none"
--                                     text-decoration-thickness: "initial"
--                                     text-decoration-style: "initial"
--                                     text-decoration-color: "initial"
--                                     font-weight: "700"
--                                     font-size: "1.125rem"
--                                     transition-behavior: "normal"
--                                     transition-duration: "0.3s"
--                                     transition-timing-function: "ease"
--                                     transition-delay: "0s"
--                                     transition-property: "all"
--                                     background-image: "initial"
--                                     background-position-x: "initial"
--                                     background-position-y: "initial"
--                                     background-size: "initial"
--                                     background-repeat: "initial"
--                                     background-attachment: "initial"
--                                     background-origin: "initial"
--                                     background-clip: "initial"
--                                     background-color: "rgba(255, 255, 255, 0.2)"
--                                     border-top-width: "2px"
--                                     border-right-width: "2px"
--                                     border-bottom-width: "2px"
--                                     border-left-width: "2px"
--                                     border-top-style: "solid"
--                                     border-right-style: "solid"
--                                     border-bottom-style: "solid"
--                                     border-left-style: "solid"
--                                     border-top-color: "rgba(255, 255, 255, 0.3)"
--                                     border-right-color: "rgba(255, 255, 255, 0.3)"
--                                     border-bottom-color: "rgba(255, 255, 255, 0.3)"
--                                     border-left-color: "rgba(255, 255, 255, 0.3)"
--                                     border-image-source: "initial"
--                                     border-image-slice: "initial"
--                                     border-image-width: "initial"
--                                     border-image-outset: "initial"
--                                     border-image-repeat: "initial"
--                                     cursor: "pointer"
-                                    }}
-                                    onMouseEnter={function onMouseEnter}
-                                    onMouseLeave={function onMouseLeave}
--                                   contenteditable="false"
-                                  >
-+                                   Get Started Now
-                        <section className="landing-cta" style={{padding:"1...", ...}}>
-                          <div className="container">
-                            <div ref={{current:null}} className="" style={{...}}>
-                              <h2>
-                              <p>
-                              <div style={{display:"flex", ...}}>
-                                <a
-                                  href="https://calendly.com/nirosha-info/30min"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{
-+                                   background: "#fff"
-+                                   color: "#000"
--                                   color: "rgb(0, 0, 0)"
-+                                   padding: "1.25rem 3rem"
-+                                   fontSize: "1.25rem"
-+                                   fontWeight: "700"
-+                                   borderRadius: "12px"
-+                                   textDecoration: "none"
-+                                   display: "inline-flex"
--                                   display: "inline-flex"
-+                                   alignItems: "center"
-+                                   gap: "0.75rem"
-+                                   transition: "all 0.3s ease"
-+                                   boxShadow: "0 4px 20px rgba(255,255,255,0.2)"
--                                   background-image: "initial"
--                                   background-position-x: "initial"
--                                   background-position-y: "initial"
--                                   background-size: "initial"
--                                   background-repeat: "initial"
--                                   background-attachment: "initial"
--                                   background-origin: "initial"
--                                   background-clip: "initial"
--                                   background-color: "rgb(255, 255, 255)"
--                                   padding-top: "1.25rem"
--                                   padding-right: "3rem"
--                                   padding-bottom: "1.25rem"
--                                   padding-left: "3rem"
--                                   font-size: "1.25rem"
--                                   font-weight: "700"
--                                   border-top-left-radius: "12px"
--                                   border-top-right-radius: "12px"
--                                   border-bottom-right-radius: "12px"
--                                   border-bottom-left-radius: "12px"
--                                   text-decoration-line: "none"
--                                   text-decoration-thickness: "initial"
--                                   text-decoration-style: "initial"
--                                   text-decoration-color: "initial"
--                                   align-items: "center"
--                                   row-gap: "0.75rem"
--                                   column-gap: "0.75rem"
--                                   transition-behavior: "normal"
--                                   transition-duration: "0.3s"
--                                   transition-timing-function: "ease"
--                                   transition-delay: "0s"
--                                   transition-property: "all"
--                                   box-shadow: "rgba(255, 255, 255, 0.2) 0px 4px 20px"
--                                   cursor: "pointer"
-                                  }}
-                                  onMouseEnter={function onMouseEnter}
-                                  onMouseLeave={function onMouseLeave}
--                                 contenteditable="false"
-                                >
-                                <a
-                                  href="tel:+919403891938"
-                                  style={{
-+                                   background: "rgba(255, 255, 255, 0.1)"
-+                                   backdropFilter: "blur(10px)"
-+                                   color: "#fff"
--                                   color: "rgb(255, 255, 255)"
-+                                   padding: "1.25rem 3rem"
-+                                   fontSize: "1.25rem"
-+                                   fontWeight: "700"
-+                                   borderRadius: "12px"
-+                                   textDecoration: "none"
-+                                   display: "inline-flex"
--                                   display: "inline-flex"
-+                                   alignItems: "center"
-+                                   gap: "0.75rem"
-+                                   border: "2px solid rgba(255, 255, 255, 0.3)"
-+                                   transition: "all 0.3s ease"
--                                   background-image: "initial"
--                                   background-position-x: "initial"
--                                   background-position-y: "initial"
--                                   background-size: "initial"
--                                   background-repeat: "initial"
--                                   background-attachment: "initial"
--                                   background-origin: "initial"
--                                   background-clip: "initial"
--                                   background-color: "rgba(255, 255, 255, 0.1)"
--                                   backdrop-filter: "blur(10px)"
--                                   padding-top: "1.25rem"
--                                   padding-right: "3rem"
--                                   padding-bottom: "1.25rem"
--                                   padding-left: "3rem"
--                                   font-size: "1.25rem"
--                                   font-weight: "700"
--                                   border-top-left-radius: "12px"
--                                   border-top-right-radius: "12px"
--                                   border-bottom-right-radius: "12px"
--                                   border-bottom-left-radius: "12px"
--                                   text-decoration-line: "none"
--                                   text-decoration-thickness: "initial"
--                                   text-decoration-style: "initial"
--                                   text-decoration-color: "initial"
--                                   align-items: "center"
--                                   row-gap: "0.75rem"
--                                   column-gap: "0.75rem"
--                                   border-top-width: "2px"
--                                   border-right-width: "2px"
--                                   border-bottom-width: "2px"
--                                   border-left-width: "2px"
--                                   border-top-style: "solid"
--                                   border-right-style: "solid"
--                                   border-bottom-style: "solid"
--                                   border-left-style: "solid"
--                                   border-top-color: "rgba(255, 255, 255, 0.3)"
--                                   border-right-color: "rgba(255, 255, 255, 0.3)"
--                                   border-bottom-color: "rgba(255, 255, 255, 0.3)"
--                                   border-left-color: "rgba(255, 255, 255, 0.3)"
--                                   border-image-source: "initial"
--                                   border-image-slice: "initial"
--                                   border-image-width: "initial"
--                                   border-image-outset: "initial"
--                                   border-image-repeat: "initial"
--                                   transition-behavior: "normal"
--                                   transition-duration: "0.3s"
--                                   transition-timing-function: "ease"
--                                   transition-delay: "0s"
--                                   transition-property: "all"
--                                   cursor: "pointer"
-                                  }}
-                                  onMouseEnter={function onMouseEnter}
-                                  onMouseLeave={function onMouseLeave}
--                                 contenteditable="false"
-                                >
-                              <div style={{display:"flex", ...}}>
-                                <div style={{display:"flex", ...}}>
-                                  <FiMessageCircle>
-                                  <a
-                                    href="https://wa.me/919403891938"
-                                    style={{
-+                                     color: "#fff"
--                                     color: "rgb(255, 255, 255)"
-+                                     textDecoration: "none"
--                                     text-decoration-line: "none"
--                                     text-decoration-thickness: "initial"
--                                     text-decoration-style: "initial"
--                                     text-decoration-color: "initial"
--                                     cursor: "pointer"
-                                    }}
--                                   contenteditable="false"
-                                  >
-+                                   WhatsApp Us
-                                <div style={{display:"flex", ...}}>
-                                  <FiMail>
-                                  <a
-                                    href="mailto:info@nirosha.org"
-                                    style={{
-+                                     color: "#fff"
--                                     color: "rgb(255, 255, 255)"
-+                                     textDecoration: "none"
--                                     text-decoration-line: "none"
--                                     text-decoration-thickness: "initial"
--                                     text-decoration-style: "initial"
--                                     text-decoration-color: "initial"
--                                     cursor: "pointer"
-                                    }}
--                                   contenteditable="false"
-                                  >
-+                                   info@nirosha.org
-                  ...
-                ...
-      ...
-
-[00:00:13.104] Browser LOG     
-    ____                   _        _____
-   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
-  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
-  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
-   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
-                     |___/                    |___/
-
-[00:00:13.104] Browser GROUP   Processing commands (2)
-[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
-[00:00:13.104] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUP   Processing GTAG command: ["js", Tue Dec 30 2025 17:30:02 GMT+0530 (India Standard Time)]
-[00:00:13.104] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
-[00:00:13.104] Browser LOG     Loaded existing client id: 1271940746.1767023617
-[00:00:13.104] Browser LOG     Event would be batched, but batching is disabled in debug mode.
-[00:00:13.104] Browser GROUP   Sending event "page_view" to undefined
-[00:00:13.104] Browser GROUP   Request parameters:
-[00:00:13.104] Browser LOG     v: 2
-[00:00:13.104] Browser LOG     tid: G-F4SER380S1
-[00:00:13.104] Browser LOG     gtm: 45je5ca1h1v9238261810za200zd9238261810
-[00:00:13.104] Browser LOG     _p: 1767096002907
-[00:00:13.104] Browser LOG     _dbg: 1
-[00:00:13.104] Browser LOG     gcd: 13l3l3l3l1l1
-[00:00:13.104] Browser LOG     npa: 0
-[00:00:13.104] Browser LOG     dma: 0
-[00:00:13.104] Browser LOG     cid: 1271940746.1767023617
-[00:00:13.104] Browser LOG     ul: en-gb
-[00:00:13.104] Browser LOG     sr: 3840x1600
-[00:00:13.104] Browser LOG     uaa: arm
-[00:00:13.104] Browser LOG     uab: 64
-[00:00:13.104] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
-[00:00:13.104] Browser LOG     uamb: 0
-[00:00:13.104] Browser LOG     uam: 
-[00:00:13.104] Browser LOG     uap: macOS
-[00:00:13.104] Browser LOG     uapv: 26.1.0
-[00:00:13.104] Browser LOG     uaw: 0
-[00:00:13.104] Browser LOG     are: 1
-[00:00:13.104] Browser LOG     frm: 0
-[00:00:13.104] Browser LOG     pscdl: noapi
-[00:00:13.104] Browser LOG     _eu: AAAAAAQ
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUP   Event parameters:
-[00:00:13.104] Browser LOG     en: page_view
-[00:00:13.104] Browser LOG     _ee: 1
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUP   Shared parameters:
-[00:00:13.104] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938468~116184927~116184929~116251938~116251940~116744867
-[00:00:13.104] Browser LOG     sid: 1767095986
-[00:00:13.104] Browser LOG     sct: 3
-[00:00:13.104] Browser LOG     seg: 1
-[00:00:13.104] Browser LOG     dl: http://localhost/wordpress-landing-page
-[00:00:13.104] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUP   Processing commands (1)
-[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUP   Processing commands (1)
-[00:00:13.104] Browser GROUP   Processing data layer push: {event: "gtm.load"}
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.104] Browser GROUPEND 
-[00:00:13.575] Browser LOG     ScrollSmoother initialized successfully
-[00:00:23.155] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
-[00:01:16.073] Browser GROUP   Processing commands (1)
-[00:01:16.073] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
-[00:01:16.073] Browser GROUPEND 
-[00:01:16.073] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
-[00:01:16.073] Browser LOG     Loaded existing client id: 1271940746.1767023617
-[00:01:16.073] Browser LOG     Event would be batched, but batching is disabled in debug mode.
-[00:01:16.073] Browser GROUP   Sending event "scroll" to undefined
-[00:01:16.073] Browser GROUP   Request parameters:
-[00:01:16.073] Browser LOG     v: 2
-[00:01:16.073] Browser LOG     tid: G-F4SER380S1
-[00:01:16.073] Browser LOG     gtm: 45je5ca1h1v9238261810za200zd9238261810
-[00:01:16.073] Browser LOG     _p: 1767096002907
-[00:01:16.073] Browser LOG     _dbg: 1
-[00:01:16.073] Browser LOG     gcd: 13l3l3l3l1l1
-[00:01:16.073] Browser LOG     npa: 0
-[00:01:16.073] Browser LOG     dma: 0
-[00:01:16.073] Browser LOG     cid: 1271940746.1767023617
-[00:01:16.073] Browser LOG     ul: en-gb
-[00:01:16.073] Browser LOG     sr: 3840x1600
-[00:01:16.073] Browser LOG     uaa: arm
-[00:01:16.073] Browser LOG     uab: 64
-[00:01:16.073] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
-[00:01:16.073] Browser LOG     uamb: 0
-[00:01:16.073] Browser LOG     uam: 
-[00:01:16.073] Browser LOG     uap: macOS
-[00:01:16.073] Browser LOG     uapv: 26.1.0
-[00:01:16.073] Browser LOG     uaw: 0
-[00:01:16.073] Browser LOG     are: 1
-[00:01:16.073] Browser LOG     frm: 0
-[00:01:16.073] Browser LOG     pscdl: noapi
-[00:01:16.073] Browser LOG     _eu: AEAAAAQ
-[00:01:16.073] Browser GROUPEND 
-[00:01:16.073] Browser GROUP   Event parameters:
-[00:01:16.073] Browser LOG     en: scroll
-[00:01:16.073] Browser LOG     epn.percent_scrolled: 90
-[00:01:16.073] Browser LOG     _et: 62970
-[00:01:16.073] Browser GROUPEND 
-[00:01:16.073] Browser GROUP   Shared parameters:
-[00:01:16.073] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938468~116184927~116184929~116251938~116251940~116744867
-[00:01:16.073] Browser LOG     sid: 1767095986
-[00:01:16.073] Browser LOG     sct: 3
-[00:01:16.073] Browser LOG     seg: 1
-[00:01:16.073] Browser LOG     dl: http://localhost/wordpress-landing-page
-[00:01:16.073] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
-[00:01:16.073] Browser GROUPEND 
-[00:01:16.073] Browser GROUPEND 
-[00:01:16.073] Browser GROUPEND 
-[00:01:16.073] Browser GROUPEND 
-[00:02:50.346] Server  LOG      ✓ Compiled in 65ms
-[00:03:02.296] Server  LOG      ✓ Compiled in 14ms
-[00:03:11.859] Server  LOG      ✓ Compiled in 67ms
-[00:03:17.015] Server  LOG      ✓ Compiled in 17ms
-[00:03:32.584] Server  LOG      ✓ Compiled in 36ms
-[00:03:40.797] Server  LOG      ✓ Compiled in 18ms
-[01:01:25.650] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:01:26.179] Browser LOG     
-    ____                   _        _____
-   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
-  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
-  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
-   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
-                     |___/                    |___/
-
-[01:01:26.179] Browser GROUP   Processing commands (2)
-[01:01:26.179] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
-[01:01:26.179] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUP   Processing GTAG command: ["js", Tue Dec 30 2025 18:31:16 GMT+0530 (India Standard Time)]
-[01:01:26.179] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
-[01:01:26.179] Browser LOG     Loaded existing client id: 1271940746.1767023617
-[01:01:26.179] Browser LOG     Event would be batched, but batching is disabled in debug mode.
-[01:01:26.179] Browser GROUP   Sending event "page_view" to undefined
-[01:01:26.179] Browser GROUP   Request parameters:
-[01:01:26.179] Browser LOG     v: 2
-[01:01:26.179] Browser LOG     tid: G-F4SER380S1
-[01:01:26.179] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
-[01:01:26.179] Browser LOG     _p: 1767099676004
-[01:01:26.179] Browser LOG     _dbg: 1
-[01:01:26.179] Browser LOG     gcd: 13l3l3l3l1l1
-[01:01:26.179] Browser LOG     npa: 0
-[01:01:26.179] Browser LOG     dma: 0
-[01:01:26.179] Browser LOG     cid: 1271940746.1767023617
-[01:01:26.179] Browser LOG     ul: en-gb
-[01:01:26.179] Browser LOG     sr: 3840x1600
-[01:01:26.179] Browser LOG     uaa: arm
-[01:01:26.179] Browser LOG     uab: 64
-[01:01:26.179] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
-[01:01:26.179] Browser LOG     uamb: 0
-[01:01:26.179] Browser LOG     uam: 
-[01:01:26.179] Browser LOG     uap: macOS
-[01:01:26.179] Browser LOG     uapv: 26.1.0
-[01:01:26.179] Browser LOG     uaw: 0
-[01:01:26.179] Browser LOG     are: 1
-[01:01:26.179] Browser LOG     frm: 0
-[01:01:26.179] Browser LOG     pscdl: noapi
-[01:01:26.179] Browser LOG     _eu: AAAAAAQ
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUP   Event parameters:
-[01:01:26.179] Browser LOG     en: page_view
-[01:01:26.179] Browser LOG     _ee: 1
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUP   Shared parameters:
-[01:01:26.179] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116682875
-[01:01:26.179] Browser LOG     sid: 1767099675
-[01:01:26.179] Browser LOG     sct: 4
-[01:01:26.179] Browser LOG     seg: 1
-[01:01:26.179] Browser LOG     dl: http://localhost/wordpress-landing-page
-[01:01:26.179] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUP   Processing commands (1)
-[01:01:26.179] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.179] Browser GROUPEND 
-[01:01:26.384] Browser GROUP   Processing commands (1)
-[01:01:26.384] Browser GROUP   Processing data layer push: {event: "gtm.load"}
-[01:01:26.384] Browser GROUPEND 
-[01:01:26.384] Browser GROUPEND 
-[01:01:26.673] Browser LOG     ScrollSmoother initialized successfully
-[01:01:36.418] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
-[01:01:43.251] Browser GROUP   Processing commands (1)
-[01:01:43.251] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
-[01:01:43.251] Browser GROUPEND 
-[01:01:43.251] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
-[01:01:43.251] Browser LOG     Loaded existing client id: 1271940746.1767023617
-[01:01:43.251] Browser LOG     Event would be batched, but batching is disabled in debug mode.
-[01:01:43.251] Browser GROUP   Sending event "scroll" to undefined
-[01:01:43.251] Browser GROUP   Request parameters:
-[01:01:43.251] Browser LOG     v: 2
-[01:01:43.251] Browser LOG     tid: G-F4SER380S1
-[01:01:43.251] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
-[01:01:43.251] Browser LOG     _p: 1767099676004
-[01:01:43.251] Browser LOG     _dbg: 1
-[01:01:43.251] Browser LOG     gcd: 13l3l3l3l1l1
-[01:01:43.251] Browser LOG     npa: 0
-[01:01:43.251] Browser LOG     dma: 0
-[01:01:43.251] Browser LOG     cid: 1271940746.1767023617
-[01:01:43.251] Browser LOG     ul: en-gb
-[01:01:43.251] Browser LOG     sr: 3840x1600
-[01:01:43.251] Browser LOG     uaa: arm
-[01:01:43.251] Browser LOG     uab: 64
-[01:01:43.251] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
-[01:01:43.251] Browser LOG     uamb: 0
-[01:01:43.251] Browser LOG     uam: 
-[01:01:43.251] Browser LOG     uap: macOS
-[01:01:43.251] Browser LOG     uapv: 26.1.0
-[01:01:43.251] Browser LOG     uaw: 0
-[01:01:43.251] Browser LOG     are: 1
-[01:01:43.251] Browser LOG     frm: 0
-[01:01:43.251] Browser LOG     pscdl: noapi
-[01:01:43.251] Browser LOG     _eu: AEAAAAQ
-[01:01:43.251] Browser GROUPEND 
-[01:01:43.251] Browser GROUP   Event parameters:
-[01:01:43.251] Browser LOG     en: scroll
-[01:01:43.251] Browser LOG     epn.percent_scrolled: 90
-[01:01:43.251] Browser LOG     _et: 17068
-[01:01:43.251] Browser GROUPEND 
-[01:01:43.251] Browser GROUP   Shared parameters:
-[01:01:43.251] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116682875
-[01:01:43.251] Browser LOG     sid: 1767099675
-[01:01:43.251] Browser LOG     sct: 4
-[01:01:43.251] Browser LOG     seg: 1
-[01:01:43.251] Browser LOG     dl: http://localhost/wordpress-landing-page
-[01:01:43.251] Browser LOG     dt: Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha
-[01:01:43.251] Browser GROUPEND 
-[01:01:43.251] Browser GROUPEND 
-[01:01:43.251] Browser GROUPEND 
-[01:01:43.251] Browser GROUPEND 
-[01:03:19.841] Server  LOG      ✓ Compiled in 35ms
-[01:03:44.274] Server  LOG      ✓ Compiled in 34ms
-[01:04:08.032] Server  LOG      ✓ Compiled in 36ms
-[04:35:59.993] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:36:00.464] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
-[04:36:00.872] Browser LOG     ScrollSmoother initialized successfully
+[00:00:12.791] Browser GROUP   Processing commands (2)
+[00:00:12.791] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:00:12.791] Browser GROUPEND 
+[00:00:12.791] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:00:12.791] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:00:12.791] Browser GROUPEND 
+[00:00:12.791] Browser GROUP   Processing GTAG command: ["js", Wed Dec 31 2025 15:50:29 GMT+0530 (India Standard Time)]
+[00:00:12.791] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:00:12.791] Browser GROUPEND 
+[00:00:12.791] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:00:12.791] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:00:12.791] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:00:12.791] Browser GROUP   Sending event "page_view" to undefined
+[00:00:12.791] Browser GROUP   Request parameters:
+[00:00:12.791] Browser LOG     v: 2
+[00:00:12.791] Browser LOG     tid: G-F4SER380S1
+[00:00:12.791] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:00:12.791] Browser LOG     _p: 1767176429260
+[00:00:12.791] Browser LOG     _dbg: 1
+[00:00:12.791] Browser LOG     gcd: 13l3l3l3l1l1
+[00:00:12.791] Browser LOG     npa: 0
+[00:00:12.791] Browser LOG     dma: 0
+[00:00:12.791] Browser LOG     cid: 1271940746.1767023617
+[00:00:12.791] Browser LOG     ul: en-gb
+[00:00:12.791] Browser LOG     sr: 3840x1600
+[00:00:12.791] Browser LOG     uaa: arm
+[00:00:12.791] Browser LOG     uab: 64
+[00:00:12.791] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:00:12.791] Browser LOG     uamb: 0
+[00:00:12.791] Browser LOG     uam: 
+[00:00:12.791] Browser LOG     uap: macOS
+[00:00:12.791] Browser LOG     uapv: 26.1.0
+[00:00:12.791] Browser LOG     uaw: 0
+[00:00:12.791] Browser LOG     are: 1
+[00:00:12.791] Browser LOG     frm: 0
+[00:00:12.791] Browser LOG     pscdl: noapi
+[00:00:12.791] Browser LOG     _eu: AAAAAAQ
+[00:00:12.791] Browser GROUPEND 
+[00:00:12.791] Browser GROUP   Event parameters:
+[00:00:12.791] Browser LOG     en: page_view
+[00:00:12.791] Browser LOG     _ee: 1
+[00:00:12.791] Browser GROUPEND 
+[00:00:12.791] Browser GROUP   Shared parameters:
+[00:00:12.791] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115616985~115938465~115938468~116184927~116184929~116251938~116251940
+[00:00:12.791] Browser LOG     sid: 1767176143
+[00:00:12.791] Browser LOG     sct: 9
+[00:00:12.791] Browser LOG     seg: 1
+[00:00:12.791] Browser LOG     dl: http://localhost/portfolio/websites
+[00:00:12.791] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:00:12.791] Browser GROUPEND 
+[00:00:12.791] Browser GROUPEND 
+[00:00:12.792] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:00:12.792] Browser GROUPEND 
+[00:00:12.792] Browser GROUPEND 
+[00:00:12.792] Browser GROUP   Processing commands (1)
+[00:00:12.792] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:00:12.792] Browser GROUPEND 
+[00:00:12.792] Browser GROUPEND 
+[00:00:12.792] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:00:12.897] Browser GROUP   Processing commands (1)
+[00:00:12.897] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:00:12.897] Browser GROUPEND 
+[00:00:12.897] Browser GROUPEND 
+[00:00:13.180] Browser LOG     ScrollSmoother initialized successfully
+[00:00:22.949] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:00:36.554] Browser GROUP   Processing commands (1)
+[00:00:36.554] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[00:00:36.554] Browser GROUPEND 
+[00:00:36.554] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[00:00:36.554] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:00:36.554] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:00:36.554] Browser GROUP   Sending event "scroll" to undefined
+[00:00:36.554] Browser GROUP   Request parameters:
+[00:00:36.554] Browser LOG     v: 2
+[00:00:36.554] Browser LOG     tid: G-F4SER380S1
+[00:00:36.554] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:00:36.554] Browser LOG     _p: 1767176429260
+[00:00:36.554] Browser LOG     _dbg: 1
+[00:00:36.554] Browser LOG     gcd: 13l3l3l3l1l1
+[00:00:36.554] Browser LOG     npa: 0
+[00:00:36.554] Browser LOG     dma: 0
+[00:00:36.554] Browser LOG     cid: 1271940746.1767023617
+[00:00:36.554] Browser LOG     ul: en-gb
+[00:00:36.554] Browser LOG     sr: 3840x1600
+[00:00:36.554] Browser LOG     uaa: arm
+[00:00:36.554] Browser LOG     uab: 64
+[00:00:36.554] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:00:36.554] Browser LOG     uamb: 0
+[00:00:36.554] Browser LOG     uam: 
+[00:00:36.554] Browser LOG     uap: macOS
+[00:00:36.554] Browser LOG     uapv: 26.1.0
+[00:00:36.555] Browser LOG     uaw: 0
+[00:00:36.555] Browser LOG     are: 1
+[00:00:36.555] Browser LOG     frm: 0
+[00:00:36.555] Browser LOG     pscdl: noapi
+[00:00:36.555] Browser LOG     _eu: AEAAAAQ
+[00:00:36.555] Browser GROUPEND 
+[00:00:36.555] Browser GROUP   Event parameters:
+[00:00:36.555] Browser LOG     en: scroll
+[00:00:36.555] Browser LOG     epn.percent_scrolled: 90
+[00:00:36.555] Browser LOG     _et: 23723
+[00:00:36.555] Browser GROUPEND 
+[00:00:36.555] Browser GROUP   Shared parameters:
+[00:00:36.555] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115616985~115938465~115938468~116184927~116184929~116251938~116251940
+[00:00:36.555] Browser LOG     sid: 1767176143
+[00:00:36.555] Browser LOG     sct: 9
+[00:00:36.555] Browser LOG     seg: 1
+[00:00:36.555] Browser LOG     dl: http://localhost/portfolio/websites
+[00:00:36.555] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:00:36.555] Browser GROUPEND 
+[00:00:36.555] Browser GROUPEND 
+[00:00:36.555] Browser GROUPEND 
+[00:00:36.555] Browser GROUPEND 

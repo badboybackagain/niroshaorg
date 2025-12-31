@@ -10,11 +10,13 @@ import FAQ from '../components/FAQ'
 import FAQSchema from '../components/FAQSchema'
 import ServiceSchema from '../components/ServiceSchema'
 import BreadcrumbSchema from '../components/BreadcrumbSchema'
+import { useCTA } from '../components/CTAContext'
 
 const ServiceDetailPage = ({ params }) => {
   const router = useRouter()
+  const { setCTAContent, resetCTA } = useCTA()
   const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 })
-  
+
   // Extract slug from params - handle both direct object and potential Promise
   const slug = React.useMemo(() => {
     if (!params) return null
@@ -22,7 +24,7 @@ const ServiceDetailPage = ({ params }) => {
     // But the page wrapper should have already awaited it
     return params.slug || null
   }, [params])
-  
+
   // Debug: Log the slug and available services
   React.useEffect(() => {
     console.log('ServiceDetailPage - Full params object:', JSON.stringify(params, null, 2))
@@ -35,8 +37,25 @@ const ServiceDetailPage = ({ params }) => {
       console.log('ServiceDetailPage - Service data:', servicesData[slug])
     }
   }, [slug, params])
-  
+
   const serviceData = slug ? servicesData[slug] : null
+
+  // Update global CTA content when on this page
+  React.useEffect(() => {
+    if (serviceData) {
+      setCTAContent({
+        title: `Ready to Get Started with ${serviceData.title}?`,
+        subtext: `Let's discuss how we can help your business grow with our expert ${serviceData.title.toLowerCase()} services.`,
+        buttonText: "Schedule Free Consultation",
+        buttonLink: "https://calendly.com/nirosha-info/30min",
+        visible: true
+      })
+    }
+
+    return () => {
+      resetCTA()
+    }
+  }, [serviceData, setCTAContent, resetCTA])
 
   if (!serviceData) {
     return (
@@ -54,17 +73,17 @@ const ServiceDetailPage = ({ params }) => {
   return (
     <>
       <ServiceSchema service={serviceData} />
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: 'Home', url: 'https://nirosha.org' },
           { name: 'Services', url: 'https://nirosha.org/services' },
           { name: serviceData.title, url: `https://nirosha.org/services/${slug}` }
-        ]} 
+        ]}
       />
-      
+
       <section className="section service-detail-hero">
         <div className="container">
-          <div 
+          <div
             ref={titleRef}
             className={`service-hero-content ${titleVisible ? 'animate-fadeInUp' : ''}`}
           >
@@ -78,10 +97,10 @@ const ServiceDetailPage = ({ params }) => {
             <h1 className="service-hero-title">{serviceData.title} Services | Team Nirosha</h1>
             <p className="service-hero-subtitle">{serviceData.heroDescription}</p>
             <div className="service-hero-cta">
-              <a 
-                href="https://calendly.com/nirosha-info/30min" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://calendly.com/nirosha-info/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary"
               >
                 <FiCalendar style={{ marginRight: '8px' }} />
@@ -129,7 +148,7 @@ const ServiceDetailPage = ({ params }) => {
             {serviceData.features.map((feature, index) => {
               const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
               return (
-                <div 
+                <div
                   key={index}
                   ref={ref}
                   className={`service-feature-card ${isVisible ? 'animate-fadeInUp' : ''}`}
@@ -152,7 +171,7 @@ const ServiceDetailPage = ({ params }) => {
             {serviceData.process.map((step, index) => {
               const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
               return (
-                <div 
+                <div
                   key={index}
                   ref={ref}
                   className={`process-step-card ${isVisible ? 'animate-fadeInLeft' : ''}`}
@@ -171,28 +190,7 @@ const ServiceDetailPage = ({ params }) => {
       <FAQ faqs={serviceData.faqs} serviceTitle={serviceData.title} />
       <FAQSchema faqs={serviceData.faqs} serviceTitle={serviceData.title} />
 
-      <section className="section service-cta">
-        <div className="container">
-          <div className="service-cta-content">
-            <h2>Ready to Get Started with {serviceData.title}?</h2>
-            <p>Let's discuss how we can help your business grow with our expert {serviceData.title.toLowerCase()} services.</p>
-            <div className="service-cta-buttons">
-              <a 
-                href="https://calendly.com/nirosha-info/30min" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-primary"
-              >
-                Schedule Free Consultation
-                <FiArrowRight style={{ marginLeft: '8px' }} />
-              </a>
-              <Link href={`/contact?service=${encodeURIComponent(serviceData.title)}`} className="btn btn-secondary">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Local CTA section removed - using global CTA via context */}
     </>
   )
 }

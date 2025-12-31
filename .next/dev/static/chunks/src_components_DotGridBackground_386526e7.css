@@ -1,0 +1,14 @@
+/* [project]/src/components/DotGridBackground.css [app-client] (css) */
+.dot-grid-background {
+  pointer-events: auto;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+
+/*# sourceMappingURL=src_components_DotGridBackground_386526e7.css.map*/

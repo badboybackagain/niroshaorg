@@ -31,7 +31,7 @@ const PortfolioPage = () => {
   useEffect(() => {
     const loadCategoryImages = async () => {
       const imagesMap = {}
-      
+
       for (const category of portfolioCategories) {
         try {
           const res = await fetch(`/cache/portfolio/${category.slug}/manifest.json`)
@@ -56,7 +56,7 @@ const PortfolioPage = () => {
           imagesMap[category.slug] = []
         }
       }
-      
+
       setCategoryImages(imagesMap)
     }
 
@@ -80,7 +80,7 @@ const PortfolioPage = () => {
     const initAnimations = async () => {
       try {
         const { gsap, ScrollTrigger } = await import('@/utils/gsapConfig')
-        
+
         ctx = gsap.context(() => {
           // Title animation
           if (titleRef.current) {
@@ -101,7 +101,7 @@ const PortfolioPage = () => {
             if (items.length > 0) {
               // Set initial state
               gsap.set(items, { opacity: 0, y: 40 })
-              
+
               // Animate in
               gsap.to(items, {
                 opacity: 1,
@@ -165,7 +165,7 @@ const PortfolioPage = () => {
               {portfolioCategories.map((category) => {
                 const images = categoryImages[category.slug] || []
                 const hasImages = images.length > 0
-                
+
                 return (
                   <Link
                     key={category.slug}
@@ -204,7 +204,7 @@ const PortfolioPage = () => {
                     </div>
                     <div className="portfolio-category-arrow">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     </div>
                   </Link>
@@ -218,6 +218,7 @@ const PortfolioPage = () => {
           )}
         </div>
       </section>
+
     </div>
   )
 }

@@ -154,6 +154,7 @@ const ServiceCard = ({ service, index }) => {
         href={service.slug}
         className="service-card-read-more"
         suppressHydrationWarning
+        aria-label={`Read more about ${service.title}`}
       >
         Read More
         <FiArrowRight style={{ marginLeft: '6px' }} />

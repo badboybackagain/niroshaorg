@@ -61,5 +61,12 @@ export const portfolioCategories = [
     description: 'Print advertisement designs',
     icon: '📰',
     image: '/cache/portfolio/magazine-ad/Dr.Sachin_Patil-thumbnail.webp'
+  },
+  {
+    slug: 'websites',
+    title: 'Website Designs',
+    description: 'Custom website designs and development',
+    icon: '💻', // Laptop icon
+    image: '/images/portfolio/websites/saharaseats.png' // Direct path since we don't have cache yet, or use a placeholder
   }
 ]

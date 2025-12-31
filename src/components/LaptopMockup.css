@@ -1,0 +1,142 @@
+/* Laptop Mockup Styles */
+.laptop-mockup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  perspective: 2000px;
+  width: 100%;
+}
+
+.laptop-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.laptop-screen-frame {
+  background: #1a1a1a;
+  border-radius: 20px 20px 0 0;
+  padding: 3% 3% 0 3%;
+  /* Relative padding effectively creates the bezel */
+  box-shadow:
+    inset 0 0 0 2px #2a2a2a,
+    0 10px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.laptop-camera {
+  position: absolute;
+  top: 1.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.8%;
+  height: 0.8%;
+  background: #0f0f0f;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2px #333;
+}
+
+.laptop-screen-content {
+  background-color: #fff;
+  width: 100%;
+  /* 16:10 Aspect Ratio approximation */
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+}
+
+.laptop-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  transition: object-position 5s ease-in-out;
+  will-change: object-position;
+}
+
+/* Hover Effect: Scroll to bottom */
+.laptop-screen-content:hover .laptop-image {
+  object-position: bottom center;
+}
+
+/* Auto-scroll animation for mobile or when prop is set */
+.laptop-image.auto-scroll {
+  animation: autoScroll 12s ease-in-out infinite;
+}
+
+/* Base Styles */
+.laptop-base {
+  background: #e0e0e0;
+  /* Aluminium grey */
+  height: 20px;
+  width: 120%;
+  /* Wider than screen */
+  margin-left: -10%;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  z-index: 9;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #dcdcdc 0%, #b0b0b0 100%);
+}
+
+.laptop-base::after {
+  content: '';
+  display: block;
+  width: 15%;
+  height: 6px;
+  background: #a0a0a0;
+  margin: 0 auto;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+  top: 0;
+}
+
+/* REFLECTION / GLARE */
+.laptop-screen-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 40%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Keyframes for auto-scroll */
+@keyframes autoScroll {
+
+  0%,
+  15% {
+    object-position: top center;
+  }
+
+  50%,
+  65% {
+    object-position: bottom center;
+  }
+
+  100% {
+    object-position: top center;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .laptop-base {
+    height: 12px;
+  }
+
+  /* Force auto-scroll on mobile if needed, or just rely on prop */
+  .laptop-image {
+    /* Optional: can default to auto-scroll here if desired, but we'll stick to hover/prop */
+  }
+}

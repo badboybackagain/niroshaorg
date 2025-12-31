@@ -11,15 +11,19 @@ const CTA = dynamic(() => import('./CTA'), { ssr: false })
 const ScrollToTopButton = dynamic(() => import('./ScrollToTopButton'), { ssr: false })
 const ContactBubbles = dynamic(() => import('./ContactBubbles'), { ssr: false })
 
+import { CTAProvider, useCTA } from './CTAContext'
+
 // Note: OrganizationSchema and WebsiteSchema are now in app/layout.jsx
 // ScrollToTop is also in app/layout.jsx
 
-const Layout = ({ children }) => {
+const LayoutContent = ({ children }) => {
+  const { title, subtext, buttonText, buttonLink, visible } = useCTA()
+
   return (
     <div className="App" suppressHydrationWarning>
       {/* Fixed elements should be outside the smooth-wrapper */}
       <Navbar />
-      
+
       {/* ScrollSmoother enabled on all pages - loads after initial render */}
       <ScrollSmootherWrapper />
       <div id="smooth-wrapper">
@@ -28,17 +32,32 @@ const Layout = ({ children }) => {
             {children}
           </main>
           <Suspense fallback={null}>
-            <CTA />
+            {visible && (
+              <CTA
+                title={title}
+                subtext={subtext}
+                buttonText={buttonText}
+                buttonLink={buttonLink}
+              />
+            )}
           </Suspense>
           <Footer />
         </div>
       </div>
-      
+
       <Suspense fallback={null}>
         <ScrollToTopButton />
         <ContactBubbles />
       </Suspense>
     </div>
+  )
+}
+
+const Layout = ({ children }) => {
+  return (
+    <CTAProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </CTAProvider>
   )
 }
 
