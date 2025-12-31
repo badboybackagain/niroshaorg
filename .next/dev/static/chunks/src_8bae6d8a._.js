@@ -107,10 +107,12 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+const ITEMS_PER_PAGE = 9;
 const WebsitesPage = ({ websites })=>{
     _s();
     const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const [selectedImage, setSelectedImage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [currentPage, setCurrentPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "WebsitesPage.useEffect": ()=>{
             // Animation for elements appearing
@@ -118,19 +120,19 @@ const WebsitesPage = ({ websites })=>{
             if (container) {
                 container.style.opacity = '0';
                 container.style.transform = 'translateY(20px)';
-                const timer = setTimeout({
-                    "WebsitesPage.useEffect.timer": ()=>{
+                // Reset animation
+                requestAnimationFrame({
+                    "WebsitesPage.useEffect": ()=>{
                         container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
                         container.style.opacity = '1';
                         container.style.transform = 'translateY(0)';
                     }
-                }["WebsitesPage.useEffect.timer"], 100);
-                return ({
-                    "WebsitesPage.useEffect": ()=>clearTimeout(timer)
-                })["WebsitesPage.useEffect"];
+                }["WebsitesPage.useEffect"]);
             }
         }
-    }["WebsitesPage.useEffect"], []);
+    }["WebsitesPage.useEffect"], [
+        currentPage
+    ]); // Re-run animation on page change
     // Prevent body scroll when lightbox is open - Robust implementation matching PortfolioCategoryPage
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "WebsitesPage.useEffect": ()=>{
@@ -165,13 +167,33 @@ const WebsitesPage = ({ websites })=>{
     }["WebsitesPage.useEffect"], [
         selectedImage
     ]);
+    // Pagination Logic
+    const totalItems = websites?.length || 0;
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    const visibleWebsites = websites ? websites.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE) : [];
+    const handlePageChange = (newPage)=>{
+        if (newPage >= 1 && newPage <= totalPages) {
+            setCurrentPage(newPage);
+            // Scroll to top of grid
+            const gridSection = document.querySelector('.portfolio-grid-section');
+            if (gridSection) {
+                const yOffset = -100 // Offset for header/nav
+                ;
+                const y = gridSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({
+                    top: y,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-c8ba1c1739966578" + " " + "portfolio-websites-page",
+        className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-websites-page",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "jsx-c8ba1c1739966578" + " " + "portfolio-category-header",
+                className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-category-header",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "jsx-c8ba1c1739966578" + " " + "container",
+                    className: "jsx-8cbd3d139a3d1145" + " " + "container",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/portfolio",
@@ -180,136 +202,198 @@ const WebsitesPage = ({ websites })=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiChevronLeft"], {}, void 0, false, {
                                     fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                                    lineNumber: 65,
+                                    lineNumber: 89,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "jsx-c8ba1c1739966578",
+                                    className: "jsx-8cbd3d139a3d1145",
                                     children: "Back to Portfolio"
                                 }, void 0, false, {
                                     fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                                    lineNumber: 66,
+                                    lineNumber: 90,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                            lineNumber: 64,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "jsx-c8ba1c1739966578" + " " + "portfolio-category-title",
+                            className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-category-title",
                             children: "Website Designs"
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                            lineNumber: 68,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "jsx-c8ba1c1739966578" + " " + "portfolio-category-description",
+                            className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-category-description",
                             children: "Browse through our collection of professional website designs"
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                            lineNumber: 69,
+                            lineNumber: 93,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                    lineNumber: 63,
+                    lineNumber: 87,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                lineNumber: 62,
+                lineNumber: 86,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "jsx-c8ba1c1739966578" + " " + "portfolio-grid-section",
+                className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-grid-section",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     ref: containerRef,
-                    className: "jsx-c8ba1c1739966578" + " " + "container",
-                    children: websites && websites.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-c8ba1c1739966578" + " " + "websites-grid",
-                        children: websites.map((site)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                onClick: ()=>setSelectedImage(site.image),
-                                style: {
-                                    cursor: 'pointer'
-                                },
-                                className: "jsx-c8ba1c1739966578" + " " + "website-item",
+                    className: "jsx-8cbd3d139a3d1145" + " " + "container",
+                    children: visibleWebsites.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "jsx-8cbd3d139a3d1145" + " " + "websites-grid",
+                                children: visibleWebsites.map((site)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        onClick: ()=>setSelectedImage(site.image),
+                                        style: {
+                                            cursor: 'pointer'
+                                        },
+                                        className: "jsx-8cbd3d139a3d1145" + " " + "website-item",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LaptopMockup$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                imageSrc: site.image,
+                                                alt: "Website Design Mockup",
+                                                sizes: "(max-width: 768px) 100vw, 33vw"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                                lineNumber: 112,
+                                                columnNumber: 21
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "jsx-8cbd3d139a3d1145" + " " + "website-hover-hint",
+                                                children: "Click to view full screen"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                                lineNumber: 117,
+                                                columnNumber: 21
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, site.id, true, {
+                                        fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                        lineNumber: 106,
+                                        columnNumber: 19
+                                    }, ("TURBOPACK compile-time value", void 0)))
+                            }, void 0, false, {
+                                fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                lineNumber: 104,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "jsx-8cbd3d139a3d1145" + " " + "pagination-container",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LaptopMockup$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        imageSrc: site.image,
-                                        alt: "Website Design Mockup",
-                                        sizes: "(max-width: 768px) 100vw, 33vw"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        disabled: currentPage === 1,
+                                        onClick: ()=>handlePageChange(currentPage - 1),
+                                        "aria-label": "Previous page",
+                                        className: "jsx-8cbd3d139a3d1145" + " " + "pagination-btn",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiChevronLeft"], {}, void 0, false, {
+                                            fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                            lineNumber: 131,
+                                            columnNumber: 21
+                                        }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                                        lineNumber: 87,
+                                        lineNumber: 125,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-c8ba1c1739966578" + " " + "website-hover-hint",
-                                        children: "Click to view full screen"
+                                        className: "jsx-8cbd3d139a3d1145" + " " + "pagination-numbers",
+                                        children: Array.from({
+                                            length: totalPages
+                                        }, (_, i)=>i + 1).map((pageNum)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>handlePageChange(pageNum),
+                                                "aria-label": `Page ${pageNum}`,
+                                                className: "jsx-8cbd3d139a3d1145" + " " + `pagination-number ${currentPage === pageNum ? 'active' : ''}`,
+                                                children: pageNum
+                                            }, pageNum, false, {
+                                                fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                                lineNumber: 136,
+                                                columnNumber: 23
+                                            }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                                        lineNumber: 92,
+                                        lineNumber: 134,
+                                        columnNumber: 19
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        disabled: currentPage === totalPages,
+                                        onClick: ()=>handlePageChange(currentPage + 1),
+                                        "aria-label": "Next page",
+                                        className: "jsx-8cbd3d139a3d1145" + " " + "pagination-btn",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiChevronRight"], {}, void 0, false, {
+                                            fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                            lineNumber: 153,
+                                            columnNumber: 21
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/page-components/WebsitesPage.jsx",
+                                        lineNumber: 147,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
-                            }, site.id, true, {
+                            }, void 0, true, {
                                 fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                                lineNumber: 81,
+                                lineNumber: 124,
                                 columnNumber: 17
-                            }, ("TURBOPACK compile-time value", void 0)))
-                    }, void 0, false, {
-                        fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                        lineNumber: 79,
-                        columnNumber: 13
-                    }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         style: {
                             padding: '4rem 2rem',
                             textAlign: 'center'
                         },
-                        className: "jsx-c8ba1c1739966578",
+                        className: "jsx-8cbd3d139a3d1145",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "jsx-c8ba1c1739966578",
+                            className: "jsx-8cbd3d139a3d1145",
                             children: "No website designs found in the portfolio directory."
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                            lineNumber: 98,
+                            lineNumber: 160,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                        lineNumber: 97,
+                        lineNumber: 159,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                    lineNumber: 77,
+                    lineNumber: 101,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                lineNumber: 76,
+                lineNumber: 100,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             selectedImage && ("TURBOPACK compile-time value", "object") !== 'undefined' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2d$dom$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createPortal"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 onClick: ()=>setSelectedImage(null),
-                className: "jsx-c8ba1c1739966578" + " " + "portfolio-lightbox-modern",
+                className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-lightbox-modern",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setSelectedImage(null),
                         "aria-label": "Close lightbox",
-                        className: "jsx-c8ba1c1739966578" + " " + "portfolio-lightbox-close-modern",
+                        className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-lightbox-close-modern",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiX"], {}, void 0, false, {
                             fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                            lineNumber: 115,
+                            lineNumber: 177,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                        lineNumber: 110,
+                        lineNumber: 172,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -320,50 +404,50 @@ const WebsitesPage = ({ websites })=>{
                             background: 'transparent',
                             boxShadow: 'none'
                         },
-                        className: "jsx-c8ba1c1739966578" + " " + "portfolio-lightbox-content-modern",
+                        className: "jsx-8cbd3d139a3d1145" + " " + "portfolio-lightbox-content-modern",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             style: {
                                 width: '100%',
                                 padding: '2rem'
                             },
-                            className: "jsx-c8ba1c1739966578",
+                            className: "jsx-8cbd3d139a3d1145",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LaptopMockup$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 imageSrc: selectedImage,
                                 alt: "Full Screen Design",
                                 sizes: "90vw"
                             }, void 0, false, {
                                 fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                                lineNumber: 124,
+                                lineNumber: 186,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                            lineNumber: 123,
+                            lineNumber: 185,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                        lineNumber: 118,
+                        lineNumber: 180,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/page-components/WebsitesPage.jsx",
-                lineNumber: 106,
+                lineNumber: 168,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)), document.body),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "c8ba1c1739966578",
-                children: ".websites-grid.jsx-c8ba1c1739966578{grid-template-columns:repeat(3,1fr);gap:3rem;padding:4rem 0;display:grid}.website-item.jsx-c8ba1c1739966578{transition:transform .3s;position:relative}.website-item.jsx-c8ba1c1739966578:hover{transform:translateY(-10px)}.website-hover-hint.jsx-c8ba1c1739966578{text-align:center;opacity:0;color:var(--text-muted);font-size:.9rem;transition:opacity .3s;position:absolute;bottom:-30px;left:0;right:0}.website-item.jsx-c8ba1c1739966578:hover .website-hover-hint.jsx-c8ba1c1739966578{opacity:1}@media (width<=1024px){.websites-grid.jsx-c8ba1c1739966578{grid-template-columns:repeat(2,1fr)}}@media (width<=768px){.websites-grid.jsx-c8ba1c1739966578{grid-template-columns:1fr;gap:4rem}}"
+                id: "8cbd3d139a3d1145",
+                children: ".websites-grid.jsx-8cbd3d139a3d1145{grid-template-columns:repeat(3,1fr);gap:3rem;padding:4rem 0 2rem;display:grid}.website-item.jsx-8cbd3d139a3d1145{transition:transform .3s;position:relative}.website-item.jsx-8cbd3d139a3d1145:hover{transform:translateY(-10px)}.website-hover-hint.jsx-8cbd3d139a3d1145{text-align:center;opacity:0;color:var(--text-muted);font-size:.9rem;transition:opacity .3s;position:absolute;bottom:-30px;left:0;right:0}.website-item.jsx-8cbd3d139a3d1145:hover .website-hover-hint.jsx-8cbd3d139a3d1145{opacity:1}.pagination-container.jsx-8cbd3d139a3d1145{border-top:1px solid #0000000d;justify-content:center;align-items:center;gap:1rem;margin:3rem 0;padding-top:2rem;display:flex}.pagination-btn.jsx-8cbd3d139a3d1145,.pagination-number.jsx-8cbd3d139a3d1145{width:40px;height:40px;color:var(--text-dark);cursor:pointer;background:#fff;border:1px solid #e5e5e5;border-radius:50%;justify-content:center;align-items:center;font-size:1rem;transition:all .2s;display:flex}.pagination-btn.jsx-8cbd3d139a3d1145:hover:not(:disabled),.pagination-number.jsx-8cbd3d139a3d1145:hover{border-color:var(--accent-color);color:var(--accent-color)}.pagination-btn.jsx-8cbd3d139a3d1145:disabled{opacity:.5;cursor:not-allowed;border-color:#eee}.pagination-number.active.jsx-8cbd3d139a3d1145{background:var(--accent-color);color:#fff;border-color:var(--accent-color)}.pagination-numbers.jsx-8cbd3d139a3d1145{gap:.5rem;display:flex}@media (width<=1024px){.websites-grid.jsx-8cbd3d139a3d1145{grid-template-columns:repeat(2,1fr)}}@media (width<=768px){.websites-grid.jsx-8cbd3d139a3d1145{grid-template-columns:1fr;gap:4rem}.pagination-container.jsx-8cbd3d139a3d1145{gap:.5rem}.pagination-btn.jsx-8cbd3d139a3d1145,.pagination-number.jsx-8cbd3d139a3d1145{width:36px;height:36px;font-size:.9rem}}"
             }, void 0, false, void 0, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/page-components/WebsitesPage.jsx",
-        lineNumber: 60,
+        lineNumber: 84,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(WebsitesPage, "WO7f+APp5fs7EE8iEdfrXhr4xAM=");
+_s(WebsitesPage, "JsMAKFYyjnvhY7/q5T7r+dib9yk=");
 _c = WebsitesPage;
 const __TURBOPACK__default__export__ = WebsitesPage;
 var _c;

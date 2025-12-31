@@ -154,7 +154,7 @@ function getSourceImages(sourceDir, excludeDirs = ['cache']) {
 
   const files = fs.readdirSync(sourceDir)
   const imageExtensions = ['.png', '.jpg', '.jpeg', '.webp']
-  
+
   return files.filter(file => {
     const filePath = path.join(sourceDir, file)
     // Skip directories (especially cache)
@@ -175,7 +175,7 @@ function getSourceImages(sourceDir, excludeDirs = ['cache']) {
  */
 async function processBlogImage(inputFile, outputBaseName, config) {
   const inputPath = path.join(config.sourceDir, inputFile)
-  
+
   if (!fs.existsSync(inputPath)) {
     console.error(`❌ Error: Source file ${inputFile} not found`)
     return false
@@ -186,7 +186,7 @@ async function processBlogImage(inputFile, outputBaseName, config) {
 
     for (const [sizeName, dimensions] of Object.entries(config.sizes)) {
       const { width, height } = dimensions
-      
+
       // Generate PNG versions (1x and 2x)
       for (const scale of [1, 2]) {
         const outputWidth = width * scale
@@ -242,7 +242,7 @@ async function processBlogImage(inputFile, outputBaseName, config) {
 async function processPortfolioLogo(inputFile, config) {
   const inputPath = path.join(config.sourceDir, inputFile)
   const baseName = path.parse(inputFile).name
-  
+
   if (!fs.existsSync(inputPath)) {
     console.error(`❌ Error: Source file ${inputFile} not found`)
     return false
@@ -253,7 +253,7 @@ async function processPortfolioLogo(inputFile, config) {
 
     for (const [sizeName, dimensions] of Object.entries(config.sizes)) {
       const { width, height } = dimensions
-      
+
       // Generate PNG versions (1x and 2x)
       for (const scale of [1, 2]) {
         const outputWidth = width * scale
@@ -309,7 +309,7 @@ async function processPortfolioLogo(inputFile, config) {
 async function processImage(inputFile, config) {
   const inputPath = path.join(config.sourceDir, inputFile)
   const baseName = path.parse(inputFile).name
-  
+
   if (!fs.existsSync(inputPath)) {
     console.error(`❌ Error: Source file ${inputFile} not found`)
     return false
@@ -340,7 +340,7 @@ async function processImage(inputFile, config) {
     for (const scale of [1, 2]) {
       const scaledWidth = outputWidth * scale
       const scaledHeight = outputHeight * scale
-      
+
       const outputName = `${baseName}${scale === 2 ? '@2x' : ''}.png`
       const outputPath = path.join(config.cacheDir, outputName)
 
@@ -349,8 +349,8 @@ async function processImage(inputFile, config) {
           fit: config.fit,
           background: { r: 255, g: 255, b: 255, alpha: 0 } // Transparent background
         })
-        .png({ 
-          quality: 85, 
+        .png({
+          quality: 85,
           compressionLevel: 9,
           adaptiveFiltering: true,
           palette: true // Use palette for better compression on logos
@@ -366,7 +366,7 @@ async function processImage(inputFile, config) {
     for (const scale of [1, 2]) {
       const scaledWidth = outputWidth * scale
       const scaledHeight = outputHeight * scale
-      
+
       const outputName = `${baseName}${scale === 2 ? '@2x' : ''}.webp`
       const outputPath = path.join(config.cacheDir, outputName)
 
@@ -375,7 +375,7 @@ async function processImage(inputFile, config) {
           fit: config.fit,
           background: { r: 255, g: 255, b: 255, alpha: 0 } // Transparent background
         })
-        .webp({ 
+        .webp({
           quality: 80, // Slightly lower quality for better compression
           effort: 6, // Higher effort for better compression
           nearLossless: false // Allow some loss for better file size
@@ -416,7 +416,7 @@ async function processCategory(categoryName, config) {
   }
 
   const sourceImages = getSourceImages(config.sourceDir)
-  
+
   if (sourceImages.length === 0) {
     console.log(`⚠️  No source images found in ${categoryName} directory`)
     return { success: 0, failed: 0, items: [] }
@@ -479,7 +479,7 @@ async function main() {
   if (!category || category === 'all') {
     // Process all categories
     const results = {}
-    
+
     for (const [categoryName, config] of Object.entries(imageConfigs)) {
       if (categoryName === 'blog') {
         console.log('\n⚠️  Blog images are processed individually. Use: npm run process-images blog <filename>')
@@ -503,7 +503,7 @@ async function main() {
     // Blog images need filename and base name
     const inputFile = args[1]
     const outputBaseName = args[2]
-    
+
     if (!inputFile || !outputBaseName) {
       console.error('❌ Blog images require filename and output base name')
       console.log('Usage: npm run process-images blog <inputFile> <outputBaseName>')
@@ -520,7 +520,7 @@ async function main() {
     // Process specific category
     const config = imageConfigs[category]
     const result = await processCategory(category, config)
-    
+
     console.log('\n' + '='.repeat(60))
     console.log('📊 Processing Summary:')
     console.log(`   ✅ Success: ${result.success}`)

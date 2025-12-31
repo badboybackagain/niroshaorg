@@ -58,6 +58,13 @@ __turbopack_context__.s([
 ]);
 const portfolioCategories = [
     {
+        slug: 'websites',
+        title: 'Website Designs',
+        description: 'Custom website designs and development',
+        icon: '💻',
+        image: '/images/portfolio/websites/saharaseats.png' // Direct path since we don't have cache yet, or use a placeholder
+    },
+    {
         slug: 'logos',
         title: 'Logo Design',
         description: 'Professional logo designs that capture brand identity',
@@ -119,13 +126,6 @@ const portfolioCategories = [
         description: 'Print advertisement designs',
         icon: '📰',
         image: '/cache/portfolio/magazine-ad/Dr.Sachin_Patil-thumbnail.webp'
-    },
-    {
-        slug: 'websites',
-        title: 'Website Designs',
-        description: 'Custom website designs and development',
-        icon: '💻',
-        image: '/images/portfolio/websites/saharaseats.png' // Direct path since we don't have cache yet, or use a placeholder
     }
 ];
 }),

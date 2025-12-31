@@ -3,12 +3,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
-import { FiChevronLeft, FiX } from 'react-icons/fi'
+import { FiChevronLeft, FiX, FiChevronRight } from 'react-icons/fi'
 import LaptopMockup from '@/components/LaptopMockup'
+
+const ITEMS_PER_PAGE = 9
 
 const WebsitesPage = ({ websites }) => {
   const containerRef = useRef(null)
   const [selectedImage, setSelectedImage] = useState(null)
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     // Animation for elements appearing
@@ -17,15 +20,14 @@ const WebsitesPage = ({ websites }) => {
       container.style.opacity = '0'
       container.style.transform = 'translateY(20px)'
 
-      const timer = setTimeout(() => {
+      // Reset animation
+      requestAnimationFrame(() => {
         container.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
         container.style.opacity = '1'
         container.style.transform = 'translateY(0)'
-      }, 100)
-
-      return () => clearTimeout(timer)
+      })
     }
-  }, [])
+  }, [currentPage]) // Re-run animation on page change
 
   // Prevent body scroll when lightbox is open - Robust implementation matching PortfolioCategoryPage
   useEffect(() => {
@@ -56,6 +58,28 @@ const WebsitesPage = ({ websites }) => {
     }
   }, [selectedImage])
 
+  // Pagination Logic
+  const totalItems = websites?.length || 0
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE)
+
+  const visibleWebsites = websites ? websites.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  ) : []
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage)
+      // Scroll to top of grid
+      const gridSection = document.querySelector('.portfolio-grid-section')
+      if (gridSection) {
+        const yOffset = -100 // Offset for header/nav
+        const y = gridSection.getBoundingClientRect().top + window.pageYOffset + yOffset
+        window.scrollTo({ top: y, behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
     <div className="portfolio-websites-page">
       {/* Header */}
@@ -75,24 +99,62 @@ const WebsitesPage = ({ websites }) => {
       {/* Grid */}
       <section className="portfolio-grid-section">
         <div className="container" ref={containerRef}>
-          {websites && websites.length > 0 ? (
-            <div className="websites-grid">
-              {websites.map((site) => (
-                <div
-                  key={site.id}
-                  className="website-item"
-                  onClick={() => setSelectedImage(site.image)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <LaptopMockup
-                    imageSrc={site.image}
-                    alt="Website Design Mockup"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="website-hover-hint">Click to view full screen</div>
+          {visibleWebsites.length > 0 ? (
+            <>
+              <div className="websites-grid">
+                {visibleWebsites.map((site) => (
+                  <div
+                    key={site.id}
+                    className="website-item"
+                    onClick={() => setSelectedImage(site.image)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <LaptopMockup
+                      imageSrc={site.image}
+                      alt="Website Design Mockup"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="website-hover-hint">Click to view full screen</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Pagination Controls */}
+              {totalPages > 1 && (
+                <div className="pagination-container">
+                  <button
+                    className="pagination-btn"
+                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    aria-label="Previous page"
+                  >
+                    <FiChevronLeft />
+                  </button>
+
+                  <div className="pagination-numbers">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                      <button
+                        key={pageNum}
+                        className={`pagination-number ${currentPage === pageNum ? 'active' : ''}`}
+                        onClick={() => handlePageChange(pageNum)}
+                        aria-label={`Page ${pageNum}`}
+                      >
+                        {pageNum}
+                      </button>
+                    ))}
+                  </div>
+
+                  <button
+                    className="pagination-btn"
+                    disabled={currentPage === totalPages}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    aria-label="Next page"
+                  >
+                    <FiChevronRight />
+                  </button>
                 </div>
-              ))}
-            </div>
+              )}
+            </>
           ) : (
             <div style={{ padding: '4rem 2rem', textAlign: 'center' }}>
               <p>No website designs found in the portfolio directory.</p>
@@ -137,7 +199,7 @@ const WebsitesPage = ({ websites }) => {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 3rem;
-          padding: 4rem 0;
+          padding: 4rem 0 2rem 0;
         }
         .website-item {
           transition: transform 0.3s ease;
@@ -161,6 +223,49 @@ const WebsitesPage = ({ websites }) => {
           opacity: 1;
         }
 
+        /* Pagination Styles */
+        .pagination-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin: 3rem 0;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .pagination-btn, .pagination-number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid #e5e5e5;
+          background: white;
+          color: var(--text-dark);
+          cursor: pointer;
+          transition: all 0.2s ease;
+          font-size: 1rem;
+        }
+        .pagination-btn:hover:not(:disabled), .pagination-number:hover {
+          border-color: var(--accent-color);
+          color: var(--accent-color);
+        }
+        .pagination-btn:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          border-color: #eee;
+        }
+        .pagination-number.active {
+          background: var(--accent-color);
+          color: white;
+          border-color: var(--accent-color);
+        }
+        .pagination-numbers {
+          display: flex;
+          gap: 0.5rem;
+        }
+
         @media (max-width: 1024px) {
           .websites-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -170,6 +275,14 @@ const WebsitesPage = ({ websites }) => {
           .websites-grid {
             grid-template-columns: 1fr;
             gap: 4rem;
+          }
+          .pagination-container {
+            gap: 0.5rem;
+          }
+          .pagination-btn, .pagination-number {
+            width: 36px;
+            height: 36px;
+            font-size: 0.9rem;
           }
         }
       `}</style>

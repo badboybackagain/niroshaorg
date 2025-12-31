@@ -10399,8 +10399,8 @@ body.lightbox-open .navbar {
 .portfolio-category-title {
   color: var(--text-dark);
   margin: 0 0 .5rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: bold;
   line-height: 1.3;
 }
 
@@ -10452,11 +10452,11 @@ body.lightbox-open .navbar {
   color: var(--accent-color);
 }
 
-.portfolio-category-title {
+.portfolio-category-header .portfolio-category-title {
   color: var(--text-dark);
   letter-spacing: -.02em;
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 1.75rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -10595,12 +10595,71 @@ body.lightbox-open .navbar {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  transition: transform .5s cubic-bezier(.4, 0, .2, 1);
-  display: block;
+  transition: transform .6s cubic-bezier(.4, 0, .2, 1);
 }
 
 .portfolio-item-modern:hover .portfolio-item-image-modern img {
-  transform: scale(1.08);
+  transform: scale(1.05);
+}
+
+.pagination-container {
+  border-top: 1px solid #0000000d;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 3rem 0;
+  padding-top: 2rem;
+  display: flex;
+}
+
+.pagination-btn, .pagination-number {
+  width: 40px;
+  height: 40px;
+  color: var(--text-dark);
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  transition: all .2s;
+  display: flex;
+}
+
+.pagination-btn:hover:not(:disabled), .pagination-number:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.pagination-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  border-color: #eee;
+}
+
+.pagination-number.active {
+  background: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+}
+
+.pagination-numbers {
+  gap: .5rem;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .pagination-container {
+    gap: .5rem;
+  }
+
+  .pagination-btn, .pagination-number {
+    width: 36px;
+    height: 36px;
+    font-size: .9rem;
+  }
 }
 
 .portfolio-item-placeholder {

@@ -134,3 +134,2133 @@
 [00:00:36.555] Browser GROUPEND 
 [00:00:36.555] Browser GROUPEND 
 [00:00:36.555] Browser GROUPEND 
+[00:05:52.390] Browser GROUP   Processing commands (1)
+[00:05:52.390] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "replaceState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio/websites", gtm.triggers: "6"}
+[00:05:52.390] Browser GROUPEND 
+[00:05:52.390] Browser GROUPEND 
+[00:06:41.443] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:41.996] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
+
+[00:06:41.996] Browser GROUP   Processing commands (2)
+[00:06:41.996] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:06:41.996] Browser GROUPEND 
+[00:06:41.996] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:06:41.996] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:06:41.997] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:06:41.997] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:06:41.997] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:06:41.997] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUP   Processing GTAG command: ["js", Wed Dec 31 2025 15:56:58 GMT+0530 (India Standard Time)]
+[00:06:41.997] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:06:41.997] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:06:41.997] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:06:41.997] Browser GROUP   Sending event "page_view" to undefined
+[00:06:41.997] Browser GROUP   Request parameters:
+[00:06:41.997] Browser LOG     v: 2
+[00:06:41.997] Browser LOG     tid: G-F4SER380S1
+[00:06:41.997] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:06:41.997] Browser LOG     _p: 1767176818581
+[00:06:41.997] Browser LOG     _dbg: 1
+[00:06:41.997] Browser LOG     gcd: 13l3l3l3l1l1
+[00:06:41.997] Browser LOG     npa: 0
+[00:06:41.997] Browser LOG     dma: 0
+[00:06:41.997] Browser LOG     cid: 1271940746.1767023617
+[00:06:41.997] Browser LOG     ul: en-gb
+[00:06:41.997] Browser LOG     sr: 3840x1600
+[00:06:41.997] Browser LOG     uaa: arm
+[00:06:41.997] Browser LOG     uab: 64
+[00:06:41.997] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:06:41.997] Browser LOG     uamb: 0
+[00:06:41.997] Browser LOG     uam: 
+[00:06:41.997] Browser LOG     uap: macOS
+[00:06:41.997] Browser LOG     uapv: 26.1.0
+[00:06:41.997] Browser LOG     uaw: 0
+[00:06:41.997] Browser LOG     are: 1
+[00:06:41.997] Browser LOG     frm: 0
+[00:06:41.997] Browser LOG     pscdl: noapi
+[00:06:41.997] Browser LOG     _eu: AAAAAAQ
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUP   Event parameters:
+[00:06:41.997] Browser LOG     en: page_view
+[00:06:41.997] Browser LOG     _ee: 1
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUP   Shared parameters:
+[00:06:41.997] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938469~116184927~116184929~116251938~116251940~116744867
+[00:06:41.997] Browser LOG     sid: 1767176143
+[00:06:41.997] Browser LOG     sct: 9
+[00:06:41.997] Browser LOG     seg: 1
+[00:06:41.997] Browser LOG     dl: http://localhost/portfolio/websites
+[00:06:41.997] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUP   Processing commands (1)
+[00:06:41.997] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUP   Processing commands (1)
+[00:06:41.997] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:06:41.997] Browser GROUPEND 
+[00:06:41.997] Browser GROUPEND 
+[00:06:42.110] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:06:42.526] Browser LOG     ScrollSmoother initialized successfully
+[00:06:52.032] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:07:54.609] Browser GROUP   Processing commands (1)
+[00:07:54.609] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[00:07:54.609] Browser GROUPEND 
+[00:07:54.609] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[00:07:54.609] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:07:54.609] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:07:54.609] Browser GROUP   Sending event "scroll" to undefined
+[00:07:54.609] Browser GROUP   Request parameters:
+[00:07:54.609] Browser LOG     v: 2
+[00:07:54.610] Browser LOG     tid: G-F4SER380S1
+[00:07:54.610] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:07:54.610] Browser LOG     _p: 1767176818581
+[00:07:54.610] Browser LOG     _dbg: 1
+[00:07:54.610] Browser LOG     gcd: 13l3l3l3l1l1
+[00:07:54.610] Browser LOG     npa: 0
+[00:07:54.610] Browser LOG     dma: 0
+[00:07:54.610] Browser LOG     cid: 1271940746.1767023617
+[00:07:54.610] Browser LOG     ul: en-gb
+[00:07:54.610] Browser LOG     sr: 3840x1600
+[00:07:54.610] Browser LOG     uaa: arm
+[00:07:54.610] Browser LOG     uab: 64
+[00:07:54.610] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:07:54.610] Browser LOG     uamb: 0
+[00:07:54.610] Browser LOG     uam: 
+[00:07:54.610] Browser LOG     uap: macOS
+[00:07:54.610] Browser LOG     uapv: 26.1.0
+[00:07:54.610] Browser LOG     uaw: 0
+[00:07:54.610] Browser LOG     are: 1
+[00:07:54.610] Browser LOG     frm: 0
+[00:07:54.610] Browser LOG     pscdl: noapi
+[00:07:54.610] Browser LOG     _eu: AEAAAAQ
+[00:07:54.610] Browser GROUPEND 
+[00:07:54.610] Browser GROUP   Event parameters:
+[00:07:54.610] Browser LOG     en: scroll
+[00:07:54.610] Browser LOG     epn.percent_scrolled: 90
+[00:07:54.610] Browser LOG     _et: 30262
+[00:07:54.610] Browser GROUPEND 
+[00:07:54.610] Browser GROUP   Shared parameters:
+[00:07:54.610] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938469~116184927~116184929~116251938~116251940~116744867
+[00:07:54.610] Browser LOG     sid: 1767176143
+[00:07:54.610] Browser LOG     sct: 9
+[00:07:54.610] Browser LOG     seg: 1
+[00:07:54.610] Browser LOG     dl: http://localhost/portfolio/websites
+[00:07:54.610] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:07:54.610] Browser GROUPEND 
+[00:07:54.610] Browser GROUPEND 
+[00:07:54.610] Browser GROUPEND 
+[00:07:54.610] Browser GROUPEND 
+[00:10:38.489] Browser LOG     ScrollSmoother initialized successfully
+[00:10:38.960] Browser GROUP   Processing commands (1)
+[00:10:38.960] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:10:38.960] Browser GROUPEND 
+[00:10:38.960] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/websites", send_to: "G-F4SER380S1"}]
+[00:10:38.960] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:10:38.960] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:10:38.960] Browser GROUP   Sending event "page_view" to undefined
+[00:10:38.960] Browser GROUP   Request parameters:
+[00:10:38.960] Browser LOG     v: 2
+[00:10:38.960] Browser LOG     tid: G-F4SER380S1
+[00:10:38.960] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:10:38.960] Browser LOG     _p: 1767176818581
+[00:10:38.960] Browser LOG     _dbg: 1
+[00:10:38.960] Browser LOG     gcd: 13l3l3l3l1l1
+[00:10:38.960] Browser LOG     npa: 0
+[00:10:38.960] Browser LOG     dma: 0
+[00:10:38.960] Browser LOG     cid: 1271940746.1767023617
+[00:10:38.960] Browser LOG     ul: en-gb
+[00:10:38.960] Browser LOG     sr: 3840x1600
+[00:10:38.960] Browser LOG     uaa: arm
+[00:10:38.960] Browser LOG     uab: 64
+[00:10:38.960] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:10:38.960] Browser LOG     uamb: 0
+[00:10:38.960] Browser LOG     uam: 
+[00:10:38.960] Browser LOG     uap: macOS
+[00:10:38.960] Browser LOG     uapv: 26.1.0
+[00:10:38.960] Browser LOG     uaw: 0
+[00:10:38.960] Browser LOG     are: 1
+[00:10:38.960] Browser LOG     frm: 0
+[00:10:38.960] Browser LOG     pscdl: noapi
+[00:10:38.960] Browser LOG     _eu: AEAAAAQ
+[00:10:38.960] Browser GROUPEND 
+[00:10:38.960] Browser GROUP   Event parameters:
+[00:10:38.960] Browser LOG     en: page_view
+[00:10:38.960] Browser LOG     _et: 29832
+[00:10:38.960] Browser GROUPEND 
+[00:10:38.960] Browser GROUP   Shared parameters:
+[00:10:38.960] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938469~116184927~116184929~116251938~116251940~116744867
+[00:10:38.960] Browser LOG     dl: http://localhost:3000/portfolio
+[00:10:38.960] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[00:10:38.960] Browser LOG     sid: 1767176143
+[00:10:38.960] Browser LOG     sct: 9
+[00:10:38.960] Browser LOG     seg: 1
+[00:10:38.960] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:10:38.960] Browser GROUPEND 
+[00:10:38.960] Browser GROUPEND 
+[00:10:38.960] Browser GROUPEND 
+[00:10:38.960] Browser GROUPEND 
+[00:10:44.950] Browser WARN    Invalid scope
+[00:10:44.950] Browser WARN    Invalid scope
+[00:10:44.950] Browser LOG     ScrollSmoother initialized successfully
+[00:10:45.417] Browser GROUP   Processing commands (1)
+[00:10:45.417] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/websites", gtm.triggers: "6"}
+[00:10:45.417] Browser GROUPEND 
+[00:10:45.417] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/websites", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:10:45.417] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:10:45.417] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:10:45.417] Browser GROUP   Sending event "page_view" to undefined
+[00:10:45.417] Browser GROUP   Request parameters:
+[00:10:45.417] Browser LOG     v: 2
+[00:10:45.417] Browser LOG     tid: G-F4SER380S1
+[00:10:45.417] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:10:45.417] Browser LOG     _p: 1767176818581
+[00:10:45.417] Browser LOG     _dbg: 1
+[00:10:45.417] Browser LOG     gcd: 13l3l3l3l1l1
+[00:10:45.417] Browser LOG     npa: 0
+[00:10:45.417] Browser LOG     dma: 0
+[00:10:45.417] Browser LOG     cid: 1271940746.1767023617
+[00:10:45.417] Browser LOG     ul: en-gb
+[00:10:45.417] Browser LOG     sr: 3840x1600
+[00:10:45.417] Browser LOG     uaa: arm
+[00:10:45.417] Browser LOG     uab: 64
+[00:10:45.417] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:10:45.417] Browser LOG     uamb: 0
+[00:10:45.417] Browser LOG     uam: 
+[00:10:45.417] Browser LOG     uap: macOS
+[00:10:45.417] Browser LOG     uapv: 26.1.0
+[00:10:45.417] Browser LOG     uaw: 0
+[00:10:45.417] Browser LOG     are: 1
+[00:10:45.417] Browser LOG     frm: 0
+[00:10:45.417] Browser LOG     pscdl: noapi
+[00:10:45.417] Browser LOG     _eu: AEAAAAQ
+[00:10:45.417] Browser GROUPEND 
+[00:10:45.417] Browser GROUP   Event parameters:
+[00:10:45.417] Browser LOG     en: page_view
+[00:10:45.417] Browser LOG     _et: 6454
+[00:10:45.417] Browser GROUPEND 
+[00:10:45.417] Browser GROUP   Shared parameters:
+[00:10:45.417] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391253~115583767~115938466~115938469~116184927~116184929~116251938~116251940~116744867
+[00:10:45.417] Browser LOG     dl: http://localhost:3000/portfolio/websites
+[00:10:45.417] Browser LOG     dr: http://localhost:3000/portfolio
+[00:10:45.417] Browser LOG     sid: 1767176143
+[00:10:45.417] Browser LOG     sct: 9
+[00:10:45.417] Browser LOG     seg: 1
+[00:10:45.417] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:10:45.417] Browser GROUPEND 
+[00:10:45.417] Browser GROUPEND 
+[00:10:45.417] Browser GROUPEND 
+[00:10:45.417] Browser GROUPEND 
+[00:10:56.424] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:57.137] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
+
+[00:10:57.137] Browser GROUP   Processing commands (2)
+[00:10:57.138] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:10:57.138] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUP   Processing GTAG command: ["js", Wed Dec 31 2025 16:01:13 GMT+0530 (India Standard Time)]
+[00:10:57.138] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:10:57.138] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:10:57.138] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:10:57.138] Browser GROUP   Sending event "page_view" to undefined
+[00:10:57.138] Browser GROUP   Request parameters:
+[00:10:57.138] Browser LOG     v: 2
+[00:10:57.138] Browser LOG     tid: G-F4SER380S1
+[00:10:57.138] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:10:57.138] Browser LOG     _p: 1767177073693
+[00:10:57.138] Browser LOG     _dbg: 1
+[00:10:57.138] Browser LOG     gcd: 13l3l3l3l1l1
+[00:10:57.138] Browser LOG     npa: 0
+[00:10:57.138] Browser LOG     dma: 0
+[00:10:57.138] Browser LOG     cid: 1271940746.1767023617
+[00:10:57.138] Browser LOG     ul: en-gb
+[00:10:57.138] Browser LOG     sr: 3840x1600
+[00:10:57.138] Browser LOG     uaa: arm
+[00:10:57.138] Browser LOG     uab: 64
+[00:10:57.138] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:10:57.138] Browser LOG     uamb: 0
+[00:10:57.138] Browser LOG     uam: 
+[00:10:57.138] Browser LOG     uap: macOS
+[00:10:57.138] Browser LOG     uapv: 26.1.0
+[00:10:57.138] Browser LOG     uaw: 0
+[00:10:57.138] Browser LOG     are: 1
+[00:10:57.138] Browser LOG     frm: 0
+[00:10:57.138] Browser LOG     pscdl: noapi
+[00:10:57.138] Browser LOG     _eu: AAAAAAQ
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUP   Event parameters:
+[00:10:57.138] Browser LOG     en: page_view
+[00:10:57.138] Browser LOG     _ee: 1
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUP   Shared parameters:
+[00:10:57.138] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115938465~115938469~116184927~116184929~116251938~116251940
+[00:10:57.138] Browser LOG     sid: 1767176143
+[00:10:57.138] Browser LOG     sct: 9
+[00:10:57.138] Browser LOG     seg: 1
+[00:10:57.138] Browser LOG     dl: http://localhost/portfolio/websites
+[00:10:57.138] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUP   Processing commands (1)
+[00:10:57.138] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUP   Processing commands (1)
+[00:10:57.138] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.138] Browser GROUPEND 
+[00:10:57.256] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:10:57.614] Browser LOG     ScrollSmoother initialized successfully
+[00:11:01.239] Browser GROUP   Processing commands (1)
+[00:11:01.239] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[00:11:01.239] Browser GROUPEND 
+[00:11:01.239] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[00:11:01.239] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:11:01.239] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:11:01.239] Browser GROUP   Sending event "scroll" to undefined
+[00:11:01.239] Browser GROUP   Request parameters:
+[00:11:01.239] Browser LOG     v: 2
+[00:11:01.239] Browser LOG     tid: G-F4SER380S1
+[00:11:01.239] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:11:01.239] Browser LOG     _p: 1767177073693
+[00:11:01.239] Browser LOG     _dbg: 1
+[00:11:01.239] Browser LOG     gcd: 13l3l3l3l1l1
+[00:11:01.239] Browser LOG     npa: 0
+[00:11:01.239] Browser LOG     dma: 0
+[00:11:01.239] Browser LOG     cid: 1271940746.1767023617
+[00:11:01.239] Browser LOG     ul: en-gb
+[00:11:01.239] Browser LOG     sr: 3840x1600
+[00:11:01.239] Browser LOG     uaa: arm
+[00:11:01.239] Browser LOG     uab: 64
+[00:11:01.239] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:11:01.239] Browser LOG     uamb: 0
+[00:11:01.239] Browser LOG     uam: 
+[00:11:01.239] Browser LOG     uap: macOS
+[00:11:01.239] Browser LOG     uapv: 26.1.0
+[00:11:01.239] Browser LOG     uaw: 0
+[00:11:01.239] Browser LOG     are: 1
+[00:11:01.239] Browser LOG     frm: 0
+[00:11:01.239] Browser LOG     pscdl: noapi
+[00:11:01.239] Browser LOG     _eu: AEAAAAQ
+[00:11:01.239] Browser GROUPEND 
+[00:11:01.239] Browser GROUP   Event parameters:
+[00:11:01.239] Browser LOG     en: scroll
+[00:11:01.239] Browser LOG     epn.percent_scrolled: 90
+[00:11:01.239] Browser LOG     _et: 4109
+[00:11:01.239] Browser GROUPEND 
+[00:11:01.239] Browser GROUP   Shared parameters:
+[00:11:01.239] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115938465~115938469~116184927~116184929~116251938~116251940
+[00:11:01.239] Browser LOG     sid: 1767176143
+[00:11:01.239] Browser LOG     sct: 9
+[00:11:01.239] Browser LOG     seg: 1
+[00:11:01.239] Browser LOG     dl: http://localhost/portfolio/websites
+[00:11:01.239] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:11:01.239] Browser GROUPEND 
+[00:11:01.239] Browser GROUPEND 
+[00:11:01.239] Browser GROUPEND 
+[00:11:01.239] Browser GROUPEND 
+[00:11:07.195] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:11:47.333] Browser LOG     ScrollSmoother initialized successfully
+[00:11:47.810] Browser GROUP   Processing commands (1)
+[00:11:47.810] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:11:47.810] Browser GROUPEND 
+[00:11:47.810] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/websites", send_to: "G-F4SER380S1"}]
+[00:11:47.810] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:11:47.810] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:11:47.810] Browser GROUP   Sending event "page_view" to undefined
+[00:11:47.810] Browser GROUP   Request parameters:
+[00:11:47.810] Browser LOG     v: 2
+[00:11:47.810] Browser LOG     tid: G-F4SER380S1
+[00:11:47.810] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:11:47.810] Browser LOG     _p: 1767177073693
+[00:11:47.810] Browser LOG     _dbg: 1
+[00:11:47.810] Browser LOG     gcd: 13l3l3l3l1l1
+[00:11:47.810] Browser LOG     npa: 0
+[00:11:47.810] Browser LOG     dma: 0
+[00:11:47.810] Browser LOG     cid: 1271940746.1767023617
+[00:11:47.810] Browser LOG     ul: en-gb
+[00:11:47.810] Browser LOG     sr: 3840x1600
+[00:11:47.810] Browser LOG     uaa: arm
+[00:11:47.810] Browser LOG     uab: 64
+[00:11:47.811] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:11:47.811] Browser LOG     uamb: 0
+[00:11:47.811] Browser LOG     uam: 
+[00:11:47.811] Browser LOG     uap: macOS
+[00:11:47.811] Browser LOG     uapv: 26.1.0
+[00:11:47.811] Browser LOG     uaw: 0
+[00:11:47.811] Browser LOG     are: 1
+[00:11:47.811] Browser LOG     frm: 0
+[00:11:47.811] Browser LOG     pscdl: noapi
+[00:11:47.811] Browser LOG     _eu: AEAAAAQ
+[00:11:47.811] Browser GROUPEND 
+[00:11:47.811] Browser GROUP   Event parameters:
+[00:11:47.811] Browser LOG     en: page_view
+[00:11:47.811] Browser LOG     _et: 46567
+[00:11:47.811] Browser GROUPEND 
+[00:11:47.811] Browser GROUP   Shared parameters:
+[00:11:47.811] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115938465~115938469~116184927~116184929~116251938~116251940
+[00:11:47.811] Browser LOG     dl: http://localhost:3000/portfolio
+[00:11:47.811] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[00:11:47.811] Browser LOG     sid: 1767176143
+[00:11:47.811] Browser LOG     sct: 9
+[00:11:47.811] Browser LOG     seg: 1
+[00:11:47.811] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:11:47.811] Browser GROUPEND 
+[00:11:47.811] Browser GROUPEND 
+[00:11:47.811] Browser GROUPEND 
+[00:11:47.811] Browser GROUPEND 
+[00:11:53.150] Browser WARN    Invalid scope
+[00:11:53.150] Browser WARN    Invalid scope
+[00:11:53.150] Browser LOG     ScrollSmoother initialized successfully
+[00:11:53.619] Browser GROUP   Processing commands (1)
+[00:11:53.619] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/websites", gtm.triggers: "6"}
+[00:11:53.619] Browser GROUPEND 
+[00:11:53.619] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/websites", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:11:53.619] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:11:53.619] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:11:53.619] Browser GROUP   Sending event "page_view" to undefined
+[00:11:53.619] Browser GROUP   Request parameters:
+[00:11:53.619] Browser LOG     v: 2
+[00:11:53.619] Browser LOG     tid: G-F4SER380S1
+[00:11:53.619] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:11:53.619] Browser LOG     _p: 1767177073693
+[00:11:53.619] Browser LOG     _dbg: 1
+[00:11:53.619] Browser LOG     gcd: 13l3l3l3l1l1
+[00:11:53.619] Browser LOG     npa: 0
+[00:11:53.619] Browser LOG     dma: 0
+[00:11:53.619] Browser LOG     cid: 1271940746.1767023617
+[00:11:53.619] Browser LOG     ul: en-gb
+[00:11:53.619] Browser LOG     sr: 3840x1600
+[00:11:53.619] Browser LOG     uaa: arm
+[00:11:53.619] Browser LOG     uab: 64
+[00:11:53.619] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:11:53.619] Browser LOG     uamb: 0
+[00:11:53.619] Browser LOG     uam: 
+[00:11:53.619] Browser LOG     uap: macOS
+[00:11:53.619] Browser LOG     uapv: 26.1.0
+[00:11:53.619] Browser LOG     uaw: 0
+[00:11:53.619] Browser LOG     are: 1
+[00:11:53.619] Browser LOG     frm: 0
+[00:11:53.619] Browser LOG     pscdl: noapi
+[00:11:53.619] Browser LOG     _eu: AEAAAAQ
+[00:11:53.619] Browser GROUPEND 
+[00:11:53.619] Browser GROUP   Event parameters:
+[00:11:53.619] Browser LOG     en: page_view
+[00:11:53.619] Browser LOG     _et: 5809
+[00:11:53.619] Browser GROUPEND 
+[00:11:53.619] Browser GROUP   Shared parameters:
+[00:11:53.619] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115938465~115938469~116184927~116184929~116251938~116251940
+[00:11:53.619] Browser LOG     dl: http://localhost:3000/portfolio/websites
+[00:11:53.619] Browser LOG     dr: http://localhost:3000/portfolio
+[00:11:53.619] Browser LOG     sid: 1767176143
+[00:11:53.619] Browser LOG     sct: 9
+[00:11:53.619] Browser LOG     seg: 1
+[00:11:53.619] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:11:53.619] Browser GROUPEND 
+[00:11:53.619] Browser GROUPEND 
+[00:11:53.619] Browser GROUPEND 
+[00:11:53.619] Browser GROUPEND 
+[00:12:38.735] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:39.112] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
+
+[00:12:39.112] Browser GROUP   Processing commands (2)
+[00:12:39.112] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:12:39.112] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Processing GTAG command: ["js", Wed Dec 31 2025 16:02:55 GMT+0530 (India Standard Time)]
+[00:12:39.112] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:12:39.112] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:12:39.112] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:12:39.112] Browser GROUP   Sending event "page_view" to undefined
+[00:12:39.112] Browser GROUP   Request parameters:
+[00:12:39.112] Browser LOG     v: 2
+[00:12:39.112] Browser LOG     tid: G-F4SER380S1
+[00:12:39.112] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:12:39.112] Browser LOG     _p: 1767177175563
+[00:12:39.112] Browser LOG     _dbg: 1
+[00:12:39.112] Browser LOG     gcd: 13l3l3l3l1l1
+[00:12:39.112] Browser LOG     npa: 0
+[00:12:39.112] Browser LOG     dma: 0
+[00:12:39.112] Browser LOG     cid: 1271940746.1767023617
+[00:12:39.112] Browser LOG     ul: en-gb
+[00:12:39.112] Browser LOG     sr: 3840x1600
+[00:12:39.112] Browser LOG     uaa: arm
+[00:12:39.112] Browser LOG     uab: 64
+[00:12:39.112] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:12:39.112] Browser LOG     uamb: 0
+[00:12:39.112] Browser LOG     uam: 
+[00:12:39.112] Browser LOG     uap: macOS
+[00:12:39.112] Browser LOG     uapv: 26.1.0
+[00:12:39.112] Browser LOG     uaw: 0
+[00:12:39.112] Browser LOG     are: 1
+[00:12:39.112] Browser LOG     frm: 0
+[00:12:39.112] Browser LOG     pscdl: noapi
+[00:12:39.112] Browser LOG     _eu: AAAAAAQ
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Event parameters:
+[00:12:39.112] Browser LOG     en: page_view
+[00:12:39.112] Browser LOG     _ee: 1
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Shared parameters:
+[00:12:39.112] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938466~115938469~116184927~116184929~116251938~116251940~116682875
+[00:12:39.112] Browser LOG     sid: 1767176143
+[00:12:39.112] Browser LOG     sct: 9
+[00:12:39.112] Browser LOG     seg: 1
+[00:12:39.112] Browser LOG     dl: http://localhost/portfolio/websites
+[00:12:39.112] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Processing commands (1)
+[00:12:39.112] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Processing commands (1)
+[00:12:39.112] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[00:12:39.112] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:12:39.112] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:12:39.112] Browser GROUP   Sending event "scroll" to undefined
+[00:12:39.112] Browser GROUP   Request parameters:
+[00:12:39.112] Browser LOG     v: 2
+[00:12:39.112] Browser LOG     tid: G-F4SER380S1
+[00:12:39.112] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:12:39.112] Browser LOG     _p: 1767177175563
+[00:12:39.112] Browser LOG     _dbg: 1
+[00:12:39.112] Browser LOG     gcd: 13l3l3l3l1l1
+[00:12:39.112] Browser LOG     npa: 0
+[00:12:39.112] Browser LOG     dma: 0
+[00:12:39.112] Browser LOG     cid: 1271940746.1767023617
+[00:12:39.112] Browser LOG     ul: en-gb
+[00:12:39.112] Browser LOG     sr: 3840x1600
+[00:12:39.112] Browser LOG     uaa: arm
+[00:12:39.112] Browser LOG     uab: 64
+[00:12:39.112] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:12:39.112] Browser LOG     uamb: 0
+[00:12:39.112] Browser LOG     uam: 
+[00:12:39.112] Browser LOG     uap: macOS
+[00:12:39.112] Browser LOG     uapv: 26.1.0
+[00:12:39.112] Browser LOG     uaw: 0
+[00:12:39.112] Browser LOG     are: 1
+[00:12:39.112] Browser LOG     frm: 0
+[00:12:39.112] Browser LOG     pscdl: noapi
+[00:12:39.112] Browser LOG     _eu: AEAAAAQ
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Event parameters:
+[00:12:39.112] Browser LOG     en: scroll
+[00:12:39.112] Browser LOG     epn.percent_scrolled: 90
+[00:12:39.112] Browser LOG     _et: 33
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUP   Shared parameters:
+[00:12:39.112] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391253~115583767~115938466~115938469~116184927~116184929~116251938~116251940~116682875
+[00:12:39.112] Browser LOG     sid: 1767176143
+[00:12:39.112] Browser LOG     sct: 9
+[00:12:39.112] Browser LOG     seg: 1
+[00:12:39.112] Browser LOG     dl: http://localhost/portfolio/websites
+[00:12:39.112] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser GROUPEND 
+[00:12:39.112] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:12:39.228] Browser GROUP   Processing commands (1)
+[00:12:39.228] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:12:39.228] Browser GROUPEND 
+[00:12:39.228] Browser GROUPEND 
+[00:12:39.480] Browser LOG     ScrollSmoother initialized successfully
+[00:12:49.288] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:13:00.876] Browser GROUP   Processing commands (1)
+[00:13:00.876] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "replaceState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio/websites", gtm.triggers: "6"}
+[00:13:00.876] Browser GROUPEND 
+[00:13:00.876] Browser GROUPEND 
+[00:13:12.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:12.693] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
+
+[00:13:12.693] Browser GROUP   Processing commands (2)
+[00:13:12.693] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:13:12.693] Browser GROUPEND 
+[00:13:12.693] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:13:12.693] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:13:12.693] Browser GROUPEND 
+[00:13:12.693] Browser GROUP   Processing GTAG command: ["js", Wed Dec 31 2025 16:03:29 GMT+0530 (India Standard Time)]
+[00:13:12.693] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:13:12.693] Browser GROUPEND 
+[00:13:12.694] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:13:12.694] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:13:12.694] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:13:12.694] Browser GROUP   Sending event "page_view" to undefined
+[00:13:12.694] Browser GROUP   Request parameters:
+[00:13:12.694] Browser LOG     v: 2
+[00:13:12.694] Browser LOG     tid: G-F4SER380S1
+[00:13:12.694] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:13:12.694] Browser LOG     _p: 1767177209140
+[00:13:12.694] Browser LOG     _dbg: 1
+[00:13:12.694] Browser LOG     gcd: 13l3l3l3l1l1
+[00:13:12.694] Browser LOG     npa: 0
+[00:13:12.694] Browser LOG     dma: 0
+[00:13:12.694] Browser LOG     cid: 1271940746.1767023617
+[00:13:12.694] Browser LOG     ul: en-gb
+[00:13:12.694] Browser LOG     sr: 3840x1600
+[00:13:12.694] Browser LOG     uaa: arm
+[00:13:12.694] Browser LOG     uab: 64
+[00:13:12.694] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:13:12.694] Browser LOG     uamb: 0
+[00:13:12.694] Browser LOG     uam: 
+[00:13:12.694] Browser LOG     uap: macOS
+[00:13:12.694] Browser LOG     uapv: 26.1.0
+[00:13:12.694] Browser LOG     uaw: 0
+[00:13:12.694] Browser LOG     are: 1
+[00:13:12.694] Browser LOG     frm: 0
+[00:13:12.694] Browser LOG     pscdl: noapi
+[00:13:12.694] Browser LOG     _eu: AAAAAAQ
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUP   Event parameters:
+[00:13:12.694] Browser LOG     en: page_view
+[00:13:12.694] Browser LOG     _ee: 1
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUP   Shared parameters:
+[00:13:12.694] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:13:12.694] Browser LOG     sid: 1767176143
+[00:13:12.694] Browser LOG     sct: 9
+[00:13:12.694] Browser LOG     seg: 1
+[00:13:12.694] Browser LOG     dl: http://localhost/portfolio/websites
+[00:13:12.694] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUP   Processing commands (1)
+[00:13:12.694] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUP   Processing commands (1)
+[00:13:12.694] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser GROUPEND 
+[00:13:12.694] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:13:13.049] Browser LOG     ScrollSmoother initialized successfully
+[00:13:17.472] Browser GROUP   Processing commands (1)
+[00:13:17.472] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[00:13:17.472] Browser GROUPEND 
+[00:13:17.472] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[00:13:17.472] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:13:17.472] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:13:17.472] Browser GROUP   Sending event "scroll" to undefined
+[00:13:17.472] Browser GROUP   Request parameters:
+[00:13:17.472] Browser LOG     v: 2
+[00:13:17.472] Browser LOG     tid: G-F4SER380S1
+[00:13:17.472] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:13:17.472] Browser LOG     _p: 1767177209140
+[00:13:17.472] Browser LOG     _dbg: 1
+[00:13:17.472] Browser LOG     gcd: 13l3l3l3l1l1
+[00:13:17.472] Browser LOG     npa: 0
+[00:13:17.472] Browser LOG     dma: 0
+[00:13:17.472] Browser LOG     cid: 1271940746.1767023617
+[00:13:17.472] Browser LOG     ul: en-gb
+[00:13:17.472] Browser LOG     sr: 3840x1600
+[00:13:17.472] Browser LOG     uaa: arm
+[00:13:17.472] Browser LOG     uab: 64
+[00:13:17.472] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:13:17.472] Browser LOG     uamb: 0
+[00:13:17.472] Browser LOG     uam: 
+[00:13:17.472] Browser LOG     uap: macOS
+[00:13:17.472] Browser LOG     uapv: 26.1.0
+[00:13:17.472] Browser LOG     uaw: 0
+[00:13:17.472] Browser LOG     are: 1
+[00:13:17.472] Browser LOG     frm: 0
+[00:13:17.472] Browser LOG     pscdl: noapi
+[00:13:17.472] Browser LOG     _eu: AEAAAAQ
+[00:13:17.472] Browser GROUPEND 
+[00:13:17.472] Browser GROUP   Event parameters:
+[00:13:17.472] Browser LOG     en: scroll
+[00:13:17.472] Browser LOG     epn.percent_scrolled: 90
+[00:13:17.472] Browser LOG     _et: 4899
+[00:13:17.472] Browser GROUPEND 
+[00:13:17.472] Browser GROUP   Shared parameters:
+[00:13:17.472] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:13:17.472] Browser LOG     sid: 1767176143
+[00:13:17.472] Browser LOG     sct: 9
+[00:13:17.472] Browser LOG     seg: 1
+[00:13:17.472] Browser LOG     dl: http://localhost/portfolio/websites
+[00:13:17.472] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:13:17.472] Browser GROUPEND 
+[00:13:17.472] Browser GROUPEND 
+[00:13:17.472] Browser GROUPEND 
+[00:13:17.472] Browser GROUPEND 
+[00:13:22.640] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:16:45.947] Server  LOG      ✓ Compiled in 42ms
+[00:17:46.338] Browser LOG     ScrollSmoother initialized successfully
+[00:17:46.823] Browser GROUP   Processing commands (1)
+[00:17:46.823] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:17:46.823] Browser GROUPEND 
+[00:17:46.823] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/websites", send_to: "G-F4SER380S1"}]
+[00:17:46.823] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:17:46.823] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:17:46.823] Browser GROUP   Sending event "page_view" to undefined
+[00:17:46.823] Browser GROUP   Request parameters:
+[00:17:46.823] Browser LOG     v: 2
+[00:17:46.823] Browser LOG     tid: G-F4SER380S1
+[00:17:46.823] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:17:46.823] Browser LOG     _p: 1767177209140
+[00:17:46.823] Browser LOG     _dbg: 1
+[00:17:46.823] Browser LOG     gcd: 13l3l3l3l1l1
+[00:17:46.823] Browser LOG     npa: 0
+[00:17:46.823] Browser LOG     dma: 0
+[00:17:46.823] Browser LOG     cid: 1271940746.1767023617
+[00:17:46.823] Browser LOG     ul: en-gb
+[00:17:46.823] Browser LOG     sr: 3840x1600
+[00:17:46.823] Browser LOG     uaa: arm
+[00:17:46.823] Browser LOG     uab: 64
+[00:17:46.823] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:17:46.823] Browser LOG     uamb: 0
+[00:17:46.823] Browser LOG     uam: 
+[00:17:46.823] Browser LOG     uap: macOS
+[00:17:46.823] Browser LOG     uapv: 26.1.0
+[00:17:46.823] Browser LOG     uaw: 0
+[00:17:46.823] Browser LOG     are: 1
+[00:17:46.823] Browser LOG     frm: 0
+[00:17:46.823] Browser LOG     pscdl: noapi
+[00:17:46.823] Browser LOG     _eu: AEAAAAQ
+[00:17:46.823] Browser GROUPEND 
+[00:17:46.823] Browser GROUP   Event parameters:
+[00:17:46.823] Browser LOG     en: page_view
+[00:17:46.823] Browser LOG     _et: 28302
+[00:17:46.823] Browser GROUPEND 
+[00:17:46.823] Browser GROUP   Shared parameters:
+[00:17:46.823] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:17:46.823] Browser LOG     dl: http://localhost:3000/portfolio
+[00:17:46.823] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[00:17:46.823] Browser LOG     sid: 1767176143
+[00:17:46.823] Browser LOG     sct: 9
+[00:17:46.823] Browser LOG     seg: 1
+[00:17:46.823] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:17:46.823] Browser GROUPEND 
+[00:17:46.823] Browser GROUPEND 
+[00:17:46.823] Browser GROUPEND 
+[00:17:46.823] Browser GROUPEND 
+[00:17:48.423] Browser WARN    Invalid scope
+[00:17:48.423] Browser WARN    Invalid scope
+[00:17:48.423] Browser LOG     ScrollSmoother initialized successfully
+[00:17:48.933] Browser GROUP   Processing commands (1)
+[00:17:48.933] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/logos", gtm.triggers: "6"}
+[00:17:48.933] Browser GROUPEND 
+[00:17:48.933] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/logos", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:17:48.933] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:17:48.933] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:17:48.933] Browser GROUP   Sending event "page_view" to undefined
+[00:17:48.933] Browser GROUP   Request parameters:
+[00:17:48.933] Browser LOG     v: 2
+[00:17:48.933] Browser LOG     tid: G-F4SER380S1
+[00:17:48.933] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:17:48.933] Browser LOG     _p: 1767177209140
+[00:17:48.933] Browser LOG     _dbg: 1
+[00:17:48.933] Browser LOG     gcd: 13l3l3l3l1l1
+[00:17:48.933] Browser LOG     npa: 0
+[00:17:48.933] Browser LOG     dma: 0
+[00:17:48.933] Browser LOG     cid: 1271940746.1767023617
+[00:17:48.933] Browser LOG     ul: en-gb
+[00:17:48.933] Browser LOG     sr: 3840x1600
+[00:17:48.933] Browser LOG     uaa: arm
+[00:17:48.933] Browser LOG     uab: 64
+[00:17:48.933] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:17:48.933] Browser LOG     uamb: 0
+[00:17:48.933] Browser LOG     uam: 
+[00:17:48.933] Browser LOG     uap: macOS
+[00:17:48.933] Browser LOG     uapv: 26.1.0
+[00:17:48.933] Browser LOG     uaw: 0
+[00:17:48.933] Browser LOG     are: 1
+[00:17:48.933] Browser LOG     frm: 0
+[00:17:48.933] Browser LOG     pscdl: noapi
+[00:17:48.933] Browser LOG     _eu: AEAAAAQ
+[00:17:48.933] Browser GROUPEND 
+[00:17:48.933] Browser GROUP   Event parameters:
+[00:17:48.933] Browser LOG     en: page_view
+[00:17:48.933] Browser LOG     _et: 2099
+[00:17:48.933] Browser GROUPEND 
+[00:17:48.933] Browser GROUP   Shared parameters:
+[00:17:48.933] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:17:48.933] Browser LOG     dl: http://localhost:3000/portfolio/logos
+[00:17:48.933] Browser LOG     dr: http://localhost:3000/portfolio
+[00:17:48.933] Browser LOG     sid: 1767176143
+[00:17:48.939] Browser LOG     sct: 9
+[00:17:48.939] Browser LOG     seg: 1
+[00:17:48.939] Browser LOG     dt: Logo Design Portfolio - Team Nirosha | Our Work
+[00:17:48.939] Browser GROUPEND 
+[00:17:48.939] Browser GROUPEND 
+[00:17:48.939] Browser GROUPEND 
+[00:17:48.939] Browser GROUPEND 
+[00:19:43.712] Server  LOG      ✓ Compiled in 43ms
+[00:20:00.954] Browser LOG     ScrollSmoother initialized successfully
+[00:20:01.426] Browser GROUP   Processing commands (1)
+[00:20:01.426] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/logos", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:20:01.426] Browser GROUPEND 
+[00:20:01.426] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/logos", send_to: "G-F4SER380S1"}]
+[00:20:01.426] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:20:01.426] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:20:01.426] Browser GROUP   Sending event "page_view" to undefined
+[00:20:01.426] Browser GROUP   Request parameters:
+[00:20:01.426] Browser LOG     v: 2
+[00:20:01.426] Browser LOG     tid: G-F4SER380S1
+[00:20:01.426] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:20:01.426] Browser LOG     _p: 1767177209140
+[00:20:01.426] Browser LOG     _dbg: 1
+[00:20:01.426] Browser LOG     gcd: 13l3l3l3l1l1
+[00:20:01.426] Browser LOG     npa: 0
+[00:20:01.426] Browser LOG     dma: 0
+[00:20:01.426] Browser LOG     cid: 1271940746.1767023617
+[00:20:01.426] Browser LOG     ul: en-gb
+[00:20:01.426] Browser LOG     sr: 3840x1600
+[00:20:01.426] Browser LOG     uaa: arm
+[00:20:01.426] Browser LOG     uab: 64
+[00:20:01.426] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:20:01.426] Browser LOG     uamb: 0
+[00:20:01.426] Browser LOG     uam: 
+[00:20:01.426] Browser LOG     uap: macOS
+[00:20:01.426] Browser LOG     uapv: 26.1.0
+[00:20:01.426] Browser LOG     uaw: 0
+[00:20:01.426] Browser LOG     are: 1
+[00:20:01.426] Browser LOG     frm: 0
+[00:20:01.426] Browser LOG     pscdl: noapi
+[00:20:01.426] Browser LOG     _eu: AEAAAAQ
+[00:20:01.426] Browser GROUPEND 
+[00:20:01.426] Browser GROUP   Event parameters:
+[00:20:01.426] Browser LOG     en: page_view
+[00:20:01.426] Browser LOG     _et: 14693
+[00:20:01.426] Browser GROUPEND 
+[00:20:01.426] Browser GROUP   Shared parameters:
+[00:20:01.426] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:20:01.426] Browser LOG     dl: http://localhost:3000/portfolio
+[00:20:01.426] Browser LOG     dr: http://localhost:3000/portfolio/logos
+[00:20:01.426] Browser LOG     sid: 1767176143
+[00:20:01.426] Browser LOG     sct: 9
+[00:20:01.426] Browser LOG     seg: 1
+[00:20:01.426] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:20:01.426] Browser GROUPEND 
+[00:20:01.426] Browser GROUPEND 
+[00:20:01.426] Browser GROUPEND 
+[00:20:01.426] Browser GROUPEND 
+[00:20:02.519] Browser WARN    Invalid scope
+[00:20:02.519] Browser WARN    Invalid scope
+[00:20:02.519] Browser LOG     ScrollSmoother initialized successfully
+[00:20:02.996] Browser GROUP   Processing commands (1)
+[00:20:02.996] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/logos", gtm.triggers: "6"}
+[00:20:02.996] Browser GROUPEND 
+[00:20:02.996] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/logos", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:20:02.996] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:20:02.996] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:20:02.996] Browser GROUP   Sending event "page_view" to undefined
+[00:20:02.996] Browser GROUP   Request parameters:
+[00:20:02.996] Browser LOG     v: 2
+[00:20:02.996] Browser LOG     tid: G-F4SER380S1
+[00:20:02.996] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:20:02.996] Browser LOG     _p: 1767177209140
+[00:20:02.996] Browser LOG     _dbg: 1
+[00:20:02.996] Browser LOG     gcd: 13l3l3l3l1l1
+[00:20:02.996] Browser LOG     npa: 0
+[00:20:02.996] Browser LOG     dma: 0
+[00:20:02.996] Browser LOG     cid: 1271940746.1767023617
+[00:20:02.996] Browser LOG     ul: en-gb
+[00:20:02.996] Browser LOG     sr: 3840x1600
+[00:20:02.996] Browser LOG     uaa: arm
+[00:20:02.996] Browser LOG     uab: 64
+[00:20:02.996] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:20:02.996] Browser LOG     uamb: 0
+[00:20:02.996] Browser LOG     uam: 
+[00:20:02.996] Browser LOG     uap: macOS
+[00:20:02.996] Browser LOG     uapv: 26.1.0
+[00:20:02.996] Browser LOG     uaw: 0
+[00:20:02.996] Browser LOG     are: 1
+[00:20:02.996] Browser LOG     frm: 0
+[00:20:02.996] Browser LOG     pscdl: noapi
+[00:20:02.996] Browser LOG     _eu: AEAAAAQ
+[00:20:02.996] Browser GROUPEND 
+[00:20:02.996] Browser GROUP   Event parameters:
+[00:20:02.996] Browser LOG     en: page_view
+[00:20:02.996] Browser LOG     _et: 1569
+[00:20:02.996] Browser GROUPEND 
+[00:20:02.996] Browser GROUP   Shared parameters:
+[00:20:02.996] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:20:02.996] Browser LOG     dl: http://localhost:3000/portfolio/logos
+[00:20:02.996] Browser LOG     dr: http://localhost:3000/portfolio
+[00:20:02.996] Browser LOG     sid: 1767176143
+[00:20:02.996] Browser LOG     sct: 9
+[00:20:02.996] Browser LOG     seg: 1
+[00:20:02.996] Browser LOG     dt: Logo Design Portfolio - Team Nirosha | Our Work
+[00:20:02.996] Browser GROUPEND 
+[00:20:02.996] Browser GROUPEND 
+[00:20:02.996] Browser GROUPEND 
+[00:20:02.996] Browser GROUPEND 
+[00:20:24.169] Browser LOG     ScrollSmoother initialized successfully
+[00:20:24.661] Browser GROUP   Processing commands (1)
+[00:20:24.661] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/logos", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:20:24.661] Browser GROUPEND 
+[00:20:24.661] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/logos", send_to: "G-F4SER380S1"}]
+[00:20:24.661] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:20:24.661] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:20:24.661] Browser GROUP   Sending event "page_view" to undefined
+[00:20:24.661] Browser GROUP   Request parameters:
+[00:20:24.661] Browser LOG     v: 2
+[00:20:24.661] Browser LOG     tid: G-F4SER380S1
+[00:20:24.661] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:20:24.661] Browser LOG     _p: 1767177209140
+[00:20:24.661] Browser LOG     _dbg: 1
+[00:20:24.661] Browser LOG     gcd: 13l3l3l3l1l1
+[00:20:24.661] Browser LOG     npa: 0
+[00:20:24.661] Browser LOG     dma: 0
+[00:20:24.661] Browser LOG     cid: 1271940746.1767023617
+[00:20:24.661] Browser LOG     ul: en-gb
+[00:20:24.661] Browser LOG     sr: 3840x1600
+[00:20:24.661] Browser LOG     uaa: arm
+[00:20:24.661] Browser LOG     uab: 64
+[00:20:24.661] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:20:24.661] Browser LOG     uamb: 0
+[00:20:24.661] Browser LOG     uam: 
+[00:20:24.661] Browser LOG     uap: macOS
+[00:20:24.661] Browser LOG     uapv: 26.1.0
+[00:20:24.661] Browser LOG     uaw: 0
+[00:20:24.661] Browser LOG     are: 1
+[00:20:24.661] Browser LOG     frm: 0
+[00:20:24.661] Browser LOG     pscdl: noapi
+[00:20:24.661] Browser LOG     _eu: AEAAAAQ
+[00:20:24.661] Browser GROUPEND 
+[00:20:24.661] Browser GROUP   Event parameters:
+[00:20:24.661] Browser LOG     en: page_view
+[00:20:24.661] Browser LOG     _et: 21645
+[00:20:24.661] Browser GROUPEND 
+[00:20:24.661] Browser GROUP   Shared parameters:
+[00:20:24.661] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:20:24.661] Browser LOG     dl: http://localhost:3000/portfolio
+[00:20:24.661] Browser LOG     dr: http://localhost:3000/portfolio/logos
+[00:20:24.661] Browser LOG     sid: 1767176143
+[00:20:24.661] Browser LOG     sct: 9
+[00:20:24.661] Browser LOG     seg: 1
+[00:20:24.661] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:20:24.661] Browser GROUPEND 
+[00:20:24.661] Browser GROUPEND 
+[00:20:24.661] Browser GROUPEND 
+[00:20:24.661] Browser GROUPEND 
+[00:20:25.303] Browser WARN    Invalid scope
+[00:20:25.303] Browser WARN    Invalid scope
+[00:20:25.304] Browser LOG     ScrollSmoother initialized successfully
+[00:20:25.784] Browser GROUP   Processing commands (1)
+[00:20:25.784] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/business-card", gtm.triggers: "6"}
+[00:20:25.784] Browser GROUPEND 
+[00:20:25.784] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/business-card", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:20:25.784] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:20:25.784] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:20:25.784] Browser GROUP   Sending event "page_view" to undefined
+[00:20:25.784] Browser GROUP   Request parameters:
+[00:20:25.784] Browser LOG     v: 2
+[00:20:25.784] Browser LOG     tid: G-F4SER380S1
+[00:20:25.784] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:20:25.784] Browser LOG     _p: 1767177209140
+[00:20:25.784] Browser LOG     _dbg: 1
+[00:20:25.784] Browser LOG     gcd: 13l3l3l3l1l1
+[00:20:25.784] Browser LOG     npa: 0
+[00:20:25.784] Browser LOG     dma: 0
+[00:20:25.784] Browser LOG     cid: 1271940746.1767023617
+[00:20:25.784] Browser LOG     ul: en-gb
+[00:20:25.784] Browser LOG     sr: 3840x1600
+[00:20:25.784] Browser LOG     uaa: arm
+[00:20:25.784] Browser LOG     uab: 64
+[00:20:25.784] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:20:25.784] Browser LOG     uamb: 0
+[00:20:25.784] Browser LOG     uam: 
+[00:20:25.784] Browser LOG     uap: macOS
+[00:20:25.784] Browser LOG     uapv: 26.1.0
+[00:20:25.784] Browser LOG     uaw: 0
+[00:20:25.784] Browser LOG     are: 1
+[00:20:25.784] Browser LOG     frm: 0
+[00:20:25.784] Browser LOG     pscdl: noapi
+[00:20:25.784] Browser LOG     _eu: AEAAAAQ
+[00:20:25.784] Browser GROUPEND 
+[00:20:25.784] Browser GROUP   Event parameters:
+[00:20:25.784] Browser LOG     en: page_view
+[00:20:25.784] Browser LOG     _et: 1138
+[00:20:25.784] Browser GROUPEND 
+[00:20:25.784] Browser GROUP   Shared parameters:
+[00:20:25.784] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:20:25.784] Browser LOG     dl: http://localhost:3000/portfolio/business-card
+[00:20:25.784] Browser LOG     dr: http://localhost:3000/portfolio
+[00:20:25.784] Browser LOG     sid: 1767176143
+[00:20:25.784] Browser LOG     sct: 9
+[00:20:25.784] Browser LOG     seg: 1
+[00:20:25.784] Browser LOG     dt: Business Cards Portfolio - Team Nirosha | Our Work
+[00:20:25.784] Browser GROUPEND 
+[00:20:25.784] Browser GROUPEND 
+[00:20:25.784] Browser GROUPEND 
+[00:20:25.784] Browser GROUPEND 
+[00:20:33.117] Browser LOG     ScrollSmoother initialized successfully
+[00:20:33.583] Browser GROUP   Processing commands (1)
+[00:20:33.583] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/business-card", gtm.newUrl: "http://localhost:3000/blog", gtm.triggers: "6"}
+[00:20:33.583] Browser GROUPEND 
+[00:20:33.583] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/blog", page_referrer: "http://localhost:3000/portfolio/business-card", send_to: "G-F4SER380S1"}]
+[00:20:33.583] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:20:33.583] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:20:33.583] Browser GROUP   Sending event "page_view" to undefined
+[00:20:33.583] Browser GROUP   Request parameters:
+[00:20:33.583] Browser LOG     v: 2
+[00:20:33.583] Browser LOG     tid: G-F4SER380S1
+[00:20:33.583] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:20:33.583] Browser LOG     _p: 1767177209140
+[00:20:33.583] Browser LOG     _dbg: 1
+[00:20:33.583] Browser LOG     gcd: 13l3l3l3l1l1
+[00:20:33.583] Browser LOG     npa: 0
+[00:20:33.583] Browser LOG     dma: 0
+[00:20:33.583] Browser LOG     cid: 1271940746.1767023617
+[00:20:33.583] Browser LOG     ul: en-gb
+[00:20:33.583] Browser LOG     sr: 3840x1600
+[00:20:33.583] Browser LOG     uaa: arm
+[00:20:33.583] Browser LOG     uab: 64
+[00:20:33.583] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:20:33.583] Browser LOG     uamb: 0
+[00:20:33.583] Browser LOG     uam: 
+[00:20:33.583] Browser LOG     uap: macOS
+[00:20:33.583] Browser LOG     uapv: 26.1.0
+[00:20:33.583] Browser LOG     uaw: 0
+[00:20:33.583] Browser LOG     are: 1
+[00:20:33.583] Browser LOG     frm: 0
+[00:20:33.583] Browser LOG     pscdl: noapi
+[00:20:33.583] Browser LOG     _eu: AEAAAAQ
+[00:20:33.583] Browser GROUPEND 
+[00:20:33.583] Browser GROUP   Event parameters:
+[00:20:33.583] Browser LOG     en: page_view
+[00:20:33.583] Browser LOG     _et: 7798
+[00:20:33.583] Browser GROUPEND 
+[00:20:33.583] Browser GROUP   Shared parameters:
+[00:20:33.583] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:20:33.583] Browser LOG     dl: http://localhost:3000/blog
+[00:20:33.583] Browser LOG     dr: http://localhost:3000/portfolio/business-card
+[00:20:33.583] Browser LOG     sid: 1767176143
+[00:20:33.583] Browser LOG     sct: 9
+[00:20:33.583] Browser LOG     seg: 1
+[00:20:33.583] Browser LOG     dt: Blog - Team Nirosha | Digital Marketing Insights
+[00:20:33.583] Browser GROUPEND 
+[00:20:33.583] Browser GROUPEND 
+[00:20:33.583] Browser GROUPEND 
+[00:20:33.583] Browser GROUPEND 
+[00:20:35.184] Browser LOG     ScrollSmoother initialized successfully
+[00:20:35.669] Browser GROUP   Processing commands (1)
+[00:20:35.669] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/blog", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:20:35.669] Browser GROUPEND 
+[00:20:35.669] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/blog", send_to: "G-F4SER380S1"}]
+[00:20:35.669] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:20:35.669] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:20:35.669] Browser GROUP   Sending event "page_view" to undefined
+[00:20:35.669] Browser GROUP   Request parameters:
+[00:20:35.669] Browser LOG     v: 2
+[00:20:35.669] Browser LOG     tid: G-F4SER380S1
+[00:20:35.669] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:20:35.669] Browser LOG     _p: 1767177209140
+[00:20:35.669] Browser LOG     _dbg: 1
+[00:20:35.669] Browser LOG     gcd: 13l3l3l3l1l1
+[00:20:35.669] Browser LOG     npa: 0
+[00:20:35.669] Browser LOG     dma: 0
+[00:20:35.669] Browser LOG     cid: 1271940746.1767023617
+[00:20:35.669] Browser LOG     ul: en-gb
+[00:20:35.669] Browser LOG     sr: 3840x1600
+[00:20:35.669] Browser LOG     uaa: arm
+[00:20:35.669] Browser LOG     uab: 64
+[00:20:35.669] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:20:35.669] Browser LOG     uamb: 0
+[00:20:35.669] Browser LOG     uam: 
+[00:20:35.669] Browser LOG     uap: macOS
+[00:20:35.669] Browser LOG     uapv: 26.1.0
+[00:20:35.669] Browser LOG     uaw: 0
+[00:20:35.669] Browser LOG     are: 1
+[00:20:35.669] Browser LOG     frm: 0
+[00:20:35.669] Browser LOG     pscdl: noapi
+[00:20:35.669] Browser LOG     _eu: AEAAAAQ
+[00:20:35.669] Browser GROUPEND 
+[00:20:35.669] Browser GROUP   Event parameters:
+[00:20:35.669] Browser LOG     en: page_view
+[00:20:35.669] Browser LOG     _et: 2084
+[00:20:35.669] Browser GROUPEND 
+[00:20:35.669] Browser GROUP   Shared parameters:
+[00:20:35.669] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:20:35.669] Browser LOG     dl: http://localhost:3000/portfolio
+[00:20:35.669] Browser LOG     dr: http://localhost:3000/blog
+[00:20:35.669] Browser LOG     sid: 1767176143
+[00:20:35.669] Browser LOG     sct: 9
+[00:20:35.669] Browser LOG     seg: 1
+[00:20:35.669] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:20:35.670] Browser GROUPEND 
+[00:20:35.670] Browser GROUPEND 
+[00:20:35.670] Browser GROUPEND 
+[00:20:35.670] Browser GROUPEND 
+[00:20:39.715] Browser WARN    Invalid scope
+[00:20:39.715] Browser WARN    Invalid scope
+[00:20:39.715] Browser LOG     ScrollSmoother initialized successfully
+[00:20:40.199] Browser GROUP   Processing commands (1)
+[00:20:40.199] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/posters", gtm.triggers: "6"}
+[00:20:40.199] Browser GROUPEND 
+[00:20:40.199] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/posters", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:20:40.199] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:20:40.199] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:20:40.199] Browser GROUP   Sending event "page_view" to undefined
+[00:20:40.199] Browser GROUP   Request parameters:
+[00:20:40.199] Browser LOG     v: 2
+[00:20:40.199] Browser LOG     tid: G-F4SER380S1
+[00:20:40.199] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:20:40.199] Browser LOG     _p: 1767177209140
+[00:20:40.199] Browser LOG     _dbg: 1
+[00:20:40.199] Browser LOG     gcd: 13l3l3l3l1l1
+[00:20:40.199] Browser LOG     npa: 0
+[00:20:40.199] Browser LOG     dma: 0
+[00:20:40.199] Browser LOG     cid: 1271940746.1767023617
+[00:20:40.199] Browser LOG     ul: en-gb
+[00:20:40.199] Browser LOG     sr: 3840x1600
+[00:20:40.199] Browser LOG     uaa: arm
+[00:20:40.199] Browser LOG     uab: 64
+[00:20:40.199] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:20:40.199] Browser LOG     uamb: 0
+[00:20:40.199] Browser LOG     uam: 
+[00:20:40.199] Browser LOG     uap: macOS
+[00:20:40.199] Browser LOG     uapv: 26.1.0
+[00:20:40.199] Browser LOG     uaw: 0
+[00:20:40.199] Browser LOG     are: 1
+[00:20:40.199] Browser LOG     frm: 0
+[00:20:40.199] Browser LOG     pscdl: noapi
+[00:20:40.199] Browser LOG     _eu: AEAAAAQ
+[00:20:40.199] Browser GROUPEND 
+[00:20:40.199] Browser GROUP   Event parameters:
+[00:20:40.199] Browser LOG     en: page_view
+[00:20:40.199] Browser LOG     _et: 4528
+[00:20:40.199] Browser GROUPEND 
+[00:20:40.199] Browser GROUP   Shared parameters:
+[00:20:40.199] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:20:40.199] Browser LOG     dl: http://localhost:3000/portfolio/posters
+[00:20:40.199] Browser LOG     dr: http://localhost:3000/portfolio
+[00:20:40.199] Browser LOG     sid: 1767176143
+[00:20:40.199] Browser LOG     sct: 9
+[00:20:40.199] Browser LOG     seg: 1
+[00:20:40.199] Browser LOG     dt: Posters Portfolio - Team Nirosha | Our Work
+[00:20:40.199] Browser GROUPEND 
+[00:20:40.199] Browser GROUPEND 
+[00:20:40.199] Browser GROUPEND 
+[00:20:40.199] Browser GROUPEND 
+[00:20:50.108] Server  LOG      ✓ Compiled in 10ms
+[00:27:43.717] Browser LOG     ScrollSmoother initialized successfully
+[00:27:44.212] Browser GROUP   Processing commands (1)
+[00:27:44.212] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/posters", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:27:44.212] Browser GROUPEND 
+[00:27:44.212] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/posters", send_to: "G-F4SER380S1"}]
+[00:27:44.212] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:27:44.212] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:27:44.212] Browser GROUP   Sending event "page_view" to undefined
+[00:27:44.212] Browser GROUP   Request parameters:
+[00:27:44.212] Browser LOG     v: 2
+[00:27:44.212] Browser LOG     tid: G-F4SER380S1
+[00:27:44.212] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:27:44.212] Browser LOG     _p: 1767177209140
+[00:27:44.212] Browser LOG     _dbg: 1
+[00:27:44.212] Browser LOG     gcd: 13l3l3l3l1l1
+[00:27:44.212] Browser LOG     npa: 0
+[00:27:44.212] Browser LOG     dma: 0
+[00:27:44.212] Browser LOG     cid: 1271940746.1767023617
+[00:27:44.212] Browser LOG     ul: en-gb
+[00:27:44.212] Browser LOG     sr: 3840x1600
+[00:27:44.212] Browser LOG     uaa: arm
+[00:27:44.212] Browser LOG     uab: 64
+[00:27:44.212] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:27:44.212] Browser LOG     uamb: 0
+[00:27:44.212] Browser LOG     uam: 
+[00:27:44.212] Browser LOG     uap: macOS
+[00:27:44.213] Browser LOG     uapv: 26.1.0
+[00:27:44.213] Browser LOG     uaw: 0
+[00:27:44.213] Browser LOG     are: 1
+[00:27:44.213] Browser LOG     frm: 0
+[00:27:44.213] Browser LOG     pscdl: noapi
+[00:27:44.213] Browser LOG     _eu: AEAAAAQ
+[00:27:44.213] Browser GROUPEND 
+[00:27:44.213] Browser GROUP   Event parameters:
+[00:27:44.213] Browser LOG     en: page_view
+[00:27:44.213] Browser LOG     _et: 118447
+[00:27:44.213] Browser GROUPEND 
+[00:27:44.213] Browser GROUP   Shared parameters:
+[00:27:44.213] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:27:44.213] Browser LOG     dl: http://localhost:3000/portfolio
+[00:27:44.213] Browser LOG     dr: http://localhost:3000/portfolio/posters
+[00:27:44.213] Browser LOG     sid: 1767176143
+[00:27:44.213] Browser LOG     sct: 9
+[00:27:44.213] Browser LOG     seg: 1
+[00:27:44.213] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:27:44.213] Browser GROUPEND 
+[00:27:44.213] Browser GROUPEND 
+[00:27:44.213] Browser GROUPEND 
+[00:27:44.213] Browser GROUPEND 
+[00:27:45.041] Browser WARN    Invalid scope
+[00:27:45.041] Browser WARN    Invalid scope
+[00:27:45.041] Browser LOG     ScrollSmoother initialized successfully
+[00:27:45.511] Browser GROUP   Processing commands (1)
+[00:27:45.511] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/logos", gtm.triggers: "6"}
+[00:27:45.511] Browser GROUPEND 
+[00:27:45.511] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/logos", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:27:45.511] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:27:45.511] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:27:45.511] Browser GROUP   Sending event "page_view" to undefined
+[00:27:45.511] Browser GROUP   Request parameters:
+[00:27:45.511] Browser LOG     v: 2
+[00:27:45.511] Browser LOG     tid: G-F4SER380S1
+[00:27:45.511] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:27:45.511] Browser LOG     _p: 1767177209140
+[00:27:45.511] Browser LOG     _dbg: 1
+[00:27:45.511] Browser LOG     gcd: 13l3l3l3l1l1
+[00:27:45.511] Browser LOG     npa: 0
+[00:27:45.511] Browser LOG     dma: 0
+[00:27:45.511] Browser LOG     cid: 1271940746.1767023617
+[00:27:45.511] Browser LOG     ul: en-gb
+[00:27:45.511] Browser LOG     sr: 3840x1600
+[00:27:45.511] Browser LOG     uaa: arm
+[00:27:45.511] Browser LOG     uab: 64
+[00:27:45.511] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:27:45.511] Browser LOG     uamb: 0
+[00:27:45.511] Browser LOG     uam: 
+[00:27:45.511] Browser LOG     uap: macOS
+[00:27:45.511] Browser LOG     uapv: 26.1.0
+[00:27:45.511] Browser LOG     uaw: 0
+[00:27:45.511] Browser LOG     are: 1
+[00:27:45.511] Browser LOG     frm: 0
+[00:27:45.511] Browser LOG     pscdl: noapi
+[00:27:45.511] Browser LOG     _eu: AEAAAAQ
+[00:27:45.511] Browser GROUPEND 
+[00:27:45.511] Browser GROUP   Event parameters:
+[00:27:45.511] Browser LOG     en: page_view
+[00:27:45.511] Browser LOG     _et: 1311
+[00:27:45.511] Browser GROUPEND 
+[00:27:45.511] Browser GROUP   Shared parameters:
+[00:27:45.511] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:27:45.511] Browser LOG     dl: http://localhost:3000/portfolio/logos
+[00:27:45.511] Browser LOG     dr: http://localhost:3000/portfolio
+[00:27:45.511] Browser LOG     sid: 1767176143
+[00:27:45.511] Browser LOG     sct: 9
+[00:27:45.511] Browser LOG     seg: 1
+[00:27:45.511] Browser LOG     dt: Logo Design Portfolio - Team Nirosha | Our Work
+[00:27:45.511] Browser GROUPEND 
+[00:27:45.511] Browser GROUPEND 
+[00:27:45.511] Browser GROUPEND 
+[00:27:45.511] Browser GROUPEND 
+[00:28:09.154] Browser LOG     ScrollSmoother initialized successfully
+[00:28:09.631] Browser GROUP   Processing commands (1)
+[00:28:09.631] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/logos", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:28:09.631] Browser GROUPEND 
+[00:28:09.631] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/logos", send_to: "G-F4SER380S1"}]
+[00:28:09.631] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:28:09.631] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:28:09.631] Browser GROUP   Sending event "page_view" to undefined
+[00:28:09.631] Browser GROUP   Request parameters:
+[00:28:09.631] Browser LOG     v: 2
+[00:28:09.631] Browser LOG     tid: G-F4SER380S1
+[00:28:09.631] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:28:09.631] Browser LOG     _p: 1767177209140
+[00:28:09.631] Browser LOG     _dbg: 1
+[00:28:09.631] Browser LOG     gcd: 13l3l3l3l1l1
+[00:28:09.631] Browser LOG     npa: 0
+[00:28:09.631] Browser LOG     dma: 0
+[00:28:09.631] Browser LOG     cid: 1271940746.1767023617
+[00:28:09.631] Browser LOG     ul: en-gb
+[00:28:09.631] Browser LOG     sr: 3840x1600
+[00:28:09.631] Browser LOG     uaa: arm
+[00:28:09.631] Browser LOG     uab: 64
+[00:28:09.631] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:28:09.631] Browser LOG     uamb: 0
+[00:28:09.631] Browser LOG     uam: 
+[00:28:09.631] Browser LOG     uap: macOS
+[00:28:09.631] Browser LOG     uapv: 26.1.0
+[00:28:09.631] Browser LOG     uaw: 0
+[00:28:09.631] Browser LOG     are: 1
+[00:28:09.631] Browser LOG     frm: 0
+[00:28:09.631] Browser LOG     pscdl: noapi
+[00:28:09.631] Browser LOG     _eu: AEAAAAQ
+[00:28:09.631] Browser GROUPEND 
+[00:28:09.631] Browser GROUP   Event parameters:
+[00:28:09.631] Browser LOG     en: page_view
+[00:28:09.631] Browser LOG     _et: 18950
+[00:28:09.631] Browser GROUPEND 
+[00:28:09.631] Browser GROUP   Shared parameters:
+[00:28:09.631] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:28:09.631] Browser LOG     dl: http://localhost:3000/portfolio
+[00:28:09.631] Browser LOG     dr: http://localhost:3000/portfolio/logos
+[00:28:09.631] Browser LOG     sid: 1767176143
+[00:28:09.631] Browser LOG     sct: 9
+[00:28:09.631] Browser LOG     seg: 1
+[00:28:09.631] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:28:09.631] Browser GROUPEND 
+[00:28:09.631] Browser GROUPEND 
+[00:28:09.631] Browser GROUPEND 
+[00:28:09.631] Browser GROUPEND 
+[00:28:10.439] Browser WARN    Invalid scope
+[00:28:10.440] Browser WARN    Invalid scope
+[00:28:10.440] Browser LOG     ScrollSmoother initialized successfully
+[00:28:10.925] Browser GROUP   Processing commands (1)
+[00:28:10.925] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/business-card", gtm.triggers: "6"}
+[00:28:10.925] Browser GROUPEND 
+[00:28:10.925] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/business-card", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:28:10.925] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:28:10.925] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:28:10.925] Browser GROUP   Sending event "page_view" to undefined
+[00:28:10.925] Browser GROUP   Request parameters:
+[00:28:10.925] Browser LOG     v: 2
+[00:28:10.925] Browser LOG     tid: G-F4SER380S1
+[00:28:10.925] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:28:10.925] Browser LOG     _p: 1767177209140
+[00:28:10.925] Browser LOG     _dbg: 1
+[00:28:10.925] Browser LOG     gcd: 13l3l3l3l1l1
+[00:28:10.925] Browser LOG     npa: 0
+[00:28:10.925] Browser LOG     dma: 0
+[00:28:10.925] Browser LOG     cid: 1271940746.1767023617
+[00:28:10.925] Browser LOG     ul: en-gb
+[00:28:10.925] Browser LOG     sr: 3840x1600
+[00:28:10.925] Browser LOG     uaa: arm
+[00:28:10.925] Browser LOG     uab: 64
+[00:28:10.925] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:28:10.925] Browser LOG     uamb: 0
+[00:28:10.925] Browser LOG     uam: 
+[00:28:10.925] Browser LOG     uap: macOS
+[00:28:10.925] Browser LOG     uapv: 26.1.0
+[00:28:10.925] Browser LOG     uaw: 0
+[00:28:10.925] Browser LOG     are: 1
+[00:28:10.925] Browser LOG     frm: 0
+[00:28:10.925] Browser LOG     pscdl: noapi
+[00:28:10.925] Browser LOG     _eu: AEAAAAQ
+[00:28:10.925] Browser GROUPEND 
+[00:28:10.925] Browser GROUP   Event parameters:
+[00:28:10.925] Browser LOG     en: page_view
+[00:28:10.925] Browser LOG     _et: 1289
+[00:28:10.925] Browser GROUPEND 
+[00:28:10.925] Browser GROUP   Shared parameters:
+[00:28:10.925] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:28:10.925] Browser LOG     dl: http://localhost:3000/portfolio/business-card
+[00:28:10.925] Browser LOG     dr: http://localhost:3000/portfolio
+[00:28:10.925] Browser LOG     sid: 1767176143
+[00:28:10.925] Browser LOG     sct: 9
+[00:28:10.925] Browser LOG     seg: 1
+[00:28:10.926] Browser LOG     dt: Business Cards Portfolio - Team Nirosha | Our Work
+[00:28:10.926] Browser GROUPEND 
+[00:28:10.926] Browser GROUPEND 
+[00:28:10.926] Browser GROUPEND 
+[00:28:10.926] Browser GROUPEND 
+[00:29:38.275] Server  LOG      ✓ Compiled in 35ms
+[00:30:12.702] Browser LOG     ScrollSmoother initialized successfully
+[00:30:13.190] Browser GROUP   Processing commands (1)
+[00:30:13.190] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/business-card", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:30:13.190] Browser GROUPEND 
+[00:30:13.190] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/business-card", send_to: "G-F4SER380S1"}]
+[00:30:13.190] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:30:13.190] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:30:13.190] Browser GROUP   Sending event "page_view" to undefined
+[00:30:13.190] Browser GROUP   Request parameters:
+[00:30:13.190] Browser LOG     v: 2
+[00:30:13.190] Browser LOG     tid: G-F4SER380S1
+[00:30:13.190] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:30:13.190] Browser LOG     _p: 1767177209140
+[00:30:13.190] Browser LOG     _dbg: 1
+[00:30:13.190] Browser LOG     gcd: 13l3l3l3l1l1
+[00:30:13.190] Browser LOG     npa: 0
+[00:30:13.190] Browser LOG     dma: 0
+[00:30:13.190] Browser LOG     cid: 1271940746.1767023617
+[00:30:13.190] Browser LOG     ul: en-gb
+[00:30:13.190] Browser LOG     sr: 3840x1600
+[00:30:13.190] Browser LOG     uaa: arm
+[00:30:13.190] Browser LOG     uab: 64
+[00:30:13.190] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:30:13.190] Browser LOG     uamb: 0
+[00:30:13.190] Browser LOG     uam: 
+[00:30:13.190] Browser LOG     uap: macOS
+[00:30:13.190] Browser LOG     uapv: 26.1.0
+[00:30:13.190] Browser LOG     uaw: 0
+[00:30:13.190] Browser LOG     are: 1
+[00:30:13.190] Browser LOG     frm: 0
+[00:30:13.190] Browser LOG     pscdl: noapi
+[00:30:13.190] Browser LOG     _eu: AEAAAAQ
+[00:30:13.190] Browser GROUPEND 
+[00:30:13.190] Browser GROUP   Event parameters:
+[00:30:13.190] Browser LOG     en: page_view
+[00:30:13.190] Browser LOG     _et: 3137
+[00:30:13.190] Browser GROUPEND 
+[00:30:13.190] Browser GROUP   Shared parameters:
+[00:30:13.190] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:30:13.190] Browser LOG     dl: http://localhost:3000/portfolio
+[00:30:13.190] Browser LOG     dr: http://localhost:3000/portfolio/business-card
+[00:30:13.190] Browser LOG     sid: 1767176143
+[00:30:13.190] Browser LOG     sct: 9
+[00:30:13.190] Browser LOG     seg: 1
+[00:30:13.190] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:30:13.190] Browser GROUPEND 
+[00:30:13.190] Browser GROUPEND 
+[00:30:13.190] Browser GROUPEND 
+[00:30:13.190] Browser GROUPEND 
+[00:30:17.166] Browser WARN    Invalid scope
+[00:30:17.167] Browser WARN    Invalid scope
+[00:30:17.167] Browser LOG     ScrollSmoother initialized successfully
+[00:30:17.644] Browser GROUP   Processing commands (1)
+[00:30:17.644] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/websites", gtm.triggers: "6"}
+[00:30:17.644] Browser GROUPEND 
+[00:30:17.644] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/websites", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:30:17.644] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:30:17.644] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:30:17.644] Browser GROUP   Sending event "page_view" to undefined
+[00:30:17.644] Browser GROUP   Request parameters:
+[00:30:17.644] Browser LOG     v: 2
+[00:30:17.644] Browser LOG     tid: G-F4SER380S1
+[00:30:17.644] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:30:17.644] Browser LOG     _p: 1767177209140
+[00:30:17.644] Browser LOG     _dbg: 1
+[00:30:17.644] Browser LOG     gcd: 13l3l3l3l1l1
+[00:30:17.644] Browser LOG     npa: 0
+[00:30:17.644] Browser LOG     dma: 0
+[00:30:17.644] Browser LOG     cid: 1271940746.1767023617
+[00:30:17.644] Browser LOG     ul: en-gb
+[00:30:17.644] Browser LOG     sr: 3840x1600
+[00:30:17.644] Browser LOG     uaa: arm
+[00:30:17.644] Browser LOG     uab: 64
+[00:30:17.644] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:30:17.644] Browser LOG     uamb: 0
+[00:30:17.644] Browser LOG     uam: 
+[00:30:17.644] Browser LOG     uap: macOS
+[00:30:17.644] Browser LOG     uapv: 26.1.0
+[00:30:17.644] Browser LOG     uaw: 0
+[00:30:17.644] Browser LOG     are: 1
+[00:30:17.644] Browser LOG     frm: 0
+[00:30:17.644] Browser LOG     pscdl: noapi
+[00:30:17.644] Browser LOG     _eu: AEAAAAQ
+[00:30:17.644] Browser GROUPEND 
+[00:30:17.644] Browser GROUP   Event parameters:
+[00:30:17.644] Browser LOG     en: page_view
+[00:30:17.644] Browser LOG     _et: 4454
+[00:30:17.644] Browser GROUPEND 
+[00:30:17.644] Browser GROUP   Shared parameters:
+[00:30:17.644] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:30:17.644] Browser LOG     dl: http://localhost:3000/portfolio/websites
+[00:30:17.644] Browser LOG     dr: http://localhost:3000/portfolio
+[00:30:17.644] Browser LOG     sid: 1767176143
+[00:30:17.644] Browser LOG     sct: 9
+[00:30:17.644] Browser LOG     seg: 1
+[00:30:17.644] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:30:17.644] Browser GROUPEND 
+[00:30:17.644] Browser GROUPEND 
+[00:30:17.644] Browser GROUPEND 
+[00:30:17.644] Browser GROUPEND 
+[00:30:23.402] Browser LOG     ScrollSmoother initialized successfully
+[00:30:23.875] Browser GROUP   Processing commands (1)
+[00:30:23.875] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:30:23.875] Browser GROUPEND 
+[00:30:23.875] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/websites", send_to: "G-F4SER380S1"}]
+[00:30:23.875] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:30:23.875] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:30:23.875] Browser GROUP   Sending event "page_view" to undefined
+[00:30:23.875] Browser GROUP   Request parameters:
+[00:30:23.875] Browser LOG     v: 2
+[00:30:23.875] Browser LOG     tid: G-F4SER380S1
+[00:30:23.875] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:30:23.875] Browser LOG     _p: 1767177209140
+[00:30:23.875] Browser LOG     _dbg: 1
+[00:30:23.875] Browser LOG     gcd: 13l3l3l3l1l1
+[00:30:23.875] Browser LOG     npa: 0
+[00:30:23.875] Browser LOG     dma: 0
+[00:30:23.875] Browser LOG     cid: 1271940746.1767023617
+[00:30:23.875] Browser LOG     ul: en-gb
+[00:30:23.875] Browser LOG     sr: 3840x1600
+[00:30:23.875] Browser LOG     uaa: arm
+[00:30:23.875] Browser LOG     uab: 64
+[00:30:23.875] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:30:23.875] Browser LOG     uamb: 0
+[00:30:23.875] Browser LOG     uam: 
+[00:30:23.875] Browser LOG     uap: macOS
+[00:30:23.875] Browser LOG     uapv: 26.1.0
+[00:30:23.875] Browser LOG     uaw: 0
+[00:30:23.875] Browser LOG     are: 1
+[00:30:23.875] Browser LOG     frm: 0
+[00:30:23.875] Browser LOG     pscdl: noapi
+[00:30:23.875] Browser LOG     _eu: AEAAAAQ
+[00:30:23.875] Browser GROUPEND 
+[00:30:23.875] Browser GROUP   Event parameters:
+[00:30:23.875] Browser LOG     en: page_view
+[00:30:23.875] Browser LOG     _et: 6231
+[00:30:23.875] Browser GROUPEND 
+[00:30:23.875] Browser GROUP   Shared parameters:
+[00:30:23.875] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:30:23.875] Browser LOG     dl: http://localhost:3000/portfolio
+[00:30:23.875] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[00:30:23.875] Browser LOG     sid: 1767176143
+[00:30:23.875] Browser LOG     sct: 9
+[00:30:23.875] Browser LOG     seg: 1
+[00:30:23.875] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:30:23.875] Browser GROUPEND 
+[00:30:23.875] Browser GROUPEND 
+[00:30:23.875] Browser GROUPEND 
+[00:30:23.875] Browser GROUPEND 
+[00:30:24.800] Browser WARN    Invalid scope
+[00:30:24.800] Browser WARN    Invalid scope
+[00:30:24.800] Browser LOG     ScrollSmoother initialized successfully
+[00:30:25.284] Browser GROUP   Processing commands (1)
+[00:30:25.284] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/logos", gtm.triggers: "6"}
+[00:30:25.284] Browser GROUPEND 
+[00:30:25.284] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/logos", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:30:25.284] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:30:25.284] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:30:25.284] Browser GROUP   Sending event "page_view" to undefined
+[00:30:25.284] Browser GROUP   Request parameters:
+[00:30:25.284] Browser LOG     v: 2
+[00:30:25.284] Browser LOG     tid: G-F4SER380S1
+[00:30:25.284] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:30:25.284] Browser LOG     _p: 1767177209140
+[00:30:25.284] Browser LOG     _dbg: 1
+[00:30:25.284] Browser LOG     gcd: 13l3l3l3l1l1
+[00:30:25.284] Browser LOG     npa: 0
+[00:30:25.284] Browser LOG     dma: 0
+[00:30:25.284] Browser LOG     cid: 1271940746.1767023617
+[00:30:25.284] Browser LOG     ul: en-gb
+[00:30:25.284] Browser LOG     sr: 3840x1600
+[00:30:25.284] Browser LOG     uaa: arm
+[00:30:25.284] Browser LOG     uab: 64
+[00:30:25.284] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:30:25.284] Browser LOG     uamb: 0
+[00:30:25.284] Browser LOG     uam: 
+[00:30:25.284] Browser LOG     uap: macOS
+[00:30:25.284] Browser LOG     uapv: 26.1.0
+[00:30:25.284] Browser LOG     uaw: 0
+[00:30:25.284] Browser LOG     are: 1
+[00:30:25.284] Browser LOG     frm: 0
+[00:30:25.284] Browser LOG     pscdl: noapi
+[00:30:25.284] Browser LOG     _eu: AEAAAAQ
+[00:30:25.284] Browser GROUPEND 
+[00:30:25.284] Browser GROUP   Event parameters:
+[00:30:25.284] Browser LOG     en: page_view
+[00:30:25.284] Browser LOG     _et: 1405
+[00:30:25.284] Browser GROUPEND 
+[00:30:25.284] Browser GROUP   Shared parameters:
+[00:30:25.284] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:30:25.284] Browser LOG     dl: http://localhost:3000/portfolio/logos
+[00:30:25.284] Browser LOG     dr: http://localhost:3000/portfolio
+[00:30:25.284] Browser LOG     sid: 1767176143
+[00:30:25.284] Browser LOG     sct: 9
+[00:30:25.284] Browser LOG     seg: 1
+[00:30:25.284] Browser LOG     dt: Logo Design Portfolio - Team Nirosha | Our Work
+[00:30:25.284] Browser GROUPEND 
+[00:30:25.284] Browser GROUPEND 
+[00:30:25.284] Browser GROUPEND 
+[00:30:25.284] Browser GROUPEND 
+[00:30:38.242] Browser LOG     ScrollSmoother initialized successfully
+[00:30:38.720] Browser GROUP   Processing commands (1)
+[00:30:38.720] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/logos", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:30:38.720] Browser GROUPEND 
+[00:30:38.720] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/logos", send_to: "G-F4SER380S1"}]
+[00:30:38.720] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:30:38.720] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:30:38.720] Browser GROUP   Sending event "page_view" to undefined
+[00:30:38.720] Browser GROUP   Request parameters:
+[00:30:38.720] Browser LOG     v: 2
+[00:30:38.720] Browser LOG     tid: G-F4SER380S1
+[00:30:38.720] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:30:38.720] Browser LOG     _p: 1767177209140
+[00:30:38.720] Browser LOG     _dbg: 1
+[00:30:38.720] Browser LOG     gcd: 13l3l3l3l1l1
+[00:30:38.720] Browser LOG     npa: 0
+[00:30:38.720] Browser LOG     dma: 0
+[00:30:38.720] Browser LOG     cid: 1271940746.1767023617
+[00:30:38.720] Browser LOG     ul: en-gb
+[00:30:38.720] Browser LOG     sr: 3840x1600
+[00:30:38.720] Browser LOG     uaa: arm
+[00:30:38.720] Browser LOG     uab: 64
+[00:30:38.720] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:30:38.720] Browser LOG     uamb: 0
+[00:30:38.720] Browser LOG     uam: 
+[00:30:38.720] Browser LOG     uap: macOS
+[00:30:38.720] Browser LOG     uapv: 26.1.0
+[00:30:38.720] Browser LOG     uaw: 0
+[00:30:38.720] Browser LOG     are: 1
+[00:30:38.720] Browser LOG     frm: 0
+[00:30:38.720] Browser LOG     pscdl: noapi
+[00:30:38.720] Browser LOG     _eu: AEAAAAQ
+[00:30:38.720] Browser GROUPEND 
+[00:30:38.720] Browser GROUP   Event parameters:
+[00:30:38.720] Browser LOG     en: page_view
+[00:30:38.720] Browser LOG     _et: 13436
+[00:30:38.720] Browser GROUPEND 
+[00:30:38.720] Browser GROUP   Shared parameters:
+[00:30:38.720] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:30:38.720] Browser LOG     dl: http://localhost:3000/portfolio
+[00:30:38.720] Browser LOG     dr: http://localhost:3000/portfolio/logos
+[00:30:38.720] Browser LOG     sid: 1767176143
+[00:30:38.720] Browser LOG     sct: 9
+[00:30:38.720] Browser LOG     seg: 1
+[00:30:38.720] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:30:38.720] Browser GROUPEND 
+[00:30:38.720] Browser GROUPEND 
+[00:30:38.720] Browser GROUPEND 
+[00:30:38.720] Browser GROUPEND 
+[00:31:36.931] Server  LOG      ✓ Compiled in 8ms
+[00:31:38.059] Browser GROUP   Processing commands (1)
+[00:31:38.059] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "replaceState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:31:38.059] Browser GROUPEND 
+[00:31:38.059] Browser GROUPEND 
+[00:34:57.916] Browser WARN    Invalid scope
+[00:34:57.916] Browser WARN    Invalid scope
+[00:34:57.916] Browser LOG     ScrollSmoother initialized successfully
+[00:34:58.398] Browser GROUP   Processing commands (1)
+[00:34:58.398] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/blog", gtm.triggers: "6"}
+[00:34:58.398] Browser GROUPEND 
+[00:34:58.398] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/blog", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[00:34:58.398] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:34:58.398] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:34:58.398] Browser GROUP   Sending event "page_view" to undefined
+[00:34:58.398] Browser GROUP   Request parameters:
+[00:34:58.398] Browser LOG     v: 2
+[00:34:58.398] Browser LOG     tid: G-F4SER380S1
+[00:34:58.398] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:34:58.398] Browser LOG     _p: 1767177209140
+[00:34:58.398] Browser LOG     _dbg: 1
+[00:34:58.398] Browser LOG     gcd: 13l3l3l3l1l1
+[00:34:58.398] Browser LOG     npa: 0
+[00:34:58.398] Browser LOG     dma: 0
+[00:34:58.398] Browser LOG     cid: 1271940746.1767023617
+[00:34:58.398] Browser LOG     ul: en-gb
+[00:34:58.398] Browser LOG     sr: 3840x1600
+[00:34:58.398] Browser LOG     uaa: arm
+[00:34:58.398] Browser LOG     uab: 64
+[00:34:58.398] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:34:58.398] Browser LOG     uamb: 0
+[00:34:58.398] Browser LOG     uam: 
+[00:34:58.398] Browser LOG     uap: macOS
+[00:34:58.398] Browser LOG     uapv: 26.1.0
+[00:34:58.398] Browser LOG     uaw: 0
+[00:34:58.398] Browser LOG     are: 1
+[00:34:58.398] Browser LOG     frm: 0
+[00:34:58.398] Browser LOG     pscdl: noapi
+[00:34:58.398] Browser LOG     _eu: AEAAAAQ
+[00:34:58.398] Browser GROUPEND 
+[00:34:58.398] Browser GROUP   Event parameters:
+[00:34:58.398] Browser LOG     en: page_view
+[00:34:58.398] Browser LOG     _et: 4405
+[00:34:58.398] Browser GROUPEND 
+[00:34:58.398] Browser GROUP   Shared parameters:
+[00:34:58.398] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:34:58.398] Browser LOG     dl: http://localhost:3000/blog
+[00:34:58.398] Browser LOG     dr: http://localhost:3000/portfolio
+[00:34:58.398] Browser LOG     sid: 1767176143
+[00:34:58.398] Browser LOG     sct: 9
+[00:34:58.398] Browser LOG     seg: 1
+[00:34:58.398] Browser LOG     dt: Blog - Team Nirosha | Digital Marketing Insights
+[00:34:58.398] Browser GROUPEND 
+[00:34:58.398] Browser GROUPEND 
+[00:34:58.398] Browser GROUPEND 
+[00:34:58.398] Browser GROUPEND 
+[00:35:26.455] Browser LOG     ScrollSmoother initialized successfully
+[00:35:26.934] Browser GROUP   Processing commands (1)
+[00:35:26.934] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/blog", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[00:35:26.934] Browser GROUPEND 
+[00:35:26.934] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/blog", send_to: "G-F4SER380S1"}]
+[00:35:26.934] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:35:26.934] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:35:26.934] Browser GROUP   Sending event "page_view" to undefined
+[00:35:26.934] Browser GROUP   Request parameters:
+[00:35:26.934] Browser LOG     v: 2
+[00:35:26.934] Browser LOG     tid: G-F4SER380S1
+[00:35:26.934] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:35:26.934] Browser LOG     _p: 1767177209140
+[00:35:26.934] Browser LOG     _dbg: 1
+[00:35:26.934] Browser LOG     gcd: 13l3l3l3l1l1
+[00:35:26.934] Browser LOG     npa: 0
+[00:35:26.934] Browser LOG     dma: 0
+[00:35:26.934] Browser LOG     cid: 1271940746.1767023617
+[00:35:26.934] Browser LOG     ul: en-gb
+[00:35:26.934] Browser LOG     sr: 3840x1600
+[00:35:26.934] Browser LOG     uaa: arm
+[00:35:26.934] Browser LOG     uab: 64
+[00:35:26.934] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:35:26.934] Browser LOG     uamb: 0
+[00:35:26.934] Browser LOG     uam: 
+[00:35:26.934] Browser LOG     uap: macOS
+[00:35:26.934] Browser LOG     uapv: 26.1.0
+[00:35:26.934] Browser LOG     uaw: 0
+[00:35:26.934] Browser LOG     are: 1
+[00:35:26.934] Browser LOG     frm: 0
+[00:35:26.934] Browser LOG     pscdl: noapi
+[00:35:26.934] Browser LOG     _eu: AEAAAAQ
+[00:35:26.935] Browser GROUPEND 
+[00:35:26.935] Browser GROUP   Event parameters:
+[00:35:26.935] Browser LOG     en: page_view
+[00:35:26.935] Browser LOG     _et: 5697
+[00:35:26.935] Browser GROUPEND 
+[00:35:26.935] Browser GROUP   Shared parameters:
+[00:35:26.935] Browser LOG     tag_exp: 103116026~103200004~104527906~104528501~104684208~104684211~105391252~115583767~115938465~115938468~116184927~116184929~116251938~116251940~116744867
+[00:35:26.935] Browser LOG     dl: http://localhost:3000/portfolio
+[00:35:26.935] Browser LOG     dr: http://localhost:3000/blog
+[00:35:26.935] Browser LOG     sid: 1767176143
+[00:35:26.935] Browser LOG     sct: 9
+[00:35:26.935] Browser LOG     seg: 1
+[00:35:26.935] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:35:26.935] Browser GROUPEND 
+[00:35:26.935] Browser GROUPEND 
+[00:35:26.935] Browser GROUPEND 
+[00:35:26.935] Browser GROUPEND 
+[00:36:19.153] Server  LOG      ✓ Compiled in 35ms
+[00:37:01.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:01.524] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
+
+[00:37:01.524] Browser GROUP   Processing commands (2)
+[00:37:01.524] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:37:01.524] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUP   Processing GTAG command: ["js", Wed Dec 31 2025 16:27:18 GMT+0530 (India Standard Time)]
+[00:37:01.524] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:37:01.524] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:37:01.524] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:37:01.524] Browser GROUP   Sending event "page_view" to undefined
+[00:37:01.524] Browser GROUP   Request parameters:
+[00:37:01.524] Browser LOG     v: 2
+[00:37:01.524] Browser LOG     tid: G-F4SER380S1
+[00:37:01.524] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:37:01.524] Browser LOG     _p: 1767178638052
+[00:37:01.524] Browser LOG     _dbg: 1
+[00:37:01.524] Browser LOG     gcd: 13l3l3l3l1l1
+[00:37:01.524] Browser LOG     npa: 0
+[00:37:01.524] Browser LOG     dma: 0
+[00:37:01.524] Browser LOG     cid: 1271940746.1767023617
+[00:37:01.524] Browser LOG     ul: en-gb
+[00:37:01.524] Browser LOG     sr: 3840x1600
+[00:37:01.524] Browser LOG     uaa: arm
+[00:37:01.524] Browser LOG     uab: 64
+[00:37:01.524] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:37:01.524] Browser LOG     uamb: 0
+[00:37:01.524] Browser LOG     uam: 
+[00:37:01.524] Browser LOG     uap: macOS
+[00:37:01.524] Browser LOG     uapv: 26.1.0
+[00:37:01.524] Browser LOG     uaw: 0
+[00:37:01.524] Browser LOG     are: 1
+[00:37:01.524] Browser LOG     frm: 0
+[00:37:01.524] Browser LOG     pscdl: noapi
+[00:37:01.524] Browser LOG     _eu: AAAAAAQ
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUP   Event parameters:
+[00:37:01.524] Browser LOG     en: page_view
+[00:37:01.524] Browser LOG     _ee: 1
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUP   Shared parameters:
+[00:37:01.524] Browser LOG     tag_exp: 103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115616986~115938465~115938468~116184927~116184929~116251938~116251940
+[00:37:01.524] Browser LOG     sid: 1767176143
+[00:37:01.524] Browser LOG     sct: 9
+[00:37:01.524] Browser LOG     seg: 1
+[00:37:01.524] Browser LOG     dl: http://localhost/portfolio
+[00:37:01.524] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUP   Processing commands (1)
+[00:37:01.524] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUP   Processing commands (1)
+[00:37:01.524] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.524] Browser GROUPEND 
+[00:37:01.644] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:37:01.960] Browser LOG     ScrollSmoother initialized successfully
+[00:37:11.573] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:55:04.048] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:04.655] Browser LOG     
+    ____                   _        _____
+   / ___| ___   ___   __ _| | ___  |_   _|_ _  __ _
+  | |  _ / _ \ / _ \ / _` | |/ _ \   | |/ _` |/ _` |
+  | |_| | (_) | (_) | (_| | |  __/   | | (_| | (_| |
+   \____|\___/ \___/ \__, |_|\___|   |_|\__,_|\__, |
+                     |___/                    |___/
+
+[00:55:04.655] Browser GROUP   Processing commands (2)
+[00:55:04.655] Browser GROUP   Processing data layer push: {event: "gtm.init_consent", gtm.uniqueEventId: 1}
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUP   Processing data layer push: {event: "gtm.init", gtm.uniqueEventId: 2}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ogt_1p_data_v2", priority: 13, vtp_isAutoEnabled: true, vtp_autoPhoneEnabled: true, vtp_autoCollectExclusionSelectors: ["list", ["map", "exclusionSelector", ""]], vtp_isEnabled: true, vtp_autoAddressEnabled: true, vtp_autoEmailEnabled: true, vtp_isAutoCollectPiiEnabledFlag: true, tag_id: 4}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_ga_first", priority: 12, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 18}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__set_product_settings", priority: 11, vtp_instanceDestinationId: "G-F4SER380S1", vtp_foreignTldMacroResult: ["macro", 1], vtp_isChinaVipRegionMacroResult: ["macro", 2], tag_id: 17}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_ga_regscope", priority: 10, vtp_settingsTable: ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""], ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 16}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_em_download", priority: 9, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 15}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_em_form", priority: 8, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 14}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_em_outbound_click", priority: 7, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 13}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_em_page_view", priority: 6, vtp_historyEvents: true, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 12}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_em_scroll", priority: 5, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 11}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_em_site_search", priority: 4, vtp_searchQueryParams: "q,s,search,query,keyword", vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 10}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_em_video", priority: 3, vtp_includeParams: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 9}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_conversion_marking", priority: 2, vtp_conversionRules: ["list", ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"close_convert_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"qualify_lead"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"], ["map", "matchingRules", "{"type":5,"args":[{"stringValue":"purchase"},{"contextValue":{"namespaceType":1,"keyParts":["eventName"]}}]}"]], vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 8}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_auto_redact", priority: 1, vtp_redactEmail: true, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 7}
+[00:55:04.655] Browser LOG     Tag fired: {function: "__ccd_ga_last", priority: 0, vtp_instanceDestinationId: "G-F4SER380S1", tag_id: 6}
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUP   Processing GTAG command: ["js", Wed Dec 31 2025 16:45:21 GMT+0530 (India Standard Time)]
+[00:55:04.655] Browser LOG     Tag fired: {function: "__gct", vtp_trackingId: "G-F4SER380S1", vtp_sessionDuration: 0, tag_id: 1}
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUP   Processing GTAG command: ["config", "G-F4SER380S1"]
+[00:55:04.655] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:55:04.655] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:55:04.655] Browser GROUP   Sending event "page_view" to undefined
+[00:55:04.655] Browser GROUP   Request parameters:
+[00:55:04.655] Browser LOG     v: 2
+[00:55:04.655] Browser LOG     tid: G-F4SER380S1
+[00:55:04.655] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:55:04.655] Browser LOG     _p: 1767179721272
+[00:55:04.655] Browser LOG     _dbg: 1
+[00:55:04.655] Browser LOG     gcd: 13l3l3l3l1l1
+[00:55:04.655] Browser LOG     npa: 0
+[00:55:04.655] Browser LOG     dma: 0
+[00:55:04.655] Browser LOG     cid: 1271940746.1767023617
+[00:55:04.655] Browser LOG     ul: en-gb
+[00:55:04.655] Browser LOG     sr: 3840x1600
+[00:55:04.655] Browser LOG     uaa: arm
+[00:55:04.655] Browser LOG     uab: 64
+[00:55:04.655] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:55:04.655] Browser LOG     uamb: 0
+[00:55:04.655] Browser LOG     uam: 
+[00:55:04.655] Browser LOG     uap: macOS
+[00:55:04.655] Browser LOG     uapv: 26.1.0
+[00:55:04.655] Browser LOG     uaw: 0
+[00:55:04.655] Browser LOG     are: 1
+[00:55:04.655] Browser LOG     frm: 0
+[00:55:04.655] Browser LOG     pscdl: noapi
+[00:55:04.655] Browser LOG     _eu: AAAAAAQ
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUP   Event parameters:
+[00:55:04.655] Browser LOG     en: page_view
+[00:55:04.655] Browser LOG     _ee: 1
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUP   Shared parameters:
+[00:55:04.655] Browser LOG     tag_exp: 102015666~103116026~103200004~104527907~104528500~104684208~104684211~105391252~115583767~115616986~115938465~115938469~116184927~116184929~116251938~116251940
+[00:55:04.655] Browser LOG     sid: 1767176143
+[00:55:04.655] Browser LOG     sct: 9
+[00:55:04.655] Browser LOG     seg: 1
+[00:55:04.655] Browser LOG     dl: http://localhost/portfolio/websites
+[00:55:04.655] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[00:55:04.655] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser LOG     GTAG Command: "config", target: "G-F4SER380S1", configuration: {}
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUP   Processing commands (1)
+[00:55:04.655] Browser GROUP   Processing data layer push: {event: "gtm.dom"}
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUP   Processing commands (1)
+[00:55:04.655] Browser GROUP   Processing data layer push: {event: "gtm.load"}
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.655] Browser GROUPEND 
+[00:55:04.782] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:55:05.143] Browser LOG     ScrollSmoother initialized successfully
+[00:55:16.287] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:57:34.226] Browser GROUP   Processing commands (1)
+[00:57:34.226] Browser GROUP   Processing data layer push: {event: "gtm.scrollDepth", gtm.scrollThreshold: 90, gtm.scrollUnits: "percent", gtm.scrollDirection: "vertical", gtm.triggers: "7"}
+[00:57:34.226] Browser GROUPEND 
+[00:57:34.226] Browser GROUP   Processing GTAG command: ["event", "scroll", {percent_scrolled: 90, send_to: "G-F4SER380S1"}]
+[00:57:34.226] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[00:57:34.226] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[00:57:34.226] Browser GROUP   Sending event "scroll" to undefined
+[00:57:34.226] Browser GROUP   Request parameters:
+[00:57:34.226] Browser LOG     v: 2
+[00:57:34.226] Browser LOG     tid: G-F4SER380S1
+[00:57:34.226] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[00:57:34.226] Browser LOG     _p: 1767179721272
+[00:57:34.226] Browser LOG     _dbg: 1
+[00:57:34.226] Browser LOG     gcd: 13l3l3l3l1l1
+[00:57:34.226] Browser LOG     npa: 0
+[00:57:34.226] Browser LOG     dma: 0
+[00:57:34.226] Browser LOG     cid: 1271940746.1767023617
+[00:57:34.226] Browser LOG     ul: en-gb
+[00:57:34.226] Browser LOG     sr: 3840x1600
+[00:57:34.226] Browser LOG     uaa: arm
+[00:57:34.226] Browser LOG     uab: 64
+[00:57:34.226] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[00:57:34.226] Browser LOG     uamb: 0
+[00:57:34.226] Browser LOG     uam: 
+[00:57:34.226] Browser LOG     uap: macOS
+[00:57:34.226] Browser LOG     uapv: 26.1.0
+[00:57:34.226] Browser LOG     uaw: 0
+[00:57:34.226] Browser LOG     are: 1
+[00:57:34.226] Browser LOG     frm: 0
+[00:57:34.226] Browser LOG     pscdl: noapi
+[00:57:34.226] Browser LOG     _eu: AEAAAAQ
+[00:57:34.227] Browser GROUPEND 
+[00:57:34.227] Browser GROUP   Event parameters:
+[00:57:34.227] Browser LOG     en: scroll
+[00:57:34.227] Browser LOG     epn.percent_scrolled: 90
+[00:57:34.227] Browser LOG     _et: 44414
+[00:57:34.227] Browser GROUPEND 
+[00:57:34.227] Browser GROUP   Shared parameters:
+[00:57:34.227] Browser LOG     tag_exp: 102015666~103116026~103200004~104527907~104528500~104684208~104684211~105391252~115583767~115616986~115938465~115938469~116184927~116184929~116251938~116251940
+[00:57:34.227] Browser LOG     sid: 1767176143
+[00:57:34.227] Browser LOG     sct: 9
+[00:57:34.227] Browser LOG     seg: 1
+[00:57:34.227] Browser LOG     dl: http://localhost/portfolio/websites
+[00:57:34.227] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[00:57:34.227] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[00:57:34.227] Browser GROUPEND 
+[00:57:34.227] Browser GROUPEND 
+[00:57:34.227] Browser GROUPEND 
+[00:57:34.227] Browser GROUPEND 
+[01:08:49.400] Browser LOG     ScrollSmoother initialized successfully
+[01:08:49.859] Browser GROUP   Processing commands (1)
+[01:08:49.859] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[01:08:49.859] Browser GROUPEND 
+[01:08:49.859] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/websites", send_to: "G-F4SER380S1"}]
+[01:08:49.859] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[01:08:49.860] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[01:08:49.860] Browser GROUP   Sending event "page_view" to undefined
+[01:08:49.860] Browser GROUP   Request parameters:
+[01:08:49.860] Browser LOG     v: 2
+[01:08:49.860] Browser LOG     tid: G-F4SER380S1
+[01:08:49.860] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[01:08:49.860] Browser LOG     _p: 1767179721272
+[01:08:49.860] Browser LOG     _dbg: 1
+[01:08:49.860] Browser LOG     gcd: 13l3l3l3l1l1
+[01:08:49.860] Browser LOG     npa: 0
+[01:08:49.860] Browser LOG     dma: 0
+[01:08:49.860] Browser LOG     cid: 1271940746.1767023617
+[01:08:49.860] Browser LOG     ul: en-gb
+[01:08:49.860] Browser LOG     sr: 3840x1600
+[01:08:49.860] Browser LOG     uaa: arm
+[01:08:49.860] Browser LOG     uab: 64
+[01:08:49.860] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[01:08:49.860] Browser LOG     uamb: 0
+[01:08:49.860] Browser LOG     uam: 
+[01:08:49.860] Browser LOG     uap: macOS
+[01:08:49.860] Browser LOG     uapv: 26.1.0
+[01:08:49.860] Browser LOG     uaw: 0
+[01:08:49.860] Browser LOG     are: 1
+[01:08:49.860] Browser LOG     frm: 0
+[01:08:49.860] Browser LOG     pscdl: noapi
+[01:08:49.860] Browser LOG     _eu: AEAAAAQ
+[01:08:49.860] Browser GROUPEND 
+[01:08:49.860] Browser GROUP   Event parameters:
+[01:08:49.860] Browser LOG     en: page_view
+[01:08:49.860] Browser LOG     _et: 79199
+[01:08:49.860] Browser GROUPEND 
+[01:08:49.860] Browser GROUP   Shared parameters:
+[01:08:49.860] Browser LOG     tag_exp: 102015666~103116026~103200004~104527907~104528500~104684208~104684211~105391252~115583767~115616986~115938465~115938469~116184927~116184929~116251938~116251940
+[01:08:49.860] Browser LOG     dl: http://localhost:3000/portfolio
+[01:08:49.860] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[01:08:49.860] Browser LOG     sid: 1767176143
+[01:08:49.860] Browser LOG     sct: 9
+[01:08:49.860] Browser LOG     seg: 1
+[01:08:49.860] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[01:08:49.860] Browser GROUPEND 
+[01:08:49.860] Browser GROUPEND 
+[01:08:49.860] Browser GROUPEND 
+[01:08:49.860] Browser GROUPEND 
+[01:08:51.180] Browser WARN    Invalid scope
+[01:08:51.180] Browser WARN    Invalid scope
+[01:08:51.180] Browser LOG     ScrollSmoother initialized successfully
+[01:08:51.666] Browser GROUP   Processing commands (1)
+[01:08:51.666] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio", gtm.newUrl: "http://localhost:3000/portfolio/websites", gtm.triggers: "6"}
+[01:08:51.666] Browser GROUPEND 
+[01:08:51.666] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio/websites", page_referrer: "http://localhost:3000/portfolio", send_to: "G-F4SER380S1"}]
+[01:08:51.666] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[01:08:51.666] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[01:08:51.666] Browser GROUP   Sending event "page_view" to undefined
+[01:08:51.666] Browser GROUP   Request parameters:
+[01:08:51.666] Browser LOG     v: 2
+[01:08:51.666] Browser LOG     tid: G-F4SER380S1
+[01:08:51.666] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[01:08:51.666] Browser LOG     _p: 1767179721272
+[01:08:51.666] Browser LOG     _dbg: 1
+[01:08:51.666] Browser LOG     gcd: 13l3l3l3l1l1
+[01:08:51.666] Browser LOG     npa: 0
+[01:08:51.666] Browser LOG     dma: 0
+[01:08:51.666] Browser LOG     cid: 1271940746.1767023617
+[01:08:51.666] Browser LOG     ul: en-gb
+[01:08:51.666] Browser LOG     sr: 3840x1600
+[01:08:51.666] Browser LOG     uaa: arm
+[01:08:51.666] Browser LOG     uab: 64
+[01:08:51.666] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[01:08:51.666] Browser LOG     uamb: 0
+[01:08:51.666] Browser LOG     uam: 
+[01:08:51.666] Browser LOG     uap: macOS
+[01:08:51.666] Browser LOG     uapv: 26.1.0
+[01:08:51.666] Browser LOG     uaw: 0
+[01:08:51.666] Browser LOG     are: 1
+[01:08:51.666] Browser LOG     frm: 0
+[01:08:51.666] Browser LOG     pscdl: noapi
+[01:08:51.666] Browser LOG     _eu: AEAAAAQ
+[01:08:51.666] Browser GROUPEND 
+[01:08:51.666] Browser GROUP   Event parameters:
+[01:08:51.666] Browser LOG     en: page_view
+[01:08:51.666] Browser LOG     _et: 1804
+[01:08:51.666] Browser GROUPEND 
+[01:08:51.666] Browser GROUP   Shared parameters:
+[01:08:51.666] Browser LOG     tag_exp: 102015666~103116026~103200004~104527907~104528500~104684208~104684211~105391252~115583767~115616986~115938465~115938469~116184927~116184929~116251938~116251940
+[01:08:51.666] Browser LOG     dl: http://localhost:3000/portfolio/websites
+[01:08:51.666] Browser LOG     dr: http://localhost:3000/portfolio
+[01:08:51.666] Browser LOG     sid: 1767176143
+[01:08:51.666] Browser LOG     sct: 9
+[01:08:51.666] Browser LOG     seg: 1
+[01:08:51.666] Browser LOG     dt: Website Designs - Portfolio | Team Nirosha
+[01:08:51.666] Browser GROUPEND 
+[01:08:51.666] Browser GROUPEND 
+[01:08:51.666] Browser GROUPEND 
+[01:08:51.666] Browser GROUPEND 
+[01:09:32.916] Browser LOG     ScrollSmoother initialized successfully
+[01:09:33.402] Browser GROUP   Processing commands (1)
+[01:09:33.402] Browser GROUP   Processing data layer push: {event: "gtm.historyChange-v2", gtm.historyChangeSource: "pushState", gtm.oldUrlFragment: "", gtm.newUrlFragment: "", gtm.oldHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.newHistoryState: {__NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: {tree: ["", {...}, undefined, undefined, true], renderedSearch: ""}}, gtm.oldUrl: "http://localhost:3000/portfolio/websites", gtm.newUrl: "http://localhost:3000/portfolio", gtm.triggers: "6"}
+[01:09:33.402] Browser GROUPEND 
+[01:09:33.402] Browser GROUP   Processing GTAG command: ["event", "page_view", {page_location: "http://localhost:3000/portfolio", page_referrer: "http://localhost:3000/portfolio/websites", send_to: "G-F4SER380S1"}]
+[01:09:33.402] Browser LOG     Loaded existing client id: 1271940746.1767023617
+[01:09:33.402] Browser LOG     Event would be batched, but batching is disabled in debug mode.
+[01:09:33.402] Browser GROUP   Sending event "page_view" to undefined
+[01:09:33.402] Browser GROUP   Request parameters:
+[01:09:33.402] Browser LOG     v: 2
+[01:09:33.402] Browser LOG     tid: G-F4SER380S1
+[01:09:33.402] Browser LOG     gtm: 45je5ca1v9238261810za200zd9238261810
+[01:09:33.402] Browser LOG     _p: 1767179721272
+[01:09:33.402] Browser LOG     _dbg: 1
+[01:09:33.402] Browser LOG     gcd: 13l3l3l3l1l1
+[01:09:33.402] Browser LOG     npa: 0
+[01:09:33.402] Browser LOG     dma: 0
+[01:09:33.402] Browser LOG     cid: 1271940746.1767023617
+[01:09:33.402] Browser LOG     ul: en-gb
+[01:09:33.402] Browser LOG     sr: 3840x1600
+[01:09:33.402] Browser LOG     uaa: arm
+[01:09:33.402] Browser LOG     uab: 64
+[01:09:33.402] Browser LOG     uafvl: Google%20Chrome;143.0.7499.170|Chromium;143.0.7499.170|Not%20A(Brand;24.0.0.0
+[01:09:33.402] Browser LOG     uamb: 0
+[01:09:33.402] Browser LOG     uam: 
+[01:09:33.402] Browser LOG     uap: macOS
+[01:09:33.402] Browser LOG     uapv: 26.1.0
+[01:09:33.402] Browser LOG     uaw: 0
+[01:09:33.402] Browser LOG     are: 1
+[01:09:33.402] Browser LOG     frm: 0
+[01:09:33.402] Browser LOG     pscdl: noapi
+[01:09:33.402] Browser LOG     _eu: AEAAAAQ
+[01:09:33.402] Browser GROUPEND 
+[01:09:33.402] Browser GROUP   Event parameters:
+[01:09:33.402] Browser LOG     en: page_view
+[01:09:33.402] Browser LOG     _et: 41732
+[01:09:33.402] Browser GROUPEND 
+[01:09:33.402] Browser GROUP   Shared parameters:
+[01:09:33.402] Browser LOG     tag_exp: 102015666~103116026~103200004~104527907~104528500~104684208~104684211~105391252~115583767~115616986~115938465~115938469~116184927~116184929~116251938~116251940
+[01:09:33.402] Browser LOG     dl: http://localhost:3000/portfolio
+[01:09:33.402] Browser LOG     dr: http://localhost:3000/portfolio/websites
+[01:09:33.402] Browser LOG     sid: 1767176143
+[01:09:33.402] Browser LOG     sct: 9
+[01:09:33.402] Browser LOG     seg: 1
+[01:09:33.402] Browser LOG     dt: Our Work - Portfolio | Team Nirosha | Design & Branding Services
+[01:09:33.402] Browser GROUPEND 
+[01:09:33.402] Browser GROUPEND 
+[01:09:33.402] Browser GROUPEND 
+[01:09:33.402] Browser GROUPEND 
+[01:11:28.180] Server  LOG      ✓ Compiled in 48ms

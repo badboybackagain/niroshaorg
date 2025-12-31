@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { FiX, FiChevronLeft, FiChevronRight, FiZoomIn, FiDownload } from 'react-icons/fi'
 
+const ITEMS_PER_PAGE = 12
+
 const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
   const router = useRouter()
   const [imageList, setImageList] = useState([])
@@ -13,6 +15,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [loadedImages, setLoadedImages] = useState(new Set())
+  const [currentPage, setCurrentPage] = useState(1)
   const sectionRef = useRef(null)
   const gridRef = useRef(null)
   const lightboxContentRef = useRef(null)
@@ -22,6 +25,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
   // Load images for this category
   useEffect(() => {
     setIsLoading(true)
+    setCurrentPage(1) // Reset page on category change
     fetch(`/cache/portfolio/${categorySlug}/manifest.json`)
       .then(res => {
         if (!res.ok) return null
@@ -73,7 +77,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
     )
 
     const items = gridRef.current.querySelectorAll('.portfolio-item-modern')
-    const imageWrappers = Array.from(items).map(item => 
+    const imageWrappers = Array.from(items).map(item =>
       item.querySelector('.portfolio-item-image-modern')
     ).filter(Boolean)
 
@@ -82,7 +86,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
     return () => {
       imageWrappers.forEach(wrapper => observer.unobserve(wrapper))
     }
-  }, [imageList, loadedImages])
+  }, [imageList, loadedImages, currentPage]) // Re-run observer when page changes
 
   // Prevent body scroll when lightbox is open
   useEffect(() => {
@@ -120,7 +124,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
       (currentIndex - 1 + imageList.length) % imageList.length,
       (currentIndex + 1) % imageList.length
     ]
-    
+
     preloadIndexes.forEach(index => {
       const imageName = imageList[index]
       const img = new Image()
@@ -198,6 +202,26 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
     return imageList.findIndex(img => img === selectedImage)
   }, [selectedImage, imageList])
 
+  // Pagination Logic
+  const totalItems = imageList.length
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE)
+  const visibleImages = imageList.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage)
+      // Scroll to top of grid
+      if (gridRef.current) {
+        const yOffset = -100 // Offset for header/nav
+        const y = gridRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset
+        window.scrollTo({ top: y, behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
     <div className="portfolio-category-page" ref={sectionRef}>
       {/* Header */}
@@ -222,49 +246,89 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
               <div className="portfolio-loading-spinner"></div>
               <p>Loading portfolio...</p>
             </div>
-          ) : imageList.length > 0 ? (
-            <div className="portfolio-grid-modern" ref={gridRef}>
-              {imageList.map((imageName, index) => {
-                const isLoaded = loadedImages.has(imageName)
-                return (
-                  <div
-                    key={imageName}
-                    className="portfolio-item-modern"
-                    data-image-name={imageName}
-                    onClick={() => openLightbox(imageName)}
-                    style={{ animationDelay: `${Math.min(index * 30, 500)}ms` }}
-                  >
-                    <div className="portfolio-item-image-modern">
-                      {isLoaded ? (
-                        <picture>
-                          <source
-                            srcSet={`/cache/portfolio/${categorySlug}/${imageName}-thumbnail.webp 1x, /cache/portfolio/${categorySlug}/${imageName}-thumbnail@2x.webp 2x`}
-                            type="image/webp"
-                          />
-                          <img
-                            src={`/cache/portfolio/${categorySlug}/${imageName}-thumbnail.png`}
-                            srcSet={`/cache/portfolio/${categorySlug}/${imageName}-thumbnail.png 1x, /cache/portfolio/${categorySlug}/${imageName}-thumbnail@2x.png 2x`}
-                            alt={`${categoryTitle} - ${imageName.replace(/[-_]/g, ' ')}`}
-                            loading="lazy"
-                            decoding="async"
-                            fetchPriority={index < 12 ? 'high' : 'low'}
-                          />
-                        </picture>
-                      ) : (
-                        <div className="portfolio-item-placeholder">
-                          <FiZoomIn />
-                        </div>
-                      )}
-                      <div className="portfolio-item-overlay-modern">
-                        <div className="portfolio-item-overlay-content">
-                          <FiZoomIn className="portfolio-item-icon" />
-                          <span className="portfolio-item-view-text">View Full Size</span>
+          ) : visibleImages.length > 0 ? (
+            <div ref={gridRef}>
+              <div className="portfolio-grid-modern">
+                {visibleImages.map((imageName, index) => {
+                  const isLoaded = loadedImages.has(imageName)
+                  // Calculate actual index for animation delay
+                  const actualIndex = (currentPage - 1) * ITEMS_PER_PAGE + index
+                  return (
+                    <div
+                      key={imageName}
+                      className="portfolio-item-modern"
+                      data-image-name={imageName}
+                      onClick={() => openLightbox(imageName)}
+                      style={{ animationDelay: `${Math.min(actualIndex * 30, 500)}ms` }}
+                    >
+                      <div className="portfolio-item-image-modern">
+                        {isLoaded ? (
+                          <picture>
+                            <source
+                              srcSet={`/cache/portfolio/${categorySlug}/${imageName}-thumbnail.webp 1x, /cache/portfolio/${categorySlug}/${imageName}-thumbnail@2x.webp 2x`}
+                              type="image/webp"
+                            />
+                            <img
+                              src={`/cache/portfolio/${categorySlug}/${imageName}-thumbnail.png`}
+                              srcSet={`/cache/portfolio/${categorySlug}/${imageName}-thumbnail.png 1x, /cache/portfolio/${categorySlug}/${imageName}-thumbnail@2x.png 2x`}
+                              alt={`${categoryTitle} - ${imageName.replace(/[-_]/g, ' ')}`}
+                              loading="lazy"
+                              decoding="async"
+                              fetchPriority={index < 12 ? 'high' : 'low'}
+                            />
+                          </picture>
+                        ) : (
+                          <div className="portfolio-item-placeholder">
+                            <FiZoomIn />
+                          </div>
+                        )}
+                        <div className="portfolio-item-overlay-modern">
+                          <div className="portfolio-item-overlay-content">
+                            <FiZoomIn className="portfolio-item-icon" />
+                            <span className="portfolio-item-view-text">View Full Size</span>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  )
+                })}
+              </div>
+
+              {/* Pagination Controls */}
+              {totalPages > 1 && (
+                <div className="pagination-container">
+                  <button
+                    className="pagination-btn"
+                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    aria-label="Previous page"
+                  >
+                    <FiChevronLeft />
+                  </button>
+
+                  <div className="pagination-numbers">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                      <button
+                        key={pageNum}
+                        className={`pagination-number ${currentPage === pageNum ? 'active' : ''}`}
+                        onClick={() => handlePageChange(pageNum)}
+                        aria-label={`Page ${pageNum}`}
+                      >
+                        {pageNum}
+                      </button>
+                    ))}
                   </div>
-                )
-              })}
+
+                  <button
+                    className="pagination-btn"
+                    disabled={currentPage === totalPages}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    aria-label="Next page"
+                  >
+                    <FiChevronRight />
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <div className="portfolio-empty-state">
@@ -283,7 +347,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
               <h3>Ready to Get Your Design?</h3>
               <p>Let's create something amazing together</p>
             </div>
-            <button 
+            <button
               className="portfolio-category-cta-button"
               onClick={handleContactClick}
             >
@@ -295,24 +359,24 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
 
       {/* Enhanced Lightbox - Render via Portal to ensure it's above everything */}
       {lightboxOpen && selectedImage && typeof window !== 'undefined' && createPortal(
-        <div 
-          className="portfolio-lightbox-modern" 
+        <div
+          className="portfolio-lightbox-modern"
           onClick={closeLightbox}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <button 
-            className="portfolio-lightbox-close-modern" 
+          <button
+            className="portfolio-lightbox-close-modern"
             onClick={closeLightbox}
             aria-label="Close lightbox"
           >
             <FiX />
           </button>
-          
+
           {imageList.length > 1 && (
             <>
-              <button 
+              <button
                 className="portfolio-lightbox-nav-modern portfolio-lightbox-prev-modern"
                 onClick={(e) => {
                   e.stopPropagation()
@@ -322,7 +386,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
               >
                 <FiChevronLeft />
               </button>
-              <button 
+              <button
                 className="portfolio-lightbox-nav-modern portfolio-lightbox-next-modern"
                 onClick={(e) => {
                   e.stopPropagation()
@@ -335,8 +399,8 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
             </>
           )}
 
-          <div 
-            className="portfolio-lightbox-content-modern" 
+          <div
+            className="portfolio-lightbox-content-modern"
             onClick={(e) => e.stopPropagation()}
             ref={lightboxContentRef}
           >
