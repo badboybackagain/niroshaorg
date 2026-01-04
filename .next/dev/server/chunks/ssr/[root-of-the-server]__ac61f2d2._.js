@@ -477,10 +477,10 @@ const metadata = {
         siteName: 'Team Nirosha',
         images: [
             {
-                url: `${SITE_URL}/logo.png`,
-                width: 600,
-                height: 60,
-                alt: 'Team Nirosha Logo'
+                url: `${SITE_URL}/ogimage.png`,
+                width: 1200,
+                height: 630,
+                alt: 'Team Nirosha - Digital Agency'
             }
         ],
         locale: 'en_US',
@@ -491,7 +491,7 @@ const metadata = {
         title: 'Web Development, SEO & Automation Agency | Team Nirosha',
         description: 'Team Nirosha is a trusted digital agency offering web development, SEO, automation, SaaS and IT solutions.',
         images: [
-            `${SITE_URL}/logo.png`
+            `${SITE_URL}/ogimage.png`
         ],
         creator: '@niroshaorg',
         site: '@niroshaorg'

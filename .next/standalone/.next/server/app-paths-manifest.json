@@ -11,6 +11,7 @@
   "/page": "app/page.js",
   "/portfolio/[slug]/page": "app/portfolio/[slug]/page.js",
   "/portfolio/page": "app/portfolio/page.js",
+  "/portfolio/websites/page": "app/portfolio/websites/page.js",
   "/privacy/page": "app/privacy/page.js",
   "/robots.txt/route": "app/robots.txt/route.js",
   "/services/[slug]/page": "app/services/[slug]/page.js",

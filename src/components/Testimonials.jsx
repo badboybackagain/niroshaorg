@@ -56,7 +56,7 @@ const TestimonialCard = ({ testimonial, index }) => {
   }
 
   return (
-    <div 
+    <div
       ref={ref}
       key={index}
       className={`testimonial-card ${isVisible ? 'animate-fadeInUp' : ''} ${isExpanded ? 'expanded' : ''}`}
@@ -65,20 +65,20 @@ const TestimonialCard = ({ testimonial, index }) => {
       {/* Stars at the top */}
       <div className="testimonial-rating">
         {[...Array(5)].map((_, i) => (
-          <FiStar 
-            key={i} 
-            className={`star ${i < rating ? 'filled' : ''}`} 
+          <FiStar
+            key={i}
+            className={`star ${i < rating ? 'filled' : ''}`}
           />
         ))}
       </div>
-      
+
       {/* Review text in the middle */}
       <div className="testimonial-text-wrapper">
         <p ref={textRef} className={`testimonial-text ${!isExpanded && showReadMore ? 'truncated' : ''}`}>
           "{getDisplayText()}{!isExpanded && showReadMore && '...'}"
         </p>
         {showReadMore && (
-          <button 
+          <button
             className="read-more-link"
             onClick={toggleExpand}
             aria-label={isExpanded ? 'Read less' : 'Read more'}
@@ -91,8 +91,8 @@ const TestimonialCard = ({ testimonial, index }) => {
       {/* Reviewer info at the bottom */}
       <div className="testimonial-author-info">
         {profileImage ? (
-          <img 
-            src={profileImage} 
+          <img
+            src={profileImage}
             alt={authorName}
             className="testimonial-profile-image"
             onError={(e) => {
@@ -152,7 +152,7 @@ const Testimonials = () => {
 
   // Filter out malformed reviews and use Google reviews if available
   const allTestimonials = (reviews && reviews.length > 0) ? reviews : fallbackTestimonials
-  
+
   // Filter out malformed reviews (metadata patterns)
   const validTestimonials = allTestimonials.filter(testimonial => {
     const text = testimonial.text || ''
@@ -190,7 +190,7 @@ const Testimonials = () => {
         setReviewsPerView(3)
       }
     }
-    
+
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
@@ -199,7 +199,7 @@ const Testimonials = () => {
   // Auto-play carousel (pauses on hover)
   useEffect(() => {
     if (testimonials.length <= reviewsPerView || isPaused) return
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalSlides)
     }, 5000) // Change slide every 5 seconds
@@ -242,7 +242,7 @@ const Testimonials = () => {
           <p className="testimonials-count-text">
             {totalReviewsCount} {totalReviewsCount === 1 ? 'person has' : 'people have'} said how good Team Nirosha
           </p>
-          <h2 
+          <h2
             ref={titleRef}
             className={`testimonials-main-title ${titleVisible ? 'animate-fadeInUp' : ''}`}
           >
@@ -259,15 +259,15 @@ const Testimonials = () => {
             <p>Showing sample testimonials</p>
           </div>
         )}
-        
+
         {testimonials.length > 0 && (
-          <div 
+          <div
             className="testimonials-carousel-wrapper"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <div className="testimonials-carousel">
-              <div 
+              <div
                 className="testimonials-carousel-track"
                 style={{
                   transform: `translateX(-${currentIndex * 100}%)`,
@@ -280,10 +280,10 @@ const Testimonials = () => {
                       {testimonials
                         .slice(slideIndex * reviewsPerView, (slideIndex + 1) * reviewsPerView)
                         .map((testimonial, index) => (
-                          <TestimonialCard 
-                            key={`${slideIndex}-${index}`} 
-                            testimonial={testimonial} 
-                            index={index} 
+                          <TestimonialCard
+                            key={`${slideIndex}-${index}`}
+                            testimonial={testimonial}
+                            index={index}
                           />
                         ))}
                     </div>
@@ -291,24 +291,24 @@ const Testimonials = () => {
                 ))}
               </div>
             </div>
-            
+
             {totalSlides > 1 && (
               <>
-                <button 
+                <button
                   className="carousel-button carousel-button-prev"
                   onClick={prevSlide}
                   aria-label="Previous reviews"
                 >
                   <FiChevronLeft />
                 </button>
-                <button 
+                <button
                   className="carousel-button carousel-button-next"
                   onClick={nextSlide}
                   aria-label="Next reviews"
                 >
                   <FiChevronRight />
                 </button>
-                
+
                 <div className="carousel-dots">
                   {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
@@ -323,7 +323,7 @@ const Testimonials = () => {
             )}
           </div>
         )}
-        
+
         {/* View all reviews link */}
         {testimonials.length > 0 && (
           <div className="testimonials-footer" suppressHydrationWarning>

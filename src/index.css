@@ -12119,3 +12119,8 @@ html.lightbox-open .navbar.menu-open {
   color: var(--accent-color);
   border: 1px solid #e5e5e5;
 }
+/* Hide Elfsight branding */
+.es-widget-background-content, 
+a[href*="elfsight.com/google-reviews-widget"] {
+  display: none !important;
+}

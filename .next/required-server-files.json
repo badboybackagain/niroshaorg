@@ -335,12 +335,13 @@
     ".next/server/next-font-manifest.js",
     ".next/server/next-font-manifest.json",
     ".next/required-server-files.json",
+    ".next/static/chunks/0a9f946d86b709c5.css",
     ".next/static/chunks/163f657a16afbe5e.css",
     ".next/static/chunks/2d745c736d77b66b.css",
-    ".next/static/chunks/3b0a39d6f6083176.css",
     ".next/static/chunks/544f99f6918891ad.css",
     ".next/static/chunks/6ec7bce8eee80382.css",
-    ".next/static/chunks/d1796efb20c8c75b.css"
+    ".next/static/chunks/d1796efb20c8c75b.css",
+    ".next/static/chunks/ed241db0870b6eb4.css"
   ],
   "ignore": []
 }

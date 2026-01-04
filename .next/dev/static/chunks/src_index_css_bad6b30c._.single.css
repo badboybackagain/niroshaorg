@@ -11330,4 +11330,8 @@ body.lightbox-open .navbar, html.lightbox-open .navbar, body.lightbox-open .navb
   font-size: .875rem;
 }
 
+.es-widget-background-content, a[href*="elfsight.com/google-reviews-widget"] {
+  display: none !important;
+}
+
 /*# sourceMappingURL=src_index_css_bad6b30c._.single.css.map*/

@@ -141,6 +141,17 @@ const imageConfigs = {
     },
     fit: 'contain',
     processAll: true
+  },
+  'portfolio-websites': {
+    sourceDir: path.join(imagesDir, 'portfolio', 'websites'),
+    cacheDir: path.join(cacheDir, 'portfolio', 'websites'),
+    sizes: {
+      thumbnail: { width: 400, height: null }, // Null height maintains aspect ratio
+      medium: { width: 800, height: null },
+      large: { width: 1600, height: null }
+    },
+    fit: 'contain', // Won't crop, but height null overrides this effectively
+    processAll: true
   }
 }
 
@@ -251,15 +262,34 @@ async function processPortfolioLogo(inputFile, config) {
   try {
     console.log(`\n📸 Processing portfolio logo: ${inputFile}`)
 
+    // Get metadata if needed for aspect ratio (if any size has null height)
+    // We do this once if needed
+    let metadata = null;
+    const needsAspectRatio = Object.values(config.sizes).some(s => s.height === null);
+    if (needsAspectRatio) {
+      metadata = await sharp(inputPath).metadata();
+    }
+
     for (const [sizeName, dimensions] of Object.entries(config.sizes)) {
       const { width, height } = dimensions
+
+      let aspectRatio = 1;
+      if (metadata) {
+        aspectRatio = metadata.width / metadata.height;
+      }
 
       // Generate PNG versions (1x and 2x)
       for (const scale of [1, 2]) {
         const outputWidth = width * scale
-        const outputHeight = height * scale
+        const outputHeight = height ? height * scale : Math.round(outputWidth / aspectRatio)
+
         const outputName = `${baseName}-${sizeName}${scale === 2 ? '@2x' : ''}.png`
         const outputPath = path.join(config.cacheDir, outputName)
+
+        if (fs.existsSync(outputPath)) {
+          console.log(`   ⏭️  Skipping unmodified: ${outputName}`)
+          continue
+        }
 
         await sharp(inputPath)
           .resize(outputWidth, outputHeight, {
@@ -277,9 +307,15 @@ async function processPortfolioLogo(inputFile, config) {
       // Generate WebP versions (1x and 2x)
       for (const scale of [1, 2]) {
         const outputWidth = width * scale
-        const outputHeight = height * scale
+        const outputHeight = height ? height * scale : Math.round(outputWidth / aspectRatio)
+
         const outputName = `${baseName}-${sizeName}${scale === 2 ? '@2x' : ''}.webp`
         const outputPath = path.join(config.cacheDir, outputName)
+
+        if (fs.existsSync(outputPath)) {
+          console.log(`   ⏭️  Skipping unmodified: ${outputName}`)
+          continue
+        }
 
         await sharp(inputPath)
           .resize(outputWidth, outputHeight, {
@@ -434,8 +470,19 @@ async function processCategory(categoryName, config) {
   for (const imageFile of sourceImages) {
     let result
     // All portfolio categories need special handling with multiple sizes
+    // portfolio-websites uses standard processImage logic (variable height) but needs multiple sizes loop,
+    // actually processImage only supports 'default' size key currently.
+    // We need to either update processImage to handle multiple sizes OR update processPortfolioLogo to handle variable height.
+    // Let's update processPortfolioLogo to handle null height for aspect ratio preservation.
+
     if (categoryName.startsWith('portfolio-')) {
-      result = await processPortfolioLogo(imageFile, config)
+      // Check if this is websites category which needs aspect ratio preservation
+      if (categoryName === 'portfolio-websites') {
+        // We can reuse processPortfolioLogo but we need to ensure it respects null height
+        result = await processPortfolioLogo(imageFile, config)
+      } else {
+        result = await processPortfolioLogo(imageFile, config)
+      }
     } else {
       result = await processImage(imageFile, config)
     }
@@ -530,7 +577,7 @@ async function main() {
     console.log('='.repeat(60))
   } else {
     console.error(`❌ Unknown category: ${category}`)
-    console.log('Available categories: blog, team, client-logos, portfolio-logos, portfolio-business-card, portfolio-id-cards, portfolio-brochure-cover, portfolio-posters, portfolio-packaging, portfolio-social-media-posts, portfolio-backdrop, portfolio-magazine-ad, all')
+    console.log('Available categories: blog, team, client-logos, portfolio-logos, portfolio-business-card, portfolio-id-cards, portfolio-brochure-cover, portfolio-posters, portfolio-packaging, portfolio-social-media-posts, portfolio-backdrop, portfolio-magazine-ad, portfolio-websites, all')
     process.exit(1)
   }
 

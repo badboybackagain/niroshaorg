@@ -11,6 +11,7 @@
   "/page": "/",
   "/portfolio/[slug]/page": "/portfolio/[slug]",
   "/portfolio/page": "/portfolio",
+  "/portfolio/websites/page": "/portfolio/websites",
   "/privacy/page": "/privacy",
   "/robots.txt/route": "/robots.txt",
   "/services/[slug]/page": "/services/[slug]",
