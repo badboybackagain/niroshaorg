@@ -29,6 +29,9 @@ public/logo-xlarge*
 temp_restore/
 assets_2025-12-16_04_40_18/
 
+
 # Build artifacts
 *.timestamp-*
 vite.config.js.timestamp-*
+.next
+public/cache

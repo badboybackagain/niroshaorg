@@ -88,10 +88,15 @@ function Websites() {
                 '.jpeg',
                 '.webp'
             ];
-            websites = files.filter((file)=>imageExtensions.includes(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].extname(file).toLowerCase())).map((file)=>({
+            websites = files.filter((file)=>imageExtensions.includes(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].extname(file).toLowerCase())).map((file)=>{
+                const basename = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].parse(file).name;
+                return {
                     id: file,
-                    image: `/images/portfolio/websites/${file}`
-                }));
+                    image: `/images/portfolio/websites/${file}`,
+                    thumbnail: `/cache/portfolio/websites/${basename}-thumbnail.webp`,
+                    full: `/cache/portfolio/websites/${basename}-large.webp`
+                };
+            });
         }
     } catch (error) {
         console.error('Error reading website images:', error);
@@ -100,7 +105,7 @@ function Websites() {
         websites: websites
     }, void 0, false, {
         fileName: "[project]/app/portfolio/websites/page.tsx",
-        lineNumber: 31,
+        lineNumber: 36,
         columnNumber: 12
     }, this);
 }

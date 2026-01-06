@@ -19,10 +19,15 @@ export default function Websites() {
 
             websites = files
                 .filter(file => imageExtensions.includes(path.extname(file).toLowerCase()))
-                .map(file => ({
-                    id: file,
-                    image: `/images/portfolio/websites/${file}`
-                }))
+                .map(file => {
+                    const basename = path.parse(file).name
+                    return {
+                        id: file,
+                        image: `/images/portfolio/websites/${file}`, // Fallback
+                        thumbnail: `/cache/portfolio/websites/${basename}-thumbnail.webp`,
+                        full: `/cache/portfolio/websites/${basename}-large.webp`
+                    }
+                })
         }
     } catch (error) {
         console.error('Error reading website images:', error)

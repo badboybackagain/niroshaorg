@@ -309,6 +309,14 @@ if [ -d ".next/standalone" ]; then
                 STANDALONE_TEAM_CACHE=$(find .next/standalone/public/cache/team -type f 2>/dev/null | wc -l | tr -d ' ')
                 echo -e "${GREEN}  - Team cache: ${STANDALONE_TEAM_CACHE} files${NC}"
             fi
+            if [ -d ".next/standalone/public/cache/portfolio" ]; then
+                STANDALONE_PORTFOLIO_CACHE=$(find .next/standalone/public/cache/portfolio -type f 2>/dev/null | wc -l | tr -d ' ')
+                echo -e "${GREEN}  - Portfolio cache: ${STANDALONE_PORTFOLIO_CACHE} files${NC}"
+            fi
+            if [ -d ".next/standalone/public/cache/portfolio" ]; then
+                STANDALONE_PORTFOLIO_CACHE=$(find .next/standalone/public/cache/portfolio -type f 2>/dev/null | wc -l | tr -d ' ')
+                echo -e "${GREEN}  - Portfolio cache: ${STANDALONE_PORTFOLIO_CACHE} files${NC}"
+            fi
         else
             echo -e "${RED}⚠ Cache directory missing in standalone!${NC}"
         fi
@@ -538,6 +546,11 @@ if [ "$DEPLOY_SOURCE" = ".next/standalone" ]; then
         echo -e "${GREEN}✓ Archive contains ${ARCHIVE_BLOG_CACHE} blog cache files${NC}"
         echo -e "${GREEN}✓ Archive contains ${ARCHIVE_CLIENT_LOGOS} client-logos cache files${NC}"
         echo -e "${GREEN}✓ Archive contains ${ARCHIVE_TEAM_CACHE} team cache files${NC}"
+        
+        ARCHIVE_PORTFOLIO_CACHE=$(tar -tzf "$ARCHIVE_PATH" 2>/dev/null | grep "public/cache/portfolio" | wc -l | tr -d ' ')
+        echo -e "${GREEN}✓ Archive contains ${ARCHIVE_PORTFOLIO_CACHE} portfolio cache files${NC}"
+        
+
         
         if [ "$ARCHIVE_BLOG_CACHE" -lt 100 ]; then
             echo -e "${YELLOW}⚠ WARNING: Archive seems to be missing blog cache files!${NC}"
@@ -795,6 +808,7 @@ find . -name '._*' -type f -delete 2>/dev/null
 echo Step 5: Verifying deployment
 test -d public/images/blog && echo Blog images: OK || echo Blog images: MISSING
 test -d public/cache && echo Cache: OK || echo Cache: MISSING
+test -d public/cache/portfolio && echo Portfolio Cache: OK || echo Portfolio Cache: MISSING
 if test -d .next/static; then STATIC_COUNT=\$(find .next/static -type f 2>/dev/null | wc -l); echo \"Static files: OK (\${STATIC_COUNT} files)\"; else echo \"Static files: MISSING - CRITICAL\"; fi
 echo Step 6: Removing archive
 rm -f $ARCHIVE_NAME

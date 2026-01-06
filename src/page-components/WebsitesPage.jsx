@@ -106,11 +106,11 @@ const WebsitesPage = ({ websites }) => {
                   <div
                     key={site.id}
                     className="website-item"
-                    onClick={() => setSelectedImage(site.image)}
+                    onClick={() => setSelectedImage(site.full || site.image)}
                     style={{ cursor: 'pointer' }}
                   >
                     <LaptopMockup
-                      imageSrc={site.image}
+                      imageSrc={site.thumbnail || site.image}
                       alt="Website Design Mockup"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />

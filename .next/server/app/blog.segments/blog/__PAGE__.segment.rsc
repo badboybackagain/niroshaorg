@@ -267,7 +267,7 @@
       "name": "E-commerce Solutions"
     }
   ]
-}0:{"buildId":"s6AzrZX7WSsA_oavtKWAN","rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3"],["$L4","$L5"],"$L6"]}],"loading":null,"isPartial":false}
+}0:{"buildId":"Ysmwuav82FYkiAemKPmM9","rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3"],["$L4","$L5"],"$L6"]}],"loading":null,"isPartial":false}
 3:["$","$L7",null,{}]
 4:["$","script","script-0",{"src":"/_next/static/chunks/b514352f26b16623.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/4e4242d13b5863a5.js","async":true}]
