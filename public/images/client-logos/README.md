@@ -92,3 +92,4 @@ All optimized images are designed to pass Google PageSpeed Insights:
 - ✅ Retina support
 - ✅ Lazy loading (handled by component)
 
+

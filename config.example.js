@@ -27,3 +27,4 @@ if (!config.gmail.user || !config.gmail.password ||
 }
 
 export default config;
+

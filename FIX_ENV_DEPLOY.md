@@ -57,3 +57,4 @@ echo "FTP_HOST: $FTP_HOST"
 ```
 
 You should see all values correctly loaded without errors.
+

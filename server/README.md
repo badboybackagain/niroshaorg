@@ -109,3 +109,4 @@ fetch('http://localhost:3000/api/contact', {
 - Verify the server is running: `curl http://localhost:3000/health`
 - Check the port number matches (default is 3000)
 - Make sure no firewall is blocking the port
+

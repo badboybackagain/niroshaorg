@@ -181,3 +181,4 @@ NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 - `src/components/GTMConsentWrapper.jsx` - Main wrapper component
 - `src/components/GoogleTagManager.jsx` - GTM integration
 - `src/components/ConsentBanner.jsx` - Consent UI
+

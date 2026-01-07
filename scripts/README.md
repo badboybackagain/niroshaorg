@@ -84,3 +84,4 @@ All processed images are generated in:
 4. **Updates**: Replace source image and re-run processing script
 5. **Naming**: Use descriptive, lowercase filenames with hyphens
 
+

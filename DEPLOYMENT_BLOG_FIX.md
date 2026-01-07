@@ -87,3 +87,4 @@ ls -la public_html/public/cache/blog/ | wc -l
 1. Run `./deploy.sh` again
 2. Check the verification output
 3. If issues persist, check server logs and file permissions
+

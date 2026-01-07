@@ -92,8 +92,6 @@ export default function RootLayout({ children }) {
             </Script>
           </>
         )}
-        {/* Defer non-critical CSS loading - must run before CSS loads */}
-        <DeferredCSS />
         {/* Inline critical CSS for above-the-fold content - prevents render blocking */}
         <CriticalCSS />
         {/* Resource hints - preconnect to critical origins for faster resource loading */}
@@ -135,9 +133,6 @@ export default function RootLayout({ children }) {
             }}
           />
         )}
-        <OrganizationSchema />
-        <WebsiteSchema />
-        <ScrollToTop />
       </head>
       {/* 
         Note: suppressHydrationWarning on body/html suppresses most hydration warnings.
@@ -146,6 +141,13 @@ export default function RootLayout({ children }) {
         for better UX and don't affect functionality.
       */}
       <body suppressHydrationWarning>
+        {/* Defer non-critical CSS loading - runs early in body */}
+        {/* Temporarily disabled to debug loading issue */}
+        {/* <DeferredCSS /> */}
+        {/* Schema components - must be in body for client components */}
+        <OrganizationSchema />
+        <WebsiteSchema />
+        <ScrollToTop />
         {USE_GTM && <GTMConsentWrapper />}
         <ThemeProvider>
           <Layout>

@@ -70,3 +70,4 @@ export const portfolioCategories = [
     image: '/cache/portfolio/magazine-ad/Dr.Sachin_Patil-thumbnail.webp'
   }
 ]
+

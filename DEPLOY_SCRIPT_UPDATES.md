@@ -166,3 +166,4 @@ The deploy script now:
 - ✅ Works with empty server directories (fresh deployment)
 
 Just run `./deploy.sh` and everything will be set up correctly!
+

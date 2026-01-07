@@ -134,3 +134,4 @@ Your server directory should look like this:
 - Verify they're set in hosting control panel (not in .env file)
 - Restart the Node.js app after setting variables
 - Check variable names match exactly (case-sensitive)
+

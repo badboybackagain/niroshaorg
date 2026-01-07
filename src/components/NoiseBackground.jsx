@@ -82,3 +82,4 @@ const NoiseBackground = ({
 };
 
 export default NoiseBackground;
+

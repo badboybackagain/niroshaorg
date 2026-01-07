@@ -146,3 +146,4 @@ src/data/
 3. **Submit to Google**: Submit your sitemap to Google Search Console
 4. **Monitor**: Check Google Search Console regularly for sitemap errors
 5. **Validate**: Use [XML Sitemap Validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html) to verify your sitemap
+

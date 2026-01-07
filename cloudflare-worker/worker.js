@@ -174,3 +174,4 @@ async function sendEmailsViaResend(gmailUser, fullName, countryCode, whatsappNum
   // See the alternative implementation below
   return { success: false, error: 'Resend not configured' };
 }
+

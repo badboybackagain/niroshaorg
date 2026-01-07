@@ -108,3 +108,4 @@ After rebuilding and deploying:
 - Works for any production domain (uses relative URL)
 - Local development still works with localhost detection
 
+

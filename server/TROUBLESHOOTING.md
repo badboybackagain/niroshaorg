@@ -177,3 +177,4 @@ If none of these work, try:
 - [ ] Server is reading .env file (check console logs)
 - [ ] Tried generating a new App Password
 - [ ] Checked Google Account for security alerts
+

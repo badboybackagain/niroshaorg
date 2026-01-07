@@ -65,3 +65,4 @@ your-project/
 ## 📝 Full Documentation
 
 See `CONFIG_FILE_SETUP.md` for detailed instructions.
+

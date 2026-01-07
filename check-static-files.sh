@@ -58,3 +58,4 @@ else
     echo "Usually: cd public_html/.next/standalone"
     exit 1
 fi
+

@@ -20,3 +20,4 @@ export const clearConsent = () => {
   if (typeof window === 'undefined') return
   localStorage.removeItem('gtm-consent')
 }
+

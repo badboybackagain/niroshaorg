@@ -200,3 +200,4 @@ console.log(`📊 Total URLs: ${allRoutes.length}`)
 console.log(`   - Static routes: ${staticRoutes.length}`)
 console.log(`   - Service routes: ${serviceRoutes.length}`)
 console.log(`   - Blog routes: ${blogRoutes.length}`)
+

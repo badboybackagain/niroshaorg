@@ -120,3 +120,4 @@ PARALLEL_TRANSFERS=20
 - `--only-newer` requires accurate file timestamps
 - Some FTP servers don't preserve timestamps correctly
 - Try using `--full` once, then subsequent deployments should skip unchanged files
+

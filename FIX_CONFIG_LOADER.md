@@ -71,3 +71,4 @@ In standalone builds, the file structure is different:
 - Using `process.cwd()` (the working directory) is more reliable
 
 The fix ensures config.js is found in the same directory where `server.js` runs from.
+

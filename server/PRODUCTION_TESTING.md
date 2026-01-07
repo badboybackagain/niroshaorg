@@ -324,3 +324,4 @@ If you encounter issues:
 4. Check browser console for errors
 5. Verify all dependencies are installed
 6. Review troubleshooting guides in `server/` directory
+

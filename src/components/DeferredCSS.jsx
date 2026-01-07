@@ -4,6 +4,7 @@
  * This prevents render-blocking and improves critical path latency
  * 
  * Uses MutationObserver to catch CSS links as Next.js injects them
+ * Note: This must be used in the body, not the head
  */
 const DeferredCSS = () => {
   return (

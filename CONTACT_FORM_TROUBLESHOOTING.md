@@ -157,3 +157,4 @@ npm run dev
 3. **Check Network tab** - See the actual request/response
 4. **Test with curl** - If curl works, it's a frontend/CORS issue
 5. **Verify both servers are running** - Frontend (Vite) and backend (Express)
+

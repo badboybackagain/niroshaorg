@@ -59,3 +59,4 @@ else
     echo ""
     node server.js
 fi
+

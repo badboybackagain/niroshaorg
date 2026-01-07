@@ -192,3 +192,4 @@ If you prefer Mailgun (free tier: 5,000 emails/month):
 5. Test and deploy!
 
 Your email server will be running on Cloudflare's infrastructure for **free**! 🎉
+

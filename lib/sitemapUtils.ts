@@ -7,3 +7,4 @@ import { servicesData } from '@/data/servicesData'
 export function extractServiceSlugs(): string[] {
   return Object.keys(servicesData)
 }
+
