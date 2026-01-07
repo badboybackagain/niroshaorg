@@ -29,6 +29,8 @@ const Navbar = () => {
   const productsDropdownRef = useRef(null)
   const productsLinkRef = useRef(null)
   const lastScrollY = useRef(0)
+  const servicesDropdownTimeoutRef = useRef(null)
+  const productsDropdownTimeoutRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,7 +91,7 @@ const Navbar = () => {
           if (servicesLinkRef.current) {
             const rect = servicesLinkRef.current.getBoundingClientRect()
             setDropdownPosition({
-              top: rect.bottom + 8,
+              top: rect.bottom + 2,
               left: rect.left
             })
           }
@@ -120,7 +122,7 @@ const Navbar = () => {
           if (productsLinkRef.current) {
             const rect = productsLinkRef.current.getBoundingClientRect()
             setProductsDropdownPosition({
-              top: rect.bottom + 8,
+              top: rect.bottom + 2,
               left: rect.left
             })
           }
@@ -146,10 +148,20 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target) &&
           servicesLinkRef.current && !servicesLinkRef.current.contains(event.target)) {
+        // Clear timeout if exists
+        if (servicesDropdownTimeoutRef.current) {
+          clearTimeout(servicesDropdownTimeoutRef.current)
+          servicesDropdownTimeoutRef.current = null
+        }
         setServicesDropdownOpen(false)
       }
       if (productsDropdownRef.current && !productsDropdownRef.current.contains(event.target) &&
           productsLinkRef.current && !productsLinkRef.current.contains(event.target)) {
+        // Clear timeout if exists
+        if (productsDropdownTimeoutRef.current) {
+          clearTimeout(productsDropdownTimeoutRef.current)
+          productsDropdownTimeoutRef.current = null
+        }
         setProductsDropdownOpen(false)
       }
     }
@@ -162,6 +174,18 @@ const Navbar = () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [servicesDropdownOpen, productsDropdownOpen])
+
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (servicesDropdownTimeoutRef.current) {
+        clearTimeout(servicesDropdownTimeoutRef.current)
+      }
+      if (productsDropdownTimeoutRef.current) {
+        clearTimeout(productsDropdownTimeoutRef.current)
+      }
+    }
+  }, [])
 
   // Get all services for submenu
   const servicesList = Object.entries(servicesData).map(([slug, data]) => ({
@@ -249,9 +273,8 @@ const Navbar = () => {
   const handleSearch = (e) => {
     e.preventDefault()
     if (searchQuery.trim()) {
-      // Simple search implementation - can be enhanced later
-      // For now, navigate to services page with search query
-      router.push(`/services?search=${encodeURIComponent(searchQuery.trim())}`)
+      // Navigate to search page with query parameter
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
       setSearchQuery('')
       setIsSearchModalOpen(false)
     }
@@ -293,18 +316,28 @@ const Navbar = () => {
               <div 
                 className={`nav-link-dropdown ${pathname?.startsWith('/services') ? 'active' : ''}`}
                 onMouseEnter={() => {
+                  // Clear any pending close timeout
+                  if (servicesDropdownTimeoutRef.current) {
+                    clearTimeout(servicesDropdownTimeoutRef.current)
+                    servicesDropdownTimeoutRef.current = null
+                  }
                   setServicesDropdownOpen(true)
                 }}
                 onMouseLeave={(e) => {
-                  // Only close if not moving to dropdown
+                  // Add a small delay before closing to allow mouse to move to dropdown
                   // Check if relatedTarget is a valid Node before using contains
                   if (e.relatedTarget && e.relatedTarget instanceof Node) {
                     if (!servicesDropdownRef.current?.contains(e.relatedTarget)) {
-                      setServicesDropdownOpen(false)
+                      // Only close if not moving to dropdown, with a delay
+                      servicesDropdownTimeoutRef.current = setTimeout(() => {
+                        setServicesDropdownOpen(false)
+                      }, 150)
                     }
                   } else {
-                    // If relatedTarget is null or not a Node, close the dropdown
-                    setServicesDropdownOpen(false)
+                    // If relatedTarget is null or not a Node, close with delay
+                    servicesDropdownTimeoutRef.current = setTimeout(() => {
+                      setServicesDropdownOpen(false)
+                    }, 150)
                   }
                 }}
               >
@@ -328,8 +361,20 @@ const Navbar = () => {
                     left: `${dropdownPosition.left}px`,
                     zIndex: 10000
                   }}
-                  onMouseEnter={() => setServicesDropdownOpen(true)}
-                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                  onMouseEnter={() => {
+                    // Clear any pending close timeout
+                    if (servicesDropdownTimeoutRef.current) {
+                      clearTimeout(servicesDropdownTimeoutRef.current)
+                      servicesDropdownTimeoutRef.current = null
+                    }
+                    setServicesDropdownOpen(true)
+                  }}
+                  onMouseLeave={() => {
+                    // Add a small delay before closing
+                    servicesDropdownTimeoutRef.current = setTimeout(() => {
+                      setServicesDropdownOpen(false)
+                    }, 150)
+                  }}
                 >
                   <Link 
                     href="/services/" 
@@ -357,15 +402,27 @@ const Navbar = () => {
               <div 
                 className={`nav-link-dropdown ${pathname?.startsWith('/products/whatsapp-api-gateway') || pathname?.startsWith('/products/pinnacle-blast') ? 'active' : ''}`}
                 onMouseEnter={() => {
+                  // Clear any pending close timeout
+                  if (productsDropdownTimeoutRef.current) {
+                    clearTimeout(productsDropdownTimeoutRef.current)
+                    productsDropdownTimeoutRef.current = null
+                  }
                   setProductsDropdownOpen(true)
                 }}
                 onMouseLeave={(e) => {
+                  // Add a small delay before closing to allow mouse to move to dropdown
                   if (e.relatedTarget && e.relatedTarget instanceof Node) {
                     if (!productsDropdownRef.current?.contains(e.relatedTarget)) {
-                      setProductsDropdownOpen(false)
+                      // Only close if not moving to dropdown, with a delay
+                      productsDropdownTimeoutRef.current = setTimeout(() => {
+                        setProductsDropdownOpen(false)
+                      }, 150)
                     }
                   } else {
-                    setProductsDropdownOpen(false)
+                    // If relatedTarget is null or not a Node, close with delay
+                    productsDropdownTimeoutRef.current = setTimeout(() => {
+                      setProductsDropdownOpen(false)
+                    }, 150)
                   }
                 }}
               >
@@ -389,8 +446,20 @@ const Navbar = () => {
                     left: `${productsDropdownPosition.left}px`,
                     zIndex: 10000
                   }}
-                  onMouseEnter={() => setProductsDropdownOpen(true)}
-                  onMouseLeave={() => setProductsDropdownOpen(false)}
+                  onMouseEnter={() => {
+                    // Clear any pending close timeout
+                    if (productsDropdownTimeoutRef.current) {
+                      clearTimeout(productsDropdownTimeoutRef.current)
+                      productsDropdownTimeoutRef.current = null
+                    }
+                    setProductsDropdownOpen(true)
+                  }}
+                  onMouseLeave={() => {
+                    // Add a small delay before closing
+                    productsDropdownTimeoutRef.current = setTimeout(() => {
+                      setProductsDropdownOpen(false)
+                    }, 150)
+                  }}
                 >
                   <Link 
                     href="/products/whatsapp-api-gateway/" 

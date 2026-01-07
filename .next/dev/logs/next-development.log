@@ -1,4 +1,13 @@
-[00:00:00.716] Server  LOG      ✓ Ready in 356ms
-[00:00:00.740] Server  ERROR   Error: write EPIPE
-[00:00:00.747] Server  ERROR    ⨯ "uncaughtException:" Error: write EPIPE
-[00:00:00.751] Server  ERROR    ⨯ "uncaughtException: " Error: write EPIPE
+[00:00:00.796] Server  LOG      ✓ Ready in 536ms
+[00:01:12.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:13.075] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:01:13.462] Browser LOG     ScrollSmoother initialized successfully
+[00:01:18.569] Browser ERROR   uncaughtError: TypeError: content.description?.toLowerCase is not a function
+[00:01:55.545] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:55.952] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:01:56.291] Browser LOG     ScrollSmoother initialized successfully
+[00:02:02.934] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:02:02.957] Server  LOG      ✓ Compiled in 7ms
+[00:02:03.365] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:03.622] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
+[00:02:04.026] Browser LOG     ScrollSmoother initialized successfully

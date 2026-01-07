@@ -1,7 +1,7 @@
-8116992493160ce497d694dcec3c4478  server.js
-eb6d7481868295915a0e64e2188b3e57  public/LOGO_INSTRUCTIONS.md
+399035bee26eeb247dd74dffcab78dc8  server.js
+3fd666eb74000c7f533df9fa76f0841b  public/LOGO_INSTRUCTIONS.md
 8e01f2244eb3db9009bc286a50073b44  public/logo-large.webp
-373cfe7fc641b58cea82af93a10d7ad5  public/README_LOGO.md
+ec889e046ced6e9b9d7e785155f5f261  public/README_LOGO.md
 1147d7b1b8ccaeb158b259df704a0891  public/reviews.json
 3edffeeaadf9e6dea74191751edaf520  public/cache/blog/cloud-infrastructure-featured@2x.webp
 e8ce9dc8fa4d74f657db953d345a6002  public/cache/blog/local-seo-strategy-large@2x.webp
@@ -2302,7 +2302,7 @@ cd88a37a7aa991d0316be4f3b139a78a  public/images/client-logos/cxplab.com.png
 694c936e8d40e9f4690e459d33cf6c9d  public/images/client-logos/newdaystays.com.png
 914565ba2ce90bc8766e8e3fba28ec54  public/images/client-logos/vcard.muppra.com.png
 5c68c6a2e38729f1b0d8d2e333c60426  public/images/client-logos/honadvisors.com.png
-27239c071dc157e885465e85163fbc83  public/images/client-logos/README.md
+976db9d22d688c86dd360a07c634f381  public/images/client-logos/README.md
 f6ba290ad8a2a9b44314263317393c42  public/images/client-logos/solitaireworld.co.in.png
 e80414d891d0c4d57d58045e8e59ec6d  public/images/client-logos/sharadagroup.com.jpg
 92eef6410a370da1ddd0977cbd672b1e  public/images/client-logos/briton.in.png
@@ -2496,11 +2496,11 @@ c1384f6a97610cf56d5e1a7d77176cde  public/logo-small.png
 f64199507e19d9af8ac44d5cb16f7603  public/logo.png
 8e3844f5dd4929735766e5ea6c0c0407  public/logo-large.png
 61be2fd43b2583ff73a035137a282f4e  public/logo@2x.png
-0cecbcc2c726627e18290a8e85221818  public/sitemap.xml
+281375ecb9fd135f81802dd86c61f5c8  public/sitemap.xml
 6d215db343b6270d8b896faea425be5e  public/logo-small@2x.webp
-87f2f551d76721d3c5fa2921066bf5c9  public/robots.txt
+936fa803f98179b2682fd514e1fb1d80  public/robots.txt
 d3ec3bc24caa73e9280266079cf09bcc  public/logo-small@2x.png
 6d215db343b6270d8b896faea425be5e  public/logo-xlarge.webp
 cb704e4d1b17ec1719448321781951a3  public/logo-large@2x.png
 d3ec3bc24caa73e9280266079cf09bcc  public/logo-xlarge.png
-8a351c0a0ea0afbff38d80c2eab05f9d  package.json
+936771f84e651619e7a1f5c2aa549349  package.json
