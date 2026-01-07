@@ -21,7 +21,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   const title = blog.seoTitle || blog.title
   const description = blog.seoDescription || blog.excerpt
   const keywords = blog.seoKeywords || blog.category
-  const url = `${SITE_URL}/blog/${blog.slug}`
+  const url = `${SITE_URL}/blog/${blog.slug}/`
   
   // Get image URL
   const imageUrl = blog.imageSlug 

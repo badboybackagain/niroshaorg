@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   creator: 'Team Nirosha',
   publisher: 'Team Nirosha',
   alternates: {
-    canonical: SITE_URL,
+    canonical: `${SITE_URL}/`,
   },
   openGraph: {
     title: 'Web Development, SEO & Automation Agency | Team Nirosha',
     description: 'Team Nirosha is a trusted digital agency offering web development, SEO, automation, SaaS and IT solutions to help businesses grow securely.',
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     siteName: 'Team Nirosha',
     images: [
       {

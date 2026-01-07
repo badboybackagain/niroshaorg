@@ -93,3 +93,5 @@ All optimized images are designed to pass Google PageSpeed Insights:
 - ✅ Lazy loading (handled by component)
 
 
+
+

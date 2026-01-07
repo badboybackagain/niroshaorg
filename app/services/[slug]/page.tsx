@@ -23,7 +23,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     (Array.isArray(service.description) ? service.description[0] : service.description) ||
     `Professional ${service.title} services by Team Nirosha`
   const keywords = service.seoKeywords || service.title
-  const url = `${SITE_URL}/services/${resolvedParams.slug}`
+  const url = `${SITE_URL}/services/${resolvedParams.slug}/`
 
   return {
     title,
@@ -80,9 +80,9 @@ export default async function ServiceDetail({ params }) {
   const service = servicesData[resolvedParams.slug]
   
   const breadcrumbItems = service ? [
-    { name: 'Home', url: SITE_URL },
-    { name: 'Services', url: `${SITE_URL}/services` },
-    { name: service.title, url: `${SITE_URL}/services/${resolvedParams.slug}` }
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Services', url: `${SITE_URL}/services/` },
+    { name: service.title, url: `${SITE_URL}/services/${resolvedParams.slug}/` }
   ] : []
 
   return (

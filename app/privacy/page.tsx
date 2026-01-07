@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   keywords: ['privacy policy', 'data protection', 'privacy rights', 'cookie policy', 'data security', 'Team Nirosha privacy'],
   authors: [{ name: 'Team Nirosha' }],
   alternates: {
-    canonical: `${SITE_URL}/privacy`,
+    canonical: `${SITE_URL}/privacy/`,
   },
   openGraph: {
     title: 'Privacy Policy - Team Nirosha',
     description: 'Learn how Team Nirosha protects your privacy and handles your personal information.',
-    url: `${SITE_URL}/privacy`,
+    url: `${SITE_URL}/privacy/`,
     siteName: 'Team Nirosha',
     images: [
       {
@@ -42,4 +42,7 @@ export const metadata: Metadata = {
 export default function Privacy() {
   return <PrivacyPage />
 }
+
+
+
 

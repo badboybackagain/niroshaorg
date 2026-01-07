@@ -36,12 +36,12 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     ],
     authors: [{ name: 'Team Nirosha' }],
     alternates: {
-      canonical: `${SITE_URL}/portfolio/${slug}`,
+      canonical: `${SITE_URL}/portfolio/${slug}/`,
     },
     openGraph: {
       title: `${category.title} Portfolio - Team Nirosha`,
       description: category.description,
-      url: `${SITE_URL}/portfolio/${slug}`,
+      url: `${SITE_URL}/portfolio/${slug}/`,
       siteName: 'Team Nirosha',
       images: [
         {
@@ -75,4 +75,7 @@ export default async function PortfolioCategory({ params }) {
     </Suspense>
   )
 }
+
+
+
 

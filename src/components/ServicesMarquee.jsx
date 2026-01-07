@@ -27,7 +27,7 @@ const ServicesMarquee = () => {
           {duplicatedServices.map((service, index) => (
             <div key={`${service.slug}-${index}`} className="services-marquee-item">
               <Link 
-                href={`/services/${service.slug}`} 
+                href={`/services/${service.slug}/`} 
                 className="services-marquee-link"
                 suppressHydrationWarning
               >

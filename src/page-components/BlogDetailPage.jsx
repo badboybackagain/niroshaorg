@@ -36,7 +36,7 @@ const BlogDetailPage = ({ params }) => {
           <div className="blog-not-found">
             <h2>Blog Post Not Found</h2>
             <p>The blog post you're looking for doesn't exist.</p>
-            <Link href="/blog" className="btn btn-primary">
+            <Link href="/blog/" className="btn btn-primary">
               Back to Blog
             </Link>
           </div>

@@ -175,3 +175,5 @@ Remove all commented Helmet blocks from page components.
 
 Your project has successfully migrated from React Router to Next.js. All functional code is using Next.js, and the application is running correctly. The remaining tasks are cleanup items that can be done at your convenience.
 
+
+

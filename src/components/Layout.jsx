@@ -7,7 +7,11 @@ import Footer from './Footer'
 import ScrollSmootherWrapper from './ScrollSmootherWrapper'
 
 // Lazy load below-the-fold components
-const CTA = dynamic(() => import('./CTA'), { ssr: false })
+// CTA can be SSR'd since it uses useEffect for animations
+const CTA = dynamic(() => import('./CTA'), { 
+  ssr: true,
+  loading: () => null 
+})
 const ScrollToTopButton = dynamic(() => import('./ScrollToTopButton'), { ssr: false })
 const ContactBubbles = dynamic(() => import('./ContactBubbles'), { ssr: false })
 

@@ -85,3 +85,5 @@ All processed images are generated in:
 5. **Naming**: Use descriptive, lowercase filenames with hyphens
 
 
+
+

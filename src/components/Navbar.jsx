@@ -17,12 +17,17 @@ const Navbar = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false)
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 })
+  const [productsDropdownPosition, setProductsDropdownPosition] = useState({ top: 0, left: 0 })
   const searchModalInputRef = useRef(null)
   const pathname = usePathname()
   const router = useRouter()
   const servicesDropdownRef = useRef(null)
   const servicesLinkRef = useRef(null)
+  const productsDropdownRef = useRef(null)
+  const productsLinkRef = useRef(null)
   const lastScrollY = useRef(0)
 
   useEffect(() => {
@@ -68,6 +73,8 @@ const Navbar = () => {
     setIsOpen(false)
     setServicesDropdownOpen(false)
     setMobileServicesOpen(false)
+    setProductsDropdownOpen(false)
+    setMobileProductsOpen(false)
   }, [pathname])
 
   // Calculate dropdown position when it opens or on scroll/resize
@@ -103,6 +110,37 @@ const Navbar = () => {
     }
   }, [servicesDropdownOpen])
 
+  // Calculate products dropdown position
+  useEffect(() => {
+    let rafId = null
+    
+    const updatePosition = () => {
+      if (productsDropdownOpen && productsLinkRef.current) {
+        rafId = requestAnimationFrame(() => {
+          if (productsLinkRef.current) {
+            const rect = productsLinkRef.current.getBoundingClientRect()
+            setProductsDropdownPosition({
+              top: rect.bottom + 8,
+              left: rect.left
+            })
+          }
+        })
+      }
+    }
+
+    if (productsDropdownOpen) {
+      updatePosition()
+      window.addEventListener('scroll', updatePosition, { passive: true, capture: true })
+      window.addEventListener('resize', updatePosition, { passive: true })
+    }
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId)
+      window.removeEventListener('scroll', updatePosition, { capture: true })
+      window.removeEventListener('resize', updatePosition)
+    }
+  }, [productsDropdownOpen])
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -110,16 +148,20 @@ const Navbar = () => {
           servicesLinkRef.current && !servicesLinkRef.current.contains(event.target)) {
         setServicesDropdownOpen(false)
       }
+      if (productsDropdownRef.current && !productsDropdownRef.current.contains(event.target) &&
+          productsLinkRef.current && !productsLinkRef.current.contains(event.target)) {
+        setProductsDropdownOpen(false)
+      }
     }
 
-    if (servicesDropdownOpen) {
+    if (servicesDropdownOpen || productsDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [servicesDropdownOpen])
+  }, [servicesDropdownOpen, productsDropdownOpen])
 
   // Get all services for submenu
   const servicesList = Object.entries(servicesData).map(([slug, data]) => ({
@@ -165,7 +207,7 @@ const Navbar = () => {
 
   // Prevent overflow when dropdown is open
   useEffect(() => {
-    if (servicesDropdownOpen) {
+    if (servicesDropdownOpen || productsDropdownOpen) {
       // Ensure navbar and body don't create scrollbars
       const navbar = document.querySelector('.navbar')
       const navContent = document.querySelector('.nav-content')
@@ -202,7 +244,7 @@ const Navbar = () => {
         navLinks.style.overflow = ''
       }
     }
-  }, [servicesDropdownOpen])
+  }, [servicesDropdownOpen, productsDropdownOpen])
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -242,8 +284,8 @@ const Navbar = () => {
                 <span className="nav-link-home-text">HOME</span>
               </Link>
               <Link 
-                href="/about" 
-                className={`nav-link ${pathname === '/about' ? 'active' : ''}`}
+                href="/about/" 
+                className={`nav-link ${pathname === '/about' || pathname === '/about/' ? 'active' : ''}`}
                 suppressHydrationWarning
               >
                 <span>ABOUT</span>
@@ -267,7 +309,7 @@ const Navbar = () => {
                 }}
               >
                 <Link 
-                  href="/services" 
+                  href="/services/" 
                   className="nav-link"
                   ref={servicesLinkRef}
                   suppressHydrationWarning
@@ -290,7 +332,7 @@ const Navbar = () => {
                   onMouseLeave={() => setServicesDropdownOpen(false)}
                 >
                   <Link 
-                    href="/services" 
+                    href="/services/" 
                     className="services-dropdown-item services-dropdown-all"
                     onClick={() => setServicesDropdownOpen(false)}
                     suppressHydrationWarning
@@ -301,8 +343,8 @@ const Navbar = () => {
                   {servicesList.map((service) => (
                     <Link
                       key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className={`services-dropdown-item ${pathname === `/services/${service.slug}` ? 'active' : ''}`}
+                      href={`/services/${service.slug}/`}
+                      className={`services-dropdown-item ${pathname === `/services/${service.slug}` || pathname === `/services/${service.slug}/` ? 'active' : ''}`}
                       onClick={() => setServicesDropdownOpen(false)}
                       suppressHydrationWarning
                     >
@@ -312,23 +354,80 @@ const Navbar = () => {
                 </div>,
                 document.body
               )}
+              <div 
+                className={`nav-link-dropdown ${pathname?.startsWith('/products/whatsapp-api-gateway') || pathname?.startsWith('/products/pinnacle-blast') ? 'active' : ''}`}
+                onMouseEnter={() => {
+                  setProductsDropdownOpen(true)
+                }}
+                onMouseLeave={(e) => {
+                  if (e.relatedTarget && e.relatedTarget instanceof Node) {
+                    if (!productsDropdownRef.current?.contains(e.relatedTarget)) {
+                      setProductsDropdownOpen(false)
+                    }
+                  } else {
+                    setProductsDropdownOpen(false)
+                  }
+                }}
+              >
+                <Link 
+                  href="/products/whatsapp-api-gateway/" 
+                  className="nav-link"
+                  ref={productsLinkRef}
+                  suppressHydrationWarning
+                >
+                  <span>PRODUCTS</span>
+                  <FiChevronDown className="dropdown-icon" />
+                </Link>
+              </div>
+              {productsDropdownOpen && createPortal(
+                <div 
+                  className="services-dropdown"
+                  ref={productsDropdownRef}
+                  style={{
+                    position: 'fixed',
+                    top: `${productsDropdownPosition.top}px`,
+                    left: `${productsDropdownPosition.left}px`,
+                    zIndex: 10000
+                  }}
+                  onMouseEnter={() => setProductsDropdownOpen(true)}
+                  onMouseLeave={() => setProductsDropdownOpen(false)}
+                >
+                  <Link 
+                    href="/products/whatsapp-api-gateway/" 
+                    className={`services-dropdown-item ${pathname === '/products/whatsapp-api-gateway' || pathname === '/products/whatsapp-api-gateway/' ? 'active' : ''}`}
+                    onClick={() => setProductsDropdownOpen(false)}
+                    suppressHydrationWarning
+                  >
+                    <span>WhatsApp API Gateway</span>
+                  </Link>
+                  <Link 
+                    href="/products/pinnacle-blast/" 
+                    className={`services-dropdown-item ${pathname === '/products/pinnacle-blast' || pathname === '/products/pinnacle-blast/' ? 'active' : ''}`}
+                    onClick={() => setProductsDropdownOpen(false)}
+                    suppressHydrationWarning
+                  >
+                    <span>Pinnacle Blast</span>
+                  </Link>
+                </div>,
+                document.body
+              )}
               <Link 
-                href="/blog" 
+                href="/blog/" 
                 className={`nav-link ${pathname?.startsWith('/blog') ? 'active' : ''}`}
                 suppressHydrationWarning
               >
                 <span>BLOG</span>
               </Link>
               <Link 
-                href="/portfolio" 
+                href="/portfolio/" 
                 className={`nav-link ${pathname?.startsWith('/portfolio') ? 'active' : ''}`}
                 suppressHydrationWarning
               >
                 <span>OUR WORK</span>
               </Link>
               <Link 
-                href="/contact" 
-                className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}
+                href="/contact/" 
+                className={`nav-link ${pathname === '/contact' || pathname === '/contact/' ? 'active' : ''}`}
                 suppressHydrationWarning
               >
                 <span>CONTACT</span>
@@ -393,8 +492,8 @@ const Navbar = () => {
               <span>Home</span>
             </Link>
             <Link 
-              href="/about" 
-              className={`mobile-menu-link ${pathname === '/about' ? 'active' : ''}`} 
+              href="/about/" 
+              className={`mobile-menu-link ${pathname === '/about' || pathname === '/about/' ? 'active' : ''}`} 
               onClick={() => setIsOpen(false)}
               suppressHydrationWarning
             >
@@ -410,8 +509,8 @@ const Navbar = () => {
               </button>
             <div className={`mobile-menu-services-submenu ${mobileServicesOpen ? 'open' : ''}`}>
               <Link
-                href="/services"
-                className={`mobile-menu-link mobile-menu-submenu-item ${pathname === '/services' ? 'active' : ''}`}
+                href="/services/"
+                className={`mobile-menu-link mobile-menu-submenu-item ${pathname === '/services' || pathname === '/services/' ? 'active' : ''}`}
                 onClick={() => {
                   setIsOpen(false)
                   setMobileServicesOpen(false)
@@ -423,8 +522,8 @@ const Navbar = () => {
               {servicesList.map((service) => (
                 <Link
                   key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className={`mobile-menu-link mobile-menu-submenu-item ${pathname === `/services/${service.slug}` ? 'active' : ''}`}
+                  href={`/services/${service.slug}/`}
+                  className={`mobile-menu-link mobile-menu-submenu-item ${pathname === `/services/${service.slug}` || pathname === `/services/${service.slug}/` ? 'active' : ''}`}
                   onClick={() => {
                     setIsOpen(false)
                     setMobileServicesOpen(false)
@@ -436,8 +535,41 @@ const Navbar = () => {
               ))}
             </div>
             </div>
+            <div className="mobile-menu-services">
+              <button
+                className={`mobile-menu-link mobile-menu-services-toggle ${pathname?.startsWith('/products/whatsapp-api-gateway') || pathname?.startsWith('/products/pinnacle-blast') ? 'active' : ''}`}
+                onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+              >
+                <span>Products</span>
+                <FiChevronRight className={`mobile-menu-chevron ${mobileProductsOpen ? 'open' : ''}`} />
+              </button>
+              <div className={`mobile-menu-services-submenu ${mobileProductsOpen ? 'open' : ''}`}>
+                <Link
+                  href="/products/whatsapp-api-gateway/"
+                  className={`mobile-menu-link mobile-menu-submenu-item ${pathname === '/products/whatsapp-api-gateway' || pathname === '/products/whatsapp-api-gateway/' ? 'active' : ''}`}
+                  onClick={() => {
+                    setIsOpen(false)
+                    setMobileProductsOpen(false)
+                  }}
+                  suppressHydrationWarning
+                >
+                  <span>WhatsApp API Gateway</span>
+                </Link>
+                <Link
+                  href="/products/pinnacle-blast/"
+                  className={`mobile-menu-link mobile-menu-submenu-item ${pathname === '/products/pinnacle-blast' || pathname === '/products/pinnacle-blast/' ? 'active' : ''}`}
+                  onClick={() => {
+                    setIsOpen(false)
+                    setMobileProductsOpen(false)
+                  }}
+                  suppressHydrationWarning
+                >
+                  <span>Pinnacle Blast</span>
+                </Link>
+              </div>
+            </div>
             <Link
-              href="/blog"
+              href="/blog/"
               className={`mobile-menu-link ${pathname?.startsWith('/blog') ? 'active' : ''}`}
               onClick={() => setIsOpen(false)}
               suppressHydrationWarning
@@ -445,7 +577,7 @@ const Navbar = () => {
               <span>Blog</span>
             </Link>
             <Link
-              href="/portfolio"
+              href="/portfolio/"
               className={`mobile-menu-link ${pathname?.startsWith('/portfolio') ? 'active' : ''}`}
               onClick={() => setIsOpen(false)}
               suppressHydrationWarning
@@ -453,8 +585,8 @@ const Navbar = () => {
               <span>Our Work</span>
             </Link>
             <Link
-              href="/contact"
-              className={`mobile-menu-link ${pathname === '/contact' ? 'active' : ''}`}
+              href="/contact/"
+              className={`mobile-menu-link ${pathname === '/contact' || pathname === '/contact/' ? 'active' : ''}`}
               onClick={() => setIsOpen(false)}
               suppressHydrationWarning
             >

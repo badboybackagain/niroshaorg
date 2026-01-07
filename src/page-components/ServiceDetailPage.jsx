@@ -64,7 +64,7 @@ const ServiceDetailPage = ({ params }) => {
           <h2>Service Not Found</h2>
           <p>Slug: {slug}</p>
           <p>Available services: {Object.keys(servicesData || {}).join(', ')}</p>
-          <Link href="/services">Back to Services</Link>
+          <Link href="/services/" suppressHydrationWarning>Back to Services</Link>
         </div>
       </section>
     )
@@ -75,9 +75,9 @@ const ServiceDetailPage = ({ params }) => {
       <ServiceSchema service={serviceData} />
       <BreadcrumbSchema
         items={[
-          { name: 'Home', url: 'https://nirosha.org' },
-          { name: 'Services', url: 'https://nirosha.org/services' },
-          { name: serviceData.title, url: `https://nirosha.org/services/${slug}` }
+          { name: 'Home', url: 'https://nirosha.org/' },
+          { name: 'Services', url: 'https://nirosha.org/services/' },
+          { name: serviceData.title, url: `https://nirosha.org/services/${slug}/` }
         ]}
       />
 
@@ -88,9 +88,9 @@ const ServiceDetailPage = ({ params }) => {
             className={`service-hero-content ${titleVisible ? 'animate-fadeInUp' : ''}`}
           >
             <div className="service-breadcrumb">
-              <Link href="/">Home</Link>
+              <Link href="/" suppressHydrationWarning>Home</Link>
               <span>/</span>
-              <Link href="/services">Services</Link>
+              <Link href="/services/" suppressHydrationWarning>Services</Link>
               <span>/</span>
               <span>{serviceData.title}</span>
             </div>

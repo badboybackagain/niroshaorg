@@ -30,12 +30,12 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     keywords: [`${category.toLowerCase()}`, 'blog', 'digital marketing', 'SEO', 'web development'],
     authors: [{ name: 'Team Nirosha' }],
     alternates: {
-      canonical: `${SITE_URL}/blog/category/${slug}`,
+      canonical: `${SITE_URL}/blog/category/${slug}/`,
     },
     openGraph: {
       title: `${category} Blog Posts - Team Nirosha`,
       description: `Expert insights and strategies for ${category.toLowerCase()}.`,
-      url: `${SITE_URL}/blog/category/${slug}`,
+      url: `${SITE_URL}/blog/category/${slug}/`,
       siteName: 'Team Nirosha',
       images: [
         {
@@ -85,5 +85,8 @@ export default async function CategoryBlogPage({ params }) {
     </Suspense>
   )
 }
+
+
+
 
 

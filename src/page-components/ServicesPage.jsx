@@ -21,7 +21,8 @@ import {
   FiX,
   FiCheckCircle,
   FiTrendingUp,
-  FiUsers
+  FiUsers,
+  FiMessageCircle
 } from 'react-icons/fi'
 import { servicesData } from '../data/servicesData.jsx'
 import DotGridBackground from '../components/DotGridBackground'
@@ -61,7 +62,7 @@ const ServiceCard = ({ service, index, slug }) => {
 
   return (
     <Link 
-      href={`/services/${slug}`}
+      href={`/services/${slug}/`}
       ref={ref}
       className={`service-card service-card-link ${isVisible ? 'animate-fadeInUp' : ''}`}
       style={{ animationDelay: `${index * 100}ms` }}
@@ -222,6 +223,27 @@ const ServicesPage = () => {
                 <p className="services-section-subtitle">
                   Choose from {serviceCount} comprehensive digital services designed to help your business thrive online
                 </p>
+              </div>
+            )}
+
+            {/* WhatsApp API Gateway Featured CTA */}
+            {!searchQuery && (
+              <div className="whatsapp-featured-cta">
+                <div className="whatsapp-featured-content">
+                  <div className="whatsapp-featured-icon">
+                    <FiMessageCircle />
+                  </div>
+                  <div className="whatsapp-featured-text">
+                    <h3>WhatsApp API Gateway</h3>
+                    <p>Send unlimited WhatsApp messages from your existing number. No per-message fees, no template approvals. Start for FREE.</p>
+                  </div>
+                  <Link 
+                    href="/products/whatsapp-api-gateway/" 
+                    className="btn btn-primary"
+                  >
+                    Learn More <FiArrowRight />
+                  </Link>
+                </div>
               </div>
             )}
 

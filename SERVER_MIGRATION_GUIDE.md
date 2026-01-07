@@ -170,3 +170,5 @@ If you need to reference the old implementation:
 
 **Summary**: The `server/` folder is no longer needed. Everything is now in Next.js API routes and environment variables. You can safely delete it or keep it as backup.
 
+
+

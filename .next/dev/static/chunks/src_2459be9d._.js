@@ -85,6 +85,8 @@ const Contact = ()=>{
     _s();
     const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"])();
     const services = [
+        'Pinnacle Blast',
+        'WhatsApp API Gateway',
         'Web Development',
         'Branding & Design',
         'SEO Services',
@@ -334,7 +336,7 @@ const Contact = ()=>{
                 className: "contact-page-background-pattern"
             }, void 0, false, {
                 fileName: "[project]/src/components/Contact.jsx",
-                lineNumber: 266,
+                lineNumber: 268,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -344,48 +346,48 @@ const Contact = ()=>{
                         className: "contact-page-particle contact-page-particle-1"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 268,
+                        lineNumber: 270,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "contact-page-particle contact-page-particle-2"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 269,
+                        lineNumber: 271,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "contact-page-particle contact-page-particle-3"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 270,
+                        lineNumber: 272,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "contact-page-particle contact-page-particle-4"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 271,
+                        lineNumber: 273,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Contact.jsx",
-                lineNumber: 267,
+                lineNumber: 269,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "contact-page-glow contact-page-glow-1"
             }, void 0, false, {
                 fileName: "[project]/src/components/Contact.jsx",
-                lineNumber: 273,
+                lineNumber: 275,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "contact-page-glow contact-page-glow-2"
             }, void 0, false, {
                 fileName: "[project]/src/components/Contact.jsx",
-                lineNumber: 274,
+                lineNumber: 276,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -400,7 +402,7 @@ const Contact = ()=>{
                                 children: "Get In Touch"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 280,
+                                lineNumber: 282,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -408,13 +410,13 @@ const Contact = ()=>{
                                 children: "Ready to transform your digital presence? Let's discuss your project and see how we can help your business grow."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 281,
+                                lineNumber: 283,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 276,
+                        lineNumber: 278,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -428,14 +430,14 @@ const Contact = ()=>{
                                         className: "form-decoration form-decoration-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 292,
+                                        lineNumber: 294,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "form-decoration form-decoration-2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 293,
+                                        lineNumber: 295,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -443,7 +445,7 @@ const Contact = ()=>{
                                         children: "Send Us a Message"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 294,
+                                        lineNumber: 296,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -461,7 +463,7 @@ const Contact = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiUser"], {}, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 298,
+                                                                lineNumber: 300,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "Full Name ",
@@ -470,13 +472,13 @@ const Contact = ()=>{
                                                                 children: "*"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 299,
+                                                                lineNumber: 301,
                                                                 columnNumber: 29
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 297,
+                                                        lineNumber: 299,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -489,13 +491,13 @@ const Contact = ()=>{
                                                         placeholder: "Enter your full name"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 301,
+                                                        lineNumber: 303,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 296,
+                                                lineNumber: 298,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -507,7 +509,7 @@ const Contact = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMessageCircle"], {}, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 314,
+                                                                lineNumber: 316,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "WhatsApp Number ",
@@ -516,13 +518,13 @@ const Contact = ()=>{
                                                                 children: "*"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 315,
+                                                                lineNumber: 317,
                                                                 columnNumber: 35
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 313,
+                                                        lineNumber: 315,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -540,7 +542,7 @@ const Contact = ()=>{
                                                                         children: "🇮🇳 +91"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 325,
+                                                                        lineNumber: 327,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -548,7 +550,7 @@ const Contact = ()=>{
                                                                         children: "🇺🇸 +1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 326,
+                                                                        lineNumber: 328,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -556,7 +558,7 @@ const Contact = ()=>{
                                                                         children: "🇬🇧 +44"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 327,
+                                                                        lineNumber: 329,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -564,7 +566,7 @@ const Contact = ()=>{
                                                                         children: "🇦🇺 +61"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 328,
+                                                                        lineNumber: 330,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -572,7 +574,7 @@ const Contact = ()=>{
                                                                         children: "🇩🇪 +49"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 329,
+                                                                        lineNumber: 331,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -580,7 +582,7 @@ const Contact = ()=>{
                                                                         children: "🇫🇷 +33"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 330,
+                                                                        lineNumber: 332,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -588,7 +590,7 @@ const Contact = ()=>{
                                                                         children: "🇯🇵 +81"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 331,
+                                                                        lineNumber: 333,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -596,7 +598,7 @@ const Contact = ()=>{
                                                                         children: "🇨🇳 +86"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 332,
+                                                                        lineNumber: 334,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -604,7 +606,7 @@ const Contact = ()=>{
                                                                         children: "🇦🇪 +971"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 333,
+                                                                        lineNumber: 335,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -612,7 +614,7 @@ const Contact = ()=>{
                                                                         children: "🇸🇬 +65"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 334,
+                                                                        lineNumber: 336,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -620,7 +622,7 @@ const Contact = ()=>{
                                                                         children: "🇲🇾 +60"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 335,
+                                                                        lineNumber: 337,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -628,7 +630,7 @@ const Contact = ()=>{
                                                                         children: "🇹🇭 +66"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 336,
+                                                                        lineNumber: 338,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -636,7 +638,7 @@ const Contact = ()=>{
                                                                         children: "🇿🇦 +27"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 337,
+                                                                        lineNumber: 339,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -644,7 +646,7 @@ const Contact = ()=>{
                                                                         children: "🇧🇷 +55"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 338,
+                                                                        lineNumber: 340,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -652,7 +654,7 @@ const Contact = ()=>{
                                                                         children: "🇲🇽 +52"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 339,
+                                                                        lineNumber: 341,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -660,7 +662,7 @@ const Contact = ()=>{
                                                                         children: "🇪🇸 +34"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 340,
+                                                                        lineNumber: 342,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -668,7 +670,7 @@ const Contact = ()=>{
                                                                         children: "🇮🇹 +39"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 341,
+                                                                        lineNumber: 343,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -676,7 +678,7 @@ const Contact = ()=>{
                                                                         children: "🇳🇱 +31"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 342,
+                                                                        lineNumber: 344,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -684,7 +686,7 @@ const Contact = ()=>{
                                                                         children: "🇸🇪 +46"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 343,
+                                                                        lineNumber: 345,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -692,7 +694,7 @@ const Contact = ()=>{
                                                                         children: "🇳🇴 +47"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 344,
+                                                                        lineNumber: 346,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -700,7 +702,7 @@ const Contact = ()=>{
                                                                         children: "🇨🇭 +41"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 345,
+                                                                        lineNumber: 347,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -708,7 +710,7 @@ const Contact = ()=>{
                                                                         children: "🇧🇪 +32"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 346,
+                                                                        lineNumber: 348,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -716,7 +718,7 @@ const Contact = ()=>{
                                                                         children: "🇮🇪 +353"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 347,
+                                                                        lineNumber: 349,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -724,7 +726,7 @@ const Contact = ()=>{
                                                                         children: "🇵🇹 +351"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 348,
+                                                                        lineNumber: 350,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -732,7 +734,7 @@ const Contact = ()=>{
                                                                         children: "🇬🇷 +30"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 349,
+                                                                        lineNumber: 351,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -740,7 +742,7 @@ const Contact = ()=>{
                                                                         children: "🇵🇱 +48"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 350,
+                                                                        lineNumber: 352,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -748,7 +750,7 @@ const Contact = ()=>{
                                                                         children: "🇷🇺 +7"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 351,
+                                                                        lineNumber: 353,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -756,7 +758,7 @@ const Contact = ()=>{
                                                                         children: "🇰🇷 +82"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 352,
+                                                                        lineNumber: 354,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -764,7 +766,7 @@ const Contact = ()=>{
                                                                         children: "🇳🇿 +64"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 353,
+                                                                        lineNumber: 355,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -772,7 +774,7 @@ const Contact = ()=>{
                                                                         children: "🇮🇩 +62"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 354,
+                                                                        lineNumber: 356,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -780,7 +782,7 @@ const Contact = ()=>{
                                                                         children: "🇵🇭 +63"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 355,
+                                                                        lineNumber: 357,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -788,7 +790,7 @@ const Contact = ()=>{
                                                                         children: "🇻🇳 +84"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 356,
+                                                                        lineNumber: 358,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -796,7 +798,7 @@ const Contact = ()=>{
                                                                         children: "🇵🇰 +92"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 357,
+                                                                        lineNumber: 359,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -804,7 +806,7 @@ const Contact = ()=>{
                                                                         children: "🇧🇩 +880"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 358,
+                                                                        lineNumber: 360,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -812,7 +814,7 @@ const Contact = ()=>{
                                                                         children: "🇱🇰 +94"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 359,
+                                                                        lineNumber: 361,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -820,7 +822,7 @@ const Contact = ()=>{
                                                                         children: "🇳🇵 +977"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 360,
+                                                                        lineNumber: 362,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -828,7 +830,7 @@ const Contact = ()=>{
                                                                         children: "🇪🇬 +20"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 361,
+                                                                        lineNumber: 363,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -836,7 +838,7 @@ const Contact = ()=>{
                                                                         children: "🇳🇬 +234"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 362,
+                                                                        lineNumber: 364,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -844,7 +846,7 @@ const Contact = ()=>{
                                                                         children: "🇰🇪 +254"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 363,
+                                                                        lineNumber: 365,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -852,7 +854,7 @@ const Contact = ()=>{
                                                                         children: "🇲🇦 +212"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 364,
+                                                                        lineNumber: 366,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -860,7 +862,7 @@ const Contact = ()=>{
                                                                         children: "🇬🇭 +233"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 365,
+                                                                        lineNumber: 367,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -868,7 +870,7 @@ const Contact = ()=>{
                                                                         children: "🇭🇰 +852"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 366,
+                                                                        lineNumber: 368,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -876,7 +878,7 @@ const Contact = ()=>{
                                                                         children: "🇹🇼 +886"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 367,
+                                                                        lineNumber: 369,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -884,7 +886,7 @@ const Contact = ()=>{
                                                                         children: "🇲🇻 +960"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 368,
+                                                                        lineNumber: 370,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -892,7 +894,7 @@ const Contact = ()=>{
                                                                         children: "🇱🇧 +961"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 369,
+                                                                        lineNumber: 371,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -900,7 +902,7 @@ const Contact = ()=>{
                                                                         children: "🇯🇴 +962"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 370,
+                                                                        lineNumber: 372,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -908,7 +910,7 @@ const Contact = ()=>{
                                                                         children: "🇰🇼 +965"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 371,
+                                                                        lineNumber: 373,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -916,7 +918,7 @@ const Contact = ()=>{
                                                                         children: "🇸🇦 +966"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 372,
+                                                                        lineNumber: 374,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -924,7 +926,7 @@ const Contact = ()=>{
                                                                         children: "🇴🇲 +968"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 373,
+                                                                        lineNumber: 375,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -932,7 +934,7 @@ const Contact = ()=>{
                                                                         children: "🇮🇱 +972"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 374,
+                                                                        lineNumber: 376,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -940,7 +942,7 @@ const Contact = ()=>{
                                                                         children: "🇧🇭 +973"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 375,
+                                                                        lineNumber: 377,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -948,13 +950,13 @@ const Contact = ()=>{
                                                                         children: "🇶🇦 +974"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                                        lineNumber: 376,
+                                                                        lineNumber: 378,
                                                                         columnNumber: 21
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 318,
+                                                                lineNumber: 320,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -967,19 +969,19 @@ const Contact = ()=>{
                                                                 placeholder: "Phone Number"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 378,
+                                                                lineNumber: 380,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 317,
+                                                        lineNumber: 319,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 312,
+                                                lineNumber: 314,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -991,7 +993,7 @@ const Contact = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMail"], {}, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 392,
+                                                                lineNumber: 394,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "Email Address ",
@@ -1000,13 +1002,13 @@ const Contact = ()=>{
                                                                 children: "*"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 393,
+                                                                lineNumber: 395,
                                                                 columnNumber: 33
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 391,
+                                                        lineNumber: 393,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1019,13 +1021,13 @@ const Contact = ()=>{
                                                         placeholder: "your.email@example.com"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 395,
+                                                        lineNumber: 397,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 390,
+                                                lineNumber: 392,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1036,22 +1038,22 @@ const Contact = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiSend"], {}, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 408,
+                                                                lineNumber: 410,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0)),
-                                                            "Services Interested In ",
+                                                            "Product / Services Interested In ",
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "required",
                                                                 children: "*"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 409,
-                                                                columnNumber: 42
+                                                                lineNumber: 411,
+                                                                columnNumber: 52
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 407,
+                                                        lineNumber: 409,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1074,13 +1076,13 @@ const Contact = ()=>{
                                                                 children: service
                                                             }, index, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 415,
+                                                                lineNumber: 417,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0));
                                                         })
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 411,
+                                                        lineNumber: 413,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     formData.serviceInterested.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("small", {
@@ -1093,13 +1095,13 @@ const Contact = ()=>{
                                                         children: "Please select at least one service"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 435,
+                                                        lineNumber: 437,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 406,
+                                                lineNumber: 408,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1111,14 +1113,14 @@ const Contact = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMessageCircle"], {}, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 443,
+                                                                lineNumber: 445,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "Comments / Project Details"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 442,
+                                                        lineNumber: 444,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1130,13 +1132,13 @@ const Contact = ()=>{
                                                         placeholder: "Tell us about your project, requirements, or any questions you have..."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 446,
+                                                        lineNumber: 448,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 441,
+                                                lineNumber: 443,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1155,7 +1157,7 @@ const Contact = ()=>{
                                                         children: "Website (leave blank)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 459,
+                                                        lineNumber: 461,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1169,13 +1171,13 @@ const Contact = ()=>{
                                                         "aria-hidden": "true"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 460,
+                                                        lineNumber: 462,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 458,
+                                                lineNumber: 460,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             submitStatus === 'success' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1184,12 +1186,12 @@ const Contact = ()=>{
                                                     children: "✓ Thank you! We'll get back to you soon."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Contact.jsx",
-                                                    lineNumber: 475,
+                                                    lineNumber: 477,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 474,
+                                                lineNumber: 476,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             submitStatus === 'error' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1198,12 +1200,12 @@ const Contact = ()=>{
                                                     children: "⚠ Something went wrong. Please try again or contact us directly at info@nirosha.org"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Contact.jsx",
-                                                    lineNumber: 480,
+                                                    lineNumber: 482,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 479,
+                                                lineNumber: 481,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1222,25 +1224,25 @@ const Contact = ()=>{
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 494,
+                                                        lineNumber: 496,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 484,
+                                                lineNumber: 486,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 295,
+                                        lineNumber: 297,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 288,
+                                lineNumber: 290,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1251,14 +1253,14 @@ const Contact = ()=>{
                                         className: "info-decoration info-decoration-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 504,
+                                        lineNumber: 506,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "info-decoration info-decoration-2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 505,
+                                        lineNumber: 507,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1266,7 +1268,7 @@ const Contact = ()=>{
                                         children: "Contact Information"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 506,
+                                        lineNumber: 508,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1282,12 +1284,12 @@ const Contact = ()=>{
                                                         className: "info-icon",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiPhone"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/Contact.jsx",
-                                                            lineNumber: 510,
+                                                            lineNumber: 512,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 509,
+                                                        lineNumber: 511,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1296,26 +1298,26 @@ const Contact = ()=>{
                                                                 children: "Phone"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 513,
+                                                                lineNumber: 515,
                                                                 columnNumber: 17
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "+91-9403891938"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 514,
+                                                                lineNumber: 516,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 512,
+                                                        lineNumber: 514,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 508,
+                                                lineNumber: 510,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1329,12 +1331,12 @@ const Contact = ()=>{
                                                         className: "info-icon",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMessageCircle"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/Contact.jsx",
-                                                            lineNumber: 520,
+                                                            lineNumber: 522,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 519,
+                                                        lineNumber: 521,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1343,26 +1345,26 @@ const Contact = ()=>{
                                                                 children: "WhatsApp"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 523,
+                                                                lineNumber: 525,
                                                                 columnNumber: 17
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "+91-9403891938"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 524,
+                                                                lineNumber: 526,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 522,
+                                                        lineNumber: 524,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 518,
+                                                lineNumber: 520,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1374,12 +1376,12 @@ const Contact = ()=>{
                                                         className: "info-icon",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMail"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/Contact.jsx",
-                                                            lineNumber: 530,
+                                                            lineNumber: 532,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 529,
+                                                        lineNumber: 531,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1388,26 +1390,26 @@ const Contact = ()=>{
                                                                 children: "Email"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 533,
+                                                                lineNumber: 535,
                                                                 columnNumber: 17
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "info@nirosha.org"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 534,
+                                                                lineNumber: 536,
                                                                 columnNumber: 19
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 532,
+                                                        lineNumber: 534,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 528,
+                                                lineNumber: 530,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1417,12 +1419,12 @@ const Contact = ()=>{
                                                         className: "info-icon",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMapPin"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/Contact.jsx",
-                                                            lineNumber: 540,
+                                                            lineNumber: 542,
                                                             columnNumber: 19
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 539,
+                                                        lineNumber: 541,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1431,32 +1433,32 @@ const Contact = ()=>{
                                                                 children: "Address"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 543,
+                                                                lineNumber: 545,
                                                                 columnNumber: 17
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 children: "Hadapsar, Pune, Maharashtra, India"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                                lineNumber: 544,
+                                                                lineNumber: 546,
                                                                 columnNumber: 17
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Contact.jsx",
-                                                        lineNumber: 542,
+                                                        lineNumber: 544,
                                                         columnNumber: 17
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 538,
+                                                lineNumber: 540,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 507,
+                                        lineNumber: 509,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1466,7 +1468,7 @@ const Contact = ()=>{
                                                 children: "Prefer to Schedule a Call?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 550,
+                                                lineNumber: 552,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1478,25 +1480,25 @@ const Contact = ()=>{
                                                 children: "Book a Free Consultation"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 551,
+                                                lineNumber: 553,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 549,
+                                        lineNumber: 551,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 500,
+                                lineNumber: 502,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 286,
+                        lineNumber: 288,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1507,14 +1509,14 @@ const Contact = ()=>{
                                 className: "map-decoration map-decoration-1"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 569,
+                                lineNumber: 571,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "map-decoration map-decoration-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 570,
+                                lineNumber: 572,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1522,7 +1524,7 @@ const Contact = ()=>{
                                 children: "Find Us"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 571,
+                                lineNumber: 573,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1542,7 +1544,7 @@ const Contact = ()=>{
                                         title: "Nirosha Enterprises | Web Designer - Hadapsar, Pune"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 573,
+                                        lineNumber: 575,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1557,41 +1559,41 @@ const Contact = ()=>{
                                                 children: "View on Google Maps →"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.jsx",
-                                                lineNumber: 585,
+                                                lineNumber: 587,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Contact.jsx",
-                                            lineNumber: 584,
+                                            lineNumber: 586,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Contact.jsx",
-                                        lineNumber: 583,
+                                        lineNumber: 585,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Contact.jsx",
-                                lineNumber: 572,
+                                lineNumber: 574,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Contact.jsx",
-                        lineNumber: 565,
+                        lineNumber: 567,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Contact.jsx",
-                lineNumber: 275,
+                lineNumber: 277,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Contact.jsx",
-        lineNumber: 265,
+        lineNumber: 267,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

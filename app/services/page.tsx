@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   keywords: ['web development services', 'SEO services', 'digital marketing', 'branding services', 'e-commerce solutions', 'automation services', 'cloud infrastructure'],
   authors: [{ name: 'Team Nirosha' }],
   alternates: {
-    canonical: `${SITE_URL}/services`,
+    canonical: `${SITE_URL}/services/`,
   },
   openGraph: {
     title: 'Our Services - Team Nirosha | Digital Agency',
     description: 'Comprehensive digital services including web development, SEO, digital marketing, branding, e-commerce solutions, automation, and cloud infrastructure.',
-    url: `${SITE_URL}/services`,
+    url: `${SITE_URL}/services/`,
     siteName: 'Team Nirosha',
     images: [
       {

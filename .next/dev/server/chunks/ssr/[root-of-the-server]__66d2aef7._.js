@@ -80,12 +80,12 @@ const metadata = {
         }
     ],
     alternates: {
-        canonical: `${SITE_URL}/about`
+        canonical: `${SITE_URL}/about/`
     },
     openGraph: {
         title: 'About Us - Team Nirosha | Digital Agency',
         description: 'Learn about Team Nirosha, a professional digital agency with expertise in web development, SEO, digital marketing, and automation solutions.',
-        url: `${SITE_URL}/about`,
+        url: `${SITE_URL}/about/`,
         siteName: 'Team Nirosha',
         images: [
             {

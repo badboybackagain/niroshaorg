@@ -16,7 +16,7 @@ const Footer = () => {
     .slice(0, 6)
     .map(service => ({
       title: service.title,
-      slug: `/services/${service.slug}`
+      slug: `/services/${service.slug}/`
     }))
 
   useEffect(() => {
@@ -101,19 +101,19 @@ const Footer = () => {
                 </li>
                 <li>
                   <span className="footer-link-bullet"></span>
-                  <Link href="/about" suppressHydrationWarning>About Us</Link>
+                  <Link href="/about/" suppressHydrationWarning>About Us</Link>
                 </li>
                 <li>
                   <span className="footer-link-bullet"></span>
-                  <Link href="/services" suppressHydrationWarning>Services</Link>
+                  <Link href="/services/" suppressHydrationWarning>Services</Link>
                 </li>
                 <li>
                   <span className="footer-link-bullet"></span>
-                  <Link href="/blog" suppressHydrationWarning>Blog</Link>
+                  <Link href="/blog/" suppressHydrationWarning>Blog</Link>
                 </li>
                 <li>
                   <span className="footer-link-bullet"></span>
-                  <Link href="/contact" suppressHydrationWarning>Contact Us</Link>
+                  <Link href="/contact/" suppressHydrationWarning>Contact Us</Link>
                 </li>
               </ul>
             </div>
@@ -169,9 +169,9 @@ const Footer = () => {
               © {new Date().getFullYear()} Team Nirosha. All rights reserved.
             </p>
             <div className="footer-bottom-links">
-              <Link href="/privacy" suppressHydrationWarning>Privacy Policy</Link>
+              <Link href="/privacy/" suppressHydrationWarning>Privacy Policy</Link>
               <span className="footer-link-separator">•</span>
-              <Link href="/terms" suppressHydrationWarning>Terms & Condition</Link>
+              <Link href="/terms/" suppressHydrationWarning>Terms & Condition</Link>
             </div>
           </div>
         </div>

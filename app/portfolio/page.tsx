@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Team Nirosha' }],
   alternates: {
-    canonical: `${SITE_URL}/portfolio`,
+    canonical: `${SITE_URL}/portfolio/`,
   },
   openGraph: {
     title: 'Our Work - Portfolio | Team Nirosha | Logo Design & Branding',
     description: 'Explore our impressive portfolio of professional designs. Get your custom design created by expert designers.',
-    url: `${SITE_URL}/portfolio`,
+    url: `${SITE_URL}/portfolio/`,
     siteName: 'Team Nirosha',
     images: [
       {
@@ -72,4 +72,7 @@ export default function Portfolio() {
     </Suspense>
   )
 }
+
+
+
 

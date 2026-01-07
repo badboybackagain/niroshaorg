@@ -21,3 +21,5 @@ export const clearConsent = () => {
   localStorage.removeItem('gtm-consent')
 }
 
+
+

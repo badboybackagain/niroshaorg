@@ -227,7 +227,7 @@ const PortfolioCategoryPage = ({ categorySlug, categoryTitle }) => {
       {/* Header */}
       <section className="portfolio-category-header">
         <div className="container">
-          <Link href="/portfolio" className="portfolio-back-link" suppressHydrationWarning>
+          <Link href="/portfolio/" className="portfolio-back-link" suppressHydrationWarning>
             <FiChevronLeft />
             <span>Back to Portfolio</span>
           </Link>

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   keywords: ['terms and conditions', 'service terms', 'user agreement', 'terms of service', 'legal terms', 'Team Nirosha terms'],
   authors: [{ name: 'Team Nirosha' }],
   alternates: {
-    canonical: `${SITE_URL}/terms`,
+    canonical: `${SITE_URL}/terms/`,
   },
   openGraph: {
     title: 'Terms and Conditions - Team Nirosha',
     description: 'Read the terms and conditions for using Team Nirosha\'s services.',
-    url: `${SITE_URL}/terms`,
+    url: `${SITE_URL}/terms/`,
     siteName: 'Team Nirosha',
     images: [
       {
@@ -42,4 +42,7 @@ export const metadata: Metadata = {
 export default function Terms() {
   return <TermsPage />
 }
+
+
+
 

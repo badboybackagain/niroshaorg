@@ -237,3 +237,5 @@ Then run:
 
 **Summary**: Create `config.js` from `config.example.js`, add your Gmail credentials, upload to server root, set permissions to 600, and restart Next.js. The config file approach works perfectly for hosting without environment variable support!
 
+
+

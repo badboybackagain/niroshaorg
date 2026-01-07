@@ -291,3 +291,5 @@ If you encounter issues:
 3. Test the `/health` endpoint: `curl http://your-server/api/health`
 4. Check Gmail account settings and App Password
 
+
+

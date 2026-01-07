@@ -47,7 +47,7 @@ const NotFoundPage = () => {
                 Go to Homepage
               </Link>
               
-              <Link href="/services" className="btn btn-secondary">
+              <Link href="/services/" className="btn btn-secondary">
                 <FiArrowLeft style={{ marginRight: '8px' }} />
                 Browse Services
               </Link>
@@ -56,9 +56,9 @@ const NotFoundPage = () => {
             <div className="not-found-links">
               <p>Or try these popular pages:</p>
               <div className="quick-links">
-                <Link href="/about">About Us</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/contact">Contact</Link>
+                <Link href="/about/">About Us</Link>
+                <Link href="/blog/">Blog</Link>
+                <Link href="/contact/">Contact</Link>
               </div>
             </div>
           </div>

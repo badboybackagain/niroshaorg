@@ -281,7 +281,7 @@ const WordPressDevelopmentPage = () => {
             <div className="service-breadcrumb" suppressHydrationWarning>
               <Link href="/" suppressHydrationWarning>Home</Link>
               <span>/</span>
-              <Link href="/services" suppressHydrationWarning>Services</Link>
+              <Link href="/services/" suppressHydrationWarning>Services</Link>
               <span>/</span>
               <span>WordPress Website Development</span>
             </div>
@@ -573,7 +573,7 @@ const WordPressDevelopmentPage = () => {
                 Schedule Free Consultation
                 <FiArrowRight style={{ marginLeft: '8px' }} />
               </a>
-              <Link href="/contact?service=WordPress%20Website%20Development" className="btn btn-secondary" suppressHydrationWarning>
+              <Link href="/contact/?service=WordPress%20Website%20Development" className="btn btn-secondary" suppressHydrationWarning>
                 Contact Us
               </Link>
             </div>

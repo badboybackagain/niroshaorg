@@ -110,7 +110,9 @@ const nextConfig = {
     ];
   },
 
-  // Redirects and rewrites if needed
+  // Trailing slash configuration
+  // trailingSlash: true automatically handles trailing slashes for all routes
+  trailingSlash: true,
   async rewrites() {
     return [
       // Add any rewrites here if needed

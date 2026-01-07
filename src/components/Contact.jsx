@@ -9,6 +9,8 @@ const Contact = () => {
   const searchParams = useSearchParams()
   
   const services = [
+    'Pinnacle Blast',
+    'WhatsApp API Gateway',
     'Web Development',
     'Branding & Design',
     'SEO Services',
@@ -406,7 +408,7 @@ const Contact = () => {
               <div className="form-group" suppressHydrationWarning>
                 <label>
                   <FiSend />
-                  Services Interested In <span className="required">*</span>
+                  Product / Services Interested In <span className="required">*</span>
                 </label>
                 <div className="services-chips-group">
                   {services.map((service, index) => {

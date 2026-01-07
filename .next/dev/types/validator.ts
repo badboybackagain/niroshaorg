@@ -127,6 +127,24 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../../app/products/pinnacle-blast/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/products/pinnacle-blast">> = Specific
+  const handler = {} as typeof import("../../../app/products/pinnacle-blast/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/products/whatsapp-api-gateway/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/products/whatsapp-api-gateway">> = Specific
+  const handler = {} as typeof import("../../../app/products/whatsapp-api-gateway/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/services/[slug]/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/services/[slug]">> = Specific

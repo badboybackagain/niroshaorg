@@ -72,3 +72,5 @@ In standalone builds, the file structure is different:
 
 The fix ensures config.js is found in the same directory where `server.js` runs from.
 
+
+

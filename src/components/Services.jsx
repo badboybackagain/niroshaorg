@@ -19,7 +19,8 @@ import {
   FiSettings,
   FiShoppingCart,
   FiMonitor,
-  FiArrowRight
+  FiArrowRight,
+  FiMessageCircle
 } from 'react-icons/fi'
 
 const ServiceCard = ({ service, index }) => {
@@ -151,7 +152,7 @@ const ServiceCard = ({ service, index }) => {
       </ul>
       <Link 
         ref={linkRef}
-        href={service.slug}
+        href={`${service.slug}/`}
         className="service-card-read-more"
         suppressHydrationWarning
         aria-label={`Read more about ${service.title}`}
@@ -395,10 +396,29 @@ const Services = () => {
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
+        {/* WhatsApp API Gateway CTA */}
+        <div className="whatsapp-featured-cta" style={{ marginTop: '3rem' }}>
+          <div className="whatsapp-featured-content">
+            <div className="whatsapp-featured-icon">
+              <FiMessageCircle />
+            </div>
+            <div className="whatsapp-featured-text">
+              <h3>WhatsApp API Gateway</h3>
+              <p>Send unlimited WhatsApp messages from your existing number. No per-message fees, no template approvals. Start for FREE.</p>
+            </div>
+            <Link 
+              href="/products/whatsapp-api-gateway/" 
+              className="btn whatsapp-featured-btn"
+            >
+              Learn More <FiArrowRight />
+            </Link>
+          </div>
+        </div>
+        
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <Link 
             ref={buttonRef}
-            href="/services" 
+            href="/services/" 
             className="btn btn-primary" 
             suppressHydrationWarning
           >

@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   creator: 'Team Nirosha',
   publisher: 'Team Nirosha',
   alternates: {
-    canonical: `${SITE_URL}/wordpress-landing-page`,
+    canonical: `${SITE_URL}/wordpress-landing-page/`,
   },
   openGraph: {
     title: 'Professional WordPress Landing Page Design | Starting ₹6,999 | Team Nirosha',
     description: 'Get a high-converting WordPress landing page designed in 48 hours! Starting at just ₹6,999. Timely delivery guaranteed or we cut the project fee.',
-    url: `${SITE_URL}/wordpress-landing-page`,
+    url: `${SITE_URL}/wordpress-landing-page/`,
     siteName: 'Team Nirosha',
     images: [
       {

@@ -252,7 +252,7 @@ const AboutPage = () => {
 
           {/* CTA Section */}
           <div className="about-page-cta">
-            <Link href="/contact" className="btn btn-primary btn-large">
+            <Link href="/contact/" className="btn btn-primary btn-large">
               Get in Touch
               <FiArrowRight style={{ marginLeft: '8px' }} />
             </Link>

@@ -145,3 +145,5 @@ After running the POST command, check:
 - Verify `config.js` has correct Gmail credentials
 - Test Gmail connection: `npm run test-smtp`
 
+
+
