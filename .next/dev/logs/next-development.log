@@ -1,13 +1,46 @@
-[00:00:00.796] Server  LOG      ✓ Ready in 536ms
-[00:01:12.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:13.075] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
-[00:01:13.462] Browser LOG     ScrollSmoother initialized successfully
-[00:01:18.569] Browser ERROR   uncaughtError: TypeError: content.description?.toLowerCase is not a function
-[00:01:55.545] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:55.952] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
-[00:01:56.291] Browser LOG     ScrollSmoother initialized successfully
-[00:02:02.934] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:02:02.957] Server  LOG      ✓ Compiled in 7ms
-[00:02:03.365] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:03.622] Browser WARN    Data from this session is not being collected by Microsoft Clarity due to your configured project settings
-[00:02:04.026] Browser LOG     ScrollSmoother initialized successfully
+[00:00:00.807] Server  LOG      ✓ Ready in 558ms
+[00:00:06.417] Server  WARN     ⚠ Cross origin request detected from 192.168.86.27 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:06.477] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.518] Browser LOG     ScrollSmoother initialized successfully
+[00:00:12.276] Browser LOG     ScrollSmoother initialized successfully
+[00:00:19.383] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:06:35.940] Server  LOG      ✓ Compiled in 14ms
+[00:06:43.498] Server  LOG      ✓ Compiled in 10ms
+[00:06:46.112] Server  LOG      ✓ Compiled in 5ms
+[00:06:48.399] Server  LOG      ✓ Compiled in 6ms
+[00:06:51.232] Server  LOG      ✓ Compiled in 4ms
+[00:06:55.853] Server  LOG      ✓ Compiled in 7ms
+[00:07:04.653] Server  LOG      ✓ Compiled in 7ms
+[00:07:08.772] Server  LOG      ✓ Compiled in 8ms
+[00:07:25.188] Server  LOG      ✓ Compiled in 12ms
+[00:07:26.550] Server  LOG      ✓ Compiled in 18ms
+[00:07:35.711] Server  LOG      ✓ Compiled in 8ms
+[00:07:40.429] Server  LOG      ✓ Compiled in 9ms
+[00:07:46.322] Server  LOG      ✓ Compiled in 13ms
+[00:07:53.420] Server  LOG      ✓ Compiled in 6ms
+[00:08:01.242] Server  LOG      ✓ Compiled in 25ms
+[00:08:04.597] Server  LOG      ✓ Compiled in 24ms
+[00:08:07.449] Server  LOG      ✓ Compiled in 53ms
+[00:08:10.227] Server  LOG      ✓ Compiled in 32ms
+[00:08:18.439] Server  LOG      ✓ Compiled in 5ms
+[00:08:31.357] Server  LOG      ✓ Compiled in 56ms
+[00:08:32.649] Server  LOG      ✓ Compiled in 7ms
+[00:08:48.498] Server  LOG      ✓ Compiled in 2ms
+[00:09:42.768] Server  LOG      ✓ Compiled in 52ms
+[00:09:48.604] Server  LOG      ✓ Compiled in 176ms
+[00:10:20.785] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:23.275] Browser LOG     ScrollSmoother initialized successfully
+[00:10:33.349] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:10:37.952] Browser LOG     ScrollSmoother initialized successfully
+[00:20:03.334] Server  LOG      ✓ Compiled in 7ms
+[00:22:37.703] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:39.568] Browser LOG     ScrollSmoother initialized successfully
+[00:22:41.849] Browser LOG     ScrollSmoother initialized successfully
+[00:22:51.437] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:24:35.240] Server  LOG      ✓ Compiled in 5ms
+[00:27:53.276] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:54.935] Browser LOG     ScrollSmoother initialized successfully
+[00:27:57.944] Browser LOG     ScrollSmoother initialized successfully
+[00:28:05.038] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+[00:34:58.235] Server  LOG      ✓ Compiled in 6ms

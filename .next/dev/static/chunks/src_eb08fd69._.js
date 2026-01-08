@@ -2075,11 +2075,12 @@ const Services = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: "/products/whatsapp-api-gateway/",
                                     className: "btn whatsapp-featured-btn",
+                                    suppressHydrationWarning: true,
                                     children: [
                                         "Learn More ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiArrowRight"], {}, void 0, false, {
                                             fileName: "[project]/src/components/Services.jsx",
-                                            lineNumber: 413,
+                                            lineNumber: 414,
                                             columnNumber: 26
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
@@ -2112,12 +2113,12 @@ const Services = ()=>{
                             children: "View All Services"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Services.jsx",
-                            lineNumber: 419,
+                            lineNumber: 420,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Services.jsx",
-                        lineNumber: 418,
+                        lineNumber: 419,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]

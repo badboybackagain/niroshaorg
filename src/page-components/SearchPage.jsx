@@ -26,6 +26,14 @@ const productsData = [
     keywords: ['Email Campaign', 'Email Marketing', 'Newsletter Software', 'Bulk Email', 'Email Automation'],
     type: 'product',
     url: '/products/pinnacle-blast/'
+  },
+  {
+    slug: 'pinnacle-assist',
+    title: 'Pinnacle Assist',
+    description: 'AI-powered review generation tool that creates unique, keyword-rich reviews for your Google Business Profile. Boost local SEO rankings with quality, detailed reviews.',
+    keywords: ['Review Generation', 'AI Reviews', 'Google Reviews', 'Local SEO', 'Review Management', 'Customer Reviews', 'Review Automation'],
+    type: 'product',
+    url: '/products/pinnacle-assist/'
   }
 ]
 

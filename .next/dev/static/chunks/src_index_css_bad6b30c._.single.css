@@ -12535,4 +12535,295 @@ body.lightbox-open .navbar, html.lightbox-open .navbar, body.lightbox-open .navb
   }
 }
 
+.pinnacle-problem-solution {
+  background: var(--bg-white);
+  padding: 80px 0;
+}
+
+.pinnacle-problem-solution-grid {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+}
+
+.pinnacle-problem-box, .pinnacle-solution-box {
+  background: var(--bg-white);
+  border: 2px solid var(--border-color);
+  text-align: left;
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all .3s;
+}
+
+.pinnacle-problem-box:hover, .pinnacle-solution-box:hover {
+  border-color: #667eea;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px #667eea1a;
+}
+
+.pinnacle-problem-box h3, .pinnacle-solution-box h3 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.pinnacle-problem-box p, .pinnacle-solution-box p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.pinnacle-problem-box p:last-child, .pinnacle-solution-box p:last-child {
+  margin-bottom: 0;
+}
+
+.pinnacle-hero-note {
+  color: #ffffffe6;
+  margin-top: 1rem;
+  font-size: .9rem;
+}
+
+.pinnacle-steps {
+  background: var(--bg-light);
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.section-header p {
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+
+.pinnacle-steps-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+}
+
+.pinnacle-step-card {
+  background: var(--bg-white);
+  border: 2px solid var(--border-color);
+  text-align: center;
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all .3s;
+  position: relative;
+}
+
+.pinnacle-step-card:hover {
+  border-color: #667eea;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px #667eea26;
+}
+
+.pinnacle-step-number {
+  width: 70px;
+  height: 70px;
+  color: var(--text-white);
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  position: relative;
+}
+
+.pinnacle-step-number-text {
+  z-index: 2;
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.pinnacle-google-logo {
+  z-index: 3;
+  background: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  box-shadow: 0 2px 8px #0003;
+}
+
+.pinnacle-step-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pinnacle-step-card p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.pinnacle-step-action {
+  color: #667eea;
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.pinnacle-steps-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.pinnacle-demo {
+  background: var(--bg-white);
+  padding: 80px 0;
+}
+
+.pinnacle-demo-grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  display: grid;
+}
+
+.pinnacle-demo-item {
+  text-align: center;
+}
+
+.pinnacle-demo-item h3 {
+  color: var(--text-dark);
+  margin-bottom: .75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pinnacle-demo-item > p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.pinnacle-demo-image {
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all .3s;
+  overflow: hidden;
+  box-shadow: 0 8px 24px #0000001a;
+}
+
+.pinnacle-demo-image:hover {
+  border-color: #667eea;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px #00000026;
+}
+
+.pinnacle-demo-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pinnacle-benefits-list {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+}
+
+.pinnacle-benefit-item {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition: all .3s;
+  display: flex;
+}
+
+.pinnacle-benefit-item:hover {
+  border-color: #667eea;
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px #667eea1a;
+}
+
+.pinnacle-benefit-check {
+  color: #10b981;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  font-size: 1.5rem;
+}
+
+.pinnacle-benefit-item span {
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.pinnacle-guarantee {
+  color: #fffffff2;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 2rem;
+  font-size: .95rem;
+  display: flex;
+}
+
+.pinnacle-guarantee svg {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .pinnacle-steps, .pinnacle-demo, .pinnacle-benefits {
+    padding: 60px 0;
+  }
+
+  .pinnacle-steps-grid, .pinnacle-demo-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pinnacle-benefits-list, .pinnacle-problem-solution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pinnacle-problem-box, .pinnacle-solution-box {
+    padding: 1.5rem;
+  }
+}
+
+.pinnacle-pricing-note, .pinnacle-pricing-info {
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .95rem;
+}
+
+.pinnacle-pricing-info {
+  color: #fffffff2;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
 /*# sourceMappingURL=src_index_css_bad6b30c._.single.css.map*/

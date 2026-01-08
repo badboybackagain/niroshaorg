@@ -127,6 +127,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../../app/products/pinnacle-assist/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/products/pinnacle-assist">> = Specific
+  const handler = {} as typeof import("../../../app/products/pinnacle-assist/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/products/pinnacle-blast/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/products/pinnacle-blast">> = Specific

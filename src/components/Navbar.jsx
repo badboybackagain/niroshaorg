@@ -400,7 +400,7 @@ const Navbar = () => {
                 document.body
               )}
               <div 
-                className={`nav-link-dropdown ${pathname?.startsWith('/products/whatsapp-api-gateway') || pathname?.startsWith('/products/pinnacle-blast') ? 'active' : ''}`}
+                className={`nav-link-dropdown ${pathname?.startsWith('/products/') ? 'active' : ''}`}
                 onMouseEnter={() => {
                   // Clear any pending close timeout
                   if (productsDropdownTimeoutRef.current) {
@@ -476,6 +476,14 @@ const Navbar = () => {
                     suppressHydrationWarning
                   >
                     <span>Pinnacle Blast</span>
+                  </Link>
+                  <Link 
+                    href="/products/pinnacle-assist/" 
+                    className={`services-dropdown-item ${pathname === '/products/pinnacle-assist' || pathname === '/products/pinnacle-assist/' ? 'active' : ''}`}
+                    onClick={() => setProductsDropdownOpen(false)}
+                    suppressHydrationWarning
+                  >
+                    <span>Pinnacle Assist</span>
                   </Link>
                 </div>,
                 document.body
@@ -606,7 +614,7 @@ const Navbar = () => {
             </div>
             <div className="mobile-menu-services">
               <button
-                className={`mobile-menu-link mobile-menu-services-toggle ${pathname?.startsWith('/products/whatsapp-api-gateway') || pathname?.startsWith('/products/pinnacle-blast') ? 'active' : ''}`}
+                className={`mobile-menu-link mobile-menu-services-toggle ${pathname?.startsWith('/products/') ? 'active' : ''}`}
                 onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
               >
                 <span>Products</span>
@@ -634,6 +642,17 @@ const Navbar = () => {
                   suppressHydrationWarning
                 >
                   <span>Pinnacle Blast</span>
+                </Link>
+                <Link
+                  href="/products/pinnacle-assist/"
+                  className={`mobile-menu-link mobile-menu-submenu-item ${pathname === '/products/pinnacle-assist' || pathname === '/products/pinnacle-assist/' ? 'active' : ''}`}
+                  onClick={() => {
+                    setIsOpen(false)
+                    setMobileProductsOpen(false)
+                  }}
+                  suppressHydrationWarning
+                >
+                  <span>Pinnacle Assist</span>
                 </Link>
               </div>
             </div>

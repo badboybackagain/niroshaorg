@@ -3,7 +3,6 @@
 import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { 
   FiGlobe, 
   FiImage,
@@ -28,7 +27,6 @@ import { servicesData } from '../data/servicesData.jsx'
 import DotGridBackground from '../components/DotGridBackground'
 
 const ServiceCard = ({ service, index, slug }) => {
-  const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
 
   const serviceSlugMap = {
     'web-development': <FiGlobe />,
@@ -63,9 +61,8 @@ const ServiceCard = ({ service, index, slug }) => {
   return (
     <Link 
       href={`/services/${slug}/`}
-      ref={ref}
-      className={`service-card service-card-link ${isVisible ? 'animate-fadeInUp' : ''}`}
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="service-card service-card-link"
+      suppressHydrationWarning
     >
       <div className="service-icon">{serviceSlugMap[slug] || <FiGlobe />}</div>
       <h3 className="service-title">{service.title}</h3>
@@ -82,7 +79,6 @@ const ServiceCard = ({ service, index, slug }) => {
 }
 
 const ServicesPage = () => {
-  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 })
   const searchParams = useSearchParams()
   const router = useRouter()
   const searchQuery = searchParams.get('search') || ''
@@ -131,10 +127,6 @@ const ServicesPage = () => {
     router.push('/services')
   }
 
-  const [heroRef, heroVisible] = useScrollAnimation({ threshold: 0.1 })
-  const [benefitsRef, benefitsVisible] = useScrollAnimation({ threshold: 0.2 })
-  const [gridRef, gridVisible] = useScrollAnimation({ threshold: 0.1 })
-
   const serviceCount = allServices.length
 
   return (
@@ -153,8 +145,7 @@ const ServicesPage = () => {
             />
             <div className="container">
               <div 
-                ref={heroRef}
-                className={`services-hero-content ${heroVisible ? 'animate-fadeInUp' : ''}`}
+                className="services-hero-content"
                 style={{ position: 'relative', zIndex: 2, pointerEvents: 'none' }}
               >
                 <div className="services-hero-badge" style={{ pointerEvents: 'auto' }}>
@@ -172,8 +163,7 @@ const ServicesPage = () => {
                 
                 {/* Key Benefits */}
                 <div 
-                  ref={benefitsRef}
-                  className={`services-hero-benefits ${benefitsVisible ? 'animate-fadeInUp' : ''}`}
+                  className="services-hero-benefits"
                   style={{ pointerEvents: 'auto' }}
                 >
                   <div className="services-hero-benefit-item">
@@ -199,8 +189,7 @@ const ServicesPage = () => {
           <div className="container">
             {searchQuery ? (
               <div 
-                ref={titleRef}
-                className={`services-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
+                className="services-header"
               >
                 <h2 className="page-title">
                   Search Results for "{searchQuery}"
@@ -216,8 +205,7 @@ const ServicesPage = () => {
               </div>
             ) : (
               <div 
-                ref={titleRef}
-                className={`services-header ${titleVisible ? 'animate-fadeInUp' : ''}`}
+                className="services-header"
               >
                 <h2 className="services-section-title">Explore Our Services</h2>
                 <p className="services-section-subtitle">
@@ -240,6 +228,7 @@ const ServicesPage = () => {
                   <Link 
                     href="/products/whatsapp-api-gateway/" 
                     className="btn btn-primary"
+                    suppressHydrationWarning
                   >
                     Learn More <FiArrowRight />
                   </Link>
@@ -249,8 +238,7 @@ const ServicesPage = () => {
 
             {filteredServices.length > 0 ? (
               <div 
-                ref={gridRef}
-                className={`services-grid ${gridVisible ? 'animate-fadeInUp' : ''}`}
+                className="services-grid"
               >
                 {filteredServices.map((service, index) => (
                   <ServiceCard key={service.slug} service={service} index={index} slug={service.slug} />

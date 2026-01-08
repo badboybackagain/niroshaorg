@@ -152,6 +152,17 @@ const imageConfigs = {
     },
     fit: 'contain', // Won't crop, but height null overrides this effectively
     processAll: true
+  },
+  'products-pinnacleassist': {
+    sourceDir: path.join(imagesDir, 'products', 'pinnacleassist'),
+    cacheDir: path.join(cacheDir, 'products', 'pinnacleassist'),
+    sizes: {
+      thumbnail: { width: 600, height: 400 },
+      featured: { width: 1200, height: 800 },
+      large: { width: 1600, height: 1200 }
+    },
+    fit: 'contain',
+    processAll: true
   }
 }
 
@@ -475,14 +486,9 @@ async function processCategory(categoryName, config) {
     // We need to either update processImage to handle multiple sizes OR update processPortfolioLogo to handle variable height.
     // Let's update processPortfolioLogo to handle null height for aspect ratio preservation.
 
-    if (categoryName.startsWith('portfolio-')) {
-      // Check if this is websites category which needs aspect ratio preservation
-      if (categoryName === 'portfolio-websites') {
-        // We can reuse processPortfolioLogo but we need to ensure it respects null height
-        result = await processPortfolioLogo(imageFile, config)
-      } else {
-        result = await processPortfolioLogo(imageFile, config)
-      }
+    if (categoryName.startsWith('portfolio-') || categoryName.startsWith('products-')) {
+      // Portfolio and products categories use multiple sizes
+      result = await processPortfolioLogo(imageFile, config)
     } else {
       result = await processImage(imageFile, config)
     }
