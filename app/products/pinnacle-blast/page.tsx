@@ -1,6 +1,7 @@
 import PinnacleBlastPage from '@/page-components/PinnacleBlastPage'
 import { Metadata } from 'next'
 import BreadcrumbSchemaServer from '@/components/BreadcrumbSchemaServer'
+import ProductSchemaServer from '@/components/ProductSchemaServer'
 
 const SITE_URL = 'https://nirosha.org'
 
@@ -81,6 +82,17 @@ export default function PinnacleBlast() {
   return (
     <>
       <BreadcrumbSchemaServer items={breadcrumbItems} />
+      <ProductSchemaServer
+        name="Pinnacle Blast"
+        description="Professional email newsletter solution that lets you send bulk emails via Amazon SES. Pay only when you send, with incredibly low rates. Unlimited subscribers and high deliverability rates."
+        url={`${SITE_URL}/products/pinnacle-blast/`}
+        image={`${SITE_URL}/ogimage.png`}
+        priceCurrency="INR"
+        availability="https://schema.org/InStock"
+        category="Software Application"
+        productId="pinnacle-blast"
+        sku="PB-001"
+      />
       <PinnacleBlastPage />
     </>
   )

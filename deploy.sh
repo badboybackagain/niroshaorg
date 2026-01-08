@@ -31,6 +31,7 @@ if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
     echo "  --full, -f         Force full deployment (upload all files)"
     echo "  --with-cache, -c   Generate image cache before building (slower but ensures all images are optimized)"
     echo "  --images           Include cache versions of images in archive (excludes original images)"
+    echo "  --noorigimage      Explicitly exclude original images folder (public/images) from archive"
     echo "  --help, -h         Show this help message"
     echo ""
     echo "Environment Variables:"
@@ -137,6 +138,7 @@ DEPLOY_MANIFEST_FILE=".deploy-manifest"
 FORCE_FULL_DEPLOY=false
 GENERATE_CACHE=false
 INCLUDE_IMAGES=false
+EXCLUDE_ORIG_IMAGES=false
 
 # SSH/SCP Configuration
 SSH_HOST="37.27.54.247"
@@ -158,6 +160,10 @@ for arg in "$@"; do
         --images)
             INCLUDE_IMAGES=true
             echo -e "${YELLOW}Including cache versions of images in archive${NC}"
+            ;;
+        --noorigimage)
+            EXCLUDE_ORIG_IMAGES=true
+            echo -e "${YELLOW}Excluding original images folder (public/images) from archive${NC}"
             ;;
     esac
 done
@@ -443,8 +449,17 @@ if [ "$DEPLOY_SOURCE" = ".next/standalone" ]; then
         --exclude="*/node_modules/.cache/*"
         --exclude="*/.next/cache/*"
         --exclude="*/.git/*"
-        --exclude="public/images/*"
     )
+    # Exclude original images if --noorigimage flag is set, or by default when using --images
+    if [ "$EXCLUDE_ORIG_IMAGES" = true ]; then
+        TAR_EXCLUDE_ARGS+=(--exclude="public/images/*")
+    elif [ "$INCLUDE_IMAGES" = true ]; then
+        # When --images is used, exclude original images by default (only include cache)
+        TAR_EXCLUDE_ARGS+=(--exclude="public/images/*")
+    else
+        # When neither flag is set, exclude all images (original and cache)
+        TAR_EXCLUDE_ARGS+=(--exclude="public/images/*")
+    fi
     # IMPORTANT: Do NOT exclude .next/static - it's required for Next.js to work!
     # The pattern */.next/cache/* only excludes cache, not static files
     
@@ -612,8 +627,17 @@ else
         --exclude="*/.next/cache/*"
         --exclude="*/node_modules/.cache/*"
         --exclude="*/.git/*"
-        --exclude="public/images/*"
     )
+    # Exclude original images if --noorigimage flag is set, or by default when using --images
+    if [ "$EXCLUDE_ORIG_IMAGES" = true ]; then
+        TAR_EXCLUDE_ARGS+=(--exclude="public/images/*")
+    elif [ "$INCLUDE_IMAGES" = true ]; then
+        # When --images is used, exclude original images by default (only include cache)
+        TAR_EXCLUDE_ARGS+=(--exclude="public/images/*")
+    else
+        # When neither flag is set, exclude all images (original and cache)
+        TAR_EXCLUDE_ARGS+=(--exclude="public/images/*")
+    fi
     
     # Exclude cache if --images flag is not set
     if [ "$INCLUDE_IMAGES" = false ]; then

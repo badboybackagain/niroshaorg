@@ -1,6 +1,7 @@
 import WhatsAppAPIGatewayPage from '@/page-components/WhatsAppAPIGatewayPage'
 import { Metadata } from 'next'
 import BreadcrumbSchemaServer from '@/components/BreadcrumbSchemaServer'
+import ProductSchemaServer from '@/components/ProductSchemaServer'
 
 const SITE_URL = 'https://nirosha.org'
 
@@ -82,6 +83,18 @@ export default function WhatsAppAPIGateway() {
   return (
     <>
       <BreadcrumbSchemaServer items={breadcrumbItems} />
+      <ProductSchemaServer
+        name="WhatsApp API Gateway"
+        description="Send unlimited WhatsApp messages from your existing number. No per-message fees, no template approvals, no verification needed. Start for FREE. Integrate with any application - contact forms, e-commerce, CRM, and more."
+        url={`${SITE_URL}/products/whatsapp-api-gateway/`}
+        image={`${SITE_URL}/ogimage.png`}
+        price="0"
+        priceCurrency="INR"
+        availability="https://schema.org/InStock"
+        category="Software Application"
+        productId="whatsapp-api-gateway"
+        sku="WAG-001"
+      />
       <WhatsAppAPIGatewayPage />
     </>
   )

@@ -1,6 +1,7 @@
 import PinnacleAssistPage from '@/page-components/PinnacleAssistPage'
 import { Metadata } from 'next'
 import BreadcrumbSchemaServer from '@/components/BreadcrumbSchemaServer'
+import ProductSchemaServer from '@/components/ProductSchemaServer'
 
 const SITE_URL = 'https://nirosha.org'
 
@@ -79,6 +80,18 @@ export default function PinnacleAssist() {
   return (
     <>
       <BreadcrumbSchemaServer items={breadcrumbItems} />
+      <ProductSchemaServer
+        name="Pinnacle Assist"
+        description="AI-powered Google Review generation tool that creates unique, keyword-rich reviews for your Google Business Profile. Boost local SEO rankings with quality, detailed reviews. No credit card needed. Only Rs. 249/- per month."
+        url={`${SITE_URL}/products/pinnacle-assist/`}
+        image={`${SITE_URL}/ogimage-pinnacle-assist.jpeg`}
+        price="249"
+        priceCurrency="INR"
+        availability="https://schema.org/InStock"
+        category="Software Application"
+        productId="pinnacle-assist"
+        sku="PA-001"
+      />
       <PinnacleAssistPage />
     </>
   )
