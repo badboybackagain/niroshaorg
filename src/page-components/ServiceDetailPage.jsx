@@ -1,21 +1,55 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
-import { FiCheck, FiArrowRight, FiCalendar, FiPhone } from 'react-icons/fi'
+import { createPortal } from 'react-dom'
+import { FiCheck, FiArrowRight, FiCalendar, FiPhone, FiX } from 'react-icons/fi'
 import { servicesData } from '../data/servicesData.jsx'
 import FAQ from '../components/FAQ'
 import FAQSchema from '../components/FAQSchema'
 import ServiceSchema from '../components/ServiceSchema'
 import BreadcrumbSchema from '../components/BreadcrumbSchema'
 import { useCTA } from '../components/CTAContext'
+import LaptopMockup from '../components/LaptopMockup'
 
-const ServiceDetailPage = ({ params }) => {
+const ServiceDetailPage = ({ params, showcaseWebsites = [] }) => {
   const router = useRouter()
   const { setCTAContent, resetCTA } = useCTA()
-  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [selectedImage, setSelectedImage] = useState(null)
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedImage) {
+      const scrollY = window.scrollY
+      document.body.classList.add('lightbox-open')
+      document.documentElement.classList.add('lightbox-open')
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+    } else {
+      const scrollY = document.body.style.top
+      document.body.classList.remove('lightbox-open')
+      document.documentElement.classList.remove('lightbox-open')
+      document.body.style.top = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
+    }
+    return () => {
+      const scrollY = document.body.style.top
+      document.body.classList.remove('lightbox-open')
+      document.documentElement.classList.remove('lightbox-open')
+      document.body.style.top = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
+    }
+  }, [selectedImage])
 
   // Extract slug from params - handle both direct object and potential Promise
   const slug = React.useMemo(() => {
@@ -83,10 +117,7 @@ const ServiceDetailPage = ({ params }) => {
 
       <section className="section service-detail-hero">
         <div className="container">
-          <div
-            ref={titleRef}
-            className={`service-hero-content ${titleVisible ? 'animate-fadeInUp' : ''}`}
-          >
+          <div className="service-hero-content">
             <div className="service-breadcrumb">
               <Link href="/" suppressHydrationWarning>Home</Link>
               <span>/</span>
@@ -141,54 +172,124 @@ const ServiceDetailPage = ({ params }) => {
         </div>
       </section>
 
+      {/* Portfolio Showcase Section - Only for web-development */}
+      {slug === 'web-development' && showcaseWebsites && showcaseWebsites.length > 0 && (
+        <section className="section service-portfolio-showcase">
+          {/* Animated background elements */}
+          <div className="showcase-bg-animation">
+            <div className="showcase-animated-shape showcase-shape-1"></div>
+            <div className="showcase-animated-shape showcase-shape-2"></div>
+            <div className="showcase-animated-shape showcase-shape-3"></div>
+          </div>
+          <div className="container">
+            <h2 className="section-title">
+              Our Work Speaks for Itself
+            </h2>
+            <p className="service-showcase-subtitle">
+              Explore some of our recent website development projects and see the quality we deliver
+            </p>
+            <div className="service-showcase-grid">
+              {showcaseWebsites.map((site, index) => (
+                <div
+                  key={site.id}
+                  className="service-showcase-item"
+                  onClick={() => setSelectedImage(site.full || site.image)}
+                  style={{ cursor: 'pointer' }}
+                >
+                    <LaptopMockup
+                      imageSrc={site.thumbnail || site.image}
+                      alt="Website Design Mockup"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="service-showcase-hover-hint">Click to view full screen</div>
+                  </div>
+              ))}
+            </div>
+            <div className="service-showcase-cta">
+              <Link 
+                href="/portfolio/websites/" 
+                className="btn btn-primary"
+                suppressHydrationWarning
+              >
+                See More Projects
+                <FiArrowRight style={{ marginLeft: '8px' }} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="section service-features">
         <div className="container">
-          <h2 className="section-title">What's Included</h2>
+          <h2 className="section-title">
+            What's Included
+          </h2>
           <div className="service-features-grid">
-            {serviceData.features.map((feature, index) => {
-              const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
-              return (
-                <div
-                  key={index}
-                  ref={ref}
-                  className={`service-feature-card ${isVisible ? 'animate-fadeInUp' : ''}`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="feature-icon">{feature.icon}</div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
-              )
-            })}
+            {serviceData.features.map((feature, index) => (
+              <div
+                key={index}
+                className="service-feature-card"
+              >
+                <div className="feature-icon">{feature.icon}</div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="section service-process">
         <div className="container">
-          <h2 className="section-title">Our {serviceData.title} Process</h2>
+          <h2 className="section-title">
+            Our {serviceData.title} Process
+          </h2>
           <div className="service-process-steps">
-            {serviceData.process.map((step, index) => {
-              const [ref, isVisible] = useScrollAnimation({ threshold: 0.2 })
-              return (
-                <div
-                  key={index}
-                  ref={ref}
-                  className={`process-step-card ${isVisible ? 'animate-fadeInLeft' : ''}`}
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <div className="step-number">{index + 1}</div>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              )
-            })}
+            {serviceData.process.map((step, index) => (
+              <div
+                key={index}
+                className="process-step-card"
+              >
+                <div className="step-number">{index + 1}</div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <FAQ faqs={serviceData.faqs} serviceTitle={serviceData.title} />
       <FAQSchema faqs={serviceData.faqs} serviceTitle={serviceData.title} />
+
+      {/* Lightbox for showcase images */}
+      {selectedImage && typeof window !== 'undefined' && createPortal(
+        <div
+          className="portfolio-lightbox-modern"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="portfolio-lightbox-close-modern"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close lightbox"
+          >
+            <FiX />
+          </button>
+          <div
+            className="portfolio-lightbox-content-modern"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ width: '100%', padding: '2rem' }}>
+              <LaptopMockup
+                imageSrc={selectedImage}
+                alt="Full Screen Design"
+                sizes="90vw"
+              />
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Local CTA section removed - using global CTA via context */}
     </>

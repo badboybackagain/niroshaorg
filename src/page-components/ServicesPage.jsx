@@ -145,7 +145,7 @@ const ServicesPage = () => {
             />
             <div className="container">
               <div 
-                className="services-hero-content"
+                className="services-hero-content animate-fadeInUp"
                 style={{ position: 'relative', zIndex: 2, pointerEvents: 'none' }}
               >
                 <div className="services-hero-badge" style={{ pointerEvents: 'auto' }}>
@@ -205,7 +205,7 @@ const ServicesPage = () => {
               </div>
             ) : (
               <div 
-                className="services-header"
+                className="services-header animate-fadeInUp"
               >
                 <h2 className="services-section-title">Explore Our Services</h2>
                 <p className="services-section-subtitle">
