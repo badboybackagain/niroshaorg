@@ -24,3 +24,6 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
 [00:22:18.006] Browser LOG     ScrollSmoother initialized successfully
 [00:22:27.748] Browser LOG     Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
 [00:25:28.990] Browser LOG     ScrollSmoother initialized successfully
+[00:30:38.272] Server  INFO    Time 1.157
+[00:30:38.273] Server  ERROR    ⨯ A conflicting public file and page file was found for path /sitemap.xml https://nextjs.org/docs/messages/conflicting-public-file-page
+[00:30:39.066] Browser ERROR   uncaughtError: Error: A conflicting public file and page file was found for path /sitemap.xml https://nextjs.org/docs/messages/conflicting-public-file-page

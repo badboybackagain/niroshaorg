@@ -1,5 +1,6 @@
 {
   "/page": "app/page.js",
   "/portfolio/page": "app/portfolio/page.js",
-  "/portfolio/websites/page": "app/portfolio/websites/page.js"
+  "/portfolio/websites/page": "app/portfolio/websites/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
 }

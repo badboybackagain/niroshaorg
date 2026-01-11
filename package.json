@@ -17,7 +17,7 @@
     "fetch-reviews": "node scripts/fetch-google-reviews-puppeteer.js",
     "fetch-reviews-basic": "node scripts/fetch-google-reviews.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "prebuild": "npm run process-logo && npm run process-images:all && npm run generate-sitemap",
+    "prebuild": "npm run process-logo && npm run process-images:all",
     "dev": "next dev",
     "build": "next build",
     "build:fast": "next build",

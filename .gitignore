@@ -35,3 +35,5 @@ assets_2025-12-16_04_40_18/
 vite.config.js.timestamp-*
 .next
 public/cache
+# Static sitemap (using app/sitemap.ts instead)
+public/sitemap.xml
