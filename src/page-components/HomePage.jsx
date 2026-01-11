@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import ServicesMarquee from '../components/ServicesMarquee'
 import ClientLogosMarquee from '../components/ClientLogosMarquee'
 import About from '../components/About'
+import VideoTestimonials from '../components/VideoTestimonials'
 
 // Lazy load below-the-fold components for better initial load performance
 const Services = dynamic(() => import('../components/Services'), {
@@ -32,6 +33,7 @@ const HomePage = () => {
       <ServicesMarquee />
       <ClientLogosMarquee />
       <About />
+      <VideoTestimonials />
       <Suspense fallback={<div style={{ minHeight: '400px' }} />}>
         <Services />
       </Suspense>

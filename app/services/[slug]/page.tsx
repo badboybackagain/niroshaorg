@@ -3,8 +3,47 @@ import { servicesData } from '@/data/servicesData'
 import { Metadata } from 'next'
 import BreadcrumbSchemaServer from '@/components/BreadcrumbSchemaServer'
 import ServiceSchemaServer from '@/components/ServiceSchemaServer'
+import fs from 'fs'
+import path from 'path'
 
 const SITE_URL = 'https://nirosha.org'
+
+// Function to get random websites for showcase
+function getRandomWebsites(count = 6) {
+  const websitesDir = path.join(process.cwd(), 'public/images/portfolio/websites')
+  let websites: { id: string; image: string; thumbnail: string; full: string }[] = []
+
+  try {
+    if (fs.existsSync(websitesDir)) {
+      const files = fs.readdirSync(websitesDir)
+      const imageExtensions = ['.png', '.jpg', '.jpeg', '.webp']
+
+      websites = files
+        .filter(file => imageExtensions.includes(path.extname(file).toLowerCase()))
+        .map(file => {
+          const basename = path.parse(file).name
+          return {
+            id: file,
+            image: `/images/portfolio/websites/${file}`,
+            thumbnail: `/cache/portfolio/websites/${basename}-thumbnail.webp`,
+            full: `/cache/portfolio/websites/${basename}-large.webp`
+          }
+        })
+      
+      // Fisher-Yates shuffle algorithm for better random distribution
+      for (let i = websites.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [websites[i], websites[j]] = [websites[j], websites[i]]
+      }
+      
+      return websites.slice(0, Math.min(count, websites.length))
+    }
+  } catch (error) {
+    console.error('Error reading website images:', error)
+  }
+
+  return websites.slice(0, Math.min(count, websites.length))
+}
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   // In Next.js 15+, params might be a Promise, so we await it
@@ -85,11 +124,16 @@ export default async function ServiceDetail({ params }) {
     { name: service.title, url: `${SITE_URL}/services/${resolvedParams.slug}/` }
   ] : []
 
+  // Get random websites for web-development page showcase
+  const showcaseWebsites = resolvedParams.slug === 'web-development' 
+    ? getRandomWebsites(6) 
+    : []
+
   return (
     <>
       {service && <ServiceSchemaServer service={service} slug={resolvedParams.slug} />}
       {breadcrumbItems.length > 0 && <BreadcrumbSchemaServer items={breadcrumbItems} />}
-      <ServiceDetailPage params={resolvedParams} />
+      <ServiceDetailPage params={resolvedParams} showcaseWebsites={showcaseWebsites} />
     </>
   )
 }

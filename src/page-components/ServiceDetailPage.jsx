@@ -221,7 +221,7 @@ const ServiceDetailPage = ({ params, showcaseWebsites = [] }) => {
 
       <section className="section service-features">
         <div className="container">
-          <h2 className="section-title">
+          <h2 className="section-title animate-fadeInUp">
             What's Included
           </h2>
           <div className="service-features-grid">
@@ -241,7 +241,7 @@ const ServiceDetailPage = ({ params, showcaseWebsites = [] }) => {
 
       <section className="section service-process">
         <div className="container">
-          <h2 className="section-title">
+          <h2 className="section-title animate-fadeInUp">
             Our {serviceData.title} Process
           </h2>
           <div className="service-process-steps">

@@ -40,6 +40,7 @@ const staticRoutes = [
   { path: '', priority: '1.0', changefreq: 'daily' }, // Homepage
   { path: 'about', priority: '0.9', changefreq: 'monthly' },
   { path: 'services', priority: '0.9', changefreq: 'weekly' },
+  { path: 'products', priority: '0.9', changefreq: 'weekly' },
   { path: 'contact', priority: '0.8', changefreq: 'monthly' },
   { path: 'blog', priority: '0.9', changefreq: 'daily' },
 ]
@@ -123,6 +124,19 @@ const blogRoutes = blogPosts.map(post => ({
   lastmod: post.publishDate || currentDate
 }))
 
+// Product routes
+const productSlugs = [
+  'pinnacle-assist',
+  'pinnacle-blast',
+  'whatsapp-api-gateway'
+]
+const productRoutes = productSlugs.map(slug => ({
+  path: `products/${slug}`,
+  priority: '0.9',
+  changefreq: 'monthly',
+  lastmod: currentDate
+}))
+
 // Combine all routes
 const allRoutes = [
   ...staticRoutes.map(route => ({
@@ -130,6 +144,7 @@ const allRoutes = [
     lastmod: currentDate
   })),
   ...serviceRoutes,
+  ...productRoutes,
   ...blogRoutes
 ]
 
@@ -199,6 +214,7 @@ console.log(`🌐 Base URL: ${baseUrl}`)
 console.log(`📊 Total URLs: ${allRoutes.length}`)
 console.log(`   - Static routes: ${staticRoutes.length}`)
 console.log(`   - Service routes: ${serviceRoutes.length}`)
+console.log(`   - Product routes: ${productRoutes.length}`)
 console.log(`   - Blog routes: ${blogRoutes.length}`)
 
 

@@ -30,6 +30,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/products`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/search`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -82,6 +94,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  // Product routes
+  const productSlugs = [
+    'pinnacle-assist',
+    'pinnacle-blast',
+    'whatsapp-api-gateway'
+  ]
+  const productRoutes: MetadataRoute.Sitemap = productSlugs.map(slug => ({
+    url: `${SITE_URL}/products/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly',
+    priority: 0.9,
+  }))
+
   // Blog routes
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map(post => {
     const lastModified = post.modifiedDate 
@@ -114,7 +139,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...categoryRoutes, ...portfolioCategoryRoutes]
+  return [...staticRoutes, ...serviceRoutes, ...productRoutes, ...blogRoutes, ...categoryRoutes, ...portfolioCategoryRoutes]
 }
 
 

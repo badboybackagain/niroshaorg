@@ -81,12 +81,12 @@ const metadata = {
         }
     ],
     alternates: {
-        canonical: `${SITE_URL}/contact`
+        canonical: `${SITE_URL}/contact/`
     },
     openGraph: {
         title: 'Contact Us - Team Nirosha | Get In Touch',
         description: 'Contact Team Nirosha for web development, SEO, digital marketing, and automation services.',
-        url: `${SITE_URL}/contact`,
+        url: `${SITE_URL}/contact/`,
         siteName: 'Team Nirosha',
         images: [
             {
