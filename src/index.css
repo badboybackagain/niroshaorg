@@ -945,11 +945,17 @@ blockquote {
   transition:
     width 0.6s,
     height 0.6s;
+  z-index: 0;
 }
 
 .btn:hover:before {
   width: 300px;
   height: 300px;
+}
+
+.btn > * {
+  position: relative;
+  z-index: 1;
 }
 
 .btn-primary {
@@ -959,6 +965,7 @@ blockquote {
 
 .btn-primary:hover {
   background-color: var(--accent-hover);
+  color: #fff;
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
