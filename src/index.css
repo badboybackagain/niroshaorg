@@ -2,6 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for form inputs and textareas */
+input,
+textarea,
+[contenteditable="true"],
+[contenteditable="true"] * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 html,
@@ -14615,4 +14630,50 @@ a[href*="elfsight.com/google-reviews-widget"] {
   color: rgba(255, 255, 255, 0.95);
   margin-top: 1.5rem;
   font-size: 1rem;
+}
+
+/* Right-Click Contact Cursor Styles */
+.contact-cursor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  animation: contactCursorPulse 1.5s ease-in-out infinite;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.contact-cursor-icon {
+  font-size: 18px;
+  display: inline-block;
+}
+
+.contact-cursor-text {
+  display: inline-block;
+}
+
+@keyframes contactCursorPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+  }
+}
+
+body.contact-cursor-active {
+  cursor: none !important;
+}
+
+body.contact-cursor-active * {
+  cursor: none !important;
 }

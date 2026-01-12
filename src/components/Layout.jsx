@@ -5,6 +5,8 @@ import dynamic from 'next/dynamic'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollSmootherWrapper from './ScrollSmootherWrapper'
+import RightClickContactCursor from './RightClickContactCursor'
+import DisableDevTools from './DisableDevTools'
 
 // Lazy load below-the-fold components
 // CTA can be SSR'd since it uses useEffect for animations
@@ -52,6 +54,8 @@ const LayoutContent = ({ children }) => {
       <Suspense fallback={null}>
         <ScrollToTopButton />
         <ContactBubbles />
+        <RightClickContactCursor />
+        <DisableDevTools />
       </Suspense>
     </div>
   )

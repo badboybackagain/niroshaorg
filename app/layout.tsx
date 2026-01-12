@@ -75,6 +75,54 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Disable console and dev tools - runs immediately before React loads */}
+        <Script
+          id="disable-console-early"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                'use strict';
+                var noop = function() {};
+                var noopReturn = function() { return {}; };
+                
+                // Disable console methods immediately
+                if (typeof console !== 'undefined') {
+                  console.log = noop;
+                  console.info = noop;
+                  console.warn = noop;
+                  console.error = noop;
+                  console.debug = noop;
+                  console.table = noop;
+                  console.trace = noop;
+                  console.dir = noop;
+                  console.dirxml = noop;
+                  console.group = noop;
+                  console.groupEnd = noop;
+                  console.groupCollapsed = noop;
+                  console.time = noop;
+                  console.timeEnd = noop;
+                  console.timeStamp = noop;
+                  console.profile = noop;
+                  console.profileEnd = noop;
+                  console.count = noop;
+                  console.clear = noop;
+                  console.assert = noop;
+                  console.memory = noopReturn;
+                }
+                
+                // Clear console periodically
+                setInterval(function() {
+                  if (typeof console !== 'undefined' && console.clear) {
+                    try {
+                      console.clear();
+                    } catch(e) {}
+                  }
+                }, 100);
+              })();
+            `,
+          }}
+        />
         {/* Google Analytics (gtag.js) - Only if GTM is not configured - placed immediately after <head> */}
         {!USE_GTM && (
           <>
