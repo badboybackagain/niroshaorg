@@ -3813,6 +3813,9 @@ body.lightbox-open .navbar {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* Enable smooth scrolling on all devices */
+  scroll-snap-align: start;
+  will-change: scroll-position;
 }
 
 .video-testimonials-carousel::-webkit-scrollbar {

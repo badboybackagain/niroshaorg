@@ -11,10 +11,14 @@ const VideoTestimonials = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [hoveredVideo, setHoveredVideo] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
+  const [isPaused, setIsPaused] = useState(false)
   const carouselRef = useRef(null)
   const videoRefs = useRef({})
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
+  const autoScrollIntervalRef = useRef(null)
 
   // Fetch playlist videos from API route
   useEffect(() => {
@@ -108,15 +112,94 @@ const VideoTestimonials = () => {
     fetchVideos()
   }, [playlistId])
 
-  // Carousel navigation
-  const scrollCarousel = useCallback((direction) => {
+  // Carousel navigation with infinite loop
+  const scrollCarousel = useCallback((direction, smooth = true) => {
+    if (!carouselRef.current || videos.length === 0) return
+    
+    const carousel = carouselRef.current
+    const scrollAmount = carousel.offsetWidth * 0.8
+    const currentScroll = carousel.scrollLeft
+    const maxScroll = carousel.scrollWidth - carousel.offsetWidth
+    const newScrollLeft = currentScroll + (direction * scrollAmount)
+    
+    // Infinite loop: if at the end, jump to beginning (or vice versa)
+    if (direction > 0 && newScrollLeft >= maxScroll - 50) {
+      // Near the end, jump to start instantly (no smooth)
+      carousel.scrollTo({ left: 0, behavior: 'auto' })
+      // Then continue scrolling smoothly
+      setTimeout(() => {
+        carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' })
+      }, 50)
+    } else if (direction < 0 && newScrollLeft <= 50) {
+      // Near the start, jump to end instantly
+      carousel.scrollTo({ left: maxScroll, behavior: 'auto' })
+      // Then continue scrolling smoothly
+      setTimeout(() => {
+        carousel.scrollTo({ left: maxScroll - scrollAmount, behavior: 'smooth' })
+      }, 50)
+    } else {
+      carousel.scrollTo({
+        left: newScrollLeft,
+        behavior: smooth ? 'smooth' : 'auto',
+      })
+    }
+  }, [videos.length])
+
+  // Auto-scroll carousel
+  useEffect(() => {
+    if (!carouselRef.current || videos.length === 0 || isPaused) {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current)
+        autoScrollIntervalRef.current = null
+      }
+      return
+    }
+
+    // Auto-scroll every 3 seconds (works on mobile too)
+    autoScrollIntervalRef.current = setInterval(() => {
+      if (carouselRef.current && !isPaused) {
+        scrollCarousel(1, true) // Scroll right
+      }
+    }, 3000)
+
+    return () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current)
+        autoScrollIntervalRef.current = null
+      }
+    }
+  }, [videos.length, isPaused, scrollCarousel])
+
+  // Pause auto-scroll when user manually scrolls
+  useEffect(() => {
     if (!carouselRef.current) return
-    const scrollAmount = carouselRef.current.offsetWidth * 0.8
-    const newScrollLeft = carouselRef.current.scrollLeft + (direction * scrollAmount)
-    carouselRef.current.scrollTo({
-      left: newScrollLeft,
-      behavior: 'smooth',
-    })
+
+    const carousel = carouselRef.current
+    let scrollTimeout
+
+    const handleScroll = () => {
+      setIsPaused(true)
+      clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(() => {
+        setIsPaused(false)
+      }, 4000) // Resume after 4 seconds of no scrolling
+    }
+
+    carousel.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      carousel.removeEventListener('scroll', handleScroll)
+      clearTimeout(scrollTimeout)
+    }
+  }, [videos.length])
+
+  // Pause on hover/interaction
+  const handleCarouselMouseEnter = useCallback(() => {
+    setIsPaused(true)
+  }, [])
+
+  const handleCarouselMouseLeave = useCallback(() => {
+    setIsPaused(false)
   }, [])
 
   // Open lightbox
@@ -200,10 +283,6 @@ const VideoTestimonials = () => {
     touchStartX.current = 0
     touchEndX.current = 0
   }
-
-  // Handle video hover - show preview thumbnail
-  const [hoveredVideo, setHoveredVideo] = useState(null)
-  const [errorMessage, setErrorMessage] = useState(null)
 
   if (loading) {
     return (
@@ -289,6 +368,8 @@ const VideoTestimonials = () => {
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
+              onMouseEnter={handleCarouselMouseEnter}
+              onMouseLeave={handleCarouselMouseLeave}
             >
               {videos.map((video, index) => (
                 <div
