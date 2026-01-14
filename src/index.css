@@ -3860,7 +3860,7 @@ body.lightbox-open .navbar {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3870,7 +3870,7 @@ body.lightbox-open .navbar {
 }
 
 .video-testimonial-thumbnail:hover .video-testimonial-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   opacity: 1;
 }
 
@@ -3878,28 +3878,45 @@ body.lightbox-open .navbar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   z-index: 3;
+  position: relative;
 }
 
 .video-testimonial-play-btn svg {
   width: 32px;
   height: 32px;
-  color: var(--accent-color);
-  margin-left: 4px; /* Offset for play icon */
+  color: rgba(255, 255, 255, 0.95);
+  margin-left: 6px;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .video-testimonial-play-btn:hover {
-  transform: scale(1.1);
-  background: #fff;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.08);
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.video-testimonial-play-btn:hover svg {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.video-testimonial-play-btn:active {
+  transform: scale(1.02);
 }
 
 .video-carousel-nav {
@@ -4153,13 +4170,15 @@ body.lightbox-open .navbar {
   }
 
   .video-testimonial-play-btn {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+    border-width: 1.5px;
   }
 
   .video-testimonial-play-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    margin-left: 5px;
   }
 }
 

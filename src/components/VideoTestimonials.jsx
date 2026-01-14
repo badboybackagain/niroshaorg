@@ -26,8 +26,11 @@ const VideoTestimonials = () => {
         const data = await response.json()
         
         if (data.error) {
-          setErrorMessage(`API Error: ${data.error}`)
-          // Still try fallback
+          // If it's a referrer restriction, don't show error (fallback will work)
+          if (!data.isReferrerError) {
+            setErrorMessage(`API Error: ${data.error}`)
+          }
+          // Always try fallback when there's an error
           loadVideosWithIframeAPI()
         } else if (data.videos && data.videos.length > 0) {
           setVideos(data.videos)

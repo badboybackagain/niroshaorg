@@ -26,11 +26,23 @@ export async function GET(request) {
 
     if (!response.ok) {
       console.error('YouTube API Error:', data)
+      
+      // Check if it's a referrer restriction error
+      const isReferrerError = data.error?.errors?.some(
+        err => err.reason === 'API_KEY_HTTP_REFERRER_BLOCKED' || 
+               err.message?.includes('referer') ||
+               err.message?.includes('referrer')
+      )
+      
       // Return error details for debugging
       return NextResponse.json({ 
         videos: [], 
         error: data.error?.message || 'Failed to fetch playlist',
-        details: data.error 
+        details: data.error,
+        isReferrerError: isReferrerError,
+        suggestion: isReferrerError 
+          ? 'API key has referrer restrictions. Component will use iframe API fallback.'
+          : 'Check API key permissions and restrictions in Google Cloud Console.'
       }, { status: response.status })
     }
 
